@@ -1,10 +1,10 @@
 # Bytnerowicz-Akana-Griffin-Menge-N-fix-Temp-Code
-R code to recreate analyses and figures for Bytnerowicz, Akana, Griffin, and Menge "The temperature sensitivity of woody dinitrogen fixation across species and growing temperatures"
+R scripts to recreate analyses and figures for Bytnerowicz, Akana, Griffin, and Menge "The temperature sensitivity of woody dinitrogen fixation across species and growing temperatures"
 
 
-.R files are split into two folders: "Figures" and "Analysis"
+R scripts are split into two folders: "Figures" and "Analysis"
 
-Data used in analyses and for figures are available in the "Data" folder
+Data used in analyses and for figures are available in the "Data" folder. R scripts are annotated to indicate what folder required data are stored in.
 
 
 
