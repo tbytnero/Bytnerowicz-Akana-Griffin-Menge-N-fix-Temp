@@ -16,7 +16,7 @@ Scripts for supplementary figures have the supplementary figure number in the fi
 
 
 
-#For "Analyses":
+#For "Analysis":
 
 Scripts to calculate N-fixation rates:
 
