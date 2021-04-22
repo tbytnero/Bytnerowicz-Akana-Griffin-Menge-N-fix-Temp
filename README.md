@@ -8,7 +8,7 @@ Data used in analyses and for figures are available in the "Data" folder
 
 
 
-For "Figures":
+#For "Figures":
 
 Script for figures found in the main text is Figures_Main_Text.R
 
@@ -16,7 +16,7 @@ Scripts for supplementary figures have the supplementary figure number in the fi
 
 
 
-For "Analyses":
+#For "Analyses":
 
 Scripts to calculate N-fixation rates:
 
