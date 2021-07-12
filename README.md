@@ -45,7 +45,7 @@ Scripts to calculate the effect of prolonged exposure of N-fixation to high temp
 
 Piecewise_Reg_Constant_Temp_Fits.R fits piecewise functions (equation S4) to N-fixation data at constant temperatures
 
-Temporal_Decline_EqS7_Parameter_Calculations.R fits estimates the parameter values in Equation S7
+Temporal_Decline_EqS7_Parameter_Calculations.R estimates the parameter values in Equation S7
 
 Temporal_Decline_Nfix_Minus_Temporal_Effect.R simulates N-fixation data had they not been affected by the time spent at each temperature and refits the modified beta function (Equation 5) to these simulated data
 
