@@ -9,7 +9,7 @@ Data used in analyses and for figures are available in the "Data" folder. R scri
 
 -------------------------------------------
 
-#For "Figures":
+####For "Figures":
 
 Script for figures found in the main text is Figures_Main_Text.R
 
@@ -17,13 +17,11 @@ Scripts for supplementary figures have the supplementary figure number in the fi
 
 -------------------------------------------
 
-#For "Analysis":
+###For "Analysis":
 
 --------
 
-Scripts to calculate N-fixation rates:
-
---------
+#Scripts to calculate N-fixation rates:
 
 Km_Calculations_Alnus.R, Km_Calculations_Gliricidia.R, Km_Calculations_Morella.R, and Km_Calculations_Robinia.R calculate the Michaelis-Menten half-saturation constant (Km) and 95% CI for measuring nitrogenase activity with ARACAS with (Supplementary Table 4) and without a possible change of Km with measurement temperature (Supplementary Table 5)
 
@@ -33,9 +31,7 @@ CF_Calculations.R calculates the Conversion Factor (CF) values in Supplementary 
 
 --------
 
-Scripts to model the temperature response of N-fixation:
-
---------
+#Scripts to model the temperature response of N-fixation:
 
 Nfix_Model_Comparison.R compares models for N-fixation (Supplementary Tables 6 and 8) and then generates parameter estimates and 95% CIs for N-fixation (Supplementary Tables 1 and 3)
 
@@ -43,9 +39,7 @@ Nfix_LinKm_Estimates.R generates parameter estimates and 95% CIs for N-fixation 
 
 --------
 
-Scripts to calculate and model the temperature response of carbon exchange:
-
---------
+#Scripts to calculate and model the temperature response of carbon exchange:
 
 Resp_Calculations.R tests for the effect of growing temperature on leaf respiration in the light (RL), compares acclimation models for the effect of temperature on leaf respiration (Supplementary Table 10), and calculates the relative respiration rate at 25 deg. C for A-Ci curve calculations
 
@@ -55,9 +49,7 @@ Photosynthesis_Model_Comparison.R compares models for photosynthesis (both A275 
 
 --------
 
-Scripts to calculate the effect of prolonged exposure of N-fixation to high temperatures:
-
---------
+#Scripts to calculate the effect of prolonged exposure of N-fixation to high temperatures:
 
 Piecewise_Reg_Constant_Temp_Fits.R fits piecewise functions (equation S4) to N-fixation data at constant temperatures
 
