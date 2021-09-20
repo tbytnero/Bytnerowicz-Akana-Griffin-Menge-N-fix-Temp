@@ -45,7 +45,7 @@ nsig.mod <- function(p,q,tau){
 
 ###############################################################################################################
 #Subset data from breakpoint to 6 hr mark
-#Vmax data are approximately normalized to 1 in order to make it easire to fit falling function
+#Vmax data are approximately normalized to 1 in order to make it easier to fit falling function
 ###############################################################################################################
 
 ###
@@ -92,7 +92,8 @@ M21_40C.cut$Vmax.norm<-M21_40C.cut$Vmax/max(M21_40C.cut$Vmax)
 
 #25 deg. C
 M26_25C<-read.csv("MOCE26_long25.csv")
-print(st<-which(M26_25C$Time==M26_25C$Time[M26_25C$Time>1.31][1]))
+#Breakpoint was visual estimated due to unequilibrated rates with fit breakpoint
+print(st<-which(M26_25C$Time==M26_25C$Time[M26_25C$Time>0.6][1]))
 print(end<-length(M26_25C$Time))
 M26_25C.cut<-M26_25C[st:end,]
 M26_25C.cut$Vmax.norm<-M26_25C.cut$Vmax/max(M26_25C.cut$Vmax)
@@ -134,7 +135,7 @@ M31_30C.cut$Vmax.norm<-M31_30C.cut$Vmax.norm/0.9
 
 #35 deg. C
 M31_35C<-read.csv("MOCE31_long35.csv")
-print(st<-which(M31_35C$Time==M31_35C$Time[M31_35C$Time>2.71][1]))
+print(st<-which(M31_35C$Time==M31_35C$Time[M31_35C$Time>3.9][1]))
 print(end<-which(M31_35C$Time==M31_35C$Time[M31_35C$Time>6][1]))
 M31_35C.cut<-M31_35C[st:end,]
 M31_35C.cut$Vmax.norm<-M31_35C.cut$Vmax/max(M31_35C.cut$Vmax)
@@ -198,7 +199,7 @@ A26_25C.cut$Vmax.norm<-A26_25C.cut$Vmax/max(A26_25C.cut$Vmax)
 
 #30 deg. C
 A26_30C<-read.csv("ALRU26_long30.csv")
-print(st<-which(A26_30C$Time==A26_30C$Time[A26_30C$Time>1.7][1]))
+print(st<-which(A26_30C$Time==A26_30C$Time[A26_30C$Time>2.88][1]))
 print(end<-length(A26_30C$Time))
 A26_30C.cut<-A26_30C[st:end,]
 A26_30C.cut$Vmax.norm<-A26_30C.cut$Vmax/max(A26_30C.cut$Vmax)
@@ -430,7 +431,7 @@ R31_25C.cut$Vmax.norm<-R31_25C.cut$Vmax/max(R31_25C.cut$Vmax)
 
 #30 deg. C
 R31_30C<-read.csv("ROPS31_long30.csv")
-print(st<-which(R31_30C$Time==R31_30C$Time[R31_30C$Time>3.64][1]))
+print(st<-which(R31_30C$Time==R31_30C$Time[R31_30C$Time>4.49][1]))
 print(end<-which(R31_30C$Time==R31_30C$Time[R31_30C$Time>6][1]))
 R31_30C.cut<-R31_30C[st:end,]
 R31_30C.cut$Vmax.norm<-R31_30C.cut$Vmax/max(R31_30C.cut$Vmax)
@@ -535,7 +536,7 @@ curve(fall(ft[2],exp(ft[3]),ft[4],ft[5],x),from=0,to=6,col="orange",lwd=2,add=T)
 ##
 
 ##25 deg. C
-M26a_fall_one_normNLL<-mle2(fall_one_normNLL,start=list(sdNase=-1,a1=1,b1=log(0.03),c1=1.3,d1=0.85),
+M26a_fall_one_normNLL<-mle2(fall_one_normNLL,start=list(sdNase=-1,a1=1,b1=log(0.03),c1=1.3,d1=0.7),
                             data=list(t1=M26_25C.cut$Time,Nasedat=M26_25C.cut$Vmax.norm),
                             control=list(maxit=20000))
 summary(M26a_fall_one_normNLL)
@@ -545,7 +546,7 @@ Mb26a<-ft[3]
 Md26a<-ft[5]
 Mc26a<-ft[4]
 #Plot data and curve
-plot(Vmax.norm~Time,cex=0.01,data=M26_25C.cut,xlim=c(0,6),ylim=c(0,2))
+plot(Vmax.norm~Time,cex=0.01,data=M26_25C.cut,xlim=c(0,6),ylim=c(0,1.2))
 curve(fall(ft[2],exp(ft[3]),ft[4],ft[5],x),from=0,to=6,col="orange",lwd=2,add=T)
 
 ##30 deg. C
@@ -609,7 +610,7 @@ plot(Vmax.norm~Time,cex=0.01,data=M31_30C.cut)
 curve(fall(ft[2],exp(ft[3]),ft[4],ft[5],x),from=0,to=6,col="orange",lwd=2,add=T)
 
 ##35 deg. C
-M31b_fall_one_normNLL<-mle2(fall_one_normNLL,start=list(sdNase=-1,a1=1,b1=log(0.1),c1=1.3,d1=0.6),
+M31b_fall_one_normNLL<-mle2(fall_one_normNLL,start=list(sdNase=-1,a1=1,b1=log(0.1),c1=1.3,d1=0.7),
                             data=list(t1=M31_35C.cut$Time,Nasedat=M31_35C.cut$Vmax.norm),
                             control=list(maxit=20000))
 summary(M31b_fall_one_normNLL)
@@ -719,7 +720,7 @@ plot(Vmax.norm~Time,cex=0.01,data=A26_25C.cut)
 curve(fall(ft[2],exp(ft[3]),ft[4],ft[5],x),from=0,to=6,col="orange",lwd=2,add=T)
 
 ##30 deg. C
-A26b_fall_one_normNLL<-mle2(fall_one_normNLL,start=list(sdNase=-1,a1=1,b1=log(0.03),c1=1.3,d1=0.8),
+A26b_fall_one_normNLL<-mle2(fall_one_normNLL,start=list(sdNase=-1,a1=1,b1=log(0.03),c1=1.3,d1=0.7),
                             data=list(t1=A26_30C.cut$Time,Nasedat=A26_30C.cut$Vmax.norm),
                             control=list(maxit=20000))
 summary(A26b_fall_one_normNLL)
@@ -1171,8 +1172,8 @@ T.a.G<-c(25.5,30.5,34.5,39.3,25.4,30.4,35.2,39.8,29.0,35.6,39.3) #Gliricidia
 T.a.R<-c(25.2,30.6,35.0,39.8,25.7,29.4,35.2,39.4,24.2,31.0,34.7,39.5) #Robinia
 
 #Redefine temperature as tau
-T.d.M<-c(c(T.a.M[1:4]-29.03),c(T.a.M[5:8]-32.95),c(T.a.M[9:11]-36.86)) #Morella
-T.d.A<-c(c(T.a.A[1:4]-32.41),c(T.a.A[5:8]-32.74),c(T.a.A[9:11]-33.07)) #Alnus
+T.d.M<-c(c(T.a.M[1:4]-29.03),c(T.a.M[5:8]-32.94),c(T.a.M[9:11]-36.86)) #Morella
+T.d.A<-c(c(T.a.A[1:4]-32.42),c(T.a.A[5:8]-32.74),c(T.a.A[9:11]-33.07)) #Alnus
 T.d.G<-c(c(T.a.G[1:4]-31.58),c(T.a.G[5:8]-33.66),c(T.a.G[9:11]-35.74)) #Gliricidia
 T.d.R<-c(c(T.a.R[1:4]-31.89),c(T.a.R[5:8]-32.02),c(T.a.R[9:12]-32.14)) #Robinia
 
@@ -1202,9 +1203,9 @@ write.csv(cbind(Tr=Tr.all,Temp=Temp.all,Tau=Tau.all,b=exp(b.all),c=c.all,d=d.all
 #Outliers (Tr,Temp,Tau,b,c,d)
 ##
 
-#M26,26.1,-6.85,4.04,0.366,0.49
-#R26,35.2,3.18,6.28,0.31,0.03
-#R26,39.4,7.38,7.93,0.44,0.009
+#M26,26.1,-6.84,0.62,1.15,0.67
+#R26,35.2,3.18,6.42,0.31,0.03
+#R26,39.4,7.38,5.33,0.46,0.01
 
 ###############################################################################################################
 #Solve for median value of "c" and fit Equations S5 and S6 to "b" and "d", respectively
@@ -1225,7 +1226,11 @@ for(i in 1:length(c.all)){
 c.all.rm[16]<-NA
 c.all.rm[40:41]<-NA
 
-print(c.est<-median(na.omit(c.all.rm))) #0.9114934
+print(c.est<-median(na.omit(c.all.rm))) #0.9572269
+
+#95% CI
+quantile(na.omit(c.all.rm),0.025)
+quantile(na.omit(c.all.rm),0.975)
 
 ###
 #Model "b" and "d" as functions of tau
@@ -1274,13 +1279,18 @@ b.mle<-mle2(b_normNLL,start=list(sdNase=-1,beta=log(beta.est),alpha=log(alpha.es
 b.mle2<-mle2(b_normNLL,start=list(sdNase=-1,beta=log(beta.est),alpha=log(alpha.est)),
              data=list(x=temp.parms.rm$Tau,bdat=log(temp.parms.rm$b+1)),
              control=list(maxit=20000))
+b.mle2.ci<-confint(b.mle2)
 
 #Compare models for b~tau
 AICctab(b.mle,b.mle2,nobs=42) #b.mle2 (Equation S5) is best
 
 #Estimated parameters
-print(alpha.mle2<-exp(coef(b.mle2)[[3]])) #alpha
-print(beta.mle2<-exp(coef(b.mle2)[[2]])) #beta
+print(alpha.mle2<-exp(coef(b.mle2)[[3]])) #alpha (this is equivalent to alpha_b in the manuscript)
+print(beta.mle2<-exp(coef(b.mle2)[[2]])) #beta (this is equivalent to beta_b in the manuscript)
+
+#95% CI
+exp(b.mle2.ci[3,1]);exp(b.mle2.ci[3,2]) #alpha
+exp(b.mle2.ci[2,1]);exp(b.mle2.ci[2,2]) #beta
 
 ##
 #d
@@ -1294,7 +1304,12 @@ q.est<-0.2528
 d.mle<-mle2(d_normNLL,start=list(sdNase=-1,p=log(p.est),q=log(q.est)),
             data=list(x=temp.parms.rm$Tau,ddat=temp.parms.rm$d),
             control=list(maxit=20000))
+d.mle.ci<-confint(d.mle)
 
 #Estimated parameters
-print(q.mle<-exp(coef(d.mle)[[3]])) #q
-print(p.mle<-exp(coef(d.mle)[[2]])) #p
+print(p.mle<-exp(coef(d.mle)[[2]])) #p (this is equivalent to alpha_d in the manuscript
+print(q.mle<-exp(coef(d.mle)[[3]])) #q (this is equivalent to beta_d in the manuscript)
+
+#95% CI
+exp(d.mle.ci[2,1]);exp(d.mle.ci[2,2]) #p
+exp(d.mle.ci[3,1]);exp(d.mle.ci[3,2]) #q

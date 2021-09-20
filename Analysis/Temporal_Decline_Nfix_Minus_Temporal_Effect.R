@@ -137,11 +137,11 @@ R31c.dat<-read.csv("ROPS31_072618_Vmax_temp.csv")
 
 #Parameter values for equation S5 and S6
 #See "Temporal_Decline_EqS7_Parameter_Calculations" script for derivation of these values
-alpha<- 0.03167873
-beta2<-0.2872763
-p<-0.7110677 
-q<-0.2381453
-c<-0.9114934
+alpha<-0.0304076
+beta2<-0.2923246
+p<-0.6549813 
+q<-0.2526679
+c<-0.9572269
 
 ###
 #Morella
@@ -277,7 +277,7 @@ MOCE21_100319_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.
 time<-M26a.dat$Time
 time<-time-time[1]
 
-Topt <- 32.95
+Topt <- 32.94
 tau<-M26a.dat$Temperature-Topt
 
 Nfix<-M26a.dat$Vmax
@@ -525,7 +525,7 @@ MOCE31_031519_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.
 time<-A21a.dat$Time
 time<-time-time[1]
 
-Topt <- 32.43
+Topt <- 32.42
 tau<-A21a.dat$Temperature-Topt
 
 Nfix<-A21a.dat$Vmax
@@ -647,7 +647,7 @@ ALRU21_073118_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.
 time<-A26a.dat$Time
 time<-time-time[1]
 
-Topt <- 32.75
+Topt <- 32.74
 tau<-A26a.dat$Temperature-Topt
 
 Nfix<-A26a.dat$Vmax
@@ -1864,10 +1864,10 @@ ft.g.inst <- coef(fit_Nase_beta_linTminTopt_GLSE_inst) #Parameter estimates
 write.csv(ft.g.inst,"GLSE_inst_beta_fit.csv") #Exports parameter estimates (available in "SNF_temporal_decline" folder)
 
 #Robinia
-fit_Nase_beta_linall_ROPS_inst <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=-1,ymax21a=0.96320475,ymax21b=0.82996072,ymax21c=1.08051641,
-                                                                           ymax26a=0.89390710,ymax26b=0.95916073,ymax26c=0.88695838,
-                                                                           ymax31a=0.89351822,ymax31b=0.69375718,ymax31c=0.88715637,
-                                                                           a=-16.33352131,b=0.81903181,c=31.04814934,d=0.05409619,e=44.75447753,f=0.03978480),
+fit_Nase_beta_linall_ROPS_inst <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=1,ymax21a=1,ymax21b=0.8,ymax21c=1.1,
+                                                                           ymax26a=0.9,ymax26b=1,ymax26c=0.9,
+                                                                           ymax31a=0.9,ymax31b=0.7,ymax31c=0.9,
+                                                                           a=-13,b=0.8,c=32,d=0.03,e=47,f=0.03),
                                        data=list(T21a=ROPS21a$Temperature,T21b=ROPS21b$Temperature,T21c=ROPS21c$Temperature,
                                                  T26a=ROPS26a$Temperature,T26b=ROPS26b$Temperature,T26c=ROPS26c$Temperature,
                                                  T31a=ROPS31a$Temperature,T31b=ROPS31b$Temperature,T31c=ROPS31c$Temperature,

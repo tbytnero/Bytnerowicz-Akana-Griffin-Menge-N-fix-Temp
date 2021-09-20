@@ -681,10 +681,10 @@ quantile(dist.TropTopt26_linKm,0.975)
 #Parameter estimates
 ##
 #Tmin
-coef(fit_Nase_beta_linall_Temp_linKm)[21]+coef(fit_Nase_beta_linall_Temp_linKm)[22]*18.5
+coef(fit_Nase_beta_linTminTopt_Temp_linKm)[21]+coef(fit_Nase_beta_linTminTopt_Temp_linKm)[22]*18.5
 
 #Topt
-coef(fit_Nase_beta_linall_Temp_linKm)[23]+coef(fit_Nase_beta_linall_Temp_linKm)[24]*18.5
+coef(fit_Nase_beta_linTminTopt_Temp_linKm)[23]+coef(fit_Nase_beta_linTminTopt_Temp_linKm)[24]*18.5
 
 #Tmax estimate is the same as in Supplementary Table 11
 

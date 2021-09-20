@@ -79,11 +79,11 @@ beta <- function(ymax,Tmin,Topt,Tmax,T){
 #See "Temporal_Decline_EqS7_Parameter_Calculations" script for derivation of these values
 ####
 
-alpha<- 0.03167873
-beta2<-0.2872763
-p<-0.7110677 
-q<-0.2381453
-c<-0.9114934
+alpha<-0.0304076
+beta2<-0.2923246
+p<-0.6549813 
+q<-0.2526679
+c<-0.9572269
 
 ####
 #Simulation of N-fixation temperature response curves at 1x, 2x slower, and 3x slower than
@@ -107,7 +107,7 @@ Tmax31.i<-28.5*M.inst[16,2]+M.inst[15,2]
 
 #Measured modified beta function parameters
 Topt21.o<-29.03
-Topt26.o<-32.95
+Topt26.o<-32.94
 Topt31.o<-36.86
 
 ##
@@ -555,7 +555,7 @@ Tmax26.i<-23.5*A.inst[16,2]+A.inst[15,2]
 Tmax31.i<-28.5*A.inst[16,2]+A.inst[15,2]
 
 #Measured modified beta function parameters
-Topt21.o<-32.41
+Topt21.o<-32.42
 Topt26.o<-32.74
 Topt31.o<-33.07
 
@@ -1931,11 +1931,11 @@ min(x1.dat[,3]-slow.3x.dat[,3]) #1.3
 max(x1.dat[,3]-slow.3x.dat[,3]) #2.2
 
 #Rate at 15 deg. C
-mean(perc.dif.time[,3]) #+5.5
-min(perc.dif.time[,3]) #+7.6
-max(perc.dif.time[,3]) #+3.5
+mean(perc.dif.time[,4]) #+5.1
+min(perc.dif.time[,4]) #+4.8
+max(perc.dif.time[,4]) #+5.8
 
 #Rate at 40 deg. C
-mean(perc.dif.time[,5]) #-46.9
-min(perc.dif.time[,5]) #-64.1
-max(perc.dif.time[,5]) #-18.6
+mean(perc.dif.time[,5]) #-48.0
+min(perc.dif.time[,5]) #-65.5
+max(perc.dif.time[,5]) #-19.0

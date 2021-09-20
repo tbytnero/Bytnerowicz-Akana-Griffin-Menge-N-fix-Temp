@@ -27,7 +27,7 @@ M21_25C<-read.csv("MOCE21_long25.csv")
 plot(M21_25C$Time,M21_25C$Vmax,pch=20,cex=0.1,col="blue",main="MOCE21; 25C",ylab="SNF (nmol C2H4 hr-1)",xlab="Time (hr)")
 
 #This finds best break point (only works here if I let max fall and max rise differ)
-Break<-seq(0.59,0.8,0.01)
+Break<-seq(0.59,2,0.01)
 sig<-numeric(length(Break))
 for(i in 1:length(Break)){
   model<-nls(Vmax~ifelse(Time<Break[i],p*(1-exp(-q*Time)),a*((1-d)/(1+b*exp(c*Time))+d)),
@@ -211,7 +211,7 @@ M31_35C<-read.csv("MOCE31_long35.csv")
 plot(M31_35C$Time,M31_35C$Vmax,pch=20,cex=0.1,col="blue",main="MOCE31; 35C",ylab="SNF (nmol C2H4 hr-1)",xlab="Time (hr)",ylim=c(0,max(M31_35C$Vmax)))
 
 #This finds best break point
-Break<-seq(0.06,2.71,0.01)
+Break<-c(seq(0.06,2.71,0.01),seq(2.8,4,0.01))
 sig<-numeric(length(Break))
 for(i in 1:length(Break)){
   model<-nls(Vmax~ifelse(Time<Break[i],a*(1-exp(-q*Time)),a*((1-d)/(1+b*exp(c*Time))+d)),
@@ -219,7 +219,7 @@ for(i in 1:length(Break)){
              start=list(a=2000,b=0.00001,c=2.2,d=0.83,q=24))
   sig[i]<-summary(model)$sigma
 }
-Break[which.min(sig)] #2.71
+Break[which.min(sig)] #3.9
 plot(sig~Break,type="l")
 
 #
@@ -233,7 +233,7 @@ M31_40C<-read.csv("MOCE31_long40.csv")
 plot(M31_40C$Time,M31_40C$Vmax,pch=20,cex=0.1,col="blue",main="MOCE31; 40C",ylab="SNF (nmol C2H4 hr-1)",xlab="Time (hr)",ylim=c(0,max(M31_40C$Vmax)))
 
 #This finds best break point
-Break<-seq(0.09,1,0.01)
+Break<-c(seq(0.09,0.42,0.01),seq(0.44,0.97,0.01))
 sig<-numeric(length(Break))
 for(i in 1:length(Break)){
   model<-nls(Vmax~ifelse(Time<Break[i],a*(1-exp(-q*Time)),a*((1-d)/(1+b*exp(c*Time))+d)),
@@ -241,7 +241,7 @@ for(i in 1:length(Break)){
              start=list(a=2420,b=0.0000001,c=4.3,d=0.97,q=70))
   sig[i]<-summary(model)$sigma
 }
-Break[which.min(sig)] #0.33
+Break[which.min(sig)] #0.34
 plot(sig~Break,type="l")
 
 ###
@@ -274,7 +274,7 @@ A21_30C<-read.csv("ALRU21_long30.csv")
 plot(A21_30C$Time,A21_30C$Vmax,pch=20,cex=0.1,col="blue",main="ALRU21; 30C",ylab="SNF (nmol C2H4 hr-1)",xlab="Time (hr)")
 
 #This finds best break point
-Break<-seq(2.43,3.5,0.01)
+Break<-c(seq(0.3,1.54,0.01),seq(1.7,2.38,0.01),seq(2.43,3.5,0.01))
 sig<-numeric(length(Break))
 for(i in 1:length(Break)){
   model<-nls(Vmax~ifelse(Time<Break[i],a*(1-exp(-q*Time)),a*((1-d)/(1+b*exp(c*Time))+d)),
@@ -355,7 +355,7 @@ A26_30C<-read.csv("ALRU26_long30.csv")
 plot(A26_30C$Time,A26_30C$Vmax,pch=20,cex=0.1,col="blue",main="ALRU26; 30C",ylab="SNF (nmol C2H4 hr-1)",xlab="Time (hr)")
 
 #This finds best break point
-Break<-seq(0.02,1.7,0.01)
+Break<-c(seq(0.02,1.7,0.01),seq(1.8,3.2,0.01))
 sig<-numeric(length(Break))
 for(i in 1:length(Break)){
   model<-nls(Vmax~ifelse(Time<Break[i],a*(1-exp(-q*Time)),a*((1-d)/(1+b*exp(c*Time))+d)),
@@ -363,7 +363,7 @@ for(i in 1:length(Break)){
              start=list(a=2300,b=0.001,c=1.7,d=0.85,q=10))
   sig[i]<-summary(model)$sigma
 }
-Break[which.min(sig)] #1.7
+Break[which.min(sig)] #2.88
 plot(sig~Break,type="l")
 
 #
@@ -399,7 +399,7 @@ A26_40C<-read.csv("ALRU26_long40.csv")
 plot(A26_40C$Time,A26_40C$Vmax,pch=20,cex=0.1,col="blue",main="ALRU26; 40C",ylab="SNF (nmol C2H4 hr-1)",xlab="Time (hr)")
 
 #This finds best break point
-Break<-seq(0.02,0.1,0.01)
+Break<-seq(0.02,0.91,0.01)
 sig<-numeric(length(Break))
 for(i in 1:length(Break)){
   model<-nls(Vmax~ifelse(Time<Break[i],a*(1-exp(-q*Time)),a*((1-d)/(1+b*exp(c*Time))+d)),
@@ -458,7 +458,7 @@ A31_40C<-read.csv("ALRU31_long40.csv")
 plot(A31_40C$Time,A31_40C$Vmax,pch=20,cex=0.1,col="blue",main="ALRU31; 40C",ylab="SNF (nmol C2H4 hr-1)",xlab="Time (hr)")
 
 #This finds best break point
-Break<-seq(0.02,0.5,0.01)
+Break<-seq(0.02,1,0.01)
 sig<-numeric(length(Break))
 for(i in 1:length(Break)){
   model<-nls(Vmax~ifelse(Time<Break[i],a*(1-exp(-q*Time)),a*((1-d)/(1+b*exp(c*Time))+d)),
@@ -650,7 +650,7 @@ G31_35C<-read.csv("GLSE31_long35.csv")
 plot(G31_35C$Time,G31_35C$Vmax,pch=20,cex=0.1,col="blue",main="GLSE31; 35C",ylab="SNF (nmol C2H4 hr-1)",xlab="Time (hr)",ylim=c(0,max(G31_35C$Vmax)))
 
 #This finds best break point
-Break<-seq(2.75,4,0.01)
+Break<-c(seq(1,2.56,0.01),seq(2.75,3.21,0.01),seq(3.23,4,0.01))
 sig<-numeric(length(Break))
 for(i in 1:length(Break)){
   model<-nls(Vmax~ifelse(Time<Break[i],a*(1-exp(-q*Time)),a*((1-d)/(1+b*exp(c*Time))+d)),
@@ -672,7 +672,7 @@ G31_40C<-read.csv("GLSE31_long40.csv")
 plot(G31_40C$Time,G31_40C$Vmax,pch=20,cex=0.1,col="blue",main="GLSE31; 40C",ylab="SNF (nmol C2H4 hr-1)",xlab="Time (hr)",ylim=c(0,max(G31_40C$Vmax)))
 
 #This finds best break point
-Break<-seq(0.02,0.3,0.01)
+Break<-seq(0.02,0.38,0.01)
 sig<-numeric(length(Break))
 for(i in 1:length(Break)){
   model<-nls(Vmax~ifelse(Time<Break[i],a*(1-exp(-q*Time)),a*((1-d)/(1+b*exp(c*Time))+d)),
@@ -684,7 +684,7 @@ Break[which.min(sig)] #0.18
 plot(sig~Break,type="l")
 
 ###
-#Gliricidia
+#Robinia
 ###
 
 ##
@@ -817,7 +817,7 @@ Break[which.min(sig)] #0.98
 plot(sig~Break,type="l")
 
 #
-#30 deg. C
+#35 deg. C
 #
 
 #Read in data
@@ -883,7 +883,7 @@ for(i in 1:length(Break)){
              start=list(a=2600,b=6.3*10^-10,c=3.6,d=0.97,q=23))
   sig[i]<-summary(model)$sigma
 }
-Break[which.min(sig)] #0.9
+Break[which.min(sig)] #0.89
 plot(sig~Break,type="l")
 
 #
@@ -897,7 +897,7 @@ R31_30C<-read.csv("ROPS31_long30.csv")
 plot(R31_30C$Time,R31_30C$Vmax,pch=20,cex=0.1,col="blue",main="ROPS31; 30C",ylab="SNF (nmol C2H4 hr-1)",xlab="Time (hr)",ylim=c(0,max(R31_30C$Vmax)))
 
 #This finds best break point
-Break<-seq(0.06,3.64,0.01)
+Break<-c(seq(0.06,3.63,0.01),seq(3.7,4.51,0.01))
 sig<-numeric(length(Break))
 for(i in 1:length(Break)){
   model<-nls(Vmax~ifelse(Time<Break[i],a*(1-exp(-q*Time)),a*((1-d)/(1+b*exp(c*Time))+d)),
@@ -905,7 +905,7 @@ for(i in 1:length(Break)){
              start=list(a=1930,b=1.5*10^-9,c=3.5,d=0.96,q=35))
   sig[i]<-summary(model)$sigma
 }
-Break[which.min(sig)] #3.64
+Break[which.min(sig)] #4.49
 plot(sig~Break,type="l")
 
 #
