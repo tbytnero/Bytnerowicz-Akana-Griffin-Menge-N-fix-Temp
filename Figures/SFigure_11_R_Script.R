@@ -146,11 +146,11 @@ beta <- function(ymax,Tmin,Topt,Tmax,T){
 #See "Temporal_Decline_EqS7_Parameter_Calculations" script for derivation of these values
 ####
 
-alpha<- 0.03167873
-beta2<-0.2872763
-p<-0.7110677 
-q<-0.2381453
-c<-0.9114934
+alpha<-0.0304076
+beta2<-0.2923246
+p<-0.6549813 
+q<-0.2526679
+c<-0.9572269
 
 ####
 #Plot Supplementary Figure 11

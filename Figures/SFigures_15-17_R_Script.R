@@ -489,10 +489,10 @@ fit_Nase_beta_linall_MOCE_linKm <- mle2(Nase_beta_linall_normNLL,start=list(sdNa
 summary(fit_Nase_beta_linall_MOCE_linKm)
 
 #Alnus
-fit_Nase_beta_linall_ALRU <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=-2.39845357,ymax21a=0.99686505,ymax21b=1.04547194,ymax21c=0.97011417,
-                                                                      ymax26a=1.00547291,ymax26b=1.00533434,ymax26c=0.91749066,
-                                                                      ymax31a=1.17651704,ymax31b=1.08128675,ymax31c=1.08072962,
-                                                                      a=-19.92168066,b=0.48755757,c=31.23940575,d=0.06415693,e=41.92691426,f=0.02707867),
+fit_Nase_beta_linall_ALRU <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=-2.40096442,ymax21a=0.99710396,ymax21b=0.97485499,ymax21c=0.97033957,
+                                                                      ymax26a=1.00553305,ymax26b=1.00558194,ymax26c=0.91760223,
+                                                                      ymax31a=1.17671495,ymax31b=1.08051574,ymax31c=1.08032221,
+                                                                      a=-20.60264188,b=0.51241949,c=31.20446094,d=0.06552585,e=41.84794232,f=0.02993945),
                                   data=list(T21a=ALRU21a$Temperature,T21b=ALRU21b$Temperature,T21c=ALRU21c$Temperature,
                                             T26a=ALRU26a$Temperature,T26b=ALRU26b$Temperature,T26c=ALRU26c$Temperature,
                                             T31a=ALRU31a$Temperature,T31b=ALRU31b$Temperature,T31c=ALRU31c$Temperature,
@@ -1589,6 +1589,7 @@ plot(15:40,15:40,col="white",xlab=NA,ylab=NA,las=1,xlim=c(17,30),ylim=c(20,40),c
 mtext(text="b",side=3,cex=1.2,adj=0)
 mtext(expression(italic('T')[opt]*' ('*degree*'C)'),side=2,cex=1.2,line=3)
 mtext(expression(italic('T')[growth]*' ('*degree*'C)'),side=1,line=3,cex=1.2)
+abline(1,1,lty=2)
 polygon(x=c(Tg.seq,rev(Tg.seq)),y=c(low.mTopt_linKm,rev(high.mTopt_linKm)),
         col=adjustcolor("darkorange1",alpha.f = 0.2),border=NA)
 polygon(x=c(Tg.seq,rev(Tg.seq)),y=c(low.aTopt,rev(high.aTopt)),

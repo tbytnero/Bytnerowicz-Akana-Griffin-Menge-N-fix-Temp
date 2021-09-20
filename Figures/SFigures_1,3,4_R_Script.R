@@ -414,6 +414,7 @@ Photo_beta_normNLL_all_Topt.lin <- function(sdPhoto,ymaxM21a,ymaxM21b,ymaxM21c,y
 #N-fixation
 ###
 
+
 #Morella
 fit_Nase_beta_linall_MOCE <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=-1,ymax21a=1,ymax21b=1,ymax21c=1,
                                                                       ymax26a=1,ymax26b=1,ymax26c=1,
@@ -429,10 +430,10 @@ fit_Nase_beta_linall_MOCE <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=-1,
 summary(fit_Nase_beta_linall_MOCE)
 
 #Alnus
-fit_Nase_beta_linall_ALRU <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=-2.39845357,ymax21a=0.99686505,ymax21b=1.04547194,ymax21c=0.97011417,
-                                                                      ymax26a=1.00547291,ymax26b=1.00533434,ymax26c=0.91749066,
-                                                                      ymax31a=1.17651704,ymax31b=1.08128675,ymax31c=1.08072962,
-                                                                      a=-19.92168066,b=0.48755757,c=31.23940575,d=0.06415693,e=41.92691426,f=0.02707867),
+fit_Nase_beta_linall_ALRU <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=-2.40096442,ymax21a=0.99710396,ymax21b=0.97485499,ymax21c=0.97033957,
+                                                                      ymax26a=1.00553305,ymax26b=1.00558194,ymax26c=0.91760223,
+                                                                      ymax31a=1.17671495,ymax31b=1.08051574,ymax31c=1.08032221,
+                                                                      a=-20.60264188,b=0.51241949,c=31.20446094,d=0.06552585,e=41.84794232,f=0.02993945),
                                   data=list(T21a=ALRU21a$Temperature,T21b=ALRU21b$Temperature,T21c=ALRU21c$Temperature,
                                             T26a=ALRU26a$Temperature,T26b=ALRU26b$Temperature,T26c=ALRU26c$Temperature,
                                             T31a=ALRU31a$Temperature,T31b=ALRU31b$Temperature,T31c=ALRU31c$Temperature,
@@ -458,10 +459,10 @@ fit_Nase_beta_linTminTopt_GLSE <- mle2(Nase_beta_linTminTopt_normNLL,start=list(
 summary(fit_Nase_beta_linTminTopt_GLSE)
 
 #Robinia
-fit_Nase_beta_linall_ROPS <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=-1,ymax21a=0.96320475,ymax21b=0.82996072,ymax21c=1.08051641,
-                                                                      ymax26a=0.89390710,ymax26b=0.95916073,ymax26c=0.88695838,
-                                                                      ymax31a=0.89351822,ymax31b=0.69375718,ymax31c=0.88715637,
-                                                                      a=-16.33352131,b=0.81903181,c=31.04814934,d=0.05409619,e=44.75447753,f=0.03978480),
+fit_Nase_beta_linall_ROPS <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=-2.10736306,ymax21a=0.95624295,ymax21b=0.81793514,ymax21c=1.08048702,
+                                                                      ymax26a=0.89691111,ymax26b=0.96189080,ymax26c=0.88615555,
+                                                                      ymax31a=0.88263265,ymax31b=0.70436753,ymax31c=0.88864834,
+                                                                      a=-15.83976396,b=0.93637792,c=31.44431832,d=0.02429493,e=44.70312824,f=0.05161931),
                                   data=list(T21a=ROPS21a$Temperature,T21b=ROPS21b$Temperature,T21c=ROPS21c$Temperature,
                                             T26a=ROPS26a$Temperature,T26b=ROPS26b$Temperature,T26c=ROPS26c$Temperature,
                                             T31a=ROPS31a$Temperature,T31b=ROPS31b$Temperature,T31c=ROPS31c$Temperature,
@@ -1521,6 +1522,7 @@ plot(15:40,15:40,col="white",xlab=NA,ylab=NA,las=1,xlim=c(17,30),ylim=c(20,40),c
 mtext(text="b",side=3,cex=1.2,adj=0)
 mtext(expression(italic('T')[opt]*' ('*degree*'C)'),side=2,cex=1.2,line=3)
 mtext(expression(italic('T')[growth]*' ('*degree*'C)'),side=1,line=3,cex=1.2)
+abline(1,1,lty=2)
 polygon(x=c(Tg.seq,rev(Tg.seq)),y=c(low.mTopt,rev(high.mTopt)),
         col=adjustcolor("darkorange1",alpha.f = 0.2),border=NA)
 polygon(x=c(Tg.seq,rev(Tg.seq)),y=c(low.aTopt,rev(high.aTopt)),

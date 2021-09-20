@@ -107,8 +107,8 @@ for(j in 1:601){
     dist.n3.43[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-3.43))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-3.43),time.sim[j])
   }
-  low.n3.43[j]=quantile(dist.n3.43,0.025)
-  high.n3.43[j]=quantile(dist.n3.43,0.975)
+  low.n3.43[j]=quantile(na.omit(dist.n3.43),0.025)
+  high.n3.43[j]=quantile(na.omit(dist.n3.43),0.975)
 }
 
 #Tau = 0.97 deg. C
@@ -120,8 +120,8 @@ for(j in 1:601){
     dist.p0.97[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],0.97))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],0.97),time.sim[j])
   }
-  low.p0.97[j]=quantile(dist.p0.97,0.025)
-  high.p0.97[j]=quantile(dist.p0.97,0.975)
+  low.p0.97[j]=quantile(na.omit(dist.p0.97),0.025)
+  high.p0.97[j]=quantile(na.omit(dist.p0.97),0.975)
 }
 
 #Tau = 5.87 deg. C
@@ -133,8 +133,8 @@ for(j in 1:601){
     dist.p5.87[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],5.87))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],5.87),time.sim[j])
   }
-  low.p5.87[j]=quantile(dist.p5.87,0.025)
-  high.p5.87[j]=quantile(dist.p5.87,0.975)
+  low.p5.87[j]=quantile(na.omit(dist.p5.87),0.025)
+  high.p5.87[j]=quantile(na.omit(dist.p5.87),0.975)
 }
 
 #Tau = 10.07 deg. C
@@ -154,56 +154,56 @@ for(j in 1:601){
 #Alnus
 ##
 
-#Tau = -7.73 deg. C
-low.n7.73<-numeric(length(time.sim))
-high.n7.73<-numeric(length(time.sim))
-dist.n7.73=numeric(10000)
+#Tau = -7.72 deg. C
+low.n7.72<-numeric(length(time.sim))
+high.n7.72<-numeric(length(time.sim))
+dist.n7.72=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.n7.73[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-7.73))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-7.73),time.sim[j])
+    dist.n7.72[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-7.72))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-7.72),time.sim[j])
   }
-  low.n7.73[j]=quantile(dist.n7.73,0.025)
-  high.n7.73[j]=quantile(dist.n7.73,0.975)
+  low.n7.72[j]=quantile(na.omit(dist.n7.72),0.025)
+  high.n7.72[j]=quantile(na.omit(dist.n7.72),0.975)
 }
 
-#Tau = -1.93 deg. C
-low.n1.93<-numeric(length(time.sim))
-high.n1.93<-numeric(length(time.sim))
-dist.n1.93=numeric(10000)
+#Tau = -1.92 deg. C
+low.n1.92<-numeric(length(time.sim))
+high.n1.92<-numeric(length(time.sim))
+dist.n1.92=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.n1.93[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-1.93))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-1.93),time.sim[j])
+    dist.n1.92[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-1.92))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-1.92),time.sim[j])
   }
-  low.n1.93[j]=quantile(dist.n1.93,0.025)
-  high.n1.93[j]=quantile(dist.n1.93,0.975)
+  low.n1.92[j]=quantile(na.omit(dist.n1.92),0.025)
+  high.n1.92[j]=quantile(na.omit(dist.n1.92),0.975)
 }
 
-#Tau = 2.47 deg. C
-low.p2.47<-numeric(length(time.sim))
-high.p2.47<-numeric(length(time.sim))
-dist.p2.47=numeric(10000)
+#Tau = 2.48 deg. C
+low.p2.48<-numeric(length(time.sim))
+high.p2.48<-numeric(length(time.sim))
+dist.p2.48=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.p2.47[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],2.47))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],2.47),time.sim[j])
+    dist.p2.48[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],2.48))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],2.48),time.sim[j])
   }
-  low.p2.47[j]=quantile(dist.p2.47,0.025)
-  high.p2.47[j]=quantile(dist.p2.47,0.975)
+  low.p2.48[j]=quantile(na.omit(dist.p2.48),0.025)
+  high.p2.48[j]=quantile(na.omit(dist.p2.48),0.975)
 }
 
-#Tau = 7.57 deg. C
-low.p7.57<-numeric(length(time.sim))
-high.p7.57<-numeric(length(time.sim))
-dist.p7.57=numeric(10000)
+#Tau = 7.58 deg. C
+low.p7.58<-numeric(length(time.sim))
+high.p7.58<-numeric(length(time.sim))
+dist.p7.58=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.p7.57[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],7.57))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],7.57),time.sim[j])
+    dist.p7.58[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],7.58))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],7.58),time.sim[j])
   }
-  low.p7.57[j]=quantile(na.omit(dist.p7.57),0.025)
-  high.p7.57[j]=quantile(na.omit(dist.p7.57),0.975)
+  low.p7.58[j]=quantile(na.omit(dist.p7.58),0.025)
+  high.p7.58[j]=quantile(na.omit(dist.p7.58),0.975)
 }
 
 ##
@@ -219,8 +219,8 @@ for(j in 1:601){
     dist.n6.08[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-6.08))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-6.08),time.sim[j])
   }
-  low.n6.08[j]=quantile(dist.n6.08,0.025)
-  high.n6.08[j]=quantile(dist.n6.08,0.975)
+  low.n6.08[j]=quantile(na.omit(dist.n6.08),0.025)
+  high.n6.08[j]=quantile(na.omit(dist.n6.08),0.975)
 }
 
 #Tau = -1.08 deg. C
@@ -232,8 +232,8 @@ for(j in 1:601){
     dist.n1.08[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-1.08))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-1.08),time.sim[j])
   }
-  low.n1.08[j]=quantile(dist.n1.08,0.025)
-  high.n1.08[j]=quantile(dist.n1.08,0.975)
+  low.n1.08[j]=quantile(na.omit(dist.n1.08),0.025)
+  high.n1.08[j]=quantile(na.omit(dist.n1.08),0.975)
 }
 
 #Tau = 2.92 deg. C
@@ -245,8 +245,8 @@ for(j in 1:601){
     dist.p2.92[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],2.92))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],2.92),time.sim[j])
   }
-  low.p2.92[j]=quantile(dist.p2.92,0.025)
-  high.p2.92[j]=quantile(dist.p2.92,0.975)
+  low.p2.92[j]=quantile(na.omit(dist.p2.92),0.025)
+  high.p2.92[j]=quantile(na.omit(dist.p2.92),0.975)
 }
 
 #Tau = 7.72 deg. C
@@ -275,8 +275,8 @@ for(j in 1:601){
     dist.n6.69[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-6.69))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-6.69),time.sim[j])
   }
-  low.n6.69[j]=quantile(dist.n6.69,0.025)
-  high.n6.69[j]=quantile(dist.n6.69,0.975)
+  low.n6.69[j]=quantile(na.omit(dist.n6.69),0.025)
+  high.n6.69[j]=quantile(na.omit(dist.n6.69),0.975)
 }
 
 #Tau = -1.29 deg. C
@@ -288,8 +288,8 @@ for(j in 1:601){
     dist.n1.29[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-1.29))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-1.29),time.sim[j])
   }
-  low.n1.29[j]=quantile(dist.n1.29,0.025)
-  high.n1.29[j]=quantile(dist.n1.29,0.975)
+  low.n1.29[j]=quantile(na.omit(dist.n1.29),0.025)
+  high.n1.29[j]=quantile(na.omit(dist.n1.29),0.975)
 }
 
 #Tau = 3.11 deg. C
@@ -301,8 +301,8 @@ for(j in 1:601){
     dist.p3.11[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],3.11))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],3.11),time.sim[j])
   }
-  low.p3.11[j]=quantile(dist.p3.11,0.025)
-  high.p3.11[j]=quantile(dist.p3.11,0.975)
+  low.p3.11[j]=quantile(na.omit(dist.p3.11),0.025)
+  high.p3.11[j]=quantile(na.omit(dist.p3.11),0.975)
 }
 
 #Tau = 7.91 deg. C
@@ -326,112 +326,112 @@ for(j in 1:601){
 #Morella
 ##
 
-#Tau = -6.85 deg. C
-low.n6.85<-numeric(length(time.sim))
-high.n6.85<-numeric(length(time.sim))
-dist.n6.85=numeric(10000)
+#Tau = -6.84 deg. C
+low.n6.84<-numeric(length(time.sim))
+high.n6.84<-numeric(length(time.sim))
+dist.n6.84=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.n6.85[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-6.85))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-6.85),time.sim[j])
+    dist.n6.84[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-6.84))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-6.84),time.sim[j])
   }
-  low.n6.85[j]=quantile(dist.n6.85,0.025)
-  high.n6.85[j]=quantile(dist.n6.85,0.975)
+  low.n6.84[j]=quantile(na.omit(dist.n6.84),0.025)
+  high.n6.84[j]=quantile(na.omit(dist.n6.84),0.975)
 }
 
-#Tau = -2.35 deg. C
-low.n2.35<-numeric(length(time.sim))
-high.n2.35<-numeric(length(time.sim))
-dist.n2.35=numeric(10000)
+#Tau = -2.34 deg. C
+low.n2.34<-numeric(length(time.sim))
+high.n2.34<-numeric(length(time.sim))
+dist.n2.34=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.n2.35[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-2.35))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-2.35),time.sim[j])
+    dist.n2.34[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-2.34))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-2.34),time.sim[j])
   }
-  low.n2.35[j]=quantile(dist.n2.35,0.025)
-  high.n2.35[j]=quantile(dist.n2.35,0.975)
+  low.n2.34[j]=quantile(na.omit(dist.n2.34),0.025)
+  high.n2.34[j]=quantile(na.omit(dist.n2.34),0.975)
 }
 
-#Tau = 2.45 deg. C
-low.p2.45<-numeric(length(time.sim))
-high.p2.45<-numeric(length(time.sim))
-dist.p2.45=numeric(10000)
+#Tau = 2.46 deg. C
+low.p2.46<-numeric(length(time.sim))
+high.p2.46<-numeric(length(time.sim))
+dist.p2.46=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.p2.45[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],2.45))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],2.45),time.sim[j])
+    dist.p2.46[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],2.46))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],2.46),time.sim[j])
   }
-  low.p2.45[j]=quantile(dist.p2.45,0.025)
-  high.p2.45[j]=quantile(dist.p2.45,0.975)
+  low.p2.46[j]=quantile(na.omit(dist.p2.46),0.025)
+  high.p2.46[j]=quantile(na.omit(dist.p2.46),0.975)
 }
 
-#Tau = 6.05 deg. C
-low.p6.05<-numeric(length(time.sim))
-high.p6.05<-numeric(length(time.sim))
-dist.p6.05=numeric(10000)
+#Tau = 6.06 deg. C
+low.p6.06<-numeric(length(time.sim))
+high.p6.06<-numeric(length(time.sim))
+dist.p6.06=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.p6.05[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],6.05))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],6.05),time.sim[j])
+    dist.p6.06[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],6.06))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],6.06),time.sim[j])
   }
-  low.p6.05[j]=quantile(dist.p6.05,0.025)
-  high.p6.05[j]=quantile(dist.p6.05,0.975)
+  low.p6.06[j]=quantile(na.omit(dist.p6.06),0.025)
+  high.p6.06[j]=quantile(na.omit(dist.p6.06),0.975)
 }
 
 ##
 #Alnus
 ##
 
-#Tau = -6.85 deg. C
-low.n6.85<-numeric(length(time.sim))
-high.n6.85<-numeric(length(time.sim))
-dist.n6.85=numeric(10000)
+#Tau = -6.84 deg. C
+low.n6.84<-numeric(length(time.sim))
+high.n6.84<-numeric(length(time.sim))
+dist.n6.84=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.n6.85[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-6.85))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-6.85),time.sim[j])
+    dist.n6.84[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-6.84))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-6.84),time.sim[j])
   }
-  low.n6.85[j]=quantile(dist.n6.85,0.025)
-  high.n6.85[j]=quantile(dist.n6.85,0.975)
+  low.n6.84[j]=quantile(na.omit(dist.n6.84),0.025)
+  high.n6.84[j]=quantile(na.omit(dist.n6.84),0.975)
 }
 
-#Tau = -2.55 deg. C
-low.n2.55<-numeric(length(time.sim))
-high.n2.55<-numeric(length(time.sim))
-dist.n2.55=numeric(10000)
+#Tau = -2.54 deg. C
+low.n2.54<-numeric(length(time.sim))
+high.n2.54<-numeric(length(time.sim))
+dist.n2.54=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.n2.55[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-2.55))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-2.55),time.sim[j])
+    dist.n2.54[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-2.54))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-2.54),time.sim[j])
   }
-  low.n2.55[j]=quantile(dist.n2.55,0.025)
-  high.n2.55[j]=quantile(dist.n2.55,0.975)
+  low.n2.54[j]=quantile(na.omit(dist.n2.54),0.025)
+  high.n2.54[j]=quantile(na.omit(dist.n2.54),0.975)
 }
 
-#Tau = 2.65 deg. C
-low.p2.65<-numeric(length(time.sim))
-high.p2.65<-numeric(length(time.sim))
-dist.p2.65=numeric(10000)
+#Tau = 2.66 deg. C
+low.p2.66<-numeric(length(time.sim))
+high.p2.66<-numeric(length(time.sim))
+dist.p2.66=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.p2.65[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],2.65))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],2.65),time.sim[j])
+    dist.p2.66[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],2.66))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],2.66),time.sim[j])
   }
-  low.p2.65[j]=quantile(dist.p2.65,0.025)
-  high.p2.65[j]=quantile(dist.p2.65,0.975)
+  low.p2.66[j]=quantile(na.omit(dist.p2.66),0.025)
+  high.p2.66[j]=quantile(na.omit(dist.p2.66),0.975)
 }
 
-#Tau = 6.85 deg. C
-low.p6.85<-numeric(length(time.sim))
-high.p6.85<-numeric(length(time.sim))
-dist.p6.85=numeric(10000)
+#Tau = 6.86 deg. C
+low.p6.86<-numeric(length(time.sim))
+high.p6.86<-numeric(length(time.sim))
+dist.p6.86=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.p6.85[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],6.85))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],6.85),time.sim[j])
+    dist.p6.86[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],6.86))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],6.86),time.sim[j])
   }
-  low.p6.85[j]=quantile(na.omit(dist.p6.85),0.025)
-  high.p6.85[j]=quantile(na.omit(dist.p6.85),0.975)
+  low.p6.86[j]=quantile(na.omit(dist.p6.86),0.025)
+  high.p6.86[j]=quantile(na.omit(dist.p6.86),0.975)
 }
 
 ##
@@ -460,8 +460,8 @@ for(j in 1:601){
     dist.n3.26[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-3.26))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-3.26),time.sim[j])
   }
-  low.n3.26[j]=quantile(dist.n3.26,0.025)
-  high.n3.26[j]=quantile(dist.n3.26,0.975)
+  low.n3.26[j]=quantile(na.omit(dist.n3.26),0.025)
+  high.n3.26[j]=quantile(na.omit(dist.n3.26),0.975)
 }
 
 #Tau = 1.54 deg. C
@@ -473,8 +473,8 @@ for(j in 1:601){
     dist.p1.54[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],1.54))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],1.54),time.sim[j])
   }
-  low.p1.54[j]=quantile(dist.p1.54,0.025)
-  high.p1.54[j]=quantile(dist.p1.54,0.975)
+  low.p1.54[j]=quantile(na.omit(dist.p1.54),0.025)
+  high.p1.54[j]=quantile(na.omit(dist.p1.54),0.975)
 }
 
 #Tau = 6.14 deg. C
@@ -486,8 +486,8 @@ for(j in 1:601){
     dist.p6.14[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],6.14))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],6.14),time.sim[j])
   }
-  low.p6.14[j]=quantile(dist.p6.14,0.025)
-  high.p6.14[j]=quantile(dist.p6.14,0.975)
+  low.p6.14[j]=quantile(na.omit(dist.p6.14),0.025)
+  high.p6.14[j]=quantile(na.omit(dist.p6.14),0.975)
 }
 
 ##
@@ -503,8 +503,8 @@ for(j in 1:601){
     dist.n6.32[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-6.32))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-6.32),time.sim[j])
   }
-  low.n6.32[j]=quantile(dist.n6.32,0.025)
-  high.n6.32[j]=quantile(dist.n6.32,0.975)
+  low.n6.32[j]=quantile(na.omit(dist.n6.32),0.025)
+  high.n6.32[j]=quantile(na.omit(dist.n6.32),0.975)
 }
 
 #Tau = -2.62 deg. C
@@ -516,8 +516,8 @@ for(j in 1:601){
     dist.n2.62[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-2.62))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-2.62),time.sim[j])
   }
-  low.n2.62[j]=quantile(dist.n2.62,0.025)
-  high.n2.62[j]=quantile(dist.n2.62,0.975)
+  low.n2.62[j]=quantile(na.omit(dist.n2.62),0.025)
+  high.n2.62[j]=quantile(na.omit(dist.n2.62),0.975)
 }
 
 #Tau = 3.18 deg. C
@@ -529,8 +529,8 @@ for(j in 1:601){
     dist.p3.18[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],3.18))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],3.18),time.sim[j])
   }
-  low.p3.18[j]=quantile(dist.p3.18,0.025)
-  high.p3.18[j]=quantile(dist.p3.18,0.975)
+  low.p3.18[j]=quantile(na.omit(dist.p3.18),0.025)
+  high.p3.18[j]=quantile(na.omit(dist.p3.18),0.975)
 }
 
 #Tau = 7.38 deg. C
@@ -563,8 +563,8 @@ for(j in 1:601){
     dist.n8.26[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-8.26))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-8.26),time.sim[j])
   }
-  low.n8.26[j]=quantile(dist.n8.26,0.025)
-  high.n8.26[j]=quantile(dist.n8.26,0.975)
+  low.n8.26[j]=quantile(na.omit(dist.n8.26),0.025)
+  high.n8.26[j]=quantile(na.omit(dist.n8.26),0.975)
 }
 
 #Tau = -2.26 deg. C
@@ -576,8 +576,8 @@ for(j in 1:601){
     dist.n2.26[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-2.26))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-2.26),time.sim[j])
   }
-  low.n2.26[j]=quantile(dist.n2.26,0.025)
-  high.n2.26[j]=quantile(dist.n2.26,0.975)
+  low.n2.26[j]=quantile(na.omit(dist.n2.26),0.025)
+  high.n2.26[j]=quantile(na.omit(dist.n2.26),0.975)
 }
 
 #Tau = 2.34 deg. C
@@ -589,8 +589,8 @@ for(j in 1:601){
     dist.p2.34[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],2.34))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],2.34),time.sim[j])
   }
-  low.p2.34[j]=quantile(dist.p2.34,0.025)
-  high.p2.34[j]=quantile(dist.p2.34,0.975)
+  low.p2.34[j]=quantile(na.omit(dist.p2.34),0.025)
+  high.p2.34[j]=quantile(na.omit(dist.p2.34),0.975)
 }
 
 ##
@@ -606,34 +606,34 @@ for(j in 1:601){
     dist.n4.17[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-4.17))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-4.17),time.sim[j])
   }
-  low.n4.17[j]=quantile(dist.n4.17,0.025)
-  high.n4.17[j]=quantile(dist.n4.17,0.975)
+  low.n4.17[j]=quantile(na.omit(dist.n4.17),0.025)
+  high.n4.17[j]=quantile(na.omit(dist.n4.17),0.975)
 }
 
-#Tau = -2.13 deg. C
-low.n2.13<-numeric(length(time.sim))
-high.n2.13<-numeric(length(time.sim))
-dist.n2.13=numeric(10000)
+#Tau = 2.13 deg. C
+low.p2.13<-numeric(length(time.sim))
+high.p2.13<-numeric(length(time.sim))
+dist.p2.13=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.n2.13[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-2.13))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],-2.13),time.sim[j])
+    dist.p2.13[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],2.13))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],2.13),time.sim[j])
   }
-  low.n2.13[j]=quantile(dist.n2.13,0.025)
-  high.n2.13[j]=quantile(dist.n2.13,0.975)
+  low.p2.13[j]=quantile(na.omit(dist.p2.13),0.025)
+  high.p2.13[j]=quantile(na.omit(dist.p2.13),0.975)
 }
 
-#Tau = 7.57 deg. C
-low.p7.57<-numeric(length(time.sim))
-high.p7.57<-numeric(length(time.sim))
-dist.p7.57=numeric(10000)
+#Tau = 6.83 deg. C
+low.p6.83<-numeric(length(time.sim))
+high.p6.83<-numeric(length(time.sim))
+dist.p6.83=numeric(10000)
 for(j in 1:601){
   for(i in 1:10000){
-    dist.p7.57[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],7.57))-1,c.est,
-                             nsig.mod(vmat.d[i,2],vmat.d[i,3],7.57),time.sim[j])
+    dist.p6.83[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],6.83))-1,c.est,
+                             nsig.mod(vmat.d[i,2],vmat.d[i,3],6.83),time.sim[j])
   }
-  low.p7.57[j]=quantile(na.omit(dist.p7.57),0.025)
-  high.p7.57[j]=quantile(na.omit(dist.p7.57),0.975)
+  low.p6.83[j]=quantile(na.omit(dist.p6.83),0.025)
+  high.p6.83[j]=quantile(na.omit(dist.p6.83),0.975)
 }
 
 ##
@@ -649,8 +649,8 @@ for(j in 1:601){
     dist.n6.74[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-6.74))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-6.74),time.sim[j])
   }
-  low.n6.74[j]=quantile(dist.n6.74,0.025)
-  high.n6.74[j]=quantile(dist.n6.74,0.975)
+  low.n6.74[j]=quantile(na.omit(dist.n6.74),0.025)
+  high.n6.74[j]=quantile(na.omit(dist.n6.74),0.975)
 }
 
 #Tau = -0.14 deg. C
@@ -662,8 +662,8 @@ for(j in 1:601){
     dist.n0.14[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-0.14))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-0.14),time.sim[j])
   }
-  low.n0.14[j]=quantile(dist.n0.14,0.025)
-  high.n0.14[j]=quantile(dist.n0.14,0.975)
+  low.n0.14[j]=quantile(na.omit(dist.n0.14),0.025)
+  high.n0.14[j]=quantile(na.omit(dist.n0.14),0.975)
 }
 
 #Tau = 3.56 deg. C
@@ -692,8 +692,8 @@ for(j in 1:601){
     dist.n7.94[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-7.94))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-7.94),time.sim[j])
   }
-  low.n7.94[j]=quantile(dist.n7.94,0.025)
-  high.n7.94[j]=quantile(dist.n7.94,0.975)
+  low.n7.94[j]=quantile(na.omit(dist.n7.94),0.025)
+  high.n7.94[j]=quantile(na.omit(dist.n7.94),0.975)
 }
 
 #Tau = -1.14 deg. C
@@ -705,8 +705,8 @@ for(j in 1:601){
     dist.n1.14[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],-1.14))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],-1.14),time.sim[j])
   }
-  low.n1.14[j]=quantile(dist.n1.14,0.025)
-  high.n1.14[j]=quantile(dist.n1.14,0.975)
+  low.n1.14[j]=quantile(na.omit(dist.n1.14),0.025)
+  high.n1.14[j]=quantile(na.omit(dist.n1.14),0.975)
 }
 
 #Tau = 2.56 deg. C
@@ -718,8 +718,8 @@ for(j in 1:601){
     dist.p2.56[i]<-fall.norm(exp(exp.mod(vmat.b[i,3],vmat.b[i,2],2.56))-1,c.est,
                              nsig.mod(vmat.d[i,2],vmat.d[i,3],2.56),time.sim[j])
   }
-  low.p2.56[j]=quantile(dist.p2.56,0.025)
-  high.p2.56[j]=quantile(dist.p2.56,0.975)
+  low.p2.56[j]=quantile(na.omit(dist.p2.56),0.025)
+  high.p2.56[j]=quantile(na.omit(dist.p2.56),0.975)
 }
 
 #Tau = 7.36 deg. C
@@ -891,13 +891,13 @@ title(main=expression('  a'),cex.main=1.5,adj=0,line=-1)
 plot(0:10,0:10,col="white",xlim=c(0,6),ylim=c(0,1.4),xlab=NA,ylab=NA,xaxt="n",yaxt="n")
 axis(1,at=c(0,1,2,3,4,5,6),labels=F,cex.axis=1.5)
 axis(2,at=c(0,.2,.4,.6,.8,1,1.2,1.4),labels=F,las=1,cex.axis=1.5)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.n7.73,rev(high.n7.73)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.n7.72,rev(high.n7.72)),
         col=adjustcolor("dodgerblue3", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.n1.93,rev(high.n1.93)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.n1.92,rev(high.n1.92)),
         col=adjustcolor("orange", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.p2.47,rev(high.p2.47)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.p2.48,rev(high.p2.48)),
         col=adjustcolor("red", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.p7.57,rev(high.p7.57)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.p7.58,rev(high.p7.58)),
         col=adjustcolor("darkred", alpha.f = 0.10), border = NA)
 points(Vmax/(0.92*max(A21_25C.cut$Vmax))~Time,data=A21_25C,pch=20,
        col=adjustcolor("dodgerblue3",alpha.f = 0.05),cex=0.01)
@@ -907,17 +907,17 @@ points(1.05*Vmax/(0.96*max(A21_35C.cut$Vmax))~Time,data=A21_35C,pch=20,
        col=adjustcolor("red",alpha.f = 0.05),cex=0.01)
 points(1.28*Vmax/(1.36*max(A21_40C.cut$Vmax))~Time,data=A21_40C,pch=20,
        col=adjustcolor("darkred",alpha.f = 0.05),cex=0.01)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-7.73))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),-7.73),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-7.72))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),-7.72),x),
       from=0,to=6,lty=1,lwd=1.5,col="dodgerblue3",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-1.93))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),-1.93),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-1.92))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),-1.92),x),
       from=0,to=6,lty=1,lwd=1.5,col="orange",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),2.47))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),2.47),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),2.48))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),2.48),x),
       from=0,to=6,lty=1,lwd=1.5,col="red",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),7.57))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),7.57),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),7.58))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),7.58),x),
       from=0,to=6,lty=1,lwd=1.5,col="darkred",add=T)
 curve(fall.norm(exp(Ab21a),Ac21a,Ad21a,x),from=0,to=6,lty=2,lwd=1.5,col="dodgerblue3",add=T)
 curve(fall.norm(exp(Ab21b),Ac21b,Ad21b,x),from=0,to=6,lty=2,lwd=1.5,col="orange",add=T)
@@ -1009,13 +1009,13 @@ title(main=expression('  d'),cex.main=1.5,adj=0,line=-1)
 plot(0:10,0:10,col="white",xlim=c(0,6),ylim=c(0,1.4),xlab=NA,ylab=NA,xaxt="n",yaxt="n")
 axis(1,at=c(0,1,2,3,4,5,6),labels=F,cex.axis=1.5)
 axis(2,at=c(0,.2,.4,.6,.8,1,1.2,1.4),labels=c("0","20","40","60","80","100","120","140"),las=1,cex.axis=1.5)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.n6.85,rev(high.n6.85)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.n6.84,rev(high.n6.84)),
         col=adjustcolor("dodgerblue3", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.n2.35,rev(high.n2.35)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.n2.34,rev(high.n2.34)),
         col=adjustcolor("orange", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.p2.45,rev(high.p2.45)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.p2.46,rev(high.p2.46)),
         col=adjustcolor("red", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.p6.05,rev(high.p6.05)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.p6.06,rev(high.p6.06)),
         col=adjustcolor("darkred", alpha.f = 0.10), border = NA)
 points(2.64*Vmax/(2.67*max(M26_25C.cut$Vmax))~Time,data=M26_25C,pch=20,
        col=adjustcolor("dodgerblue3",alpha.f = 0.05),cex=0.01)
@@ -1025,17 +1025,17 @@ points(Vmax/(0.89*max(M26_35C.cut$Vmax))~Time,data=M26_35C,pch=20,
        col=adjustcolor("red",alpha.f = 0.05),cex=0.01)
 points(1.55*Vmax/(1.67*max(M26_40C.cut$Vmax))~Time,data=M26_40C,pch=20,
        col=adjustcolor("darkred",alpha.f = 0.05),cex=0.01)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-6.85))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),-6.85),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-6.84))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),-6.84),x),
       from=0,to=6,lty=1,lwd=1.5,col="dodgerblue3",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-2.35))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),-2.35),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-2.34))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),-2.34),x),
       from=0,to=6,lty=1,lwd=1.5,col="orange",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),2.45))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),2.45),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),2.46))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),2.46),x),
       from=0,to=6,lty=1,lwd=1.5,col="red",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),6.05))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),6.05),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),6.06))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),6.06),x),
       from=0,to=6,lty=1,lwd=1.5,col="darkred",add=T)
 curve(fall.norm(exp(Mb26a),Mc26a,Md26a,x),from=0,to=6,lty=2,lwd=1.5,col="dodgerblue3",add=T)
 curve(fall.norm(exp(Mb26b),Mc26b,Md26b,x),from=0,to=6,lty=2,lwd=1.5,col="orange",add=T)
@@ -1047,13 +1047,13 @@ title(main=expression('  e'),cex.main=1.5,adj=0,line=-1)
 plot(0:10,0:10,col="white",xlim=c(0,6),ylim=c(0,1.4),xlab=NA,ylab=NA,xaxt="n",yaxt="n")
 axis(1,at=c(0,1,2,3,4,5,6),labels=F,cex.axis=1.5)
 axis(2,at=c(0,.2,.4,.6,.8,1,1.2,1.4),labels=F,las=1,cex.axis=1.5)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.n6.85,rev(high.n6.85)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.n6.84,rev(high.n6.84)),
         col=adjustcolor("dodgerblue3", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.n2.55,rev(high.n2.55)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.n2.54,rev(high.n2.54)),
         col=adjustcolor("orange", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.p2.65,rev(high.p2.65)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.p2.66,rev(high.p2.66)),
         col=adjustcolor("red", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.p6.85,rev(high.p6.85)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.p6.86,rev(high.p6.86)),
         col=adjustcolor("darkred", alpha.f = 0.10), border = NA)
 points(Vmax/(0.85*max(A26_25C.cut$Vmax))~Time,data=A26_25C,pch=20,
        col=adjustcolor("dodgerblue3",alpha.f = 0.05),cex=0.01)
@@ -1063,17 +1063,17 @@ points(Vmax/(0.25*1.07*max(A26_35C.cut$Vmax))~Time,data=A26_35C,pch=20,
        col=adjustcolor("red",alpha.f = 0.05),cex=0.01)
 points(1.18*Vmax/(1.25*max(A26_40C.cut$Vmax))~Time,data=A26_40C,pch=20,
        col=adjustcolor("darkred",alpha.f = 0.05),cex=0.01)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-6.85))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),-6.85),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-6.84))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),-6.84),x),
       from=0,to=6,lty=1,lwd=1.5,col="dodgerblue3",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-2.55))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),-2.55),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-2.54))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),-2.54),x),
       from=0,to=6,lty=1,lwd=1.5,col="orange",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),2.65))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),2.65),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),2.66))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),2.66),x),
       from=0,to=6,lty=1,lwd=1.5,col="red",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),6.85))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),6.85),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),6.86))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),6.86),x),
       from=0,to=6,lty=1,lwd=1.5,col="darkred",add=T)
 curve(fall.norm(exp(Ab26a),Ac26a,Ad26a,x),from=0,to=6,lty=2,lwd=1.5,col="dodgerblue3",add=T)
 curve(fall.norm(exp(Ab26b),Ac26b,Ad26b,x),from=0,to=6,lty=2,lwd=1.5,col="orange",add=T)
@@ -1194,9 +1194,9 @@ axis(1,at=c(0,1,2,3,4,5,6),labels=T,cex.axis=1.5)
 axis(2,at=c(0,.2,.4,.6,.8,1,1.2,1.4),labels=F,las=1,cex.axis=1.5)
 polygon(x=c(time.sim,rev(time.sim)),y=c(low.n4.17,rev(high.n4.17)),
         col=adjustcolor("orange", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.n2.13,rev(high.n2.13)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.p2.13,rev(high.p2.13)),
         col=adjustcolor("red", alpha.f = 0.10), border = NA)
-polygon(x=c(time.sim,rev(time.sim)),y=c(low.p7.57,rev(high.p7.57)),
+polygon(x=c(time.sim,rev(time.sim)),y=c(low.p6.83,rev(high.p6.83)),
         col=adjustcolor("darkred", alpha.f = 0.10), border = NA)
 points(Vmax/(0.8*0.97*max(A31_30C.cut$Vmax))~Time,data=A31_30C,pch=20,
        col=adjustcolor("orange",alpha.f = 0.05),cex=0.01)
@@ -1207,11 +1207,11 @@ points(1.12*Vmax/(1.34*max(A31_40C.cut$Vmax))~Time,data=A31_40C,pch=20,
 curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-4.17))-1,c.est,
                 nsig.mod(log(p.mle),log(q.mle),-4.17),x),
       from=0,to=6,lty=1,lwd=1.5,col="orange",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),-2.13))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),-2.13),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),2.13))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),2.13),x),
       from=0,to=6,lty=1,lwd=1.5,col="red",add=T)
-curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),7.57))-1,c.est,
-                nsig.mod(log(p.mle),log(q.mle),7.57),x),
+curve(fall.norm(exp(exp.mod(log(alpha.mle2),log(beta.mle2),6.83))-1,c.est,
+                nsig.mod(log(p.mle),log(q.mle),6.83),x),
       from=0,to=6,lty=1,lwd=1.5,col="darkred",add=T)
 curve(fall.norm(exp(Ab31a),Ac31a,Ad31a,x),from=0,to=6,lty=2,lwd=1.5,col="orange",add=T)
 curve(fall.norm(exp(Ab31b),Ac31b,Ad31b,x),from=0,to=6,lty=2,lwd=1.5,col="red",add=T)
