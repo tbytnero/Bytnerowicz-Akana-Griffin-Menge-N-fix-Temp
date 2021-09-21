@@ -6,7 +6,7 @@
 
 ####
 #Figure were exported as PDFs from R Studio
-#PDF dimension is 10.5 x 3 inches
+#PDF dimension is 10.5 x 3.5 inches
 ####
 
 #Read in data from "SNF_temporal_decline" folder
