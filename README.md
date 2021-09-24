@@ -5,7 +5,7 @@ R scripts to recreate analyses and figures for Bytnerowicz, Akana, Griffin, and 
 
 R scripts are split into two folders: "Figures" and "Analysis"
 
-Data used in analyses and for figures are available in the "Data" folder. R scripts are annotated to indicate what folder required data are stored in.
+Data used in analyses and for figures are available in Dryad (see Data Availability statment in manuscript). After downloading the data, set the R working directory to a folder with those data to run analyses and to recreate figures.
 
 -------------------------------------------
 
