@@ -17,7 +17,7 @@ library(bbmle)
 library(MASS)
 
 ####
-#Read in output data from A-Ci curve statistical fits from "Photo_Temp" folder
+#Read in output data from A-Ci curve statistical fits
 #See A-Ci_Calculations.R for A-Ci curve statistical fits
 ####
 

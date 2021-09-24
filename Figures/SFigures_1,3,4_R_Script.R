@@ -17,7 +17,7 @@ library(bbmle)
 library(MASS)
 
 ####
-#Read N-fixation data in from "SNF_Temp" folder
+#Read in N-fixation data
 ####
 
 #Alnus rubra
@@ -65,7 +65,7 @@ ROPS31b <- read.csv("ROPS31_071418_Vmax_temp.csv")
 ROPS31c <- read.csv("ROPS31_072618_Vmax_temp.csv")
 
 ####
-#Read photosynthesis data (Asat) in from "Photo_Temp" folder 
+#Read in photosynthesis data (Asat)
 ####
 
 A400.data<-read.csv("A400_data.csv")

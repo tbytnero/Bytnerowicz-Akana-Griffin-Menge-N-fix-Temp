@@ -17,7 +17,7 @@ library(bbmle)
 library(MASS)
 
 ####
-#Read N-fixation data in from "SNF_Temp" folder
+#Read in N-fixation data
 ####
 
 #Alnus rubra
@@ -65,7 +65,7 @@ ROPS31b <- read.csv("ROPS31_071418_Vmax_temp.csv")
 ROPS31c <- read.csv("ROPS31_072618_Vmax_temp.csv")
 
 ####
-#Read photosynthesis data (A275) in from "Photo_Temp" folder 
+#Read in photosynthesis data (A275)
 ####
 
 #Alnus rubra
@@ -1720,7 +1720,7 @@ Topt31.o<-36.86
 Tmax21.o<-44.29
 Tmax31.o<-46.13
 
-#Read in data for Figure 4d-f from "SNF_temporal_decline" folder
+#Read in data for Figure 4d-f
 x1.dat<-read.csv("x1.Topt.r15.r40.csv") #simulated data at measurement heating rate
 slow.3x.dat<-read.csv("slow.3x.Topt.r15.r40.csv") #simulated data at 3x slower heating rate
 

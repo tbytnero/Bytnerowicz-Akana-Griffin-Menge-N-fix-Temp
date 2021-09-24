@@ -17,10 +17,10 @@ library(bbmle)
 library(MASS)
 
 ####
-#Read data for Alnus in from "SNF_Temp" folder (there was no linear acclimation of Km for Alnus)
+#Read in data 
 ####
 
-#Alnus rubra
+#Alnus rubra (there was no linear acclimation of Km for Alnus)
 ALRU21a <- read.csv("ALRU21_070118_Vmax_temp.csv")
 ALRU21b <- read.csv("ALRU21_072218_Vmax_temp.csv")
 ALRU21c <- read.csv("ALRU21_073118_Vmax_temp.csv")
@@ -31,45 +31,41 @@ ALRU31a <- read.csv("ALRU31_021618_Vmax_temp.csv")
 ALRU31b <- read.csv("ALRU31_070818_Vmax_temp.csv")
 ALRU31c <- read.csv("ALRU31_073018_Vmax_temp.csv")
 
-####
-#Read data for other species in from "SNF_Temp_linKm" folder
-####
-
 #Gliricidia sepium
-GLSE21a <- read.csv("GLSE21_021518_Vmax_temp.csv")
-GLSE21b <- read.csv("GLSE21_070218_Vmax_temp.csv")
-GLSE21c <- read.csv("GLSE21_090219_Vmax_temp.csv")
-GLSE26a <- read.csv("GLSE26_121419_Vmax_temp.csv")
-GLSE26b <- read.csv("GLSE26_121819_Vmax_temp.csv")
-GLSE26c <- read.csv("GLSE26_012120_Vmax_temp.csv")
-GLSE31a <- read.csv("GLSE31_071118_Vmax_temp.csv")
-GLSE31b <- read.csv("GLSE31_071618_Vmax_temp.csv")
-GLSE31c <- read.csv("GLSE31_072418_Vmax_temp.csv")
+GLSE21a <- read.csv("GLSE21_021518_Vmax_temp_linKm.csv")
+GLSE21b <- read.csv("GLSE21_070218_Vmax_temp_linKm.csv")
+GLSE21c <- read.csv("GLSE21_090219_Vmax_temp_linKm.csv")
+GLSE26a <- read.csv("GLSE26_121419_Vmax_temp_linKm.csv")
+GLSE26b <- read.csv("GLSE26_121819_Vmax_temp_linKm.csv")
+GLSE26c <- read.csv("GLSE26_012120_Vmax_temp_linKm.csv")
+GLSE31a <- read.csv("GLSE31_071118_Vmax_temp_linKm.csv")
+GLSE31b <- read.csv("GLSE31_071618_Vmax_temp_linKm.csv")
+GLSE31c <- read.csv("GLSE31_072418_Vmax_temp_linKm.csv")
 
 #Morella cerifera
-MOCE21a <- read.csv("MOCE21_022018_Vmax_temp.csv")
-MOCE21b <- read.csv("MOCE21_072219_Vmax_temp.csv")
-MOCE21c <- read.csv("MOCE21_100319_Vmax_temp.csv")
-MOCE26a <- read.csv("MOCE26_121219_Vmax_temp.csv")
-MOCE26b <- read.csv("MOCE26_121719_Vmax_temp.csv")
-MOCE26c <- read.csv("MOCE26_020820_Vmax_temp.csv")
-MOCE31a <- read.csv("MOCE31_022118_Vmax_temp.csv")
-MOCE31b <- read.csv("MOCE31_030619_Vmax_temp.csv")
-MOCE31c <- read.csv("MOCE31_031519_Vmax_temp.csv")
+MOCE21a <- read.csv("MOCE21_022018_Vmax_temp_linKm.csv")
+MOCE21b <- read.csv("MOCE21_072219_Vmax_temp_linKm.csv")
+MOCE21c <- read.csv("MOCE21_100319_Vmax_temp_linKm.csv")
+MOCE26a <- read.csv("MOCE26_121219_Vmax_temp_linKm.csv")
+MOCE26b <- read.csv("MOCE26_121719_Vmax_temp_linKm.csv")
+MOCE26c <- read.csv("MOCE26_020820_Vmax_temp_linKm.csv")
+MOCE31a <- read.csv("MOCE31_022118_Vmax_temp_linKm.csv")
+MOCE31b <- read.csv("MOCE31_030619_Vmax_temp_linKm.csv")
+MOCE31c <- read.csv("MOCE31_031519_Vmax_temp_linKm.csv")
 
 #Robinia pseudoacacia
-ROPS21a <- read.csv("ROPS21_021318_Vmax_temp.csv")
-ROPS21b <- read.csv("ROPS21_072318_Vmax_temp.csv")
-ROPS21c <- read.csv("ROPS21_080218_Vmax_temp.csv")
-ROPS26a <- read.csv("ROPS26_120319_Vmax_temp.csv")
-ROPS26b <- read.csv("ROPS26_121619_Vmax_temp.csv")
-ROPS26c <- read.csv("ROPS26_020620_Vmax_temp.csv")
-ROPS31a <- read.csv("ROPS31_020918_Vmax_temp.csv")
-ROPS31b <- read.csv("ROPS31_071418_Vmax_temp.csv")
-ROPS31c <- read.csv("ROPS31_072618_Vmax_temp.csv")
+ROPS21a <- read.csv("ROPS21_021318_Vmax_temp_linKm.csv")
+ROPS21b <- read.csv("ROPS21_072318_Vmax_temp_linKm.csv")
+ROPS21c <- read.csv("ROPS21_080218_Vmax_temp_linKm.csv")
+ROPS26a <- read.csv("ROPS26_120319_Vmax_temp_linKm.csv")
+ROPS26b <- read.csv("ROPS26_121619_Vmax_temp_linKm.csv")
+ROPS26c <- read.csv("ROPS26_020620_Vmax_temp_linKm.csv")
+ROPS31a <- read.csv("ROPS31_020918_Vmax_temp_linKm.csv")
+ROPS31b <- read.csv("ROPS31_071418_Vmax_temp_linKm.csv")
+ROPS31c <- read.csv("ROPS31_072618_Vmax_temp_linKm.csv")
 
 ####
-#Read photosynthesis data (A275) in from "Photo_Temp" folder 
+#Read in photosynthesis data (A275)
 ####
 
 #Alnus rubra

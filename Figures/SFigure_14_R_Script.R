@@ -9,9 +9,9 @@
 #PDF dimension is 10.5 x 3.5 inches
 ####
 
-#Read in data from "SNF_temporal_decline" folder
+#Read in data
 x1.dat<-read.csv("x1.Topt.r15.r40.csv") #simulated data at measurement heating rate
-og.dat<-read.csv("og.Topt.r15.r40.csv") #measured data
+og.dat<-read.csv("og.Topt.r15.r40.csv") #measured data (see Nfix_Model_Comparison.R for how these values were calculated)
 
 #Convert rates from proportion to percent for plotting
 x1.dat$r15<-x1.dat$r15*100

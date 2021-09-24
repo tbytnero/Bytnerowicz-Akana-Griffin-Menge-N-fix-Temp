@@ -17,7 +17,7 @@ library(bbmle)
 library(MASS)
 
 ####
-#Read the data in from "Resp_Temp" folder
+#Read in data
 ####
 
 #Dark respiration (RD) data

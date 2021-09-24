@@ -10,7 +10,7 @@
 ####
 
 ####
-#Read N-fixation data in from "SNF_Temp" folder
+#Read in N-fixation data
 ####
 
 M.og<-read.csv("MOCE_lin_beta_fit.csv")
@@ -19,7 +19,7 @@ G.og<-read.csv("GLSE_lin_beta_fit.csv")
 R.og<-read.csv("ROPS_lin_beta_fit.csv")
 
 ####
-#Read N-fixation data in from "SNF_temporal_decline" folder
+#Read in simulated instantaneous N-fixation fits (i.e., without effect of temporal decline)
 ####
 
 M.inst<-read.csv("MOCE_inst_beta_fit.csv")

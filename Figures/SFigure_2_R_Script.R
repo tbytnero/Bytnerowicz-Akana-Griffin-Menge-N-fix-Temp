@@ -17,7 +17,7 @@ library(bbmle)
 library(MASS)
 
 ####
-#Read photosynthesis data (A275) in from "Photo_Temp" folder 
+#Read in photosynthesis data (A275)
 ####
 
 #Alnus rubra
