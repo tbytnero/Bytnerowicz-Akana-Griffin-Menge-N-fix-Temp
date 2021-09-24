@@ -10,7 +10,7 @@
 library(plantecophys)
 
 #####
-#Read in data from "Photo_Temp" folder
+#Read in data
 #####
 
 M21.071418<-read.csv("MOCE21_ACi_071418.csv")

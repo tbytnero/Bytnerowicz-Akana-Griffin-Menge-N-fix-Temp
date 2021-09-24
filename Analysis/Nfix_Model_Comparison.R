@@ -13,7 +13,7 @@ library(bbmle)
 library(MASS)
 
 ####
-#Read the data in from "SNF_Temp" folder
+#Read the data
 ####
 
 #Alnus rubra

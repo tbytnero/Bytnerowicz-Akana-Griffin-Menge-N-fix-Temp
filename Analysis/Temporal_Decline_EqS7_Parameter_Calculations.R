@@ -12,10 +12,6 @@
 #calculated and "b" and "d" are regressed across tau (Equations S5 and S6) to parameterize Equation S7
 
 ####
-#Set Working Directory to "SNF_temporal_decline" folder
-####
-
-####
 #Load Necessary Package
 ####
 

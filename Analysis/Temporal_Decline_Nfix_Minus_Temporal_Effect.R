@@ -6,10 +6,6 @@
 ###############################################################################################################
 
 ####
-#Set Working Directory to "SNF_Temp" folder
-####
-
-####
 #Load Necessary Package
 ####
 
@@ -1624,8 +1620,7 @@ for (i in 1:(length(time)-1)){
 ROPS31_072618_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ####
-#The following exports the above as .csv files, which are also available in the
-#"SNF_temporal_decline" folder
+#The following exports the above as .csv files
 ####
 
 write.csv(MOCE21_022018_inst,"MOCE21_022018_inst.csv")
@@ -1670,7 +1665,7 @@ write.csv(ROPS31_072618_inst,"ROPS31_072618_inst.csv")
 ####
 
 ####
-#Read in data that were generated above (from the "SNF_temporal_decline" folder)
+#Read in data that were generated above
 ####
 
 #Morella
@@ -1828,7 +1823,7 @@ fit_Nase_beta_linall_MOCE_inst <- mle2(Nase_beta_linall_normNLL,start=list(sdNas
                                        control=list(maxit=20000))
 summary(fit_Nase_beta_linall_MOCE_inst) #Summary
 ft.m.inst <- coef(fit_Nase_beta_linall_MOCE_inst) #Parameter estimates
-write.csv(ft.m.inst,"MOCE_inst_beta_fit.csv") #Exports parameter estimates (available in "SNF_temporal_decline" folder)
+write.csv(ft.m.inst,"MOCE_inst_beta_fit.csv") #Exports parameter estimates
 
 #Alnus
 fit_Nase_beta_linall_ALRU_inst <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=-1,ymax21a=1,ymax21b=1,ymax21c=1,
@@ -1844,7 +1839,7 @@ fit_Nase_beta_linall_ALRU_inst <- mle2(Nase_beta_linall_normNLL,start=list(sdNas
                                        control=list(maxit=20000))
 summary(fit_Nase_beta_linall_ALRU_inst) #Summary
 ft.a.inst <- coef(fit_Nase_beta_linall_ALRU_inst) #Parameter estimates
-write.csv(ft.a.inst,"ALRU_inst_beta_fit.csv") #Exports parameter estimates (available in "SNF_temporal_decline" folder)
+write.csv(ft.a.inst,"ALRU_inst_beta_fit.csv") #Exports parameter estimates
 
 #Gliricidia
 fit_Nase_beta_linTminTopt_GLSE_inst <- mle2(Nase_beta_linTminTopt_normNLL,start=list(sdNase=-1,ymax21a=1,ymax21b=1,ymax21c=1,
@@ -1861,7 +1856,7 @@ fit_Nase_beta_linTminTopt_GLSE_inst <- mle2(Nase_beta_linTminTopt_normNLL,start=
                                             control=list(maxit=20000))
 summary(fit_Nase_beta_linTminTopt_GLSE_inst) #Summary
 ft.g.inst <- coef(fit_Nase_beta_linTminTopt_GLSE_inst) #Parameter estimates
-write.csv(ft.g.inst,"GLSE_inst_beta_fit.csv") #Exports parameter estimates (available in "SNF_temporal_decline" folder)
+write.csv(ft.g.inst,"GLSE_inst_beta_fit.csv") #Exports parameter estimates
 
 #Robinia
 fit_Nase_beta_linall_ROPS_inst <- mle2(Nase_beta_linall_normNLL,start=list(sdNase=1,ymax21a=1,ymax21b=0.8,ymax21c=1.1,
@@ -1877,4 +1872,4 @@ fit_Nase_beta_linall_ROPS_inst <- mle2(Nase_beta_linall_normNLL,start=list(sdNas
                                        control=list(maxit=50000))
 summary(fit_Nase_beta_linall_ROPS_inst) #Summary
 ft.r.inst <- coef(fit_Nase_beta_linall_ROPS_inst) #Parameter estimates
-write.csv(ft.r.inst,"ROPS_inst_beta_fit.csv") #Exports parameter estimates (available in "SNF_temporal_decline" folder)
+write.csv(ft.r.inst,"ROPS_inst_beta_fit.csv") #Exports parameter estimates

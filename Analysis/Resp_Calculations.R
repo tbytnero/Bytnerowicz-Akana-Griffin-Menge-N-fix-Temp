@@ -10,7 +10,7 @@
 library(bbmle)
 
 ####
-#Read the data in from "Resp_Temp" folder
+#Read in data
 ####
 
 #RL data calculated using the Kok effect

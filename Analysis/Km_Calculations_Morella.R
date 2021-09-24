@@ -13,7 +13,7 @@
 library(bbmle)
 
 ####
-#Read the data in from "Km" folder and subset for each individual plant within a growing temperature
+#Read the data and subset for each individual plant within a growing temperature
 ####
 
 ###

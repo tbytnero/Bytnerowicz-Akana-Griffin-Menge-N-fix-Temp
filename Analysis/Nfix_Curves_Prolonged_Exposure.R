@@ -5,10 +5,6 @@
 ###############################################################################################################
 
 ####
-#Set Working Directory as the "SNF_temporal_decline" folder
-####
-
-####
 #Read in data that were generated in Temporal_Decline_Nfix_Minus_Temporal_Effect.R
 ####
 
@@ -1887,7 +1883,7 @@ R31.15.x3.slow<-x3.slow.fit[which(temp.sim==15)]/max(x3.slow.fit)
 R31.40.x3.slow<-x3.slow.fit[which(temp.sim==40)]/max(x3.slow.fit)
 
 ####
-#Exports parameter estimates (available in "SNF_temporal_decline" folder)
+#Exports parameter estimates
 ####
 
 #For 1x heating rate
@@ -1914,7 +1910,7 @@ write.csv(data.frame(Treat=Tr,Topt=Topt,r15=r15,r40=r40),"slow.3x.Topt.r15.r40.c
 #Calculate simulated change in Topt and rates at 15 and 40 deg. C due to prolonged exposure (3x slower heating rate)
 ####
 
-#Read in data (generated above) from "SNF_temporal_decline" folder
+#Read in data (generated above)
 x1.dat<-read.csv("x1.Topt.r15.r40.csv")
 slow.3x.dat<-read.csv("slow.3x.Topt.r15.r40.csv")
 

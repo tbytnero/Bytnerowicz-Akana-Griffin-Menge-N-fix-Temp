@@ -8,7 +8,7 @@
 #Load Necessary Package
 library(bbmle)
 
-#Load background ethylene data from "BG_C2H4" folder
+#Read in data
 BG.dat<-read.csv("C2H4_Background_C2H2_Temp.csv")
 
 ###

@@ -8,7 +8,7 @@
 #Load Necessary Package
 library(bbmle)
 
-#Load CF data from "Conversion_Factor" folder
+#Read in data
 CF.dat<-read.csv("CF_Temp_all.csv")
 
 #Separate by species
