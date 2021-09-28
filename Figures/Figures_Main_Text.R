@@ -21,48 +21,48 @@ library(MASS)
 ####
 
 #Alnus rubra
-ALRU21a <- read.csv("ALRU21_070118_Vmax_temp.csv")
-ALRU21b <- read.csv("ALRU21_072218_Vmax_temp.csv")
-ALRU21c <- read.csv("ALRU21_073118_Vmax_temp.csv")
-ALRU26a <- read.csv("ALRU26_102519_Vmax_temp.csv")
-ALRU26b <- read.csv("ALRU26_111519_Vmax_temp.csv")
-ALRU26c <- read.csv("ALRU26_122019_Vmax_temp.csv")
-ALRU31a <- read.csv("ALRU31_021618_Vmax_temp.csv")
-ALRU31b <- read.csv("ALRU31_070818_Vmax_temp.csv")
-ALRU31c <- read.csv("ALRU31_073018_Vmax_temp.csv")
+ALRU21a <- read.csv("ALRU21a_Vmax_temp.csv")
+ALRU21b <- read.csv("ALRU21b_Vmax_temp.csv")
+ALRU21c <- read.csv("ALRU21c_Vmax_temp.csv")
+ALRU26a <- read.csv("ALRU26a_Vmax_temp.csv")
+ALRU26b <- read.csv("ALRU26b_Vmax_temp.csv")
+ALRU26c <- read.csv("ALRU26c_Vmax_temp.csv")
+ALRU31a <- read.csv("ALRU31a_Vmax_temp.csv")
+ALRU31b <- read.csv("ALRU31b_Vmax_temp.csv")
+ALRU31c <- read.csv("ALRU31c_Vmax_temp.csv")
 
 #Gliricidia sepium
-GLSE21a <- read.csv("GLSE21_021518_Vmax_temp.csv")
-GLSE21b <- read.csv("GLSE21_070218_Vmax_temp.csv")
-GLSE21c <- read.csv("GLSE21_090219_Vmax_temp.csv")
-GLSE26a <- read.csv("GLSE26_121419_Vmax_temp.csv")
-GLSE26b <- read.csv("GLSE26_121819_Vmax_temp.csv")
-GLSE26c <- read.csv("GLSE26_012120_Vmax_temp.csv")
-GLSE31a <- read.csv("GLSE31_071118_Vmax_temp.csv")
-GLSE31b <- read.csv("GLSE31_071618_Vmax_temp.csv")
-GLSE31c <- read.csv("GLSE31_072418_Vmax_temp.csv")
+GLSE21a <- read.csv("GLSE21a_Vmax_temp.csv")
+GLSE21b <- read.csv("GLSE21b_Vmax_temp.csv")
+GLSE21c <- read.csv("GLSE21c_Vmax_temp.csv")
+GLSE26a <- read.csv("GLSE26a_Vmax_temp.csv")
+GLSE26b <- read.csv("GLSE26b_Vmax_temp.csv")
+GLSE26c <- read.csv("GLSE26c_Vmax_temp.csv")
+GLSE31a <- read.csv("GLSE31a_Vmax_temp.csv")
+GLSE31b <- read.csv("GLSE31b_Vmax_temp.csv")
+GLSE31c <- read.csv("GLSE31c_Vmax_temp.csv")
 
 #Morella cerifera
-MOCE21a <- read.csv("MOCE21_022018_Vmax_temp.csv")
-MOCE21b <- read.csv("MOCE21_072219_Vmax_temp.csv")
-MOCE21c <- read.csv("MOCE21_100319_Vmax_temp.csv")
-MOCE26a <- read.csv("MOCE26_121219_Vmax_temp.csv")
-MOCE26b <- read.csv("MOCE26_121719_Vmax_temp.csv")
-MOCE26c <- read.csv("MOCE26_020820_Vmax_temp.csv")
-MOCE31a <- read.csv("MOCE31_022118_Vmax_temp.csv")
-MOCE31b <- read.csv("MOCE31_030619_Vmax_temp.csv")
-MOCE31c <- read.csv("MOCE31_031519_Vmax_temp.csv")
+MOCE21a <- read.csv("MOCE21a_Vmax_temp.csv")
+MOCE21b <- read.csv("MOCE21b_Vmax_temp.csv")
+MOCE21c <- read.csv("MOCE21c_Vmax_temp.csv")
+MOCE26a <- read.csv("MOCE26a_Vmax_temp.csv")
+MOCE26b <- read.csv("MOCE26b_Vmax_temp.csv")
+MOCE26c <- read.csv("MOCE26c_Vmax_temp.csv")
+MOCE31a <- read.csv("MOCE31a_Vmax_temp.csv")
+MOCE31b <- read.csv("MOCE31b_Vmax_temp.csv")
+MOCE31c <- read.csv("MOCE31c_Vmax_temp.csv")
 
 #Robinia pseudoacacia
-ROPS21a <- read.csv("ROPS21_021318_Vmax_temp.csv")
-ROPS21b <- read.csv("ROPS21_072318_Vmax_temp.csv")
-ROPS21c <- read.csv("ROPS21_080218_Vmax_temp.csv")
-ROPS26a <- read.csv("ROPS26_120319_Vmax_temp.csv")
-ROPS26b <- read.csv("ROPS26_121619_Vmax_temp.csv")
-ROPS26c <- read.csv("ROPS26_020620_Vmax_temp.csv")
-ROPS31a <- read.csv("ROPS31_020918_Vmax_temp.csv")
-ROPS31b <- read.csv("ROPS31_071418_Vmax_temp.csv")
-ROPS31c <- read.csv("ROPS31_072618_Vmax_temp.csv")
+ROPS21a <- read.csv("ROPS21a_Vmax_temp.csv")
+ROPS21b <- read.csv("ROPS21b_Vmax_temp.csv")
+ROPS21c <- read.csv("ROPS21c_Vmax_temp.csv")
+ROPS26a <- read.csv("ROPS26a_Vmax_temp.csv")
+ROPS26b <- read.csv("ROPS26b_Vmax_temp.csv")
+ROPS26c <- read.csv("ROPS26c_Vmax_temp.csv")
+ROPS31a <- read.csv("ROPS31a_Vmax_temp.csv")
+ROPS31b <- read.csv("ROPS31b_Vmax_temp.csv")
+ROPS31c <- read.csv("ROPS31c_Vmax_temp.csv")
 
 ####
 #Read in photosynthesis data (A275)
@@ -1616,18 +1616,18 @@ polygon(x=c(Tg.seq,rev(Tg.seq)),y=c(low.gTopt.A275,rev(high.gTopt.A275)),
         col=adjustcolor("orangered2",alpha.f = 0.2),border=NA)
 polygon(x=c(Tg.seq,rev(Tg.seq)),y=c(low.rTopt.A275,rev(high.rTopt.A275)),
         col=adjustcolor("dodgerblue3",alpha.f = 0.2),border=NA)
-abline(a=14.56,b=0.783,col="darkorange1",lwd=1)
-abline(a=31.20,b=0.066,col="darkturquoise",lwd=1)
-abline(a=23.88,b=0.416,col="orangered2",lwd=1)
-abline(a=31.44,b=0.025,col="dodgerblue3",lwd=1)
+abline(a=ft.m[13],b=ft.m[14],col="darkorange1",lwd=1)
+abline(a=ft.a[13],b=ft.a[14],col="darkturquoise",lwd=1)
+abline(a=ft.g[14],b=ft.g[15],col="orangered2",lwd=1)
+abline(a=ft.r[13],b=ft.r[14],col="dodgerblue3",lwd=1)
 abline(a=22.83,b=0.238,col="darkorange1",lwd=1,lty=2)
 abline(a=19.10,b=0.339,col="darkturquoise",lwd=1,lty=2)
 abline(a=22.87,b=0.194,col="dodgerblue3",lwd=1,lty=2)
 abline(a=12.90,b=0.637,col="orangered2",lwd=1,lty=2)
-points(14.56+0.783*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=16,col="darkorange1",cex=1.5,lwd=1)
-points(31.24+0.064*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=16,col="darkturquoise",cex=1.5,lwd=1)
-points(23.88+0.416*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=17,col="orangered2",cex=1.5,lwd=1)
-points(31.44+0.025*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=17,col="dodgerblue3",cex=1.5,lwd=1)
+points(ft.m[13]+ft.m[14]*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=16,col="darkorange1",cex=1.5,lwd=1)
+points(ft.a[13]+ft.a[14]*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=16,col="darkturquoise",cex=1.5,lwd=1)
+points(ft.g[14]+ft.g[15]*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=17,col="orangered2",cex=1.5,lwd=1)
+points(ft.r[13]+ft.r[14]*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=17,col="dodgerblue3",cex=1.5,lwd=1)
 points(22.83+0.238*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=1,col="darkorange1",cex=1.5,lwd=1)
 points(19.10+0.339*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=1,col="darkturquoise",cex=1.5,lwd=1)
 points(22.87+0.194*c(18.5,23.5,28.5)~c(18.5,23.5,28.5),pch=2,col="dodgerblue3",cex=1.5,lwd=1)
@@ -1713,12 +1713,12 @@ Tmax31.i<-46.14
 #Modified beta parameters to measured N-fixation temperature responses
 #See "Nfix_Model_Comparison.R" script for statistical fits
 #(for Morella at 21:15 and 31:25 deg. C growing temperatures; Figure 4b,c)
-Tmin21.o<-2.02
-Tmin31.o<-13.60
-Topt21.o<-29.03
-Topt31.o<-36.86
-Tmax21.o<-44.29
-Tmax31.o<-46.13
+Tmin21.o<-ft.m[12]*18.5+ft.m[11]
+Tmin31.o<-ft.m[12]*28.5+ft.m[11]
+Topt21.o<-ft.m[14]*18.5+ft.m[13]
+Topt31.o<-ft.m[14]*28.5+ft.m[13]
+Tmax21.o<-ft.m[16]*18.5+ft.m[15]
+Tmax31.o<-ft.m[16]*28.5+ft.m[15]
 
 #Read in data for Figure 4d-f
 x1.dat<-read.csv("x1.Topt.r15.r40.csv") #simulated data at measurement heating rate
@@ -2081,6 +2081,7 @@ mtext(expression('(short exposure; % of max)'),side=1,cex=1.2,line=4.75)
 legend("top",legend=expression('Slope = 1.048 (1.046, 1.051)'),bty="n",
        y.intersp = 0.7,cex=.9,x.intersp = 0.5)
 abline(a=0,b=1,lty=2)
+abline(lm(c(slow.3x.dat$r15*100)~c(x1.dat$r15*100)),lwd=1.2)
 points(c(slow.3x.dat$r15*100)~c(x1.dat$r15*100),pch=c(16,16,16,16,16,16,17,17,17,17,17,17),
        col=c("darkorange1","darkorange1","darkorange1","darkturquoise","darkturquoise","darkturquoise",
              "orangered2","orangered2","orangered2","dodgerblue3","dodgerblue3","dodgerblue3"),cex=1.5)
@@ -2093,8 +2094,12 @@ points(c(slow.3x.dat$r15[12]*100)~c(x1.dat$r15[12]*100),pch=17,col="dodgerblue3"
 points(c(slow.3x.dat$r15[12]*100)~c(x1.dat$r15[12]*100),pch=2,col="orangered3",cex=1.5)
 points(c(slow.3x.dat$r15[11]*100)~c(x1.dat$r15[11]*100),pch=17,col="dodgerblue3",cex=1.5)
 points(c(slow.3x.dat$r15[11]*100)~c(x1.dat$r15[11]*100),pch=2,col="gold1",cex=1.5)
+points(c(slow.3x.dat$r15[5]*100)~c(x1.dat$r15[5]*100),pch=16,col="darkturquoise",cex=1.5)
+points(c(slow.3x.dat$r15[5]*100)~c(x1.dat$r15[5]*100),pch=1,col="gold1",cex=1.5)
+points(c(slow.3x.dat$r15[6]*100)~c(x1.dat$r15[6]*100),pch=16,col="darkturquoise",cex=1.5)
+points(c(slow.3x.dat$r15[6]*100)~c(x1.dat$r15[6]*100),pch=1,col="orangered3",cex=1.5)
+
 mtext(text="d",side=3,cex=1.2,adj=0)
-abline(lm(c(slow.3x.dat$r15*100)~c(x1.dat$r15*100)),lwd=1.2)
 
 #4e
 plot(25:40,25:40,col="white",xlab=NA,ylab=NA,las=1,xlim=c(25,40),ylim=c(25,40),cex.lab=1.5,cex.axis=1.2)
@@ -2104,6 +2109,8 @@ mtext(expression(italic('T')[opt]),side=1,cex=1.2,line=3)
 mtext(expression('(short exposure; '*degree*'C)'),side=1,cex=1.2,line=4.75)
 legend("top",legend=expression('Slope = 1.136 (1.061, 1.211)'),bty="n",
        y.intersp = 0.7,cex=.9,x.intersp = 0.5)
+abline(a=0,b=1,lty=2)
+abline(lm(slow.3x.dat$Topt~x1.dat$Topt),lwd=1.2)
 points(slow.3x.dat$Topt~x1.dat$Topt,pch=c(16,16,16,16,16,16,17,17,17,17,17,17),
        col=c("darkorange1","darkorange1","darkorange1","darkturquoise","darkturquoise","darkturquoise",
              "orangered2","orangered2","orangered2","dodgerblue3","dodgerblue3","dodgerblue3"),cex=1.5)
@@ -2121,8 +2128,6 @@ points(slow.3x.dat$Topt[12]~x1.dat$Topt[12],pch=2,col="orangered3",cex=1.5)
 points(slow.3x.dat$Topt[6]~x1.dat$Topt[6],pch=16,col="darkturquoise",cex=1.5)
 points(slow.3x.dat$Topt[6]~x1.dat$Topt[6],pch=1,col="orangered3",cex=1.5)
 mtext(text="e",side=3,cex=1.2,adj=0)
-abline(a=0,b=1,lty=2)
-abline(lm(slow.3x.dat$Topt~x1.dat$Topt),lwd=1.2)
 
 #4f
 plot(25:40,25:40,col="white",xlab=NA,ylab=NA,las=1,xlim=c(0,100),ylim=c(0,100),cex.lab=1.5,cex.axis=1.2)
