@@ -23,25 +23,25 @@ library(bbmle)
 #21:15 deg. C growing temperature
 ##
 
-M21a.dat<-read.csv("MOCE21_022018_Vmax_temp.csv")
-M21b.dat<-read.csv("MOCE21_072219_Vmax_temp.csv")
-M21c.dat<-read.csv("MOCE21_100319_Vmax_temp.csv")
+M21a.dat<-read.csv("MOCE21a_Vmax_temp.csv")
+M21b.dat<-read.csv("MOCE21b_Vmax_temp.csv")
+M21c.dat<-read.csv("MOCE21c_Vmax_temp.csv")
 
 ##
 #26:20 deg. C growing temperature
 ##
 
-M26a.dat<-read.csv("MOCE26_121219_Vmax_temp.csv")
-M26b.dat<-read.csv("MOCE26_121719_Vmax_temp.csv")
-M26c.dat<-read.csv("MOCE26_020820_Vmax_temp.csv")
+M26a.dat<-read.csv("MOCE26a_Vmax_temp.csv")
+M26b.dat<-read.csv("MOCE26b_Vmax_temp.csv")
+M26c.dat<-read.csv("MOCE26c_Vmax_temp.csv")
 
 ##
 #31:25 deg. C growing temperature
 ##
 
-M31a.dat<-read.csv("MOCE31_022118_Vmax_temp.csv")
-M31b.dat<-read.csv("MOCE31_030619_Vmax_temp.csv")
-M31c.dat<-read.csv("MOCE31_031519_Vmax_temp.csv")
+M31a.dat<-read.csv("MOCE31a_Vmax_temp.csv")
+M31b.dat<-read.csv("MOCE31b_Vmax_temp.csv")
+M31c.dat<-read.csv("MOCE31c_Vmax_temp.csv")
 
 ###
 #Alnus
@@ -51,25 +51,25 @@ M31c.dat<-read.csv("MOCE31_031519_Vmax_temp.csv")
 #21:15 deg. C growing temperature
 ##
 
-A21a.dat<-read.csv("ALRU21_070118_Vmax_temp.csv")
-A21b.dat<-read.csv("ALRU21_072218_Vmax_temp.csv")
-A21c.dat<-read.csv("ALRU21_073118_Vmax_temp.csv")
+A21a.dat<-read.csv("ALRU21a_Vmax_temp.csv")
+A21b.dat<-read.csv("ALRU21b_Vmax_temp.csv")
+A21c.dat<-read.csv("ALRU21c_Vmax_temp.csv")
 
 ##
 #26:20 deg. C growing temperature
 ##
 
-A26a.dat<-read.csv("ALRU26_102519_Vmax_temp.csv")
-A26b.dat<-read.csv("ALRU26_111519_Vmax_temp.csv")
-A26c.dat<-read.csv("ALRU26_122019_Vmax_temp.csv")
+A26a.dat<-read.csv("ALRU26a_Vmax_temp.csv")
+A26b.dat<-read.csv("ALRU26b_Vmax_temp.csv")
+A26c.dat<-read.csv("ALRU26c_Vmax_temp.csv")
 
 ##
 #31:25 deg. C growing temperature
 ##
 
-A31a.dat<-read.csv("ALRU31_070818_Vmax_temp.csv")
-A31b.dat<-read.csv("ALRU31_073018_Vmax_temp.csv")
-A31c.dat<-read.csv("ALRU31_021618_Vmax_temp.csv")
+A31a.dat<-read.csv("ALRU31a_Vmax_temp.csv")
+A31b.dat<-read.csv("ALRU31b_Vmax_temp.csv")
+A31c.dat<-read.csv("ALRU31c_Vmax_temp.csv")
 
 ###
 #Gliricidia
@@ -79,25 +79,25 @@ A31c.dat<-read.csv("ALRU31_021618_Vmax_temp.csv")
 #21:15 deg. C growing temperature
 ##
 
-G21a.dat<-read.csv("GLSE21_021518_Vmax_temp.csv")
-G21b.dat<-read.csv("GLSE21_070218_Vmax_temp.csv")
-G21c.dat<-read.csv("GLSE21_090219_Vmax_temp.csv")
+G21a.dat<-read.csv("GLSE21a_Vmax_temp.csv")
+G21b.dat<-read.csv("GLSE21b_Vmax_temp.csv")
+G21c.dat<-read.csv("GLSE21c_Vmax_temp.csv")
 
 ##
 #26:20 deg. C growing temperature
 ##
 
-G26a.dat<-read.csv("GLSE26_121419_Vmax_temp.csv")
-G26b.dat<-read.csv("GLSE26_121819_Vmax_temp.csv")
-G26c.dat<-read.csv("GLSE26_012120_Vmax_temp.csv")
+G26a.dat<-read.csv("GLSE26a_Vmax_temp.csv")
+G26b.dat<-read.csv("GLSE26b_Vmax_temp.csv")
+G26c.dat<-read.csv("GLSE26c_Vmax_temp.csv")
 
 ##
 #31:25 deg. C growing temperature
 ##
 
-G31a.dat<-read.csv("GLSE31_071118_Vmax_temp.csv")
-G31b.dat<-read.csv("GLSE31_071618_Vmax_temp.csv")
-G31c.dat<-read.csv("GLSE31_072418_Vmax_temp.csv")
+G31a.dat<-read.csv("GLSE31a_Vmax_temp.csv")
+G31b.dat<-read.csv("GLSE31b_Vmax_temp.csv")
+G31c.dat<-read.csv("GLSE31c_Vmax_temp.csv")
 
 ###
 #Robinia
@@ -107,25 +107,25 @@ G31c.dat<-read.csv("GLSE31_072418_Vmax_temp.csv")
 #21:15 deg. C growing temperature
 ##
 
-R21a.dat<-read.csv("ROPS21_021318_Vmax_temp.csv")
-R21b.dat<-read.csv("ROPS21_072318_Vmax_temp.csv")
-R21c.dat<-read.csv("ROPS21_080218_Vmax_temp.csv")
+R21a.dat<-read.csv("ROPS21a_Vmax_temp.csv")
+R21b.dat<-read.csv("ROPS21b_Vmax_temp.csv")
+R21c.dat<-read.csv("ROPS21c_Vmax_temp.csv")
 
 ##
 #26:20 deg. C growing temperature
 ##
 
-R26a.dat<-read.csv("ROPS26_120319_Vmax_temp.csv")
-R26b.dat<-read.csv("ROPS26_121619_Vmax_temp.csv")
-R26c.dat<-read.csv("ROPS26_020620_Vmax_temp.csv")
+R26a.dat<-read.csv("ROPS26a_Vmax_temp.csv")
+R26b.dat<-read.csv("ROPS26b_Vmax_temp.csv")
+R26c.dat<-read.csv("ROPS26c_Vmax_temp.csv")
 
 ##
 #31:25 deg. C growing temperature
 ##
 
-R31a.dat<-read.csv("ROPS31_020918_Vmax_temp.csv")
-R31b.dat<-read.csv("ROPS31_071418_Vmax_temp.csv")
-R31c.dat<-read.csv("ROPS31_072618_Vmax_temp.csv")
+R31a.dat<-read.csv("ROPS31a_Vmax_temp.csv")
+R31b.dat<-read.csv("ROPS31b_Vmax_temp.csv")
+R31c.dat<-read.csv("ROPS31c_Vmax_temp.csv")
 
 ####
 #Simulate N-fixation data had they not been affected by the time spent at each temperature
@@ -185,7 +185,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-MOCE21_022018_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+MOCE21a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-M21b.dat$Time
@@ -224,7 +224,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-MOCE21_072219_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+MOCE21b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-M21c.dat$Time
@@ -263,7 +263,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-MOCE21_100319_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+MOCE21c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ##
 #26:20 deg. C growing temperature
@@ -307,7 +307,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-MOCE26_121219_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+MOCE26a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-M26b.dat$Time
@@ -346,7 +346,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-MOCE26_121719_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+MOCE26b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-M26c.dat$Time
@@ -385,7 +385,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-MOCE26_020820_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+MOCE26c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ##
 #31:25 deg. C growing temperature
@@ -429,7 +429,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-MOCE31_022118_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+MOCE31a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-M31b.dat$Time
@@ -468,7 +468,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-MOCE31_030619_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+MOCE31b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-M31c.dat$Time
@@ -507,7 +507,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-MOCE31_031519_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+MOCE31c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ###
 #Alnus
@@ -555,7 +555,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ALRU21_070118_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ALRU21a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-A21b.dat$Time
@@ -594,7 +594,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ALRU21_072218_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ALRU21b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-A21c.dat$Time
@@ -633,7 +633,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ALRU21_073118_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ALRU21c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ##
 #26:20 deg. C growing temperature
@@ -677,7 +677,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ALRU26_102519_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ALRU26a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-A26b.dat$Time
@@ -716,7 +716,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ALRU26_111519_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ALRU26b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-A26c.dat$Time
@@ -755,7 +755,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ALRU26_122019_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ALRU26c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ##
 #31:25 deg. C growing temperature
@@ -799,7 +799,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ALRU31_070818_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ALRU31a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-A31b.dat$Time
@@ -838,7 +838,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ALRU31_073018_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ALRU31b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-A31c.dat$Time
@@ -877,7 +877,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ALRU31_021618_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ALRU31c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ###
 #Gliricidia
@@ -925,7 +925,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-GLSE21_021518_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+GLSE21a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-G21b.dat$Time
@@ -964,7 +964,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-GLSE21_070218_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+GLSE21b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-G21c.dat$Time
@@ -1003,7 +1003,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-GLSE21_090219_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+GLSE21c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ##
 #26:20 deg. C growing temperature
@@ -1047,7 +1047,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-GLSE26_121419_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+GLSE26a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-G26b.dat$Time
@@ -1086,7 +1086,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-GLSE26_121819_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+GLSE26b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-G26c.dat$Time
@@ -1125,7 +1125,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-GLSE26_012120_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+GLSE26c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ##
 #31:25 deg. C growing temperature
@@ -1169,7 +1169,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-GLSE31_071118_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+GLSE31a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-G31b.dat$Time
@@ -1208,7 +1208,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-GLSE31_071618_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+GLSE31b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-G31c.dat$Time
@@ -1247,7 +1247,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-GLSE31_072418_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+GLSE31c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ###
 #Robinia
@@ -1295,7 +1295,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ROPS21_021318_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ROPS21a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-R21b.dat$Time
@@ -1334,7 +1334,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ROPS21_072318_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ROPS21b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-R21c.dat$Time
@@ -1373,7 +1373,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ROPS21_080218_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ROPS21c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ##
 #26:20 deg. C growing temperature
@@ -1417,7 +1417,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ROPS26_120319_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ROPS26a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-R26b.dat$Time
@@ -1456,7 +1456,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ROPS26_121619_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ROPS26b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-R26c.dat$Time
@@ -1495,7 +1495,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ROPS26_020620_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ROPS26c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ##
 #31:25 deg. C growing temperature
@@ -1539,7 +1539,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ROPS31_020918_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ROPS31a_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 2
 time<-R31b.dat$Time
@@ -1578,7 +1578,7 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ROPS31_071418_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ROPS31b_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 #Replicate 3
 time<-R31c.dat$Time
@@ -1617,48 +1617,48 @@ for (i in 1:(length(time)-1)){
   SNF_inst[i+1] <- SNF_inst[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-ROPS31_072618_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
+ROPS31c_inst<-data.frame(Time=time,Temperature=tau+Topt,Vmax.og=Nfix,Vmax.inst=Nfix/SNF_inst)
 
 ####
 #The following exports the above as .csv files
 ####
 
-write.csv(MOCE21_022018_inst,"MOCE21_022018_inst.csv")
-write.csv(MOCE21_072219_inst,"MOCE21_072219_inst.csv")
-write.csv(MOCE21_100319_inst,"MOCE21_100319_inst.csv")
-write.csv(MOCE26_121219_inst,"MOCE26_121219_inst.csv")
-write.csv(MOCE26_121719_inst,"MOCE26_121719_inst.csv")
-write.csv(MOCE26_020820_inst,"MOCE26_020820_inst.csv")
-write.csv(MOCE31_022118_inst,"MOCE31_022118_inst.csv")
-write.csv(MOCE31_030619_inst,"MOCE31_030619_inst.csv")
-write.csv(MOCE31_031519_inst,"MOCE31_031519_inst.csv")
-write.csv(ALRU21_070118_inst,"ALRU21_070118_inst.csv")
-write.csv(ALRU21_072218_inst,"ALRU21_072218_inst.csv")
-write.csv(ALRU21_073118_inst,"ALRU21_073118_inst.csv")
-write.csv(ALRU26_102519_inst,"ALRU26_102519_inst.csv")
-write.csv(ALRU26_111519_inst,"ALRU26_111519_inst.csv")
-write.csv(ALRU26_122019_inst,"ALRU26_122019_inst.csv")
-write.csv(ALRU31_070818_inst,"ALRU31_070818_inst.csv")
-write.csv(ALRU31_073018_inst,"ALRU31_073018_inst.csv")
-write.csv(ALRU31_021618_inst,"ALRU31_021618_inst.csv")
-write.csv(GLSE21_021518_inst,"GLSE21_021518_inst.csv")
-write.csv(GLSE21_070218_inst,"GLSE21_070218_inst.csv")
-write.csv(GLSE21_090219_inst,"GLSE21_090219_inst.csv")
-write.csv(GLSE26_121419_inst,"GLSE26_121419_inst.csv")
-write.csv(GLSE26_121819_inst,"GLSE26_121819_inst.csv")
-write.csv(GLSE26_012120_inst,"GLSE26_012120_inst.csv")
-write.csv(GLSE31_071118_inst,"GLSE31_071118_inst.csv")
-write.csv(GLSE31_071618_inst,"GLSE31_071618_inst.csv")
-write.csv(GLSE31_072418_inst,"GLSE31_072418_inst.csv")
-write.csv(ROPS21_021318_inst,"ROPS21_021318_inst.csv")
-write.csv(ROPS21_072318_inst,"ROPS21_072318_inst.csv")
-write.csv(ROPS21_080218_inst,"ROPS21_080218_inst.csv")
-write.csv(ROPS26_120319_inst,"ROPS26_120319_inst.csv")
-write.csv(ROPS26_121619_inst,"ROPS26_121619_inst.csv")
-write.csv(ROPS26_020620_inst,"ROPS26_020620_inst.csv")
-write.csv(ROPS31_020918_inst,"ROPS31_020918_inst.csv")
-write.csv(ROPS31_071418_inst,"ROPS31_071418_inst.csv")
-write.csv(ROPS31_072618_inst,"ROPS31_072618_inst.csv")
+write.csv(MOCE21a_inst,"MOCE21a_inst.csv")
+write.csv(MOCE21b_inst,"MOCE21b_inst.csv")
+write.csv(MOCE21c_inst,"MOCE21c_inst.csv")
+write.csv(MOCE26a_inst,"MOCE26a_inst.csv")
+write.csv(MOCE26b_inst,"MOCE26b_inst.csv")
+write.csv(MOCE26c_inst,"MOCE26c_inst.csv")
+write.csv(MOCE31a_inst,"MOCE31a_inst.csv")
+write.csv(MOCE31b_inst,"MOCE31b_inst.csv")
+write.csv(MOCE31c_inst,"MOCE31c_inst.csv")
+write.csv(ALRU21a_inst,"ALRU21a_inst.csv")
+write.csv(ALRU21b_inst,"ALRU21b_inst.csv")
+write.csv(ALRU21c_inst,"ALRU21c_inst.csv")
+write.csv(ALRU26a_inst,"ALRU26a_inst.csv")
+write.csv(ALRU26b_inst,"ALRU26b_inst.csv")
+write.csv(ALRU26c_inst,"ALRU26c_inst.csv")
+write.csv(ALRU31a_inst,"ALRU31a_inst.csv")
+write.csv(ALRU31b_inst,"ALRU31b_inst.csv")
+write.csv(ALRU31c_inst,"ALRU31c_inst.csv")
+write.csv(GLSE21a_inst,"GLSE21a_inst.csv")
+write.csv(GLSE21b_inst,"GLSE21b_inst.csv")
+write.csv(GLSE21c_inst,"GLSE21c_inst.csv")
+write.csv(GLSE26a_inst,"GLSE26a_inst.csv")
+write.csv(GLSE26b_inst,"GLSE26b_inst.csv")
+write.csv(GLSE26c_inst,"GLSE26c_inst.csv")
+write.csv(GLSE31a_inst,"GLSE31a_inst.csv")
+write.csv(GLSE31b_inst,"GLSE31b_inst.csv")
+write.csv(GLSE31c_inst,"GLSE31c_inst.csv")
+write.csv(ROPS21a_inst,"ROPS21a_inst.csv")
+write.csv(ROPS21b_inst,"ROPS21b_inst.csv")
+write.csv(ROPS21c_inst,"ROPS21c_inst.csv")
+write.csv(ROPS26a_inst,"ROPS26a_inst.csv")
+write.csv(ROPS26b_inst,"ROPS26b_inst.csv")
+write.csv(ROPS26c_inst,"ROPS26c_inst.csv")
+write.csv(ROPS31a_inst,"ROPS31a_inst.csv")
+write.csv(ROPS31b_inst,"ROPS31b_inst.csv")
+write.csv(ROPS31c_inst,"ROPS31c_inst.csv")
 
 ####
 #The following refits the modified beta function (Equation 5) to the simulated data generated above
@@ -1669,48 +1669,48 @@ write.csv(ROPS31_072618_inst,"ROPS31_072618_inst.csv")
 ####
 
 #Morella
-MOCE21a <- read.csv("MOCE21_022018_inst.csv")
-MOCE21b <- read.csv("MOCE21_072219_inst.csv")
-MOCE21c <- read.csv("MOCE21_100319_inst.csv")
-MOCE26a <- read.csv("MOCE26_121219_inst.csv")
-MOCE26b <- read.csv("MOCE26_121719_inst.csv")
-MOCE26c <- read.csv("MOCE26_020820_inst.csv")
-MOCE31a <- read.csv("MOCE31_022118_inst.csv")
-MOCE31b <- read.csv("MOCE31_030619_inst.csv")
-MOCE31c <- read.csv("MOCE31_031519_inst.csv")
+MOCE21a <- read.csv("MOCE21a_inst.csv")
+MOCE21b <- read.csv("MOCE21b_inst.csv")
+MOCE21c <- read.csv("MOCE21c_inst.csv")
+MOCE26a <- read.csv("MOCE26a_inst.csv")
+MOCE26b <- read.csv("MOCE26b_inst.csv")
+MOCE26c <- read.csv("MOCE26c_inst.csv")
+MOCE31a <- read.csv("MOCE31a_inst.csv")
+MOCE31b <- read.csv("MOCE31b_inst.csv")
+MOCE31c <- read.csv("MOCE31c_inst.csv")
 
 #Alnus
-ALRU21a <- read.csv("ALRU21_070118_inst.csv")
-ALRU21b <- read.csv("ALRU21_072218_inst.csv")
-ALRU21c <- read.csv("ALRU21_073118_inst.csv")
-ALRU26a <- read.csv("ALRU26_102519_inst.csv")
-ALRU26b <- read.csv("ALRU26_111519_inst.csv")
-ALRU26c <- read.csv("ALRU26_122019_inst.csv")
-ALRU31a <- read.csv("ALRU31_021618_inst.csv")
-ALRU31b <- read.csv("ALRU31_070818_inst.csv")
-ALRU31c <- read.csv("ALRU31_073018_inst.csv")
+ALRU21a <- read.csv("ALRU21a_inst.csv")
+ALRU21b <- read.csv("ALRU21b_inst.csv")
+ALRU21c <- read.csv("ALRU21c_inst.csv")
+ALRU26a <- read.csv("ALRU26a_inst.csv")
+ALRU26b <- read.csv("ALRU26b_inst.csv")
+ALRU26c <- read.csv("ALRU26c_inst.csv")
+ALRU31a <- read.csv("ALRU31c_inst.csv")
+ALRU31b <- read.csv("ALRU31a_inst.csv")
+ALRU31c <- read.csv("ALRU31b_inst.csv")
 
 #Gliricidia
-GLSE21a <- read.csv("GLSE21_021518_inst.csv")
-GLSE21b <- read.csv("GLSE21_070218_inst.csv")
-GLSE21c <- read.csv("GLSE21_090219_inst.csv")
-GLSE26a <- read.csv("GLSE26_121419_inst.csv")
-GLSE26b <- read.csv("GLSE26_121819_inst.csv")
-GLSE26c <- read.csv("GLSE26_012120_inst.csv")
-GLSE31a <- read.csv("GLSE31_071118_inst.csv")
-GLSE31b <- read.csv("GLSE31_071618_inst.csv")
-GLSE31c <- read.csv("GLSE31_072418_inst.csv")
+GLSE21a <- read.csv("GLSE21a_inst.csv")
+GLSE21b <- read.csv("GLSE21b_inst.csv")
+GLSE21c <- read.csv("GLSE21c_inst.csv")
+GLSE26a <- read.csv("GLSE26a_inst.csv")
+GLSE26b <- read.csv("GLSE26b_inst.csv")
+GLSE26c <- read.csv("GLSE26c_inst.csv")
+GLSE31a <- read.csv("GLSE31a_inst.csv")
+GLSE31b <- read.csv("GLSE31b_inst.csv")
+GLSE31c <- read.csv("GLSE31c_inst.csv")
 
 #Robinia
-ROPS21a <- read.csv("ROPS21_021318_inst.csv")
-ROPS21b <- read.csv("ROPS21_072318_inst.csv")
-ROPS21c <- read.csv("ROPS21_080218_inst.csv")
-ROPS26a <- read.csv("ROPS26_120319_inst.csv")
-ROPS26b <- read.csv("ROPS26_121619_inst.csv")
-ROPS26c <- read.csv("ROPS26_020620_inst.csv")
-ROPS31a <- read.csv("ROPS31_020918_inst.csv")
-ROPS31b <- read.csv("ROPS31_071418_inst.csv")
-ROPS31c <- read.csv("ROPS31_072618_inst.csv")
+ROPS21a <- read.csv("ROPS21a_inst.csv")
+ROPS21b <- read.csv("ROPS21b_inst.csv")
+ROPS21c <- read.csv("ROPS21c_inst.csv")
+ROPS26a <- read.csv("ROPS26a_inst.csv")
+ROPS26b <- read.csv("ROPS26b_inst.csv")
+ROPS26c <- read.csv("ROPS26c_inst.csv")
+ROPS31a <- read.csv("ROPS31a_inst.csv")
+ROPS31b <- read.csv("ROPS31b_inst.csv")
+ROPS31c <- read.csv("ROPS31c_inst.csv")
 
 ####
 #Define functions

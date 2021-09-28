@@ -13,45 +13,45 @@ library(plantecophys)
 #Read in data
 #####
 
-M21.071418<-read.csv("MOCE21_ACi_071418.csv")
-M21.120918<-read.csv("MOCE21_ACi_120918.csv")
-M21.012119<-read.csv("MOCE21_ACi_012119.csv")
-M26.083019<-read.csv("MOCE26_ACi_083019.csv")
-M26.091119<-read.csv("MOCE26_ACi_091119.csv")
-M26.092119<-read.csv("MOCE26_ACi_092119.csv")
-M31.080218<-read.csv("MOCE31_ACi_080218.csv")
-M31.120418<-read.csv("MOCE31_ACi_120418.csv")
-M31.040919<-read.csv("MOCE31_ACi_040919.csv")
-A21.071218<-read.csv("ALRU21_ACi_071218.csv")
-A21.071818<-read.csv("ALRU21_ACi_071818.csv")
-A21.101718<-read.csv("ALRU21_ACi_101718.csv")
-A26.112419<-read.csv("ALRU26_ACi_112419.csv")
-A26.020420<-read.csv("ALRU26_ACi_020420.csv")
-A26.020820<-read.csv("ALRU26_ACi_020820.csv")
-A31.071618<-read.csv("ALRU31_ACi_071618.csv")
-A31.092918<-read.csv("ALRU31_ACi_092918.csv")
-A31.112518<-read.csv("ALRU31_ACi_112518.csv")
-G21.080318<-read.csv("GLSE21_ACi_080318.csv")
-G21.112718<-read.csv("GLSE21_ACi_112718.csv")
-G21.082019<-read.csv("GLSE21_ACi_082019.csv")
-G21.082819<-read.csv("GLSE21_ACi_082819.csv")
-G26.082319<-read.csv("GLSE26_ACi_082319.csv")
-G26.090619<-read.csv("GLSE26_ACi_090619.csv")
-G26.100319<-read.csv("GLSE26_ACi_100319.csv")
-G26.110119<-read.csv("GLSE26_ACi_110119.csv")
-G31.050418<-read.csv("GLSE31_ACi_050418.csv")
-G31.071118<-read.csv("GLSE31_ACi_071118.csv")
-G31.072218<-read.csv("GLSE31_ACi_072218.csv")
-R21.073118<-read.csv("ROPS21_ACi_073118.csv")
-R21.100518<-read.csv("ROPS21_ACi_100518.csv")
-R21.101018<-read.csv("ROPS21_ACi_101018.csv")
-R21.091719<-read.csv("ROPS21_ACi_091719.csv")
-R26.102219<-read.csv("ROPS26_ACi_102219.csv")
-R26.112219<-read.csv("ROPS26_ACi_112219.csv")
-R26.120319<-read.csv("ROPS26_ACi_120319.csv")
-R31.071318<-read.csv("ROPS31_ACi_071318.csv")
-R31.072318<-read.csv("ROPS31_ACi_072318.csv")
-R31.101418<-read.csv("ROPS31_ACi_101418.csv")
+M21a<-read.csv("MOCE21a_ACi.csv")
+M21b<-read.csv("MOCE21b_ACi.csv")
+M21c<-read.csv("MOCE21c_ACi.csv")
+M26a<-read.csv("MOCE26a_ACi.csv")
+M26b<-read.csv("MOCE26b_ACi.csv")
+M26c<-read.csv("MOCE26c_ACi.csv")
+M31a<-read.csv("MOCE31a_ACi.csv")
+M31b<-read.csv("MOCE31b_ACi.csv")
+M31c<-read.csv("MOCE31c_ACi.csv")
+A21a<-read.csv("ALRU21a_ACi.csv")
+A21b<-read.csv("ALRU21b_ACi.csv")
+A21c<-read.csv("ALRU21c_ACi.csv")
+A26a<-read.csv("ALRU26a_ACi.csv")
+A26b<-read.csv("ALRU26b_ACi.csv")
+A26c<-read.csv("ALRU26c_ACi.csv")
+A31a<-read.csv("ALRU31a_ACi.csv")
+A31b<-read.csv("ALRU31b_ACi.csv")
+A31c<-read.csv("ALRU31c_ACi.csv")
+G21a<-read.csv("GLSE21a_ACi.csv")
+G21b<-read.csv("GLSE21b_ACi.csv")
+G21c<-read.csv("GLSE21c_ACi.csv")
+G21d<-read.csv("GLSE21d_ACi.csv")
+G26a<-read.csv("GLSE26a_ACi.csv")
+G26b<-read.csv("GLSE26b_ACi.csv")
+G26c<-read.csv("GLSE26c_ACi.csv")
+G26d<-read.csv("GLSE26d_ACi.csv")
+G31a<-read.csv("GLSE31a_ACi.csv")
+G31b<-read.csv("GLSE31b_ACi.csv")
+G31c<-read.csv("GLSE31c_ACi.csv")
+R21a<-read.csv("ROPS21a_ACi.csv")
+R21b<-read.csv("ROPS21b_ACi.csv")
+R21c<-read.csv("ROPS21c_ACi.csv")
+R21d<-read.csv("ROPS21d_ACi.csv")
+R26a<-read.csv("ROPS26a_ACi.csv")
+R26b<-read.csv("ROPS26b_ACi.csv")
+R26c<-read.csv("ROPS26c_ACi.csv")
+R31a<-read.csv("ROPS31a_ACi.csv")
+R31b<-read.csv("ROPS31b_ACi.csv")
+R31c<-read.csv("ROPS31c_ACi.csv")
 
 ####
 #Morella
@@ -67,159 +67,159 @@ R31.101418<-read.csv("ROPS31_ACi_101418.csv")
 
 #Calculate respiration in the light (RL) for each measurement temperature
 #Here and below, RL is coded as Rd in order to work with the fitacis function
-p.M21.Rd<-rep(NA,length(M21.071418$Curve))
-for (i in 1:length(M21.071418$Curve)){
-  p.M21.Rd[i]<-norm.Topt.s.lin(0.753/Rd.25.M21,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],18.5,M21.071418$Curve[i])
+p.M21.Rd<-rep(NA,length(M21a$Curve))
+for (i in 1:length(M21a$Curve)){
+  p.M21.Rd[i]<-norm.Topt.s.lin(0.753/Rd.25.M21,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],18.5,M21a$Curve[i])
 }
-M21.071418$Rd<-p.M21.Rd
+M21a$Rd<-p.M21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-M21.071418.d<-M21.071418[M21.071418$Direction == "down",]
-M21.071418.u<-M21.071418[M21.071418$Direction == "up",]
+M21a.d<-M21a[M21a$Direction == "down",]
+M21a.u<-M21a[M21a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.M21.071418.d<-fitacis(M21.071418.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M21.071418.d)
-coef(m.M21.071418.d)
+m.M21a.d<-fitacis(M21a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M21a.d)
+coef(m.M21a.d)
 
 #Ascending
-m.M21.071418.u<-fitacis(M21.071418.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M21.071418.u)
-coef(m.M21.071418.u)
+m.M21a.u<-fitacis(M21a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M21a.u)
+coef(m.M21a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.M21.071418.d$`10`$df[,2]~m.M21.071418.d$`10`$df[,3])
-summary(lm(m.M21.071418.d$`10`$df[,2]~m.M21.071418.d$`10`$df[,3]))
-plot(m.M21.071418.d$`15`$df[,2]~m.M21.071418.d$`15`$df[,3])
-summary(lm(m.M21.071418.d$`15`$df[,2]~m.M21.071418.d$`15`$df[,3]))
-plot(m.M21.071418.d$`20`$df[,2]~m.M21.071418.d$`20`$df[,3])
-summary(lm(m.M21.071418.d$`20`$df[,2]~m.M21.071418.d$`20`$df[,3]))
+plot(m.M21a.d$`10`$df[,2]~m.M21a.d$`10`$df[,3])
+summary(lm(m.M21a.d$`10`$df[,2]~m.M21a.d$`10`$df[,3]))
+plot(m.M21a.d$`15`$df[,2]~m.M21a.d$`15`$df[,3])
+summary(lm(m.M21a.d$`15`$df[,2]~m.M21a.d$`15`$df[,3]))
+plot(m.M21a.d$`20`$df[,2]~m.M21a.d$`20`$df[,3])
+summary(lm(m.M21a.d$`20`$df[,2]~m.M21a.d$`20`$df[,3]))
 
 #Ascending
-plot(m.M21.071418.u$`20`$df[,2]~m.M21.071418.u$`20`$df[,3])
-summary(lm(m.M21.071418.u$`20`$df[,2]~m.M21.071418.u$`20`$df[,3]))
-plot(m.M21.071418.u$`25`$df[,2]~m.M21.071418.u$`25`$df[,3])
-summary(lm(m.M21.071418.u$`25`$df[,2]~m.M21.071418.u$`25`$df[,3]))
-plot(m.M21.071418.u$`30`$df[,2]~m.M21.071418.u$`30`$df[,3])
-summary(lm(m.M21.071418.u$`30`$df[,2]~m.M21.071418.u$`30`$df[,3]))
-plot(m.M21.071418.u$`35`$df[,2]~m.M21.071418.u$`35`$df[,3])
-summary(lm(m.M21.071418.u$`35`$df[,2]~m.M21.071418.u$`35`$df[,3]))
-plot(m.M21.071418.u$`40`$df[,2]~m.M21.071418.u$`40`$df[,3])
-summary(lm(m.M21.071418.u$`40`$df[,2]~m.M21.071418.u$`40`$df[,3]))
+plot(m.M21a.u$`20`$df[,2]~m.M21a.u$`20`$df[,3])
+summary(lm(m.M21a.u$`20`$df[,2]~m.M21a.u$`20`$df[,3]))
+plot(m.M21a.u$`25`$df[,2]~m.M21a.u$`25`$df[,3])
+summary(lm(m.M21a.u$`25`$df[,2]~m.M21a.u$`25`$df[,3]))
+plot(m.M21a.u$`30`$df[,2]~m.M21a.u$`30`$df[,3])
+summary(lm(m.M21a.u$`30`$df[,2]~m.M21a.u$`30`$df[,3]))
+plot(m.M21a.u$`35`$df[,2]~m.M21a.u$`35`$df[,3])
+summary(lm(m.M21a.u$`35`$df[,2]~m.M21a.u$`35`$df[,3]))
+plot(m.M21a.u$`40`$df[,2]~m.M21a.u$`40`$df[,3])
+summary(lm(m.M21a.u$`40`$df[,2]~m.M21a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.M21.Rd<-rep(NA,length(M21.120918$Curve))
-for (i in 1:length(M21.120918$Curve)){
-  p.M21.Rd[i]<-norm.Topt.s.lin(0.753/Rd.25.M21,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],18.5,M21.120918$Curve[i])
+p.M21.Rd<-rep(NA,length(M21b$Curve))
+for (i in 1:length(M21b$Curve)){
+  p.M21.Rd[i]<-norm.Topt.s.lin(0.753/Rd.25.M21,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],18.5,M21b$Curve[i])
 }
-M21.120918$Rd<-p.M21.Rd
+M21b$Rd<-p.M21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-M21.120918.d<-M21.120918[M21.120918$Direction == "down",]
-M21.120918.u<-M21.120918[M21.120918$Direction == "up",]
+M21b.d<-M21b[M21b$Direction == "down",]
+M21b.u<-M21b[M21b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.M21.120918.d<-fitacis(M21.120918.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M21.120918.d)
-coef(m.M21.120918.d)
+m.M21b.d<-fitacis(M21b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M21b.d)
+coef(m.M21b.d)
 
 #Ascending
-m.M21.120918.u<-fitacis(M21.120918.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M21.120918.u)
-coef(m.M21.120918.u)
+m.M21b.u<-fitacis(M21b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M21b.u)
+coef(m.M21b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.M21.120918.d$`10`$df[,2]~m.M21.120918.d$`10`$df[,3])
-summary(lm(m.M21.120918.d$`10`$df[,2]~m.M21.120918.d$`10`$df[,3]))
-plot(m.M21.120918.d$`15`$df[,2]~m.M21.120918.d$`15`$df[,3])
-summary(lm(m.M21.120918.d$`15`$df[,2]~m.M21.120918.d$`15`$df[,3]))
-plot(m.M21.120918.d$`20`$df[,2]~m.M21.120918.d$`20`$df[,3])
-summary(lm(m.M21.120918.d$`20`$df[,2]~m.M21.120918.d$`20`$df[,3]))
+plot(m.M21b.d$`10`$df[,2]~m.M21b.d$`10`$df[,3])
+summary(lm(m.M21b.d$`10`$df[,2]~m.M21b.d$`10`$df[,3]))
+plot(m.M21b.d$`15`$df[,2]~m.M21b.d$`15`$df[,3])
+summary(lm(m.M21b.d$`15`$df[,2]~m.M21b.d$`15`$df[,3]))
+plot(m.M21b.d$`20`$df[,2]~m.M21b.d$`20`$df[,3])
+summary(lm(m.M21b.d$`20`$df[,2]~m.M21b.d$`20`$df[,3]))
 
 #Ascending
-plot(m.M21.120918.u$`20`$df[,2]~m.M21.120918.u$`20`$df[,3])
-summary(lm(m.M21.120918.u$`20`$df[,2]~m.M21.120918.u$`20`$df[,3]))
-plot(m.M21.120918.u$`25`$df[,2]~m.M21.120918.u$`25`$df[,3])
-summary(lm(m.M21.120918.u$`25`$df[,2]~m.M21.120918.u$`25`$df[,3]))
-plot(m.M21.120918.u$`30`$df[,2]~m.M21.120918.u$`30`$df[,3])
-summary(lm(m.M21.120918.u$`30`$df[,2]~m.M21.120918.u$`30`$df[,3]))
-plot(m.M21.120918.u$`35`$df[,2]~m.M21.120918.u$`35`$df[,3])
-summary(lm(m.M21.120918.u$`35`$df[,2]~m.M21.120918.u$`35`$df[,3]))
-plot(m.M21.120918.u$`40`$df[,2]~m.M21.120918.u$`40`$df[,3])
-summary(lm(m.M21.120918.u$`40`$df[,2]~m.M21.120918.u$`40`$df[,3]))
+plot(m.M21b.u$`20`$df[,2]~m.M21b.u$`20`$df[,3])
+summary(lm(m.M21b.u$`20`$df[,2]~m.M21b.u$`20`$df[,3]))
+plot(m.M21b.u$`25`$df[,2]~m.M21b.u$`25`$df[,3])
+summary(lm(m.M21b.u$`25`$df[,2]~m.M21b.u$`25`$df[,3]))
+plot(m.M21b.u$`30`$df[,2]~m.M21b.u$`30`$df[,3])
+summary(lm(m.M21b.u$`30`$df[,2]~m.M21b.u$`30`$df[,3]))
+plot(m.M21b.u$`35`$df[,2]~m.M21b.u$`35`$df[,3])
+summary(lm(m.M21b.u$`35`$df[,2]~m.M21b.u$`35`$df[,3]))
+plot(m.M21b.u$`40`$df[,2]~m.M21b.u$`40`$df[,3])
+summary(lm(m.M21b.u$`40`$df[,2]~m.M21b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.M21.Rd<-rep(NA,length(M21.012119$Curve))
-for (i in 1:length(M21.012119$Curve)){
-  p.M21.Rd[i]<-norm.Topt.s.lin(0.753/Rd.25.M21,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],18.5,M21.012119$Curve[i])
+p.M21.Rd<-rep(NA,length(M21c$Curve))
+for (i in 1:length(M21c$Curve)){
+  p.M21.Rd[i]<-norm.Topt.s.lin(0.753/Rd.25.M21,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],18.5,M21c$Curve[i])
 }
-M21.012119$Rd<-p.M21.Rd
+M21c$Rd<-p.M21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-M21.012119.d<-M21.012119[M21.012119$Direction == "down",]
-M21.012119.u<-M21.012119[M21.012119$Direction == "up",]
+M21c.d<-M21c[M21c$Direction == "down",]
+M21c.u<-M21c[M21c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.M21.012119.d<-fitacis(M21.012119.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M21.012119.d)
-coef(m.M21.012119.d)
+m.M21c.d<-fitacis(M21c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M21c.d)
+coef(m.M21c.d)
 
 #Ascending
-m.M21.012119.u<-fitacis(M21.012119.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M21.012119.u)
-coef(m.M21.012119.u)
+m.M21c.u<-fitacis(M21c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M21c.u)
+coef(m.M21c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.M21.012119.d$`10`$df[,2]~m.M21.012119.d$`10`$df[,3])
-summary(lm(m.M21.012119.d$`10`$df[,2]~m.M21.012119.d$`10`$df[,3]))
-plot(m.M21.012119.d$`15`$df[,2]~m.M21.012119.d$`15`$df[,3])
-summary(lm(m.M21.012119.d$`15`$df[,2]~m.M21.012119.d$`15`$df[,3]))
-plot(m.M21.012119.d$`20`$df[,2]~m.M21.012119.d$`20`$df[,3])
-summary(lm(m.M21.012119.d$`20`$df[,2]~m.M21.012119.d$`20`$df[,3]))
+plot(m.M21c.d$`10`$df[,2]~m.M21c.d$`10`$df[,3])
+summary(lm(m.M21c.d$`10`$df[,2]~m.M21c.d$`10`$df[,3]))
+plot(m.M21c.d$`15`$df[,2]~m.M21c.d$`15`$df[,3])
+summary(lm(m.M21c.d$`15`$df[,2]~m.M21c.d$`15`$df[,3]))
+plot(m.M21c.d$`20`$df[,2]~m.M21c.d$`20`$df[,3])
+summary(lm(m.M21c.d$`20`$df[,2]~m.M21c.d$`20`$df[,3]))
 
 #Ascending
-plot(m.M21.012119.u$`20`$df[,2]~m.M21.012119.u$`20`$df[,3])
-summary(lm(m.M21.012119.u$`20`$df[,2]~m.M21.012119.u$`20`$df[,3]))
-plot(m.M21.012119.u$`25`$df[,2]~m.M21.012119.u$`25`$df[,3])
-summary(lm(m.M21.012119.u$`25`$df[,2]~m.M21.012119.u$`25`$df[,3]))
-plot(m.M21.012119.u$`30`$df[,2]~m.M21.012119.u$`30`$df[,3])
-summary(lm(m.M21.012119.u$`30`$df[,2]~m.M21.012119.u$`30`$df[,3]))
-plot(m.M21.012119.u$`35`$df[,2]~m.M21.012119.u$`35`$df[,3])
-summary(lm(m.M21.012119.u$`35`$df[,2]~m.M21.012119.u$`35`$df[,3]))
-plot(m.M21.012119.u$`40`$df[,2]~m.M21.012119.u$`40`$df[,3])
-summary(lm(m.M21.012119.u$`40`$df[,2]~m.M21.012119.u$`40`$df[,3]))
+plot(m.M21c.u$`20`$df[,2]~m.M21c.u$`20`$df[,3])
+summary(lm(m.M21c.u$`20`$df[,2]~m.M21c.u$`20`$df[,3]))
+plot(m.M21c.u$`25`$df[,2]~m.M21c.u$`25`$df[,3])
+summary(lm(m.M21c.u$`25`$df[,2]~m.M21c.u$`25`$df[,3]))
+plot(m.M21c.u$`30`$df[,2]~m.M21c.u$`30`$df[,3])
+summary(lm(m.M21c.u$`30`$df[,2]~m.M21c.u$`30`$df[,3]))
+plot(m.M21c.u$`35`$df[,2]~m.M21c.u$`35`$df[,3])
+summary(lm(m.M21c.u$`35`$df[,2]~m.M21c.u$`35`$df[,3]))
+plot(m.M21c.u$`40`$df[,2]~m.M21c.u$`40`$df[,3])
+summary(lm(m.M21c.u$`40`$df[,2]~m.M21c.u$`40`$df[,3]))
 
 ###
 #26:20 deg. C growing temperature
@@ -230,159 +230,159 @@ summary(lm(m.M21.012119.u$`40`$df[,2]~m.M21.012119.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.M26.Rd<-rep(NA,length(M26.083019$Curve))
-for (i in 1:length(M26.083019$Curve)){
-  p.M26.Rd[i]<-norm.Topt.s.lin(0.491/Rd.25.M26,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],23.5,M26.083019$Curve[i])
+p.M26.Rd<-rep(NA,length(M26a$Curve))
+for (i in 1:length(M26a$Curve)){
+  p.M26.Rd[i]<-norm.Topt.s.lin(0.491/Rd.25.M26,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],23.5,M26a$Curve[i])
 }
-M26.083019$Rd<-p.M26.Rd
+M26a$Rd<-p.M26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-M26.083019.d<-M26.083019[M26.083019$Direction == "down",]
-M26.083019.u<-M26.083019[M26.083019$Direction == "up",]
+M26a.d<-M26a[M26a$Direction == "down",]
+M26a.u<-M26a[M26a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.M26.083019.d<-fitacis(M26.083019.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M26.083019.d)
-coef(m.M26.083019.d)
+m.M26a.d<-fitacis(M26a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M26a.d)
+coef(m.M26a.d)
 
 #Ascending
-m.M26.083019.u<-fitacis(M26.083019.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M26.083019.u)
-coef(m.M26.083019.u)
+m.M26a.u<-fitacis(M26a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M26a.u)
+coef(m.M26a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.M26.083019.d$`10`$df[,2]~m.M26.083019.d$`10`$df[,3])
-summary(lm(m.M26.083019.d$`10`$df[,2]~m.M26.083019.d$`10`$df[,3]))
-plot(m.M26.083019.d$`15`$df[,2]~m.M26.083019.d$`15`$df[,3])
-summary(lm(m.M26.083019.d$`15`$df[,2]~m.M26.083019.d$`15`$df[,3]))
-plot(m.M26.083019.d$`20`$df[,2]~m.M26.083019.d$`20`$df[,3])
-summary(lm(m.M26.083019.d$`20`$df[,2]~m.M26.083019.d$`20`$df[,3]))
-plot(m.M26.083019.d$`25`$df[,2]~m.M26.083019.d$`25`$df[,3])
-summary(lm(m.M26.083019.d$`25`$df[,2]~m.M26.083019.d$`25`$df[,3]))
+plot(m.M26a.d$`10`$df[,2]~m.M26a.d$`10`$df[,3])
+summary(lm(m.M26a.d$`10`$df[,2]~m.M26a.d$`10`$df[,3]))
+plot(m.M26a.d$`15`$df[,2]~m.M26a.d$`15`$df[,3])
+summary(lm(m.M26a.d$`15`$df[,2]~m.M26a.d$`15`$df[,3]))
+plot(m.M26a.d$`20`$df[,2]~m.M26a.d$`20`$df[,3])
+summary(lm(m.M26a.d$`20`$df[,2]~m.M26a.d$`20`$df[,3]))
+plot(m.M26a.d$`25`$df[,2]~m.M26a.d$`25`$df[,3])
+summary(lm(m.M26a.d$`25`$df[,2]~m.M26a.d$`25`$df[,3]))
 
 #Ascending
-plot(m.M26.083019.u$`25`$df[,2]~m.M26.083019.u$`25`$df[,3])
-summary(lm(m.M26.083019.u$`25`$df[,2]~m.M26.083019.u$`25`$df[,3]))
-plot(m.M26.083019.u$`30`$df[,2]~m.M26.083019.u$`30`$df[,3])
-summary(lm(m.M26.083019.u$`30`$df[,2]~m.M26.083019.u$`30`$df[,3]))
-plot(m.M26.083019.u$`35`$df[,2]~m.M26.083019.u$`35`$df[,3])
-summary(lm(m.M26.083019.u$`35`$df[,2]~m.M26.083019.u$`35`$df[,3]))
-plot(m.M26.083019.u$`40`$df[,2]~m.M26.083019.u$`40`$df[,3])
-summary(lm(m.M26.083019.u$`40`$df[,2]~m.M26.083019.u$`40`$df[,3]))
+plot(m.M26a.u$`25`$df[,2]~m.M26a.u$`25`$df[,3])
+summary(lm(m.M26a.u$`25`$df[,2]~m.M26a.u$`25`$df[,3]))
+plot(m.M26a.u$`30`$df[,2]~m.M26a.u$`30`$df[,3])
+summary(lm(m.M26a.u$`30`$df[,2]~m.M26a.u$`30`$df[,3]))
+plot(m.M26a.u$`35`$df[,2]~m.M26a.u$`35`$df[,3])
+summary(lm(m.M26a.u$`35`$df[,2]~m.M26a.u$`35`$df[,3]))
+plot(m.M26a.u$`40`$df[,2]~m.M26a.u$`40`$df[,3])
+summary(lm(m.M26a.u$`40`$df[,2]~m.M26a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.M26.Rd<-rep(NA,length(M26.091119$Curve))
-for (i in 1:length(M26.091119$Curve)){
-  p.M26.Rd[i]<-norm.Topt.s.lin(0.491/Rd.25.M26,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],23.5,M26.091119$Curve[i])
+p.M26.Rd<-rep(NA,length(M26b$Curve))
+for (i in 1:length(M26b$Curve)){
+  p.M26.Rd[i]<-norm.Topt.s.lin(0.491/Rd.25.M26,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],23.5,M26b$Curve[i])
 }
-M26.091119$Rd<-p.M26.Rd
+M26b$Rd<-p.M26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-M26.091119.d<-M26.091119[M26.091119$Direction == "down",]
-M26.091119.u<-M26.091119[M26.091119$Direction == "up",]
+M26b.d<-M26b[M26b$Direction == "down",]
+M26b.u<-M26b[M26b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.M26.091119.d<-fitacis(M26.091119.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M26.091119.d)
-coef(m.M26.091119.d)
+m.M26b.d<-fitacis(M26b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M26b.d)
+coef(m.M26b.d)
 
 #Ascending
-m.M26.091119.u<-fitacis(M26.091119.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M26.091119.u)
-coef(m.M26.091119.u)
+m.M26b.u<-fitacis(M26b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M26b.u)
+coef(m.M26b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.M26.091119.d$`10`$df[,2]~m.M26.091119.d$`10`$df[,3])
-summary(lm(m.M26.091119.d$`10`$df[,2]~m.M26.091119.d$`10`$df[,3]))
-plot(m.M26.091119.d$`15`$df[,2]~m.M26.091119.d$`15`$df[,3])
-summary(lm(m.M26.091119.d$`15`$df[,2]~m.M26.091119.d$`15`$df[,3]))
-plot(m.M26.091119.d$`20`$df[,2]~m.M26.091119.d$`20`$df[,3])
-summary(lm(m.M26.091119.d$`20`$df[,2]~m.M26.091119.d$`20`$df[,3]))
-plot(m.M26.091119.d$`25`$df[,2]~m.M26.091119.d$`25`$df[,3])
-summary(lm(m.M26.091119.d$`25`$df[,2]~m.M26.091119.d$`25`$df[,3]))
+plot(m.M26b.d$`10`$df[,2]~m.M26b.d$`10`$df[,3])
+summary(lm(m.M26b.d$`10`$df[,2]~m.M26b.d$`10`$df[,3]))
+plot(m.M26b.d$`15`$df[,2]~m.M26b.d$`15`$df[,3])
+summary(lm(m.M26b.d$`15`$df[,2]~m.M26b.d$`15`$df[,3]))
+plot(m.M26b.d$`20`$df[,2]~m.M26b.d$`20`$df[,3])
+summary(lm(m.M26b.d$`20`$df[,2]~m.M26b.d$`20`$df[,3]))
+plot(m.M26b.d$`25`$df[,2]~m.M26b.d$`25`$df[,3])
+summary(lm(m.M26b.d$`25`$df[,2]~m.M26b.d$`25`$df[,3]))
 
 #Ascending
-plot(m.M26.091119.u$`25`$df[,2]~m.M26.091119.u$`25`$df[,3])
-summary(lm(m.M26.091119.u$`25`$df[,2]~m.M26.091119.u$`25`$df[,3]))
-plot(m.M26.091119.u$`30`$df[,2]~m.M26.091119.u$`30`$df[,3])
-summary(lm(m.M26.091119.u$`30`$df[,2]~m.M26.091119.u$`30`$df[,3]))
-plot(m.M26.091119.u$`35`$df[,2]~m.M26.091119.u$`35`$df[,3])
-summary(lm(m.M26.091119.u$`35`$df[,2]~m.M26.091119.u$`35`$df[,3]))
-plot(m.M26.091119.u$`40`$df[,2]~m.M26.091119.u$`40`$df[,3])
-summary(lm(m.M26.091119.u$`40`$df[,2]~m.M26.091119.u$`40`$df[,3]))
+plot(m.M26b.u$`25`$df[,2]~m.M26b.u$`25`$df[,3])
+summary(lm(m.M26b.u$`25`$df[,2]~m.M26b.u$`25`$df[,3]))
+plot(m.M26b.u$`30`$df[,2]~m.M26b.u$`30`$df[,3])
+summary(lm(m.M26b.u$`30`$df[,2]~m.M26b.u$`30`$df[,3]))
+plot(m.M26b.u$`35`$df[,2]~m.M26b.u$`35`$df[,3])
+summary(lm(m.M26b.u$`35`$df[,2]~m.M26b.u$`35`$df[,3]))
+plot(m.M26b.u$`40`$df[,2]~m.M26b.u$`40`$df[,3])
+summary(lm(m.M26b.u$`40`$df[,2]~m.M26b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.M26.Rd<-rep(NA,length(M26.092119$Curve))
-for (i in 1:length(M26.092119$Curve)){
-  p.M26.Rd[i]<-norm.Topt.s.lin(0.491/Rd.25.M26,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],23.5,M26.092119$Curve[i])
+p.M26.Rd<-rep(NA,length(M26c$Curve))
+for (i in 1:length(M26c$Curve)){
+  p.M26.Rd[i]<-norm.Topt.s.lin(0.491/Rd.25.M26,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],23.5,M26c$Curve[i])
 }
-M26.092119$Rd<-p.M26.Rd
+M26c$Rd<-p.M26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-M26.092119.d<-M26.092119[M26.092119$Direction == "down",]
-M26.092119.u<-M26.092119[M26.092119$Direction == "up",]
+M26c.d<-M26c[M26c$Direction == "down",]
+M26c.u<-M26c[M26c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.M26.092119.d<-fitacis(M26.092119.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M26.092119.d)
-coef(m.M26.092119.d)
+m.M26c.d<-fitacis(M26c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M26c.d)
+coef(m.M26c.d)
 
 #Ascending
-m.M26.092119.u<-fitacis(M26.092119.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M26.092119.u)
-coef(m.M26.092119.u)
+m.M26c.u<-fitacis(M26c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M26c.u)
+coef(m.M26c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.M26.092119.d$`10`$df[,2]~m.M26.092119.d$`10`$df[,3])
-summary(lm(m.M26.092119.d$`10`$df[,2]~m.M26.092119.d$`10`$df[,3]))
-plot(m.M26.092119.d$`15`$df[,2]~m.M26.092119.d$`15`$df[,3])
-summary(lm(m.M26.092119.d$`15`$df[,2]~m.M26.092119.d$`15`$df[,3]))
-plot(m.M26.092119.d$`20`$df[,2]~m.M26.092119.d$`20`$df[,3])
-summary(lm(m.M26.092119.d$`20`$df[,2]~m.M26.092119.d$`20`$df[,3]))
-plot(m.M26.092119.d$`25`$df[,2]~m.M26.092119.d$`25`$df[,3])
-summary(lm(m.M26.092119.d$`25`$df[,2]~m.M26.092119.d$`25`$df[,3]))
+plot(m.M26c.d$`10`$df[,2]~m.M26c.d$`10`$df[,3])
+summary(lm(m.M26c.d$`10`$df[,2]~m.M26c.d$`10`$df[,3]))
+plot(m.M26c.d$`15`$df[,2]~m.M26c.d$`15`$df[,3])
+summary(lm(m.M26c.d$`15`$df[,2]~m.M26c.d$`15`$df[,3]))
+plot(m.M26c.d$`20`$df[,2]~m.M26c.d$`20`$df[,3])
+summary(lm(m.M26c.d$`20`$df[,2]~m.M26c.d$`20`$df[,3]))
+plot(m.M26c.d$`25`$df[,2]~m.M26c.d$`25`$df[,3])
+summary(lm(m.M26c.d$`25`$df[,2]~m.M26c.d$`25`$df[,3]))
 
 #Ascending
-plot(m.M26.092119.u$`25`$df[,2]~m.M26.092119.u$`25`$df[,3])
-summary(lm(m.M26.092119.u$`25`$df[,2]~m.M26.092119.u$`25`$df[,3]))
-plot(m.M26.092119.u$`30`$df[,2]~m.M26.092119.u$`30`$df[,3])
-summary(lm(m.M26.092119.u$`30`$df[,2]~m.M26.092119.u$`30`$df[,3]))
-plot(m.M26.092119.u$`35`$df[,2]~m.M26.092119.u$`35`$df[,3])
-summary(lm(m.M26.092119.u$`35`$df[,2]~m.M26.092119.u$`35`$df[,3]))
-plot(m.M26.092119.u$`40`$df[,2]~m.M26.092119.u$`40`$df[,3])
-summary(lm(m.M26.092119.u$`40`$df[,2]~m.M26.092119.u$`40`$df[,3]))
+plot(m.M26c.u$`25`$df[,2]~m.M26c.u$`25`$df[,3])
+summary(lm(m.M26c.u$`25`$df[,2]~m.M26c.u$`25`$df[,3]))
+plot(m.M26c.u$`30`$df[,2]~m.M26c.u$`30`$df[,3])
+summary(lm(m.M26c.u$`30`$df[,2]~m.M26c.u$`30`$df[,3]))
+plot(m.M26c.u$`35`$df[,2]~m.M26c.u$`35`$df[,3])
+summary(lm(m.M26c.u$`35`$df[,2]~m.M26c.u$`35`$df[,3]))
+plot(m.M26c.u$`40`$df[,2]~m.M26c.u$`40`$df[,3])
+summary(lm(m.M26c.u$`40`$df[,2]~m.M26c.u$`40`$df[,3]))
 
 ###
 #31:25 deg. C growing temperature
@@ -393,157 +393,157 @@ summary(lm(m.M26.092119.u$`40`$df[,2]~m.M26.092119.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.M31.Rd<-rep(NA,length(M31.080218$Curve))
-for (i in 1:length(M31.080218$Curve)){
-  p.M31.Rd[i]<-norm.Topt.s.lin(0.229/Rd.25.M31,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],28.5,M31.080218$Curve[i])
+p.M31.Rd<-rep(NA,length(M31a$Curve))
+for (i in 1:length(M31a$Curve)){
+  p.M31.Rd[i]<-norm.Topt.s.lin(0.229/Rd.25.M31,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],28.5,M31a$Curve[i])
 }
-M31.080218$Rd<-p.M31.Rd
+M31a$Rd<-p.M31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-M31.080218.d<-M31.080218[M31.080218$Direction == "down",]
-M31.080218.u<-M31.080218[M31.080218$Direction == "up",]
+M31a.d<-M31a[M31a$Direction == "down",]
+M31a.u<-M31a[M31a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.M31.080218.d<-fitacis(M31.080218.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M31.080218.d)
-coef(m.M31.080218.d)
+m.M31a.d<-fitacis(M31a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M31a.d)
+coef(m.M31a.d)
 
 #Ascending
-m.M31.080218.u<-fitacis(M31.080218.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M31.080218.u)
-coef(m.M31.080218.u)
+m.M31a.u<-fitacis(M31a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M31a.u)
+coef(m.M31a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.M31.080218.d$`10`$df[,2]~m.M31.080218.d$`10`$df[,3])
-summary(lm(m.M31.080218.d$`10`$df[,2]~m.M31.080218.d$`10`$df[,3]))
-plot(m.M31.080218.d$`15`$df[,2]~m.M31.080218.d$`15`$df[,3])
-summary(lm(m.M31.080218.d$`15`$df[,2]~m.M31.080218.d$`15`$df[,3]))
-plot(m.M31.080218.d$`20`$df[,2]~m.M31.080218.d$`20`$df[,3])
-summary(lm(m.M31.080218.d$`20`$df[,2]~m.M31.080218.d$`20`$df[,3]))
-plot(m.M31.080218.d$`25`$df[,2]~m.M31.080218.d$`25`$df[,3])
-summary(lm(m.M31.080218.d$`25`$df[,2]~m.M31.080218.d$`25`$df[,3]))
-plot(m.M31.080218.d$`30`$df[,2]~m.M31.080218.d$`30`$df[,3])
-summary(lm(m.M31.080218.d$`30`$df[,2]~m.M31.080218.d$`30`$df[,3]))
+plot(m.M31a.d$`10`$df[,2]~m.M31a.d$`10`$df[,3])
+summary(lm(m.M31a.d$`10`$df[,2]~m.M31a.d$`10`$df[,3]))
+plot(m.M31a.d$`15`$df[,2]~m.M31a.d$`15`$df[,3])
+summary(lm(m.M31a.d$`15`$df[,2]~m.M31a.d$`15`$df[,3]))
+plot(m.M31a.d$`20`$df[,2]~m.M31a.d$`20`$df[,3])
+summary(lm(m.M31a.d$`20`$df[,2]~m.M31a.d$`20`$df[,3]))
+plot(m.M31a.d$`25`$df[,2]~m.M31a.d$`25`$df[,3])
+summary(lm(m.M31a.d$`25`$df[,2]~m.M31a.d$`25`$df[,3]))
+plot(m.M31a.d$`30`$df[,2]~m.M31a.d$`30`$df[,3])
+summary(lm(m.M31a.d$`30`$df[,2]~m.M31a.d$`30`$df[,3]))
 
 #Ascending
-plot(m.M31.080218.u$`30`$df[,2]~m.M31.080218.u$`30`$df[,3])
-summary(lm(m.M31.080218.u$`30`$df[,2]~m.M31.080218.u$`30`$df[,3]))
-plot(m.M31.080218.u$`35`$df[,2]~m.M31.080218.u$`35`$df[,3])
-summary(lm(m.M31.080218.u$`35`$df[,2]~m.M31.080218.u$`35`$df[,3]))
-plot(m.M31.080218.u$`40`$df[,2]~m.M31.080218.u$`40`$df[,3])
-summary(lm(m.M31.080218.u$`40`$df[,2]~m.M31.080218.u$`40`$df[,3]))
+plot(m.M31a.u$`30`$df[,2]~m.M31a.u$`30`$df[,3])
+summary(lm(m.M31a.u$`30`$df[,2]~m.M31a.u$`30`$df[,3]))
+plot(m.M31a.u$`35`$df[,2]~m.M31a.u$`35`$df[,3])
+summary(lm(m.M31a.u$`35`$df[,2]~m.M31a.u$`35`$df[,3]))
+plot(m.M31a.u$`40`$df[,2]~m.M31a.u$`40`$df[,3])
+summary(lm(m.M31a.u$`40`$df[,2]~m.M31a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.M31.Rd<-rep(NA,length(M31.120418$Curve))
-for (i in 1:length(M31.120418$Curve)){
-  p.M31.Rd[i]<-norm.Topt.s.lin(0.229/Rd.25.M31,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],28.5,M31.120418$Curve[i])
+p.M31.Rd<-rep(NA,length(M31b$Curve))
+for (i in 1:length(M31b$Curve)){
+  p.M31.Rd[i]<-norm.Topt.s.lin(0.229/Rd.25.M31,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],28.5,M31b$Curve[i])
 }
-M31.120418$Rd<-p.M31.Rd
+M31b$Rd<-p.M31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-M31.120418.d<-M31.120418[M31.120418$Direction == "down",]
-M31.120418.u<-M31.120418[M31.120418$Direction == "up",]
+M31b.d<-M31b[M31b$Direction == "down",]
+M31b.u<-M31b[M31b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.M31.120418.d<-fitacis(M31.120418.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M31.120418.d)
-coef(m.M31.120418.d)
+m.M31b.d<-fitacis(M31b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M31b.d)
+coef(m.M31b.d)
 
 #Ascending
-m.M31.120418.u<-fitacis(M31.120418.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M31.120418.u)
-coef(m.M31.120418.u)
+m.M31b.u<-fitacis(M31b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M31b.u)
+coef(m.M31b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.M31.120418.d$`15`$df[,2]~m.M31.120418.d$`15`$df[,3])
-summary(lm(m.M31.120418.d$`15`$df[,2]~m.M31.120418.d$`15`$df[,3]))
-plot(m.M31.120418.d$`20`$df[,2]~m.M31.120418.d$`20`$df[,3])
-summary(lm(m.M31.120418.d$`20`$df[,2]~m.M31.120418.d$`20`$df[,3]))
-plot(m.M31.120418.d$`25`$df[,2]~m.M31.120418.d$`25`$df[,3])
-summary(lm(m.M31.120418.d$`25`$df[,2]~m.M31.120418.d$`25`$df[,3]))
-plot(m.M31.120418.d$`30`$df[,2]~m.M31.120418.d$`30`$df[,3])
-summary(lm(m.M31.120418.d$`30`$df[,2]~m.M31.120418.d$`30`$df[,3]))
+plot(m.M31b.d$`15`$df[,2]~m.M31b.d$`15`$df[,3])
+summary(lm(m.M31b.d$`15`$df[,2]~m.M31b.d$`15`$df[,3]))
+plot(m.M31b.d$`20`$df[,2]~m.M31b.d$`20`$df[,3])
+summary(lm(m.M31b.d$`20`$df[,2]~m.M31b.d$`20`$df[,3]))
+plot(m.M31b.d$`25`$df[,2]~m.M31b.d$`25`$df[,3])
+summary(lm(m.M31b.d$`25`$df[,2]~m.M31b.d$`25`$df[,3]))
+plot(m.M31b.d$`30`$df[,2]~m.M31b.d$`30`$df[,3])
+summary(lm(m.M31b.d$`30`$df[,2]~m.M31b.d$`30`$df[,3]))
 
 #Ascending
-plot(m.M31.120418.u$`30`$df[,2]~m.M31.120418.u$`30`$df[,3])
-summary(lm(m.M31.120418.u$`30`$df[,2]~m.M31.120418.u$`30`$df[,3]))
-plot(m.M31.120418.u$`35`$df[,2]~m.M31.120418.u$`35`$df[,3])
-summary(lm(m.M31.120418.u$`35`$df[,2]~m.M31.120418.u$`35`$df[,3]))
-plot(m.M31.120418.u$`40`$df[,2]~m.M31.120418.u$`40`$df[,3])
-summary(lm(m.M31.120418.u$`40`$df[,2]~m.M31.120418.u$`40`$df[,3]))
+plot(m.M31b.u$`30`$df[,2]~m.M31b.u$`30`$df[,3])
+summary(lm(m.M31b.u$`30`$df[,2]~m.M31b.u$`30`$df[,3]))
+plot(m.M31b.u$`35`$df[,2]~m.M31b.u$`35`$df[,3])
+summary(lm(m.M31b.u$`35`$df[,2]~m.M31b.u$`35`$df[,3]))
+plot(m.M31b.u$`40`$df[,2]~m.M31b.u$`40`$df[,3])
+summary(lm(m.M31b.u$`40`$df[,2]~m.M31b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.M31.Rd<-rep(NA,length(M31.040919$Curve))
-for (i in 1:length(M31.040919$Curve)){
-  p.M31.Rd[i]<-norm.Topt.s.lin(0.229/Rd.25.M31,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],28.5,M31.040919$Curve[i])
+p.M31.Rd<-rep(NA,length(M31c$Curve))
+for (i in 1:length(M31c$Curve)){
+  p.M31.Rd[i]<-norm.Topt.s.lin(0.229/Rd.25.M31,ft.Topt.s.lin.M[11],ft.Topt.s.lin.M[12],ft.Topt.s.lin.M[13],ft.Topt.s.lin.M[14],28.5,M31c$Curve[i])
 }
-M31.040919$Rd<-p.M31.Rd
+M31c$Rd<-p.M31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-M31.040919.d<-M31.040919[M31.040919$Direction == "down",]
-M31.040919.u<-M31.040919[M31.040919$Direction == "up",]
+M31c.d<-M31c[M31c$Direction == "down",]
+M31c.u<-M31c[M31c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.M31.040919.d<-fitacis(M31.040919.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M31.040919.d)
-coef(m.M31.040919.d)
+m.M31c.d<-fitacis(M31c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M31c.d)
+coef(m.M31c.d)
 
 #Ascending
-m.M31.040919.u<-fitacis(M31.040919.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.M31.040919.u)
-coef(m.M31.040919.u)
+m.M31c.u<-fitacis(M31c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.M31c.u)
+coef(m.M31c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.M31.040919.d$`10`$df[,2]~m.M31.040919.d$`10`$df[,3])
-summary(lm(m.M31.040919.d$`10`$df[,2]~m.M31.040919.d$`10`$df[,3]))
-plot(m.M31.040919.d$`15`$df[,2]~m.M31.040919.d$`15`$df[,3])
-summary(lm(m.M31.040919.d$`15`$df[,2]~m.M31.040919.d$`15`$df[,3]))
-plot(m.M31.040919.d$`20`$df[,2]~m.M31.040919.d$`20`$df[,3])
-summary(lm(m.M31.040919.d$`20`$df[,2]~m.M31.040919.d$`20`$df[,3]))
-plot(m.M31.040919.d$`25`$df[,2]~m.M31.040919.d$`25`$df[,3])
-summary(lm(m.M31.040919.d$`25`$df[,2]~m.M31.040919.d$`25`$df[,3]))
-plot(m.M31.040919.d$`30`$df[,2]~m.M31.040919.d$`30`$df[,3])
-summary(lm(m.M31.040919.d$`30`$df[,2]~m.M31.040919.d$`30`$df[,3]))
+plot(m.M31c.d$`10`$df[,2]~m.M31c.d$`10`$df[,3])
+summary(lm(m.M31c.d$`10`$df[,2]~m.M31c.d$`10`$df[,3]))
+plot(m.M31c.d$`15`$df[,2]~m.M31c.d$`15`$df[,3])
+summary(lm(m.M31c.d$`15`$df[,2]~m.M31c.d$`15`$df[,3]))
+plot(m.M31c.d$`20`$df[,2]~m.M31c.d$`20`$df[,3])
+summary(lm(m.M31c.d$`20`$df[,2]~m.M31c.d$`20`$df[,3]))
+plot(m.M31c.d$`25`$df[,2]~m.M31c.d$`25`$df[,3])
+summary(lm(m.M31c.d$`25`$df[,2]~m.M31c.d$`25`$df[,3]))
+plot(m.M31c.d$`30`$df[,2]~m.M31c.d$`30`$df[,3])
+summary(lm(m.M31c.d$`30`$df[,2]~m.M31c.d$`30`$df[,3]))
 
 #Ascending
-plot(m.M31.040919.u$`30`$df[,2]~m.M31.040919.u$`30`$df[,3])
-summary(lm(m.M31.040919.u$`30`$df[,2]~m.M31.040919.u$`30`$df[,3]))
-plot(m.M31.040919.u$`35`$df[,2]~m.M31.040919.u$`35`$df[,3])
-summary(lm(m.M31.040919.u$`35`$df[,2]~m.M31.040919.u$`35`$df[,3]))
-plot(m.M31.040919.u$`40`$df[,2]~m.M31.040919.u$`40`$df[,3])
-summary(lm(m.M31.040919.u$`40`$df[,2]~m.M31.040919.u$`40`$df[,3]))
+plot(m.M31c.u$`30`$df[,2]~m.M31c.u$`30`$df[,3])
+summary(lm(m.M31c.u$`30`$df[,2]~m.M31c.u$`30`$df[,3]))
+plot(m.M31c.u$`35`$df[,2]~m.M31c.u$`35`$df[,3])
+summary(lm(m.M31c.u$`35`$df[,2]~m.M31c.u$`35`$df[,3]))
+plot(m.M31c.u$`40`$df[,2]~m.M31c.u$`40`$df[,3])
+summary(lm(m.M31c.u$`40`$df[,2]~m.M31c.u$`40`$df[,3]))
 
 ####
 #Alnus
@@ -558,159 +558,159 @@ summary(lm(m.M31.040919.u$`40`$df[,2]~m.M31.040919.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.A21.Rd<-rep(NA,length(A21.071218$Curve))
-for (i in 1:length(A21.071218$Curve)){
-  p.A21.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A21,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],18.5,A21.071218$Curve[i])
+p.A21.Rd<-rep(NA,length(A21a$Curve))
+for (i in 1:length(A21a$Curve)){
+  p.A21.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A21,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],18.5,A21a$Curve[i])
 }
-A21.071218$Rd<-p.A21.Rd
+A21a$Rd<-p.A21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-A21.071218.d<-A21.071218[A21.071218$Direction == "down",]
-A21.071218.u<-A21.071218[A21.071218$Direction == "up",]
+A21a.d<-A21a[A21a$Direction == "down",]
+A21a.u<-A21a[A21a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.A21.071218.d<-fitacis(A21.071218.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A21.071218.d)
-coef(m.A21.071218.d)
+m.A21a.d<-fitacis(A21a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A21a.d)
+coef(m.A21a.d)
 
 #Ascending
-m.A21.071218.u<-fitacis(A21.071218.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A21.071218.u)
-coef(m.A21.071218.u)
+m.A21a.u<-fitacis(A21a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A21a.u)
+coef(m.A21a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.A21.071218.d$`10`$df[,2]~m.A21.071218.d$`10`$df[,3])
-summary(lm(m.A21.071218.d$`10`$df[,2]~m.A21.071218.d$`10`$df[,3]))
-plot(m.A21.071218.d$`15`$df[,2]~m.A21.071218.d$`15`$df[,3])
-summary(lm(m.A21.071218.d$`15`$df[,2]~m.A21.071218.d$`15`$df[,3]))
-plot(m.A21.071218.d$`20`$df[,2]~m.A21.071218.d$`20`$df[,3])
-summary(lm(m.A21.071218.d$`20`$df[,2]~m.A21.071218.d$`20`$df[,3]))
+plot(m.A21a.d$`10`$df[,2]~m.A21a.d$`10`$df[,3])
+summary(lm(m.A21a.d$`10`$df[,2]~m.A21a.d$`10`$df[,3]))
+plot(m.A21a.d$`15`$df[,2]~m.A21a.d$`15`$df[,3])
+summary(lm(m.A21a.d$`15`$df[,2]~m.A21a.d$`15`$df[,3]))
+plot(m.A21a.d$`20`$df[,2]~m.A21a.d$`20`$df[,3])
+summary(lm(m.A21a.d$`20`$df[,2]~m.A21a.d$`20`$df[,3]))
 
 #Ascending
-plot(m.A21.071218.u$`20`$df[,2]~m.A21.071218.u$`20`$df[,3])
-summary(lm(m.A21.071218.u$`20`$df[,2]~m.A21.071218.u$`20`$df[,3]))
-plot(m.A21.071218.u$`25`$df[,2]~m.A21.071218.u$`25`$df[,3])
-summary(lm(m.A21.071218.u$`25`$df[,2]~m.A21.071218.u$`25`$df[,3]))
-plot(m.A21.071218.u$`30`$df[,2]~m.A21.071218.u$`30`$df[,3])
-summary(lm(m.A21.071218.u$`30`$df[,2]~m.A21.071218.u$`30`$df[,3]))
-plot(m.A21.071218.u$`35`$df[,2]~m.A21.071218.u$`35`$df[,3])
-summary(lm(m.A21.071218.u$`35`$df[,2]~m.A21.071218.u$`35`$df[,3]))
-plot(m.A21.071218.u$`40`$df[,2]~m.A21.071218.u$`40`$df[,3])
-summary(lm(m.A21.071218.u$`40`$df[,2]~m.A21.071218.u$`40`$df[,3]))
+plot(m.A21a.u$`20`$df[,2]~m.A21a.u$`20`$df[,3])
+summary(lm(m.A21a.u$`20`$df[,2]~m.A21a.u$`20`$df[,3]))
+plot(m.A21a.u$`25`$df[,2]~m.A21a.u$`25`$df[,3])
+summary(lm(m.A21a.u$`25`$df[,2]~m.A21a.u$`25`$df[,3]))
+plot(m.A21a.u$`30`$df[,2]~m.A21a.u$`30`$df[,3])
+summary(lm(m.A21a.u$`30`$df[,2]~m.A21a.u$`30`$df[,3]))
+plot(m.A21a.u$`35`$df[,2]~m.A21a.u$`35`$df[,3])
+summary(lm(m.A21a.u$`35`$df[,2]~m.A21a.u$`35`$df[,3]))
+plot(m.A21a.u$`40`$df[,2]~m.A21a.u$`40`$df[,3])
+summary(lm(m.A21a.u$`40`$df[,2]~m.A21a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.A21.Rd<-rep(NA,length(A21.071818$Curve))
-for (i in 1:length(A21.071818$Curve)){
-  p.A21.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A21,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],18.5,A21.071818$Curve[i])
+p.A21.Rd<-rep(NA,length(A21b$Curve))
+for (i in 1:length(A21b$Curve)){
+  p.A21.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A21,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],18.5,A21b$Curve[i])
 }
-A21.071818$Rd<-p.A21.Rd
+A21b$Rd<-p.A21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-A21.071818.d<-A21.071818[A21.071818$Direction == "down",]
-A21.071818.u<-A21.071818[A21.071818$Direction == "up",]
+A21b.d<-A21b[A21b$Direction == "down",]
+A21b.u<-A21b[A21b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.A21.071818.d<-fitacis(A21.071818.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A21.071818.d)
-coef(m.A21.071818.d)
+m.A21b.d<-fitacis(A21b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A21b.d)
+coef(m.A21b.d)
 
 #Ascending
-m.A21.071818.u<-fitacis(A21.071818.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A21.071818.u)
-coef(m.A21.071818.u)
+m.A21b.u<-fitacis(A21b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A21b.u)
+coef(m.A21b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.A21.071818.d$`10`$df[,2]~m.A21.071818.d$`10`$df[,3])
-summary(lm(m.A21.071818.d$`10`$df[,2]~m.A21.071818.d$`10`$df[,3]))
-plot(m.A21.071818.d$`15`$df[,2]~m.A21.071818.d$`15`$df[,3])
-summary(lm(m.A21.071818.d$`15`$df[,2]~m.A21.071818.d$`15`$df[,3]))
-plot(m.A21.071818.d$`20`$df[,2]~m.A21.071818.d$`20`$df[,3])
-summary(lm(m.A21.071818.d$`20`$df[,2]~m.A21.071818.d$`20`$df[,3]))
+plot(m.A21b.d$`10`$df[,2]~m.A21b.d$`10`$df[,3])
+summary(lm(m.A21b.d$`10`$df[,2]~m.A21b.d$`10`$df[,3]))
+plot(m.A21b.d$`15`$df[,2]~m.A21b.d$`15`$df[,3])
+summary(lm(m.A21b.d$`15`$df[,2]~m.A21b.d$`15`$df[,3]))
+plot(m.A21b.d$`20`$df[,2]~m.A21b.d$`20`$df[,3])
+summary(lm(m.A21b.d$`20`$df[,2]~m.A21b.d$`20`$df[,3]))
 
 #Ascending
-plot(m.A21.071818.u$`20`$df[,2]~m.A21.071818.u$`20`$df[,3])
-summary(lm(m.A21.071818.u$`20`$df[,2]~m.A21.071818.u$`20`$df[,3]))
-plot(m.A21.071818.u$`25`$df[,2]~m.A21.071818.u$`25`$df[,3])
-summary(lm(m.A21.071818.u$`25`$df[,2]~m.A21.071818.u$`25`$df[,3]))
-plot(m.A21.071818.u$`30`$df[,2]~m.A21.071818.u$`30`$df[,3])
-summary(lm(m.A21.071818.u$`30`$df[,2]~m.A21.071818.u$`30`$df[,3]))
-plot(m.A21.071818.u$`35`$df[,2]~m.A21.071818.u$`35`$df[,3])
-summary(lm(m.A21.071818.u$`35`$df[,2]~m.A21.071818.u$`35`$df[,3]))
-plot(m.A21.071818.u$`40`$df[,2]~m.A21.071818.u$`40`$df[,3])
-summary(lm(m.A21.071818.u$`40`$df[,2]~m.A21.071818.u$`40`$df[,3]))
+plot(m.A21b.u$`20`$df[,2]~m.A21b.u$`20`$df[,3])
+summary(lm(m.A21b.u$`20`$df[,2]~m.A21b.u$`20`$df[,3]))
+plot(m.A21b.u$`25`$df[,2]~m.A21b.u$`25`$df[,3])
+summary(lm(m.A21b.u$`25`$df[,2]~m.A21b.u$`25`$df[,3]))
+plot(m.A21b.u$`30`$df[,2]~m.A21b.u$`30`$df[,3])
+summary(lm(m.A21b.u$`30`$df[,2]~m.A21b.u$`30`$df[,3]))
+plot(m.A21b.u$`35`$df[,2]~m.A21b.u$`35`$df[,3])
+summary(lm(m.A21b.u$`35`$df[,2]~m.A21b.u$`35`$df[,3]))
+plot(m.A21b.u$`40`$df[,2]~m.A21b.u$`40`$df[,3])
+summary(lm(m.A21b.u$`40`$df[,2]~m.A21b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.A21.Rd<-rep(NA,length(A21.101718$Curve))
-for (i in 1:length(A21.101718$Curve)){
-  p.A21.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A21,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],18.5,A21.101718$Curve[i])
+p.A21.Rd<-rep(NA,length(A21c$Curve))
+for (i in 1:length(A21c$Curve)){
+  p.A21.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A21,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],18.5,A21c$Curve[i])
 }
-A21.101718$Rd<-p.A21.Rd
+A21c$Rd<-p.A21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-A21.101718.d<-A21.101718[A21.101718$Direction == "down",]
-A21.101718.u<-A21.101718[A21.101718$Direction == "up",]
+A21c.d<-A21c[A21c$Direction == "down",]
+A21c.u<-A21c[A21c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.A21.101718.d<-fitacis(A21.101718.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A21.101718.d)
-coef(m.A21.101718.d)
+m.A21c.d<-fitacis(A21c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A21c.d)
+coef(m.A21c.d)
 
 #Ascending
-m.A21.101718.u<-fitacis(A21.101718.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A21.101718.u)
-coef(m.A21.101718.u)
+m.A21c.u<-fitacis(A21c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A21c.u)
+coef(m.A21c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.A21.101718.d$`10`$df[,2]~m.A21.101718.d$`10`$df[,3])
-summary(lm(m.A21.101718.d$`10`$df[,2]~m.A21.101718.d$`10`$df[,3]))
-plot(m.A21.101718.d$`15`$df[,2]~m.A21.101718.d$`15`$df[,3])
-summary(lm(m.A21.101718.d$`15`$df[,2]~m.A21.101718.d$`15`$df[,3]))
-plot(m.A21.101718.d$`20`$df[,2]~m.A21.101718.d$`20`$df[,3])
-summary(lm(m.A21.101718.d$`20`$df[,2]~m.A21.101718.d$`20`$df[,3]))
+plot(m.A21c.d$`10`$df[,2]~m.A21c.d$`10`$df[,3])
+summary(lm(m.A21c.d$`10`$df[,2]~m.A21c.d$`10`$df[,3]))
+plot(m.A21c.d$`15`$df[,2]~m.A21c.d$`15`$df[,3])
+summary(lm(m.A21c.d$`15`$df[,2]~m.A21c.d$`15`$df[,3]))
+plot(m.A21c.d$`20`$df[,2]~m.A21c.d$`20`$df[,3])
+summary(lm(m.A21c.d$`20`$df[,2]~m.A21c.d$`20`$df[,3]))
 
 #Ascending
-plot(m.A21.101718.u$`20`$df[,2]~m.A21.101718.u$`20`$df[,3])
-summary(lm(m.A21.101718.u$`20`$df[,2]~m.A21.101718.u$`20`$df[,3]))
-plot(m.A21.101718.u$`25`$df[,2]~m.A21.101718.u$`25`$df[,3])
-summary(lm(m.A21.101718.u$`25`$df[,2]~m.A21.101718.u$`25`$df[,3]))
-plot(m.A21.101718.u$`30`$df[,2]~m.A21.101718.u$`30`$df[,3])
-summary(lm(m.A21.101718.u$`30`$df[,2]~m.A21.101718.u$`30`$df[,3]))
-plot(m.A21.101718.u$`35`$df[,2]~m.A21.101718.u$`35`$df[,3])
-summary(lm(m.A21.101718.u$`35`$df[,2]~m.A21.101718.u$`35`$df[,3]))
-plot(m.A21.101718.u$`40`$df[,2]~m.A21.101718.u$`40`$df[,3])
-summary(lm(m.A21.101718.u$`40`$df[,2]~m.A21.101718.u$`40`$df[,3]))
+plot(m.A21c.u$`20`$df[,2]~m.A21c.u$`20`$df[,3])
+summary(lm(m.A21c.u$`20`$df[,2]~m.A21c.u$`20`$df[,3]))
+plot(m.A21c.u$`25`$df[,2]~m.A21c.u$`25`$df[,3])
+summary(lm(m.A21c.u$`25`$df[,2]~m.A21c.u$`25`$df[,3]))
+plot(m.A21c.u$`30`$df[,2]~m.A21c.u$`30`$df[,3])
+summary(lm(m.A21c.u$`30`$df[,2]~m.A21c.u$`30`$df[,3]))
+plot(m.A21c.u$`35`$df[,2]~m.A21c.u$`35`$df[,3])
+summary(lm(m.A21c.u$`35`$df[,2]~m.A21c.u$`35`$df[,3]))
+plot(m.A21c.u$`40`$df[,2]~m.A21c.u$`40`$df[,3])
+summary(lm(m.A21c.u$`40`$df[,2]~m.A21c.u$`40`$df[,3]))
 
 ###
 #26:20 deg. C growing temperature
@@ -721,159 +721,159 @@ summary(lm(m.A21.101718.u$`40`$df[,2]~m.A21.101718.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.A26.Rd<-rep(NA,length(A26.112419$Curve))
-for (i in 1:length(A26.112419$Curve)){
-  p.A26.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A26,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],23.5,A26.112419$Curve[i])
+p.A26.Rd<-rep(NA,length(A26a$Curve))
+for (i in 1:length(A26a$Curve)){
+  p.A26.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A26,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],23.5,A26a$Curve[i])
 }
-A26.112419$Rd<-p.A26.Rd
+A26a$Rd<-p.A26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-A26.112419.d<-A26.112419[A26.112419$Direction == "down",]
-A26.112419.u<-A26.112419[A26.112419$Direction == "up",]
+A26a.d<-A26a[A26a$Direction == "down",]
+A26a.u<-A26a[A26a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.A26.112419.d<-fitacis(A26.112419.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A26.112419.d)
-coef(m.A26.112419.d)
+m.A26a.d<-fitacis(A26a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A26a.d)
+coef(m.A26a.d)
 
 #Ascending
-m.A26.112419.u<-fitacis(A26.112419.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A26.112419.u)
-coef(m.A26.112419.u)
+m.A26a.u<-fitacis(A26a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A26a.u)
+coef(m.A26a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.A26.112419.d$`10`$df[,2]~m.A26.112419.d$`10`$df[,3])
-summary(lm(m.A26.112419.d$`10`$df[,2]~m.A26.112419.d$`10`$df[,3]))
-plot(m.A26.112419.d$`15`$df[,2]~m.A26.112419.d$`15`$df[,3])
-summary(lm(m.A26.112419.d$`15`$df[,2]~m.A26.112419.d$`15`$df[,3]))
-plot(m.A26.112419.d$`20`$df[,2]~m.A26.112419.d$`20`$df[,3])
-summary(lm(m.A26.112419.d$`20`$df[,2]~m.A26.112419.d$`20`$df[,3]))
-plot(m.A26.112419.d$`25`$df[,2]~m.A26.112419.d$`25`$df[,3])
-summary(lm(m.A26.112419.d$`25`$df[,2]~m.A26.112419.d$`25`$df[,3]))
+plot(m.A26a.d$`10`$df[,2]~m.A26a.d$`10`$df[,3])
+summary(lm(m.A26a.d$`10`$df[,2]~m.A26a.d$`10`$df[,3]))
+plot(m.A26a.d$`15`$df[,2]~m.A26a.d$`15`$df[,3])
+summary(lm(m.A26a.d$`15`$df[,2]~m.A26a.d$`15`$df[,3]))
+plot(m.A26a.d$`20`$df[,2]~m.A26a.d$`20`$df[,3])
+summary(lm(m.A26a.d$`20`$df[,2]~m.A26a.d$`20`$df[,3]))
+plot(m.A26a.d$`25`$df[,2]~m.A26a.d$`25`$df[,3])
+summary(lm(m.A26a.d$`25`$df[,2]~m.A26a.d$`25`$df[,3]))
 
 #Ascending
-plot(m.A26.112419.u$`25`$df[,2]~m.A26.112419.u$`25`$df[,3])
-summary(lm(m.A26.112419.u$`25`$df[,2]~m.A26.112419.u$`25`$df[,3]))
-plot(m.A26.112419.u$`30`$df[,2]~m.A26.112419.u$`30`$df[,3])
-summary(lm(m.A26.112419.u$`30`$df[,2]~m.A26.112419.u$`30`$df[,3]))
-plot(m.A26.112419.u$`35`$df[,2]~m.A26.112419.u$`35`$df[,3])
-summary(lm(m.A26.112419.u$`35`$df[,2]~m.A26.112419.u$`35`$df[,3]))
-plot(m.A26.112419.u$`40`$df[,2]~m.A26.112419.u$`40`$df[,3])
-summary(lm(m.A26.112419.u$`40`$df[,2]~m.A26.112419.u$`40`$df[,3]))
+plot(m.A26a.u$`25`$df[,2]~m.A26a.u$`25`$df[,3])
+summary(lm(m.A26a.u$`25`$df[,2]~m.A26a.u$`25`$df[,3]))
+plot(m.A26a.u$`30`$df[,2]~m.A26a.u$`30`$df[,3])
+summary(lm(m.A26a.u$`30`$df[,2]~m.A26a.u$`30`$df[,3]))
+plot(m.A26a.u$`35`$df[,2]~m.A26a.u$`35`$df[,3])
+summary(lm(m.A26a.u$`35`$df[,2]~m.A26a.u$`35`$df[,3]))
+plot(m.A26a.u$`40`$df[,2]~m.A26a.u$`40`$df[,3])
+summary(lm(m.A26a.u$`40`$df[,2]~m.A26a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.A26.Rd<-rep(NA,length(A26.020420$Curve))
-for (i in 1:length(A26.020420$Curve)){
-  p.A26.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A26,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],23.5,A26.020420$Curve[i])
+p.A26.Rd<-rep(NA,length(A26b$Curve))
+for (i in 1:length(A26b$Curve)){
+  p.A26.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A26,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],23.5,A26b$Curve[i])
 }
-A26.020420$Rd<-p.A26.Rd
+A26b$Rd<-p.A26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-A26.020420.d<-A26.020420[A26.020420$Direction == "down",]
-A26.020420.u<-A26.020420[A26.020420$Direction == "up",]
+A26b.d<-A26b[A26b$Direction == "down",]
+A26b.u<-A26b[A26b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.A26.020420.d<-fitacis(A26.020420.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A26.020420.d)
-coef(m.A26.020420.d) 
+m.A26b.d<-fitacis(A26b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A26b.d)
+coef(m.A26b.d) 
 
 #Ascending
-m.A26.020420.u<-fitacis(A26.020420.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A26.020420.u)
-coef(m.A26.020420.u)
+m.A26b.u<-fitacis(A26b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A26b.u)
+coef(m.A26b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.A26.020420.d$`10`$df[,2]~m.A26.020420.d$`10`$df[,3])
-summary(lm(m.A26.020420.d$`10`$df[,2]~m.A26.020420.d$`10`$df[,3]))
-plot(m.A26.020420.d$`15`$df[,2]~m.A26.020420.d$`15`$df[,3])
-summary(lm(m.A26.020420.d$`15`$df[,2]~m.A26.020420.d$`15`$df[,3]))
-plot(m.A26.020420.d$`20`$df[,2]~m.A26.020420.d$`20`$df[,3])
-summary(lm(m.A26.020420.d$`20`$df[,2]~m.A26.020420.d$`20`$df[,3]))
-plot(m.A26.020420.d$`25`$df[,2]~m.A26.020420.d$`25`$df[,3])
-summary(lm(m.A26.020420.d$`25`$df[,2]~m.A26.020420.d$`25`$df[,3]))
+plot(m.A26b.d$`10`$df[,2]~m.A26b.d$`10`$df[,3])
+summary(lm(m.A26b.d$`10`$df[,2]~m.A26b.d$`10`$df[,3]))
+plot(m.A26b.d$`15`$df[,2]~m.A26b.d$`15`$df[,3])
+summary(lm(m.A26b.d$`15`$df[,2]~m.A26b.d$`15`$df[,3]))
+plot(m.A26b.d$`20`$df[,2]~m.A26b.d$`20`$df[,3])
+summary(lm(m.A26b.d$`20`$df[,2]~m.A26b.d$`20`$df[,3]))
+plot(m.A26b.d$`25`$df[,2]~m.A26b.d$`25`$df[,3])
+summary(lm(m.A26b.d$`25`$df[,2]~m.A26b.d$`25`$df[,3]))
 
 #Ascending
-plot(m.A26.020420.u$`25`$df[,2]~m.A26.020420.u$`25`$df[,3])
-summary(lm(m.A26.020420.u$`25`$df[,2]~m.A26.020420.u$`25`$df[,3]))
-plot(m.A26.020420.u$`30`$df[,2]~m.A26.020420.u$`30`$df[,3])
-summary(lm(m.A26.020420.u$`30`$df[,2]~m.A26.020420.u$`30`$df[,3]))
-plot(m.A26.020420.u$`35`$df[,2]~m.A26.020420.u$`35`$df[,3])
-summary(lm(m.A26.020420.u$`35`$df[,2]~m.A26.020420.u$`35`$df[,3]))
-plot(m.A26.020420.u$`40`$df[,2]~m.A26.020420.u$`40`$df[,3])
-summary(lm(m.A26.020420.u$`40`$df[,2]~m.A26.020420.u$`40`$df[,3]))
+plot(m.A26b.u$`25`$df[,2]~m.A26b.u$`25`$df[,3])
+summary(lm(m.A26b.u$`25`$df[,2]~m.A26b.u$`25`$df[,3]))
+plot(m.A26b.u$`30`$df[,2]~m.A26b.u$`30`$df[,3])
+summary(lm(m.A26b.u$`30`$df[,2]~m.A26b.u$`30`$df[,3]))
+plot(m.A26b.u$`35`$df[,2]~m.A26b.u$`35`$df[,3])
+summary(lm(m.A26b.u$`35`$df[,2]~m.A26b.u$`35`$df[,3]))
+plot(m.A26b.u$`40`$df[,2]~m.A26b.u$`40`$df[,3])
+summary(lm(m.A26b.u$`40`$df[,2]~m.A26b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.A26.Rd<-rep(NA,length(A26.020820$Curve))
-for (i in 1:length(A26.020820$Curve)){
-  p.A26.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A26,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],23.5,A26.020820$Curve[i])
+p.A26.Rd<-rep(NA,length(A26c$Curve))
+for (i in 1:length(A26c$Curve)){
+  p.A26.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A26,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],23.5,A26c$Curve[i])
 }
-A26.020820$Rd<-p.A26.Rd
+A26c$Rd<-p.A26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-A26.020820.d<-A26.020820[A26.020820$Direction == "down",]
-A26.020820.u<-A26.020820[A26.020820$Direction == "up",]
+A26c.d<-A26c[A26c$Direction == "down",]
+A26c.u<-A26c[A26c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.A26.020820.d<-fitacis(A26.020820.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A26.020820.d)
-coef(m.A26.020820.d) 
+m.A26c.d<-fitacis(A26c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A26c.d)
+coef(m.A26c.d) 
 
 #Ascending
-m.A26.020820.u<-fitacis(A26.020820.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A26.020820.u)
-coef(m.A26.020820.u)
+m.A26c.u<-fitacis(A26c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A26c.u)
+coef(m.A26c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.A26.020820.d$`10`$df[,2]~m.A26.020820.d$`10`$df[,3])
-summary(lm(m.A26.020820.d$`10`$df[,2]~m.A26.020820.d$`10`$df[,3]))
-plot(m.A26.020820.d$`15`$df[,2]~m.A26.020820.d$`15`$df[,3])
-summary(lm(m.A26.020820.d$`15`$df[,2]~m.A26.020820.d$`15`$df[,3]))
-plot(m.A26.020820.d$`20`$df[,2]~m.A26.020820.d$`20`$df[,3])
-summary(lm(m.A26.020820.d$`20`$df[,2]~m.A26.020820.d$`20`$df[,3]))
-plot(m.A26.020820.d$`25`$df[,2]~m.A26.020820.d$`25`$df[,3])
-summary(lm(m.A26.020820.d$`25`$df[,2]~m.A26.020820.d$`25`$df[,3]))
+plot(m.A26c.d$`10`$df[,2]~m.A26c.d$`10`$df[,3])
+summary(lm(m.A26c.d$`10`$df[,2]~m.A26c.d$`10`$df[,3]))
+plot(m.A26c.d$`15`$df[,2]~m.A26c.d$`15`$df[,3])
+summary(lm(m.A26c.d$`15`$df[,2]~m.A26c.d$`15`$df[,3]))
+plot(m.A26c.d$`20`$df[,2]~m.A26c.d$`20`$df[,3])
+summary(lm(m.A26c.d$`20`$df[,2]~m.A26c.d$`20`$df[,3]))
+plot(m.A26c.d$`25`$df[,2]~m.A26c.d$`25`$df[,3])
+summary(lm(m.A26c.d$`25`$df[,2]~m.A26c.d$`25`$df[,3]))
 
 #Ascending
-plot(m.A26.020820.u$`25`$df[,2]~m.A26.020820.u$`25`$df[,3])
-summary(lm(m.A26.020820.u$`25`$df[,2]~m.A26.020820.u$`25`$df[,3]))
-plot(m.A26.020820.u$`30`$df[,2]~m.A26.020820.u$`30`$df[,3])
-summary(lm(m.A26.020820.u$`30`$df[,2]~m.A26.020820.u$`30`$df[,3]))
-plot(m.A26.020820.u$`35`$df[,2]~m.A26.020820.u$`35`$df[,3])
-summary(lm(m.A26.020820.u$`35`$df[,2]~m.A26.020820.u$`35`$df[,3]))
-plot(m.A26.020820.u$`40`$df[,2]~m.A26.020820.u$`40`$df[,3])
-summary(lm(m.A26.020820.u$`40`$df[,2]~m.A26.020820.u$`40`$df[,3]))
+plot(m.A26c.u$`25`$df[,2]~m.A26c.u$`25`$df[,3])
+summary(lm(m.A26c.u$`25`$df[,2]~m.A26c.u$`25`$df[,3]))
+plot(m.A26c.u$`30`$df[,2]~m.A26c.u$`30`$df[,3])
+summary(lm(m.A26c.u$`30`$df[,2]~m.A26c.u$`30`$df[,3]))
+plot(m.A26c.u$`35`$df[,2]~m.A26c.u$`35`$df[,3])
+summary(lm(m.A26c.u$`35`$df[,2]~m.A26c.u$`35`$df[,3]))
+plot(m.A26c.u$`40`$df[,2]~m.A26c.u$`40`$df[,3])
+summary(lm(m.A26c.u$`40`$df[,2]~m.A26c.u$`40`$df[,3]))
 
 ###
 #31:25 deg. C growing temperature
@@ -884,159 +884,159 @@ summary(lm(m.A26.020820.u$`40`$df[,2]~m.A26.020820.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.A31.Rd<-rep(NA,length(A31.071618$Curve))
-for (i in 1:length(A31.071618$Curve)){
-  p.A31.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A31,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],28.5,A31.071618$Curve[i])
+p.A31.Rd<-rep(NA,length(A31a$Curve))
+for (i in 1:length(A31a$Curve)){
+  p.A31.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A31,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],28.5,A31a$Curve[i])
 }
-A31.071618$Rd<-p.A31.Rd
+A31a$Rd<-p.A31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-A31.071618.d<-A31.071618[A31.071618$Direction == "down",]
-A31.071618.u<-A31.071618[A31.071618$Direction == "up",]
+A31a.d<-A31a[A31a$Direction == "down",]
+A31a.u<-A31a[A31a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.A31.071618.d<-fitacis(A31.071618.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A31.071618.d)
-coef(m.A31.071618.d)
+m.A31a.d<-fitacis(A31a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A31a.d)
+coef(m.A31a.d)
 
 #Ascending
-m.A31.071618.u<-fitacis(A31.071618.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A31.071618.u)
-coef(m.A31.071618.u) 
+m.A31a.u<-fitacis(A31a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A31a.u)
+coef(m.A31a.u) 
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.A31.071618.d$`10`$df[,2]~m.A31.071618.d$`10`$df[,3])
-summary(lm(m.A31.071618.d$`10`$df[,2]~m.A31.071618.d$`10`$df[,3]))
-plot(m.A31.071618.d$`15`$df[,2]~m.A31.071618.d$`15`$df[,3])
-summary(lm(m.A31.071618.d$`15`$df[,2]~m.A31.071618.d$`15`$df[,3]))
-plot(m.A31.071618.d$`20`$df[,2]~m.A31.071618.d$`20`$df[,3])
-summary(lm(m.A31.071618.d$`20`$df[,2]~m.A31.071618.d$`20`$df[,3]))
-plot(m.A31.071618.d$`25`$df[,2]~m.A31.071618.d$`25`$df[,3])
-summary(lm(m.A31.071618.d$`25`$df[,2]~m.A31.071618.d$`25`$df[,3]))
-plot(m.A31.071618.d$`30`$df[,2]~m.A31.071618.d$`30`$df[,3])
-summary(lm(m.A31.071618.d$`30`$df[,2]~m.A31.071618.d$`30`$df[,3]))
+plot(m.A31a.d$`10`$df[,2]~m.A31a.d$`10`$df[,3])
+summary(lm(m.A31a.d$`10`$df[,2]~m.A31a.d$`10`$df[,3]))
+plot(m.A31a.d$`15`$df[,2]~m.A31a.d$`15`$df[,3])
+summary(lm(m.A31a.d$`15`$df[,2]~m.A31a.d$`15`$df[,3]))
+plot(m.A31a.d$`20`$df[,2]~m.A31a.d$`20`$df[,3])
+summary(lm(m.A31a.d$`20`$df[,2]~m.A31a.d$`20`$df[,3]))
+plot(m.A31a.d$`25`$df[,2]~m.A31a.d$`25`$df[,3])
+summary(lm(m.A31a.d$`25`$df[,2]~m.A31a.d$`25`$df[,3]))
+plot(m.A31a.d$`30`$df[,2]~m.A31a.d$`30`$df[,3])
+summary(lm(m.A31a.d$`30`$df[,2]~m.A31a.d$`30`$df[,3]))
 
 #Ascending
-plot(m.A31.071618.u$`30`$df[,2]~m.A31.071618.u$`30`$df[,3])
-summary(lm(m.A31.071618.u$`30`$df[,2]~m.A31.071618.u$`30`$df[,3]))
-plot(m.A31.071618.u$`35`$df[,2]~m.A31.071618.u$`35`$df[,3])
-summary(lm(m.A31.071618.u$`35`$df[,2]~m.A31.071618.u$`35`$df[,3]))
-plot(m.A31.071618.u$`40`$df[,2]~m.A31.071618.u$`40`$df[,3])
-summary(lm(m.A31.071618.u$`40`$df[,2]~m.A31.071618.u$`40`$df[,3]))
+plot(m.A31a.u$`30`$df[,2]~m.A31a.u$`30`$df[,3])
+summary(lm(m.A31a.u$`30`$df[,2]~m.A31a.u$`30`$df[,3]))
+plot(m.A31a.u$`35`$df[,2]~m.A31a.u$`35`$df[,3])
+summary(lm(m.A31a.u$`35`$df[,2]~m.A31a.u$`35`$df[,3]))
+plot(m.A31a.u$`40`$df[,2]~m.A31a.u$`40`$df[,3])
+summary(lm(m.A31a.u$`40`$df[,2]~m.A31a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.A31.Rd<-rep(NA,length(A31.092918$Curve))
-for (i in 1:length(A31.092918$Curve)){
-  p.A31.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A31,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],28.5,A31.092918$Curve[i])
+p.A31.Rd<-rep(NA,length(A31b$Curve))
+for (i in 1:length(A31b$Curve)){
+  p.A31.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A31,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],28.5,A31b$Curve[i])
 }
-A31.092918$Rd<-p.A31.Rd
+A31b$Rd<-p.A31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-A31.092918.d<-A31.092918[A31.092918$Direction == "down",]
-A31.092918.u<-A31.092918[A31.092918$Direction == "up",]
+A31b.d<-A31b[A31b$Direction == "down",]
+A31b.u<-A31b[A31b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.A31.092918.d<-fitacis(A31.092918.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A31.092918.d)
-coef(m.A31.092918.d)
+m.A31b.d<-fitacis(A31b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A31b.d)
+coef(m.A31b.d)
 
 #Ascending
-m.A31.092918.u<-fitacis(A31.092918.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A31.092918.u)
-coef(m.A31.092918.u)
+m.A31b.u<-fitacis(A31b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A31b.u)
+coef(m.A31b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.A31.092918.d$`10`$df[,2]~m.A31.092918.d$`10`$df[,3])
-summary(lm(m.A31.092918.d$`10`$df[,2]~m.A31.092918.d$`10`$df[,3]))
-plot(m.A31.092918.d$`15`$df[,2]~m.A31.092918.d$`15`$df[,3])
-summary(lm(m.A31.092918.d$`15`$df[,2]~m.A31.092918.d$`15`$df[,3]))
-plot(m.A31.092918.d$`20`$df[,2]~m.A31.092918.d$`20`$df[,3])
-summary(lm(m.A31.092918.d$`20`$df[,2]~m.A31.092918.d$`20`$df[,3]))
-plot(m.A31.092918.d$`25`$df[,2]~m.A31.092918.d$`25`$df[,3])
-summary(lm(m.A31.092918.d$`25`$df[,2]~m.A31.092918.d$`25`$df[,3]))
-plot(m.A31.092918.d$`30`$df[,2]~m.A31.092918.d$`30`$df[,3])
-summary(lm(m.A31.092918.d$`30`$df[,2]~m.A31.092918.d$`30`$df[,3]))
+plot(m.A31b.d$`10`$df[,2]~m.A31b.d$`10`$df[,3])
+summary(lm(m.A31b.d$`10`$df[,2]~m.A31b.d$`10`$df[,3]))
+plot(m.A31b.d$`15`$df[,2]~m.A31b.d$`15`$df[,3])
+summary(lm(m.A31b.d$`15`$df[,2]~m.A31b.d$`15`$df[,3]))
+plot(m.A31b.d$`20`$df[,2]~m.A31b.d$`20`$df[,3])
+summary(lm(m.A31b.d$`20`$df[,2]~m.A31b.d$`20`$df[,3]))
+plot(m.A31b.d$`25`$df[,2]~m.A31b.d$`25`$df[,3])
+summary(lm(m.A31b.d$`25`$df[,2]~m.A31b.d$`25`$df[,3]))
+plot(m.A31b.d$`30`$df[,2]~m.A31b.d$`30`$df[,3])
+summary(lm(m.A31b.d$`30`$df[,2]~m.A31b.d$`30`$df[,3]))
 
 #Ascending
-plot(m.A31.092918.u$`30`$df[,2]~m.A31.092918.u$`30`$df[,3])
-summary(lm(m.A31.092918.u$`30`$df[,2]~m.A31.092918.u$`30`$df[,3]))
-plot(m.A31.092918.u$`35`$df[,2]~m.A31.092918.u$`35`$df[,3])
-summary(lm(m.A31.092918.u$`35`$df[,2]~m.A31.092918.u$`35`$df[,3]))
-plot(m.A31.092918.u$`40`$df[,2]~m.A31.092918.u$`40`$df[,3])
-summary(lm(m.A31.092918.u$`40`$df[,2]~m.A31.092918.u$`40`$df[,3]))
+plot(m.A31b.u$`30`$df[,2]~m.A31b.u$`30`$df[,3])
+summary(lm(m.A31b.u$`30`$df[,2]~m.A31b.u$`30`$df[,3]))
+plot(m.A31b.u$`35`$df[,2]~m.A31b.u$`35`$df[,3])
+summary(lm(m.A31b.u$`35`$df[,2]~m.A31b.u$`35`$df[,3]))
+plot(m.A31b.u$`40`$df[,2]~m.A31b.u$`40`$df[,3])
+summary(lm(m.A31b.u$`40`$df[,2]~m.A31b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.A31.Rd<-rep(NA,length(A31.112518$Curve))
-for (i in 1:length(A31.112518$Curve)){
-  p.A31.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A31,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],28.5,A31.112518$Curve[i])
+p.A31.Rd<-rep(NA,length(A31c$Curve))
+for (i in 1:length(A31c$Curve)){
+  p.A31.Rd[i]<-norm.Topt.s.lin(0.938/Rd.25.A31,ft.Topt.s.lin.A[11],ft.Topt.s.lin.A[12],ft.Topt.s.lin.A[13],ft.Topt.s.lin.A[14],28.5,A31c$Curve[i])
 }
-A31.112518$Rd<-p.A31.Rd
+A31c$Rd<-p.A31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-A31.112518.d<-A31.112518[A31.112518$Direction == "down",]
-A31.112518.u<-A31.112518[A31.112518$Direction == "up",]
+A31c.d<-A31c[A31c$Direction == "down",]
+A31c.u<-A31c[A31c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.A31.112518.d<-fitacis(A31.112518.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A31.112518.d)
-coef(m.A31.112518.d)
+m.A31c.d<-fitacis(A31c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A31c.d)
+coef(m.A31c.d)
 
 #Ascending
-m.A31.112518.u<-fitacis(A31.112518.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.A31.112518.u)
-coef(m.A31.112518.u)
+m.A31c.u<-fitacis(A31c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.A31c.u)
+coef(m.A31c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.A31.112518.d$`10`$df[,2]~m.A31.112518.d$`10`$df[,3])
-summary(lm(m.A31.112518.d$`10`$df[,2]~m.A31.112518.d$`10`$df[,3]))
-plot(m.A31.112518.d$`15`$df[,2]~m.A31.112518.d$`15`$df[,3])
-summary(lm(m.A31.112518.d$`15`$df[,2]~m.A31.112518.d$`15`$df[,3]))
-plot(m.A31.112518.d$`20`$df[,2]~m.A31.112518.d$`20`$df[,3])
-summary(lm(m.A31.112518.d$`20`$df[,2]~m.A31.112518.d$`20`$df[,3]))
-plot(m.A31.112518.d$`25`$df[,2]~m.A31.112518.d$`25`$df[,3])
-summary(lm(m.A31.112518.d$`25`$df[,2]~m.A31.112518.d$`25`$df[,3]))
-plot(m.A31.112518.d$`30`$df[,2]~m.A31.112518.d$`30`$df[,3])
-summary(lm(m.A31.112518.d$`30`$df[,2]~m.A31.112518.d$`30`$df[,3]))
+plot(m.A31c.d$`10`$df[,2]~m.A31c.d$`10`$df[,3])
+summary(lm(m.A31c.d$`10`$df[,2]~m.A31c.d$`10`$df[,3]))
+plot(m.A31c.d$`15`$df[,2]~m.A31c.d$`15`$df[,3])
+summary(lm(m.A31c.d$`15`$df[,2]~m.A31c.d$`15`$df[,3]))
+plot(m.A31c.d$`20`$df[,2]~m.A31c.d$`20`$df[,3])
+summary(lm(m.A31c.d$`20`$df[,2]~m.A31c.d$`20`$df[,3]))
+plot(m.A31c.d$`25`$df[,2]~m.A31c.d$`25`$df[,3])
+summary(lm(m.A31c.d$`25`$df[,2]~m.A31c.d$`25`$df[,3]))
+plot(m.A31c.d$`30`$df[,2]~m.A31c.d$`30`$df[,3])
+summary(lm(m.A31c.d$`30`$df[,2]~m.A31c.d$`30`$df[,3]))
 
 #Ascending
-plot(m.A31.112518.u$`30`$df[,2]~m.A31.112518.u$`30`$df[,3])
-summary(lm(m.A31.112518.u$`30`$df[,2]~m.A31.112518.u$`30`$df[,3]))
-plot(m.A31.112518.u$`35`$df[,2]~m.A31.112518.u$`35`$df[,3])
-summary(lm(m.A31.112518.u$`35`$df[,2]~m.A31.112518.u$`35`$df[,3]))
-plot(m.A31.112518.u$`40`$df[,2]~m.A31.112518.u$`40`$df[,3])
-summary(lm(m.A31.112518.u$`40`$df[,2]~m.A31.112518.u$`40`$df[,3]))
+plot(m.A31c.u$`30`$df[,2]~m.A31c.u$`30`$df[,3])
+summary(lm(m.A31c.u$`30`$df[,2]~m.A31c.u$`30`$df[,3]))
+plot(m.A31c.u$`35`$df[,2]~m.A31c.u$`35`$df[,3])
+summary(lm(m.A31c.u$`35`$df[,2]~m.A31c.u$`35`$df[,3]))
+plot(m.A31c.u$`40`$df[,2]~m.A31c.u$`40`$df[,3])
+summary(lm(m.A31c.u$`40`$df[,2]~m.A31c.u$`40`$df[,3]))
 
 ####
 #Gliricidia
@@ -1051,212 +1051,212 @@ summary(lm(m.A31.112518.u$`40`$df[,2]~m.A31.112518.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.G21.Rd<-rep(NA,length(G21.080318$Curve))
-for (i in 1:length(G21.080318$Curve)){
-  p.G21.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G21,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],18.5,G21.080318$Curve[i])
+p.G21.Rd<-rep(NA,length(G21a$Curve))
+for (i in 1:length(G21a$Curve)){
+  p.G21.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G21,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],18.5,G21a$Curve[i])
 }
-G21.080318$Rd<-p.G21.Rd
+G21a$Rd<-p.G21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G21.080318.d<-G21.080318[G21.080318$Direction == "down",]
-G21.080318.u<-G21.080318[G21.080318$Direction == "up",]
+G21a.d<-G21a[G21a$Direction == "down",]
+G21a.u<-G21a[G21a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.G21.080318.d<-fitacis(G21.080318.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G21.080318.d)
-coef(m.G21.080318.d)
+m.G21a.d<-fitacis(G21a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G21a.d)
+coef(m.G21a.d)
 
 #Ascending
-m.G21.080318.u<-fitacis(G21.080318.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G21.080318.u)
-coef(m.G21.080318.u)
+m.G21a.u<-fitacis(G21a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G21a.u)
+coef(m.G21a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.G21.080318.d$`10`$df[,2]~m.G21.080318.d$`10`$df[,3])
-summary(lm(m.G21.080318.d$`10`$df[,2]~m.G21.080318.d$`10`$df[,3]))
-plot(m.G21.080318.d$`15`$df[,2]~m.G21.080318.d$`15`$df[,3])
-summary(lm(m.G21.080318.d$`15`$df[,2]~m.G21.080318.d$`15`$df[,3]))
-plot(m.G21.080318.d$`20`$df[,2]~m.G21.080318.d$`20`$df[,3])
-summary(lm(m.G21.080318.d$`20`$df[,2]~m.G21.080318.d$`20`$df[,3]))
+plot(m.G21a.d$`10`$df[,2]~m.G21a.d$`10`$df[,3])
+summary(lm(m.G21a.d$`10`$df[,2]~m.G21a.d$`10`$df[,3]))
+plot(m.G21a.d$`15`$df[,2]~m.G21a.d$`15`$df[,3])
+summary(lm(m.G21a.d$`15`$df[,2]~m.G21a.d$`15`$df[,3]))
+plot(m.G21a.d$`20`$df[,2]~m.G21a.d$`20`$df[,3])
+summary(lm(m.G21a.d$`20`$df[,2]~m.G21a.d$`20`$df[,3]))
 
 #Ascending
-plot(m.G21.080318.u$`20`$df[,2]~m.G21.080318.u$`20`$df[,3])
-summary(lm(m.G21.080318.u$`20`$df[,2]~m.G21.080318.u$`20`$df[,3]))
-plot(m.G21.080318.u$`25`$df[,2]~m.G21.080318.u$`25`$df[,3])
-summary(lm(m.G21.080318.u$`25`$df[,2]~m.G21.080318.u$`25`$df[,3]))
-plot(m.G21.080318.u$`30`$df[,2]~m.G21.080318.u$`30`$df[,3])
-summary(lm(m.G21.080318.u$`30`$df[,2]~m.G21.080318.u$`30`$df[,3]))
-plot(m.G21.080318.u$`35`$df[,2]~m.G21.080318.u$`35`$df[,3])
-summary(lm(m.G21.080318.u$`35`$df[,2]~m.G21.080318.u$`35`$df[,3]))
-plot(m.G21.080318.u$`40`$df[,2]~m.G21.080318.u$`40`$df[,3])
-summary(lm(m.G21.080318.u$`40`$df[,2]~m.G21.080318.u$`40`$df[,3]))
+plot(m.G21a.u$`20`$df[,2]~m.G21a.u$`20`$df[,3])
+summary(lm(m.G21a.u$`20`$df[,2]~m.G21a.u$`20`$df[,3]))
+plot(m.G21a.u$`25`$df[,2]~m.G21a.u$`25`$df[,3])
+summary(lm(m.G21a.u$`25`$df[,2]~m.G21a.u$`25`$df[,3]))
+plot(m.G21a.u$`30`$df[,2]~m.G21a.u$`30`$df[,3])
+summary(lm(m.G21a.u$`30`$df[,2]~m.G21a.u$`30`$df[,3]))
+plot(m.G21a.u$`35`$df[,2]~m.G21a.u$`35`$df[,3])
+summary(lm(m.G21a.u$`35`$df[,2]~m.G21a.u$`35`$df[,3]))
+plot(m.G21a.u$`40`$df[,2]~m.G21a.u$`40`$df[,3])
+summary(lm(m.G21a.u$`40`$df[,2]~m.G21a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.G21.Rd<-rep(NA,length(G21.112718$Curve))
-for (i in 1:length(G21.112718$Curve)){
-  p.G21.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G21,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],18.5,G21.112718$Curve[i])
+p.G21.Rd<-rep(NA,length(G21b$Curve))
+for (i in 1:length(G21b$Curve)){
+  p.G21.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G21,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],18.5,G21b$Curve[i])
 }
-G21.112718$Rd<-p.G21.Rd
+G21b$Rd<-p.G21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G21.112718.d<-G21.112718[G21.112718$Direction == "down",]
-G21.112718.u<-G21.112718[G21.112718$Direction == "up",]
+G21b.d<-G21b[G21b$Direction == "down",]
+G21b.u<-G21b[G21b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.G21.112718.d<-fitacis(G21.112718.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G21.112718.d)
-coef(m.G21.112718.d)
+m.G21b.d<-fitacis(G21b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G21b.d)
+coef(m.G21b.d)
 
 #Ascending
-m.G21.112718.u<-fitacis(G21.112718.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G21.112718.u)
-coef(m.G21.112718.u)
+m.G21b.u<-fitacis(G21b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G21b.u)
+coef(m.G21b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.G21.112718.d$`10`$df[,2]~m.G21.112718.d$`10`$df[,3])
-summary(lm(m.G21.112718.d$`10`$df[,2]~m.G21.112718.d$`10`$df[,3]))
-plot(m.G21.112718.d$`15`$df[,2]~m.G21.112718.d$`15`$df[,3])
-summary(lm(m.G21.112718.d$`15`$df[,2]~m.G21.112718.d$`15`$df[,3]))
-plot(m.G21.112718.d$`20`$df[,2]~m.G21.112718.d$`20`$df[,3])
-summary(lm(m.G21.112718.d$`20`$df[,2]~m.G21.112718.d$`20`$df[,3]))
+plot(m.G21b.d$`10`$df[,2]~m.G21b.d$`10`$df[,3])
+summary(lm(m.G21b.d$`10`$df[,2]~m.G21b.d$`10`$df[,3]))
+plot(m.G21b.d$`15`$df[,2]~m.G21b.d$`15`$df[,3])
+summary(lm(m.G21b.d$`15`$df[,2]~m.G21b.d$`15`$df[,3]))
+plot(m.G21b.d$`20`$df[,2]~m.G21b.d$`20`$df[,3])
+summary(lm(m.G21b.d$`20`$df[,2]~m.G21b.d$`20`$df[,3]))
 
 #Ascending
-plot(m.G21.112718.u$`20`$df[,2]~m.G21.112718.u$`20`$df[,3])
-summary(lm(m.G21.112718.u$`20`$df[,2]~m.G21.112718.u$`20`$df[,3]))
-plot(m.G21.112718.u$`25`$df[,2]~m.G21.112718.u$`25`$df[,3])
-summary(lm(m.G21.112718.u$`25`$df[,2]~m.G21.112718.u$`25`$df[,3]))
-plot(m.G21.112718.u$`30`$df[,2]~m.G21.112718.u$`30`$df[,3])
-summary(lm(m.G21.112718.u$`30`$df[,2]~m.G21.112718.u$`30`$df[,3]))
-plot(m.G21.112718.u$`35`$df[,2]~m.G21.112718.u$`35`$df[,3])
-summary(lm(m.G21.112718.u$`35`$df[,2]~m.G21.112718.u$`35`$df[,3]))
-plot(m.G21.112718.u$`40`$df[,2]~m.G21.112718.u$`40`$df[,3])
-summary(lm(m.G21.112718.u$`40`$df[,2]~m.G21.112718.u$`40`$df[,3]))
+plot(m.G21b.u$`20`$df[,2]~m.G21b.u$`20`$df[,3])
+summary(lm(m.G21b.u$`20`$df[,2]~m.G21b.u$`20`$df[,3]))
+plot(m.G21b.u$`25`$df[,2]~m.G21b.u$`25`$df[,3])
+summary(lm(m.G21b.u$`25`$df[,2]~m.G21b.u$`25`$df[,3]))
+plot(m.G21b.u$`30`$df[,2]~m.G21b.u$`30`$df[,3])
+summary(lm(m.G21b.u$`30`$df[,2]~m.G21b.u$`30`$df[,3]))
+plot(m.G21b.u$`35`$df[,2]~m.G21b.u$`35`$df[,3])
+summary(lm(m.G21b.u$`35`$df[,2]~m.G21b.u$`35`$df[,3]))
+plot(m.G21b.u$`40`$df[,2]~m.G21b.u$`40`$df[,3])
+summary(lm(m.G21b.u$`40`$df[,2]~m.G21b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.G21.Rd<-rep(NA,length(G21.082019$Curve))
-for (i in 1:length(G21.082019$Curve)){
-  p.G21.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G21,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],18.5,G21.082019$Curve[i])
+p.G21.Rd<-rep(NA,length(G21c$Curve))
+for (i in 1:length(G21c$Curve)){
+  p.G21.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G21,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],18.5,G21c$Curve[i])
 }
-G21.082019$Rd<-p.G21.Rd
+G21c$Rd<-p.G21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G21.082019.d<-G21.082019[G21.082019$Direction == "down",]
-G21.082019.u<-G21.082019[G21.082019$Direction == "up",]
+G21c.d<-G21c[G21c$Direction == "down",]
+G21c.u<-G21c[G21c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.G21.082019.d<-fitacis(G21.082019.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G21.082019.d)
-coef(m.G21.082019.d)
+m.G21c.d<-fitacis(G21c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G21c.d)
+coef(m.G21c.d)
 
 #Ascending
-m.G21.082019.u<-fitacis(G21.082019.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G21.082019.u)
-coef(m.G21.082019.u)
+m.G21c.u<-fitacis(G21c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G21c.u)
+coef(m.G21c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.G21.082019.d$`10`$df[,2]~m.G21.082019.d$`10`$df[,3])
-summary(lm(m.G21.082019.d$`10`$df[,2]~m.G21.082019.d$`10`$df[,3]))
-plot(m.G21.082019.d$`15`$df[,2]~m.G21.082019.d$`15`$df[,3])
-summary(lm(m.G21.082019.d$`15`$df[,2]~m.G21.082019.d$`15`$df[,3]))
-plot(m.G21.082019.d$`20`$df[,2]~m.G21.082019.d$`20`$df[,3])
-summary(lm(m.G21.082019.d$`20`$df[,2]~m.G21.082019.d$`20`$df[,3]))
+plot(m.G21c.d$`10`$df[,2]~m.G21c.d$`10`$df[,3])
+summary(lm(m.G21c.d$`10`$df[,2]~m.G21c.d$`10`$df[,3]))
+plot(m.G21c.d$`15`$df[,2]~m.G21c.d$`15`$df[,3])
+summary(lm(m.G21c.d$`15`$df[,2]~m.G21c.d$`15`$df[,3]))
+plot(m.G21c.d$`20`$df[,2]~m.G21c.d$`20`$df[,3])
+summary(lm(m.G21c.d$`20`$df[,2]~m.G21c.d$`20`$df[,3]))
 
 #Ascending
-plot(m.G21.082019.u$`20`$df[,2]~m.G21.082019.u$`20`$df[,3])
-summary(lm(m.G21.082019.u$`20`$df[,2]~m.G21.082019.u$`20`$df[,3]))
-plot(m.G21.082019.u$`25`$df[,2]~m.G21.082019.u$`25`$df[,3])
-summary(lm(m.G21.082019.u$`25`$df[,2]~m.G21.082019.u$`25`$df[,3]))
-plot(m.G21.082019.u$`30`$df[,2]~m.G21.082019.u$`30`$df[,3])
-summary(lm(m.G21.082019.u$`30`$df[,2]~m.G21.082019.u$`30`$df[,3]))
-plot(m.G21.082019.u$`35`$df[,2]~m.G21.082019.u$`35`$df[,3])
-summary(lm(m.G21.082019.u$`35`$df[,2]~m.G21.082019.u$`35`$df[,3]))
-plot(m.G21.082019.u$`40`$df[,2]~m.G21.082019.u$`40`$df[,3])
-summary(lm(m.G21.082019.u$`40`$df[,2]~m.G21.082019.u$`40`$df[,3]))
+plot(m.G21c.u$`20`$df[,2]~m.G21c.u$`20`$df[,3])
+summary(lm(m.G21c.u$`20`$df[,2]~m.G21c.u$`20`$df[,3]))
+plot(m.G21c.u$`25`$df[,2]~m.G21c.u$`25`$df[,3])
+summary(lm(m.G21c.u$`25`$df[,2]~m.G21c.u$`25`$df[,3]))
+plot(m.G21c.u$`30`$df[,2]~m.G21c.u$`30`$df[,3])
+summary(lm(m.G21c.u$`30`$df[,2]~m.G21c.u$`30`$df[,3]))
+plot(m.G21c.u$`35`$df[,2]~m.G21c.u$`35`$df[,3])
+summary(lm(m.G21c.u$`35`$df[,2]~m.G21c.u$`35`$df[,3]))
+plot(m.G21c.u$`40`$df[,2]~m.G21c.u$`40`$df[,3])
+summary(lm(m.G21c.u$`40`$df[,2]~m.G21c.u$`40`$df[,3]))
 
 ##
 #Replicate 4
 ##
 
 #Calculate RL for each measurement temperature
-p.G21.Rd<-rep(NA,length(G21.082819$Curve))
-for (i in 1:length(G21.082819$Curve)){
-  p.G21.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G21,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],18.5,G21.082819$Curve[i])
+p.G21.Rd<-rep(NA,length(G21d$Curve))
+for (i in 1:length(G21d$Curve)){
+  p.G21.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G21,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],18.5,G21d$Curve[i])
 }
-G21.082819$Rd<-p.G21.Rd
+G21d$Rd<-p.G21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G21.082819.d<-G21.082819[G21.082819$Direction == "down",]
-G21.082819.u<-G21.082819[G21.082819$Direction == "up",]
+G21d.d<-G21d[G21d$Direction == "down",]
+G21d.u<-G21d[G21d$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.G21.082819.d<-fitacis(G21.082819.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G21.082819.d)
-coef(m.G21.082819.d)
+m.G21d.d<-fitacis(G21d.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G21d.d)
+coef(m.G21d.d)
 
 #Ascending
-m.G21.082819.u<-fitacis(G21.082819.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G21.082819.u)
-coef(m.G21.082819.u)
+m.G21d.u<-fitacis(G21d.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G21d.u)
+coef(m.G21d.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.G21.082819.d$`10`$df[,2]~m.G21.082819.d$`10`$df[,3])
-summary(lm(m.G21.082819.d$`10`$df[,2]~m.G21.082819.d$`10`$df[,3]))
-plot(m.G21.082819.d$`15`$df[,2]~m.G21.082819.d$`15`$df[,3])
-summary(lm(m.G21.082819.d$`15`$df[,2]~m.G21.082819.d$`15`$df[,3]))
-plot(m.G21.082819.d$`20`$df[,2]~m.G21.082819.d$`20`$df[,3])
-summary(lm(m.G21.082819.d$`20`$df[,2]~m.G21.082819.d$`20`$df[,3]))
+plot(m.G21d.d$`10`$df[,2]~m.G21d.d$`10`$df[,3])
+summary(lm(m.G21d.d$`10`$df[,2]~m.G21d.d$`10`$df[,3]))
+plot(m.G21d.d$`15`$df[,2]~m.G21d.d$`15`$df[,3])
+summary(lm(m.G21d.d$`15`$df[,2]~m.G21d.d$`15`$df[,3]))
+plot(m.G21d.d$`20`$df[,2]~m.G21d.d$`20`$df[,3])
+summary(lm(m.G21d.d$`20`$df[,2]~m.G21d.d$`20`$df[,3]))
 
 #Ascending
-plot(m.G21.082819.u$`20`$df[,2]~m.G21.082819.u$`20`$df[,3])
-summary(lm(m.G21.082819.u$`20`$df[,2]~m.G21.082819.u$`20`$df[,3]))
-plot(m.G21.082819.u$`25`$df[,2]~m.G21.082819.u$`25`$df[,3])
-summary(lm(m.G21.082819.u$`25`$df[,2]~m.G21.082819.u$`25`$df[,3]))
-plot(m.G21.082819.u$`30`$df[,2]~m.G21.082819.u$`30`$df[,3])
-summary(lm(m.G21.082819.u$`30`$df[,2]~m.G21.082819.u$`30`$df[,3]))
-plot(m.G21.082819.u$`35`$df[,2]~m.G21.082819.u$`35`$df[,3])
-summary(lm(m.G21.082819.u$`35`$df[,2]~m.G21.082819.u$`35`$df[,3]))
-plot(m.G21.082819.u$`40`$df[,2]~m.G21.082819.u$`40`$df[,3])
-summary(lm(m.G21.082819.u$`40`$df[,2]~m.G21.082819.u$`40`$df[,3]))
+plot(m.G21d.u$`20`$df[,2]~m.G21d.u$`20`$df[,3])
+summary(lm(m.G21d.u$`20`$df[,2]~m.G21d.u$`20`$df[,3]))
+plot(m.G21d.u$`25`$df[,2]~m.G21d.u$`25`$df[,3])
+summary(lm(m.G21d.u$`25`$df[,2]~m.G21d.u$`25`$df[,3]))
+plot(m.G21d.u$`30`$df[,2]~m.G21d.u$`30`$df[,3])
+summary(lm(m.G21d.u$`30`$df[,2]~m.G21d.u$`30`$df[,3]))
+plot(m.G21d.u$`35`$df[,2]~m.G21d.u$`35`$df[,3])
+summary(lm(m.G21d.u$`35`$df[,2]~m.G21d.u$`35`$df[,3]))
+plot(m.G21d.u$`40`$df[,2]~m.G21d.u$`40`$df[,3])
+summary(lm(m.G21d.u$`40`$df[,2]~m.G21d.u$`40`$df[,3]))
 
 ###
 #26:20 deg. C growing temperature
@@ -1267,196 +1267,196 @@ summary(lm(m.G21.082819.u$`40`$df[,2]~m.G21.082819.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.G26.Rd<-rep(NA,length(G26.082319$Curve))
-for (i in 1:length(G26.082319$Curve)){
-  p.G26.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G26,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],23.5,G26.082319$Curve[i])
+p.G26.Rd<-rep(NA,length(G26a$Curve))
+for (i in 1:length(G26a$Curve)){
+  p.G26.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G26,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],23.5,G26a$Curve[i])
 }
-G26.082319$Rd<-p.G26.Rd
+G26a$Rd<-p.G26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G26.082319.d<-G26.082319[G26.082319$Direction == "down",]
-G26.082319.u<-G26.082319[G26.082319$Direction == "up",]
+G26a.d<-G26a[G26a$Direction == "down",]
+G26a.u<-G26a[G26a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.G26.082319.d<-fitacis(G26.082319.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G26.082319.d)
-coef(m.G26.082319.d)
+m.G26a.d<-fitacis(G26a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G26a.d)
+coef(m.G26a.d)
 
 #Ascending
-m.G26.082319.u<-fitacis(G26.082319.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G26.082319.u)
-coef(m.G26.082319.u)
+m.G26a.u<-fitacis(G26a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G26a.u)
+coef(m.G26a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.G26.082319.d$`10`$df[,2]~m.G26.082319.d$`10`$df[,3])
-summary(lm(m.G26.082319.d$`10`$df[,2]~m.G26.082319.d$`10`$df[,3]))
-plot(m.G26.082319.d$`15`$df[,2]~m.G26.082319.d$`15`$df[,3])
-summary(lm(m.G26.082319.d$`15`$df[,2]~m.G26.082319.d$`15`$df[,3]))
-plot(m.G26.082319.d$`20`$df[,2]~m.G26.082319.d$`20`$df[,3])
-summary(lm(m.G26.082319.d$`20`$df[,2]~m.G26.082319.d$`20`$df[,3]))
-plot(m.G26.082319.d$`25`$df[,2]~m.G26.082319.d$`25`$df[,3])
-summary(lm(m.G26.082319.d$`25`$df[,2]~m.G26.082319.d$`25`$df[,3]))
+plot(m.G26a.d$`10`$df[,2]~m.G26a.d$`10`$df[,3])
+summary(lm(m.G26a.d$`10`$df[,2]~m.G26a.d$`10`$df[,3]))
+plot(m.G26a.d$`15`$df[,2]~m.G26a.d$`15`$df[,3])
+summary(lm(m.G26a.d$`15`$df[,2]~m.G26a.d$`15`$df[,3]))
+plot(m.G26a.d$`20`$df[,2]~m.G26a.d$`20`$df[,3])
+summary(lm(m.G26a.d$`20`$df[,2]~m.G26a.d$`20`$df[,3]))
+plot(m.G26a.d$`25`$df[,2]~m.G26a.d$`25`$df[,3])
+summary(lm(m.G26a.d$`25`$df[,2]~m.G26a.d$`25`$df[,3]))
 
 #Ascending
-plot(m.G26.082319.u$`25`$df[,2]~m.G26.082319.u$`25`$df[,3])
-summary(lm(m.G26.082319.u$`25`$df[,2]~m.G26.082319.u$`25`$df[,3]))
-plot(m.G26.082319.u$`30`$df[,2]~m.G26.082319.u$`30`$df[,3])
-summary(lm(m.G26.082319.u$`30`$df[,2]~m.G26.082319.u$`30`$df[,3]))
-plot(m.G26.082319.u$`35`$df[,2]~m.G26.082319.u$`35`$df[,3])
-summary(lm(m.G26.082319.u$`35`$df[,2]~m.G26.082319.u$`35`$df[,3]))
-plot(m.G26.082319.u$`40`$df[,2]~m.G26.082319.u$`40`$df[,3])
-summary(lm(m.G26.082319.u$`40`$df[,2]~m.G26.082319.u$`40`$df[,3]))
+plot(m.G26a.u$`25`$df[,2]~m.G26a.u$`25`$df[,3])
+summary(lm(m.G26a.u$`25`$df[,2]~m.G26a.u$`25`$df[,3]))
+plot(m.G26a.u$`30`$df[,2]~m.G26a.u$`30`$df[,3])
+summary(lm(m.G26a.u$`30`$df[,2]~m.G26a.u$`30`$df[,3]))
+plot(m.G26a.u$`35`$df[,2]~m.G26a.u$`35`$df[,3])
+summary(lm(m.G26a.u$`35`$df[,2]~m.G26a.u$`35`$df[,3]))
+plot(m.G26a.u$`40`$df[,2]~m.G26a.u$`40`$df[,3])
+summary(lm(m.G26a.u$`40`$df[,2]~m.G26a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.G26.Rd<-rep(NA,length(G26.090619$Curve))
-for (i in 1:length(G26.090619$Curve)){
-  p.G26.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G26,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],23.5,G26.090619$Curve[i])
+p.G26.Rd<-rep(NA,length(G26b$Curve))
+for (i in 1:length(G26b$Curve)){
+  p.G26.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G26,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],23.5,G26b$Curve[i])
 }
-G26.090619$Rd<-p.G26.Rd
+G26b$Rd<-p.G26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G26.090619.d<-G26.090619[G26.090619$Direction == "down",]
-G26.090619.u<-G26.090619[G26.090619$Direction == "up",]
+G26b.d<-G26b[G26b$Direction == "down",]
+G26b.u<-G26b[G26b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.G26.090619.d<-fitacis(G26.090619.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G26.090619.d)
-coef(m.G26.090619.d)
+m.G26b.d<-fitacis(G26b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G26b.d)
+coef(m.G26b.d)
 
 #Ascending
-m.G26.090619.u<-fitacis(G26.090619.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G26.090619.u)
-coef(m.G26.090619.u)
+m.G26b.u<-fitacis(G26b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G26b.u)
+coef(m.G26b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.G26.090619.d$`10`$df[,2]~m.G26.090619.d$`10`$df[,3])
-summary(lm(m.G26.090619.d$`10`$df[,2]~m.G26.090619.d$`10`$df[,3]))
-plot(m.G26.090619.d$`15`$df[,2]~m.G26.090619.d$`15`$df[,3])
-summary(lm(m.G26.090619.d$`15`$df[,2]~m.G26.090619.d$`15`$df[,3]))
-plot(m.G26.090619.d$`20`$df[,2]~m.G26.090619.d$`20`$df[,3])
-summary(lm(m.G26.090619.d$`20`$df[,2]~m.G26.090619.d$`20`$df[,3]))
-plot(m.G26.090619.d$`25`$df[,2]~m.G26.090619.d$`25`$df[,3])
-summary(lm(m.G26.090619.d$`25`$df[,2]~m.G26.090619.d$`25`$df[,3]))
+plot(m.G26b.d$`10`$df[,2]~m.G26b.d$`10`$df[,3])
+summary(lm(m.G26b.d$`10`$df[,2]~m.G26b.d$`10`$df[,3]))
+plot(m.G26b.d$`15`$df[,2]~m.G26b.d$`15`$df[,3])
+summary(lm(m.G26b.d$`15`$df[,2]~m.G26b.d$`15`$df[,3]))
+plot(m.G26b.d$`20`$df[,2]~m.G26b.d$`20`$df[,3])
+summary(lm(m.G26b.d$`20`$df[,2]~m.G26b.d$`20`$df[,3]))
+plot(m.G26b.d$`25`$df[,2]~m.G26b.d$`25`$df[,3])
+summary(lm(m.G26b.d$`25`$df[,2]~m.G26b.d$`25`$df[,3]))
 
 #Ascending
-plot(m.G26.090619.u$`25`$df[,2]~m.G26.090619.u$`25`$df[,3])
-summary(lm(m.G26.090619.u$`25`$df[,2]~m.G26.090619.u$`25`$df[,3]))
-plot(m.G26.090619.u$`30`$df[,2]~m.G26.090619.u$`30`$df[,3])
-summary(lm(m.G26.090619.u$`30`$df[,2]~m.G26.090619.u$`30`$df[,3]))
-plot(m.G26.090619.u$`35`$df[,2]~m.G26.090619.u$`35`$df[,3])
-summary(lm(m.G26.090619.u$`35`$df[,2]~m.G26.090619.u$`35`$df[,3]))
-plot(m.G26.090619.u$`40`$df[,2]~m.G26.090619.u$`40`$df[,3])
-summary(lm(m.G26.090619.u$`40`$df[,2]~m.G26.090619.u$`40`$df[,3]))
+plot(m.G26b.u$`25`$df[,2]~m.G26b.u$`25`$df[,3])
+summary(lm(m.G26b.u$`25`$df[,2]~m.G26b.u$`25`$df[,3]))
+plot(m.G26b.u$`30`$df[,2]~m.G26b.u$`30`$df[,3])
+summary(lm(m.G26b.u$`30`$df[,2]~m.G26b.u$`30`$df[,3]))
+plot(m.G26b.u$`35`$df[,2]~m.G26b.u$`35`$df[,3])
+summary(lm(m.G26b.u$`35`$df[,2]~m.G26b.u$`35`$df[,3]))
+plot(m.G26b.u$`40`$df[,2]~m.G26b.u$`40`$df[,3])
+summary(lm(m.G26b.u$`40`$df[,2]~m.G26b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.G26.Rd<-rep(NA,length(G26.100319$Curve))
-for (i in 1:length(G26.100319$Curve)){
-  p.G26.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G26,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],23.5,G26.100319$Curve[i])
+p.G26.Rd<-rep(NA,length(G26c$Curve))
+for (i in 1:length(G26c$Curve)){
+  p.G26.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G26,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],23.5,G26c$Curve[i])
 }
-G26.100319$Rd<-p.G26.Rd
+G26c$Rd<-p.G26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G26.100319.d<-G26.100319[G26.100319$Direction == "down",]
-G26.100319.u<-G26.100319[G26.100319$Direction == "up",]
+G26c.d<-G26c[G26c$Direction == "down",]
+G26c.u<-G26c[G26c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.G26.100319.d<-fitacis(G26.100319.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G26.100319.d)
-coef(m.G26.100319.d)
+m.G26c.d<-fitacis(G26c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G26c.d)
+coef(m.G26c.d)
 
 #Ascending
-m.G26.100319.u<-fitacis(G26.100319.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G26.100319.u)
-coef(m.G26.100319.u)
+m.G26c.u<-fitacis(G26c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G26c.u)
+coef(m.G26c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.G26.100319.d$`10`$df[,2]~m.G26.100319.d$`10`$df[,3])
-summary(lm(m.G26.100319.d$`10`$df[,2]~m.G26.100319.d$`10`$df[,3]))
-plot(m.G26.100319.d$`15`$df[,2]~m.G26.100319.d$`15`$df[,3])
-summary(lm(m.G26.100319.d$`15`$df[,2]~m.G26.100319.d$`15`$df[,3]))
-plot(m.G26.100319.d$`20`$df[,2]~m.G26.100319.d$`20`$df[,3])
-summary(lm(m.G26.100319.d$`20`$df[,2]~m.G26.100319.d$`20`$df[,3]))
-plot(m.G26.100319.d$`25`$df[,2]~m.G26.100319.d$`25`$df[,3])
-summary(lm(m.G26.100319.d$`25`$df[,2]~m.G26.100319.d$`25`$df[,3]))
+plot(m.G26c.d$`10`$df[,2]~m.G26c.d$`10`$df[,3])
+summary(lm(m.G26c.d$`10`$df[,2]~m.G26c.d$`10`$df[,3]))
+plot(m.G26c.d$`15`$df[,2]~m.G26c.d$`15`$df[,3])
+summary(lm(m.G26c.d$`15`$df[,2]~m.G26c.d$`15`$df[,3]))
+plot(m.G26c.d$`20`$df[,2]~m.G26c.d$`20`$df[,3])
+summary(lm(m.G26c.d$`20`$df[,2]~m.G26c.d$`20`$df[,3]))
+plot(m.G26c.d$`25`$df[,2]~m.G26c.d$`25`$df[,3])
+summary(lm(m.G26c.d$`25`$df[,2]~m.G26c.d$`25`$df[,3]))
 
 #Ascending
-plot(m.G26.100319.u$`25`$df[,2]~m.G26.100319.u$`25`$df[,3])
-summary(lm(m.G26.100319.u$`25`$df[,2]~m.G26.100319.u$`25`$df[,3]))
-plot(m.G26.100319.u$`30`$df[,2]~m.G26.100319.u$`30`$df[,3])
-summary(lm(m.G26.100319.u$`30`$df[,2]~m.G26.100319.u$`30`$df[,3]))
-plot(m.G26.100319.u$`35`$df[,2]~m.G26.100319.u$`35`$df[,3])
-summary(lm(m.G26.100319.u$`35`$df[,2]~m.G26.100319.u$`35`$df[,3]))
-plot(m.G26.100319.u$`40`$df[,2]~m.G26.100319.u$`40`$df[,3])
-summary(lm(m.G26.100319.u$`40`$df[,2]~m.G26.100319.u$`40`$df[,3]))
+plot(m.G26c.u$`25`$df[,2]~m.G26c.u$`25`$df[,3])
+summary(lm(m.G26c.u$`25`$df[,2]~m.G26c.u$`25`$df[,3]))
+plot(m.G26c.u$`30`$df[,2]~m.G26c.u$`30`$df[,3])
+summary(lm(m.G26c.u$`30`$df[,2]~m.G26c.u$`30`$df[,3]))
+plot(m.G26c.u$`35`$df[,2]~m.G26c.u$`35`$df[,3])
+summary(lm(m.G26c.u$`35`$df[,2]~m.G26c.u$`35`$df[,3]))
+plot(m.G26c.u$`40`$df[,2]~m.G26c.u$`40`$df[,3])
+summary(lm(m.G26c.u$`40`$df[,2]~m.G26c.u$`40`$df[,3]))
 
 ##
 #Replicate 4
 ##
 
 #Calculate RL for each measurement temperature
-p.G26.Rd<-rep(NA,length(G26.110119$Curve))
-for (i in 1:length(G26.110119$Curve)){
-  p.G26.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G26,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],23.5,G26.110119$Curve[i])
+p.G26.Rd<-rep(NA,length(G26d$Curve))
+for (i in 1:length(G26d$Curve)){
+  p.G26.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G26,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],23.5,G26d$Curve[i])
 }
-G26.110119$Rd<-p.G26.Rd
+G26d$Rd<-p.G26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G26.110119.u<-G26.110119[G26.110119$Direction == "up",]
+G26d.u<-G26d[G26d$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Ascending
-m.G26.110119.u<-fitacis(G26.110119.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G26.110119.u)
-coef(m.G26.110119.u)
+m.G26d.u<-fitacis(G26d.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G26d.u)
+coef(m.G26d.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Ascending
-plot(m.G26.110119.u$`25`$df[,2]~m.G26.110119.u$`25`$df[,3])
-summary(lm(m.G26.110119.u$`25`$df[,2]~m.G26.110119.u$`25`$df[,3]))
-plot(m.G26.110119.u$`30`$df[,2]~m.G26.110119.u$`30`$df[,3])
-summary(lm(m.G26.110119.u$`30`$df[,2]~m.G26.110119.u$`30`$df[,3]))
-plot(m.G26.110119.u$`35`$df[,2]~m.G26.110119.u$`35`$df[,3])
-summary(lm(m.G26.110119.u$`35`$df[,2]~m.G26.110119.u$`35`$df[,3]))
-plot(m.G26.110119.u$`40`$df[,2]~m.G26.110119.u$`40`$df[,3])
-summary(lm(m.G26.110119.u$`40`$df[,2]~m.G26.110119.u$`40`$df[,3]))
+plot(m.G26d.u$`25`$df[,2]~m.G26d.u$`25`$df[,3])
+summary(lm(m.G26d.u$`25`$df[,2]~m.G26d.u$`25`$df[,3]))
+plot(m.G26d.u$`30`$df[,2]~m.G26d.u$`30`$df[,3])
+summary(lm(m.G26d.u$`30`$df[,2]~m.G26d.u$`30`$df[,3]))
+plot(m.G26d.u$`35`$df[,2]~m.G26d.u$`35`$df[,3])
+summary(lm(m.G26d.u$`35`$df[,2]~m.G26d.u$`35`$df[,3]))
+plot(m.G26d.u$`40`$df[,2]~m.G26d.u$`40`$df[,3])
+summary(lm(m.G26d.u$`40`$df[,2]~m.G26d.u$`40`$df[,3]))
 
 ###
 #31:25 deg. C growing temperature
@@ -1467,159 +1467,159 @@ summary(lm(m.G26.110119.u$`40`$df[,2]~m.G26.110119.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.G31.Rd<-rep(NA,length(G31.050418$Curve))
-for (i in 1:length(G31.050418$Curve)){
-  p.G31.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G31,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],28.5,G31.050418$Curve[i])
+p.G31.Rd<-rep(NA,length(G31a$Curve))
+for (i in 1:length(G31a$Curve)){
+  p.G31.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G31,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],28.5,G31a$Curve[i])
 }
-G31.050418$Rd<-p.G31.Rd
+G31a$Rd<-p.G31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G31.050418.d<-G31.050418[G31.050418$Direction == "down",]
-G31.050418.u<-G31.050418[G31.050418$Direction == "up",]
+G31a.d<-G31a[G31a$Direction == "down",]
+G31a.u<-G31a[G31a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.G31.050418.d<-fitacis(G31.050418.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G31.050418.d)
-coef(m.G31.050418.d)
+m.G31a.d<-fitacis(G31a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G31a.d)
+coef(m.G31a.d)
 
 #Ascending
-m.G31.050418.u<-fitacis(G31.050418.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G31.050418.u)
-coef(m.G31.050418.u)
+m.G31a.u<-fitacis(G31a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G31a.u)
+coef(m.G31a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.G31.050418.d$`15`$df[,2]~m.G31.050418.d$`15`$df[,3])
-summary(lm(m.G31.050418.d$`15`$df[,2]~m.G31.050418.d$`15`$df[,3]))
-plot(m.G31.050418.d$`20`$df[,2]~m.G31.050418.d$`20`$df[,3])
-summary(lm(m.G31.050418.d$`20`$df[,2]~m.G31.050418.d$`20`$df[,3]))
-plot(m.G31.050418.d$`25`$df[,2]~m.G31.050418.d$`25`$df[,3])
-summary(lm(m.G31.050418.d$`25`$df[,2]~m.G31.050418.d$`25`$df[,3]))
-plot(m.G31.050418.d$`30`$df[,2]~m.G31.050418.d$`30`$df[,3])
-summary(lm(m.G31.050418.d$`30`$df[,2]~m.G31.050418.d$`30`$df[,3]))
+plot(m.G31a.d$`15`$df[,2]~m.G31a.d$`15`$df[,3])
+summary(lm(m.G31a.d$`15`$df[,2]~m.G31a.d$`15`$df[,3]))
+plot(m.G31a.d$`20`$df[,2]~m.G31a.d$`20`$df[,3])
+summary(lm(m.G31a.d$`20`$df[,2]~m.G31a.d$`20`$df[,3]))
+plot(m.G31a.d$`25`$df[,2]~m.G31a.d$`25`$df[,3])
+summary(lm(m.G31a.d$`25`$df[,2]~m.G31a.d$`25`$df[,3]))
+plot(m.G31a.d$`30`$df[,2]~m.G31a.d$`30`$df[,3])
+summary(lm(m.G31a.d$`30`$df[,2]~m.G31a.d$`30`$df[,3]))
 
 #Ascending
-plot(m.G31.050418.u$`30`$df[,2]~m.G31.050418.u$`30`$df[,3])
-summary(lm(m.G31.050418.u$`30`$df[,2]~m.G31.050418.u$`30`$df[,3]))
-plot(m.G31.050418.u$`35`$df[,2]~m.G31.050418.u$`35`$df[,3])
-summary(lm(m.G31.050418.u$`35`$df[,2]~m.G31.050418.u$`35`$df[,3]))
-plot(m.G31.050418.u$`40`$df[,2]~m.G31.050418.u$`40`$df[,3])
-summary(lm(m.G31.050418.u$`40`$df[,2]~m.G31.050418.u$`40`$df[,3]))
+plot(m.G31a.u$`30`$df[,2]~m.G31a.u$`30`$df[,3])
+summary(lm(m.G31a.u$`30`$df[,2]~m.G31a.u$`30`$df[,3]))
+plot(m.G31a.u$`35`$df[,2]~m.G31a.u$`35`$df[,3])
+summary(lm(m.G31a.u$`35`$df[,2]~m.G31a.u$`35`$df[,3]))
+plot(m.G31a.u$`40`$df[,2]~m.G31a.u$`40`$df[,3])
+summary(lm(m.G31a.u$`40`$df[,2]~m.G31a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.G31.Rd<-rep(NA,length(G31.071118$Curve))
-for (i in 1:length(G31.071118$Curve)){
-  p.G31.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G31,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],28.5,G31.071118$Curve[i])
+p.G31.Rd<-rep(NA,length(G31b$Curve))
+for (i in 1:length(G31b$Curve)){
+  p.G31.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G31,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],28.5,G31b$Curve[i])
 }
-G31.071118$Rd<-p.G31.Rd
+G31b$Rd<-p.G31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G31.071118.d<-G31.071118[G31.071118$Direction == "down",]
-G31.071118.u<-G31.071118[G31.071118$Direction == "up",]
+G31b.d<-G31b[G31b$Direction == "down",]
+G31b.u<-G31b[G31b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.G31.071118.d<-fitacis(G31.071118.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G31.071118.d)
-coef(m.G31.071118.d)
+m.G31b.d<-fitacis(G31b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G31b.d)
+coef(m.G31b.d)
 
 #Ascending
-m.G31.071118.u<-fitacis(G31.071118.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G31.071118.u)
-coef(m.G31.071118.u)
+m.G31b.u<-fitacis(G31b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G31b.u)
+coef(m.G31b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.G31.071118.d$`10`$df[,2]~m.G31.071118.d$`10`$df[,3])
-summary(lm(m.G31.071118.d$`10`$df[,2]~m.G31.071118.d$`10`$df[,3]))
-plot(m.G31.071118.d$`15`$df[,2]~m.G31.071118.d$`15`$df[,3])
-summary(lm(m.G31.071118.d$`15`$df[,2]~m.G31.071118.d$`15`$df[,3]))
-plot(m.G31.071118.d$`20`$df[,2]~m.G31.071118.d$`20`$df[,3])
-summary(lm(m.G31.071118.d$`20`$df[,2]~m.G31.071118.d$`20`$df[,3]))
-plot(m.G31.071118.d$`25`$df[,2]~m.G31.071118.d$`25`$df[,3])
-summary(lm(m.G31.071118.d$`25`$df[,2]~m.G31.071118.d$`25`$df[,3]))
-plot(m.G31.071118.d$`30`$df[,2]~m.G31.071118.d$`30`$df[,3])
-summary(lm(m.G31.071118.d$`30`$df[,2]~m.G31.071118.d$`30`$df[,3]))
+plot(m.G31b.d$`10`$df[,2]~m.G31b.d$`10`$df[,3])
+summary(lm(m.G31b.d$`10`$df[,2]~m.G31b.d$`10`$df[,3]))
+plot(m.G31b.d$`15`$df[,2]~m.G31b.d$`15`$df[,3])
+summary(lm(m.G31b.d$`15`$df[,2]~m.G31b.d$`15`$df[,3]))
+plot(m.G31b.d$`20`$df[,2]~m.G31b.d$`20`$df[,3])
+summary(lm(m.G31b.d$`20`$df[,2]~m.G31b.d$`20`$df[,3]))
+plot(m.G31b.d$`25`$df[,2]~m.G31b.d$`25`$df[,3])
+summary(lm(m.G31b.d$`25`$df[,2]~m.G31b.d$`25`$df[,3]))
+plot(m.G31b.d$`30`$df[,2]~m.G31b.d$`30`$df[,3])
+summary(lm(m.G31b.d$`30`$df[,2]~m.G31b.d$`30`$df[,3]))
 
 #Ascending
-plot(m.G31.071118.u$`30`$df[,2]~m.G31.071118.u$`30`$df[,3])
-summary(lm(m.G31.071118.u$`30`$df[,2]~m.G31.071118.u$`30`$df[,3]))
-plot(m.G31.071118.u$`35`$df[,2]~m.G31.071118.u$`35`$df[,3])
-summary(lm(m.G31.071118.u$`35`$df[,2]~m.G31.071118.u$`35`$df[,3]))
-plot(m.G31.071118.u$`40`$df[,2]~m.G31.071118.u$`40`$df[,3])
-summary(lm(m.G31.071118.u$`40`$df[,2]~m.G31.071118.u$`40`$df[,3]))
+plot(m.G31b.u$`30`$df[,2]~m.G31b.u$`30`$df[,3])
+summary(lm(m.G31b.u$`30`$df[,2]~m.G31b.u$`30`$df[,3]))
+plot(m.G31b.u$`35`$df[,2]~m.G31b.u$`35`$df[,3])
+summary(lm(m.G31b.u$`35`$df[,2]~m.G31b.u$`35`$df[,3]))
+plot(m.G31b.u$`40`$df[,2]~m.G31b.u$`40`$df[,3])
+summary(lm(m.G31b.u$`40`$df[,2]~m.G31b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.G31.Rd<-rep(NA,length(G31.072218$Curve))
-for (i in 1:length(G31.072218$Curve)){
-  p.G31.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G31,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],28.5,G31.072218$Curve[i])
+p.G31.Rd<-rep(NA,length(G31c$Curve))
+for (i in 1:length(G31c$Curve)){
+  p.G31.Rd[i]<-norm.Topt.s.lin(0.839/Rd.25.G31,ft.Topt.s.lin.G[10],ft.Topt.s.lin.G[11],ft.Topt.s.lin.G[12],ft.Topt.s.lin.G[13],28.5,G31c$Curve[i])
 }
-G31.072218$Rd<-p.G31.Rd
+G31c$Rd<-p.G31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-G31.072218.d<-G31.072218[G31.072218$Direction == "down",]
-G31.072218.u<-G31.072218[G31.072218$Direction == "up",]
+G31c.d<-G31c[G31c$Direction == "down",]
+G31c.u<-G31c[G31c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.G31.072218.d<-fitacis(G31.072218.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G31.072218.d)
-coef(m.G31.072218.d)
+m.G31c.d<-fitacis(G31c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G31c.d)
+coef(m.G31c.d)
 
 #Ascending
-m.G31.072218.u<-fitacis(G31.072218.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.G31.072218.u)
-coef(m.G31.072218.u)
+m.G31c.u<-fitacis(G31c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.G31c.u)
+coef(m.G31c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.G31.072218.d$`10`$df[,2]~m.G31.072218.d$`10`$df[,3])
-summary(lm(m.G31.072218.d$`10`$df[,2]~m.G31.072218.d$`10`$df[,3]))
-plot(m.G31.072218.d$`15`$df[,2]~m.G31.072218.d$`15`$df[,3])
-summary(lm(m.G31.072218.d$`15`$df[,2]~m.G31.072218.d$`15`$df[,3]))
-plot(m.G31.072218.d$`20`$df[,2]~m.G31.072218.d$`20`$df[,3])
-summary(lm(m.G31.072218.d$`20`$df[,2]~m.G31.072218.d$`20`$df[,3]))
-plot(m.G31.072218.d$`25`$df[,2]~m.G31.072218.d$`25`$df[,3])
-summary(lm(m.G31.072218.d$`25`$df[,2]~m.G31.072218.d$`25`$df[,3]))
-plot(m.G31.072218.d$`30`$df[,2]~m.G31.072218.d$`30`$df[,3])
-summary(lm(m.G31.072218.d$`30`$df[,2]~m.G31.072218.d$`30`$df[,3]))
-plot(m.G31.072218.d$`32`$df[,2]~m.G31.072218.d$`32`$df[,3])
-summary(lm(m.G31.072218.d$`32`$df[,2]~m.G31.072218.d$`32`$df[,3]))
+plot(m.G31c.d$`10`$df[,2]~m.G31c.d$`10`$df[,3])
+summary(lm(m.G31c.d$`10`$df[,2]~m.G31c.d$`10`$df[,3]))
+plot(m.G31c.d$`15`$df[,2]~m.G31c.d$`15`$df[,3])
+summary(lm(m.G31c.d$`15`$df[,2]~m.G31c.d$`15`$df[,3]))
+plot(m.G31c.d$`20`$df[,2]~m.G31c.d$`20`$df[,3])
+summary(lm(m.G31c.d$`20`$df[,2]~m.G31c.d$`20`$df[,3]))
+plot(m.G31c.d$`25`$df[,2]~m.G31c.d$`25`$df[,3])
+summary(lm(m.G31c.d$`25`$df[,2]~m.G31c.d$`25`$df[,3]))
+plot(m.G31c.d$`30`$df[,2]~m.G31c.d$`30`$df[,3])
+summary(lm(m.G31c.d$`30`$df[,2]~m.G31c.d$`30`$df[,3]))
+plot(m.G31c.d$`32`$df[,2]~m.G31c.d$`32`$df[,3])
+summary(lm(m.G31c.d$`32`$df[,2]~m.G31c.d$`32`$df[,3]))
 
 #Ascending
-plot(m.G31.072218.u$`30`$df[,2]~m.G31.072218.u$`30`$df[,3])
-summary(lm(m.G31.072218.u$`30`$df[,2]~m.G31.072218.u$`30`$df[,3]))
-plot(m.G31.072218.u$`35`$df[,2]~m.G31.072218.u$`35`$df[,3])
-summary(lm(m.G31.072218.u$`35`$df[,2]~m.G31.072218.u$`35`$df[,3]))
-plot(m.G31.072218.u$`40`$df[,2]~m.G31.072218.u$`40`$df[,3])
-summary(lm(m.G31.072218.u$`40`$df[,2]~m.G31.072218.u$`40`$df[,3]))
+plot(m.G31c.u$`30`$df[,2]~m.G31c.u$`30`$df[,3])
+summary(lm(m.G31c.u$`30`$df[,2]~m.G31c.u$`30`$df[,3]))
+plot(m.G31c.u$`35`$df[,2]~m.G31c.u$`35`$df[,3])
+summary(lm(m.G31c.u$`35`$df[,2]~m.G31c.u$`35`$df[,3]))
+plot(m.G31c.u$`40`$df[,2]~m.G31c.u$`40`$df[,3])
+summary(lm(m.G31c.u$`40`$df[,2]~m.G31c.u$`40`$df[,3]))
 
 ####
 #Robinia
@@ -1634,212 +1634,212 @@ summary(lm(m.G31.072218.u$`40`$df[,2]~m.G31.072218.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.R21.Rd<-rep(NA,length(R21.073118$Curve))
-for (i in 1:length(R21.073118$Curve)){
-  p.R21.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R21,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],18.5,R21.073118$Curve[i])
+p.R21.Rd<-rep(NA,length(R21a$Curve))
+for (i in 1:length(R21a$Curve)){
+  p.R21.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R21,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],18.5,R21a$Curve[i])
 }
-R21.073118$Rd<-p.R21.Rd
+R21a$Rd<-p.R21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-R21.073118.d<-R21.073118[R21.073118$Direction == "down",]
-R21.073118.u<-R21.073118[R21.073118$Direction == "up",]
+R21a.d<-R21a[R21a$Direction == "down",]
+R21a.u<-R21a[R21a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.R21.073118.d<-fitacis(R21.073118.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R21.073118.d)
-coef(m.R21.073118.d)
+m.R21a.d<-fitacis(R21a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R21a.d)
+coef(m.R21a.d)
 
 #Ascending
-m.R21.073118.u<-fitacis(R21.073118.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R21.073118.u)
-coef(m.R21.073118.u)
+m.R21a.u<-fitacis(R21a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R21a.u)
+coef(m.R21a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.R21.073118.d$`10`$df[,2]~m.R21.073118.d$`10`$df[,3])
-summary(lm(m.R21.073118.d$`10`$df[,2]~m.R21.073118.d$`10`$df[,3]))
-plot(m.R21.073118.d$`15`$df[,2]~m.R21.073118.d$`15`$df[,3])
-summary(lm(m.R21.073118.d$`15`$df[,2]~m.R21.073118.d$`15`$df[,3]))
-plot(m.R21.073118.d$`20`$df[,2]~m.R21.073118.d$`20`$df[,3])
-summary(lm(m.R21.073118.d$`20`$df[,2]~m.R21.073118.d$`20`$df[,3]))
+plot(m.R21a.d$`10`$df[,2]~m.R21a.d$`10`$df[,3])
+summary(lm(m.R21a.d$`10`$df[,2]~m.R21a.d$`10`$df[,3]))
+plot(m.R21a.d$`15`$df[,2]~m.R21a.d$`15`$df[,3])
+summary(lm(m.R21a.d$`15`$df[,2]~m.R21a.d$`15`$df[,3]))
+plot(m.R21a.d$`20`$df[,2]~m.R21a.d$`20`$df[,3])
+summary(lm(m.R21a.d$`20`$df[,2]~m.R21a.d$`20`$df[,3]))
 
 #Ascending
-plot(m.R21.073118.u$`20`$df[,2]~m.R21.073118.u$`20`$df[,3])
-summary(lm(m.R21.073118.u$`20`$df[,2]~m.R21.073118.u$`20`$df[,3]))
-plot(m.R21.073118.u$`25`$df[,2]~m.R21.073118.u$`25`$df[,3])
-summary(lm(m.R21.073118.u$`25`$df[,2]~m.R21.073118.u$`25`$df[,3]))
-plot(m.R21.073118.u$`30`$df[,2]~m.R21.073118.u$`30`$df[,3])
-summary(lm(m.R21.073118.u$`30`$df[,2]~m.R21.073118.u$`30`$df[,3]))
-plot(m.R21.073118.u$`35`$df[,2]~m.R21.073118.u$`35`$df[,3])
-summary(lm(m.R21.073118.u$`35`$df[,2]~m.R21.073118.u$`35`$df[,3]))
-plot(m.R21.073118.u$`40`$df[,2]~m.R21.073118.u$`40`$df[,3])
-summary(lm(m.R21.073118.u$`40`$df[,2]~m.R21.073118.u$`40`$df[,3]))
+plot(m.R21a.u$`20`$df[,2]~m.R21a.u$`20`$df[,3])
+summary(lm(m.R21a.u$`20`$df[,2]~m.R21a.u$`20`$df[,3]))
+plot(m.R21a.u$`25`$df[,2]~m.R21a.u$`25`$df[,3])
+summary(lm(m.R21a.u$`25`$df[,2]~m.R21a.u$`25`$df[,3]))
+plot(m.R21a.u$`30`$df[,2]~m.R21a.u$`30`$df[,3])
+summary(lm(m.R21a.u$`30`$df[,2]~m.R21a.u$`30`$df[,3]))
+plot(m.R21a.u$`35`$df[,2]~m.R21a.u$`35`$df[,3])
+summary(lm(m.R21a.u$`35`$df[,2]~m.R21a.u$`35`$df[,3]))
+plot(m.R21a.u$`40`$df[,2]~m.R21a.u$`40`$df[,3])
+summary(lm(m.R21a.u$`40`$df[,2]~m.R21a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.R21.Rd<-rep(NA,length(R21.100518$Curve))
-for (i in 1:length(R21.100518$Curve)){
-  p.R21.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R21,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],18.5,R21.100518$Curve[i])
+p.R21.Rd<-rep(NA,length(R21b$Curve))
+for (i in 1:length(R21b$Curve)){
+  p.R21.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R21,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],18.5,R21b$Curve[i])
 }
-R21.100518$Rd<-p.R21.Rd
+R21b$Rd<-p.R21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-R21.100518.d<-R21.100518[R21.100518$Direction == "down",]
-R21.100518.u<-R21.100518[R21.100518$Direction == "up",]
+R21b.d<-R21b[R21b$Direction == "down",]
+R21b.u<-R21b[R21b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.R21.100518.d<-fitacis(R21.100518.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R21.100518.d)
-coef(m.R21.100518.d)
+m.R21b.d<-fitacis(R21b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R21b.d)
+coef(m.R21b.d)
 
 #Ascending
-m.R21.100518.u<-fitacis(R21.100518.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R21.100518.u)
-coef(m.R21.100518.u)
+m.R21b.u<-fitacis(R21b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R21b.u)
+coef(m.R21b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.R21.100518.d$`10`$df[,2]~m.R21.100518.d$`10`$df[,3])
-summary(lm(m.R21.100518.d$`10`$df[,2]~m.R21.100518.d$`10`$df[,3]))
-plot(m.R21.100518.d$`15`$df[,2]~m.R21.100518.d$`15`$df[,3])
-summary(lm(m.R21.100518.d$`15`$df[,2]~m.R21.100518.d$`15`$df[,3]))
-plot(m.R21.100518.d$`20`$df[,2]~m.R21.100518.d$`20`$df[,3])
-summary(lm(m.R21.100518.d$`20`$df[,2]~m.R21.100518.d$`20`$df[,3]))
+plot(m.R21b.d$`10`$df[,2]~m.R21b.d$`10`$df[,3])
+summary(lm(m.R21b.d$`10`$df[,2]~m.R21b.d$`10`$df[,3]))
+plot(m.R21b.d$`15`$df[,2]~m.R21b.d$`15`$df[,3])
+summary(lm(m.R21b.d$`15`$df[,2]~m.R21b.d$`15`$df[,3]))
+plot(m.R21b.d$`20`$df[,2]~m.R21b.d$`20`$df[,3])
+summary(lm(m.R21b.d$`20`$df[,2]~m.R21b.d$`20`$df[,3]))
 
 #Ascending
-plot(m.R21.100518.u$`20`$df[,2]~m.R21.100518.u$`20`$df[,3])
-summary(lm(m.R21.100518.u$`20`$df[,2]~m.R21.100518.u$`20`$df[,3]))
-plot(m.R21.100518.u$`25`$df[,2]~m.R21.100518.u$`25`$df[,3])
-summary(lm(m.R21.100518.u$`25`$df[,2]~m.R21.100518.u$`25`$df[,3]))
-plot(m.R21.100518.u$`30`$df[,2]~m.R21.100518.u$`30`$df[,3])
-summary(lm(m.R21.100518.u$`30`$df[,2]~m.R21.100518.u$`30`$df[,3]))
-plot(m.R21.100518.u$`35`$df[,2]~m.R21.100518.u$`35`$df[,3])
-summary(lm(m.R21.100518.u$`35`$df[,2]~m.R21.100518.u$`35`$df[,3]))
-plot(m.R21.100518.u$`40`$df[,2]~m.R21.100518.u$`40`$df[,3])
-summary(lm(m.R21.100518.u$`40`$df[,2]~m.R21.100518.u$`40`$df[,3]))
+plot(m.R21b.u$`20`$df[,2]~m.R21b.u$`20`$df[,3])
+summary(lm(m.R21b.u$`20`$df[,2]~m.R21b.u$`20`$df[,3]))
+plot(m.R21b.u$`25`$df[,2]~m.R21b.u$`25`$df[,3])
+summary(lm(m.R21b.u$`25`$df[,2]~m.R21b.u$`25`$df[,3]))
+plot(m.R21b.u$`30`$df[,2]~m.R21b.u$`30`$df[,3])
+summary(lm(m.R21b.u$`30`$df[,2]~m.R21b.u$`30`$df[,3]))
+plot(m.R21b.u$`35`$df[,2]~m.R21b.u$`35`$df[,3])
+summary(lm(m.R21b.u$`35`$df[,2]~m.R21b.u$`35`$df[,3]))
+plot(m.R21b.u$`40`$df[,2]~m.R21b.u$`40`$df[,3])
+summary(lm(m.R21b.u$`40`$df[,2]~m.R21b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.R21.Rd<-rep(NA,length(R21.101018$Curve))
-for (i in 1:length(R21.101018$Curve)){
-  p.R21.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R21,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],18.5,R21.101018$Curve[i])
+p.R21.Rd<-rep(NA,length(R21c$Curve))
+for (i in 1:length(R21c$Curve)){
+  p.R21.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R21,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],18.5,R21c$Curve[i])
 }
-R21.101018$Rd<-p.R21.Rd
+R21c$Rd<-p.R21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-R21.101018.d<-R21.101018[R21.101018$Direction == "down",]
-R21.101018.u<-R21.101018[R21.101018$Direction == "up",]
+R21c.d<-R21c[R21c$Direction == "down",]
+R21c.u<-R21c[R21c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.R21.101018.d<-fitacis(R21.101018.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R21.101018.d)
-coef(m.R21.101018.d)
+m.R21c.d<-fitacis(R21c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R21c.d)
+coef(m.R21c.d)
 
 #Ascending
-m.R21.101018.u<-fitacis(R21.101018.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R21.101018.u)
-coef(m.R21.101018.u)
+m.R21c.u<-fitacis(R21c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R21c.u)
+coef(m.R21c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.R21.101018.d$`10`$df[,2]~m.R21.101018.d$`10`$df[,3])
-summary(lm(m.R21.101018.d$`10`$df[,2]~m.R21.101018.d$`10`$df[,3]))
-plot(m.R21.101018.d$`15`$df[,2]~m.R21.101018.d$`15`$df[,3])
-summary(lm(m.R21.101018.d$`15`$df[,2]~m.R21.101018.d$`15`$df[,3]))
-plot(m.R21.101018.d$`20`$df[,2]~m.R21.101018.d$`20`$df[,3])
-summary(lm(m.R21.101018.d$`20`$df[,2]~m.R21.101018.d$`20`$df[,3]))
+plot(m.R21c.d$`10`$df[,2]~m.R21c.d$`10`$df[,3])
+summary(lm(m.R21c.d$`10`$df[,2]~m.R21c.d$`10`$df[,3]))
+plot(m.R21c.d$`15`$df[,2]~m.R21c.d$`15`$df[,3])
+summary(lm(m.R21c.d$`15`$df[,2]~m.R21c.d$`15`$df[,3]))
+plot(m.R21c.d$`20`$df[,2]~m.R21c.d$`20`$df[,3])
+summary(lm(m.R21c.d$`20`$df[,2]~m.R21c.d$`20`$df[,3]))
 
 #Ascending
-plot(m.R21.101018.u$`20`$df[,2]~m.R21.101018.u$`20`$df[,3])
-summary(lm(m.R21.101018.u$`20`$df[,2]~m.R21.101018.u$`20`$df[,3]))
-plot(m.R21.101018.u$`25`$df[,2]~m.R21.101018.u$`25`$df[,3])
-summary(lm(m.R21.101018.u$`25`$df[,2]~m.R21.101018.u$`25`$df[,3]))
-plot(m.R21.101018.u$`30`$df[,2]~m.R21.101018.u$`30`$df[,3])
-summary(lm(m.R21.101018.u$`30`$df[,2]~m.R21.101018.u$`30`$df[,3]))
-plot(m.R21.101018.u$`35`$df[,2]~m.R21.101018.u$`35`$df[,3])
-summary(lm(m.R21.101018.u$`35`$df[,2]~m.R21.101018.u$`35`$df[,3]))
-plot(m.R21.101018.u$`40`$df[,2]~m.R21.101018.u$`40`$df[,3])
-summary(lm(m.R21.101018.u$`40`$df[,2]~m.R21.101018.u$`40`$df[,3]))
+plot(m.R21c.u$`20`$df[,2]~m.R21c.u$`20`$df[,3])
+summary(lm(m.R21c.u$`20`$df[,2]~m.R21c.u$`20`$df[,3]))
+plot(m.R21c.u$`25`$df[,2]~m.R21c.u$`25`$df[,3])
+summary(lm(m.R21c.u$`25`$df[,2]~m.R21c.u$`25`$df[,3]))
+plot(m.R21c.u$`30`$df[,2]~m.R21c.u$`30`$df[,3])
+summary(lm(m.R21c.u$`30`$df[,2]~m.R21c.u$`30`$df[,3]))
+plot(m.R21c.u$`35`$df[,2]~m.R21c.u$`35`$df[,3])
+summary(lm(m.R21c.u$`35`$df[,2]~m.R21c.u$`35`$df[,3]))
+plot(m.R21c.u$`40`$df[,2]~m.R21c.u$`40`$df[,3])
+summary(lm(m.R21c.u$`40`$df[,2]~m.R21c.u$`40`$df[,3]))
 
 ##
 #Replicate 4
 ##
 
 #Calculate RL for each measurement temperature
-p.R21.Rd<-rep(NA,length(R21.091719$Curve))
-for (i in 1:length(R21.091719$Curve)){
-  p.R21.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R21,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],18.5,R21.091719$Curve[i])
+p.R21.Rd<-rep(NA,length(R21d$Curve))
+for (i in 1:length(R21d$Curve)){
+  p.R21.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R21,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],18.5,R21d$Curve[i])
 }
-R21.091719$Rd<-p.R21.Rd
+R21d$Rd<-p.R21.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-R21.091719.d<-R21.091719[R21.091719$Direction == "down",]
-R21.091719.u<-R21.091719[R21.091719$Direction == "up",]
+R21d.d<-R21d[R21d$Direction == "down",]
+R21d.u<-R21d[R21d$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.R21.091719.d<-fitacis(R21.091719.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R21.091719.d)
-coef(m.R21.091719.d)
+m.R21d.d<-fitacis(R21d.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R21d.d)
+coef(m.R21d.d)
 
 #Ascending
-m.R21.091719.u<-fitacis(R21.091719.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R21.091719.u)
-coef(m.R21.091719.u)
+m.R21d.u<-fitacis(R21d.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R21d.u)
+coef(m.R21d.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.R21.091719.d$`10`$df[,2]~m.R21.091719.d$`10`$df[,3])
-summary(lm(m.R21.091719.d$`10`$df[,2]~m.R21.091719.d$`10`$df[,3]))
-plot(m.R21.091719.d$`15`$df[,2]~m.R21.091719.d$`15`$df[,3])
-summary(lm(m.R21.091719.d$`15`$df[,2]~m.R21.091719.d$`15`$df[,3]))
-plot(m.R21.091719.d$`20`$df[,2]~m.R21.091719.d$`20`$df[,3])
-summary(lm(m.R21.091719.d$`20`$df[,2]~m.R21.091719.d$`20`$df[,3]))
+plot(m.R21d.d$`10`$df[,2]~m.R21d.d$`10`$df[,3])
+summary(lm(m.R21d.d$`10`$df[,2]~m.R21d.d$`10`$df[,3]))
+plot(m.R21d.d$`15`$df[,2]~m.R21d.d$`15`$df[,3])
+summary(lm(m.R21d.d$`15`$df[,2]~m.R21d.d$`15`$df[,3]))
+plot(m.R21d.d$`20`$df[,2]~m.R21d.d$`20`$df[,3])
+summary(lm(m.R21d.d$`20`$df[,2]~m.R21d.d$`20`$df[,3]))
 
 #Ascending
-plot(m.R21.091719.u$`20`$df[,2]~m.R21.091719.u$`20`$df[,3])
-summary(lm(m.R21.091719.u$`20`$df[,2]~m.R21.091719.u$`20`$df[,3]))
-plot(m.R21.091719.u$`25`$df[,2]~m.R21.091719.u$`25`$df[,3])
-summary(lm(m.R21.091719.u$`25`$df[,2]~m.R21.091719.u$`25`$df[,3]))
-plot(m.R21.091719.u$`30`$df[,2]~m.R21.091719.u$`30`$df[,3])
-summary(lm(m.R21.091719.u$`30`$df[,2]~m.R21.091719.u$`30`$df[,3]))
-plot(m.R21.091719.u$`35`$df[,2]~m.R21.091719.u$`35`$df[,3])
-summary(lm(m.R21.091719.u$`35`$df[,2]~m.R21.091719.u$`35`$df[,3]))
-plot(m.R21.091719.u$`40`$df[,2]~m.R21.091719.u$`40`$df[,3])
-summary(lm(m.R21.091719.u$`40`$df[,2]~m.R21.091719.u$`40`$df[,3]))
+plot(m.R21d.u$`20`$df[,2]~m.R21d.u$`20`$df[,3])
+summary(lm(m.R21d.u$`20`$df[,2]~m.R21d.u$`20`$df[,3]))
+plot(m.R21d.u$`25`$df[,2]~m.R21d.u$`25`$df[,3])
+summary(lm(m.R21d.u$`25`$df[,2]~m.R21d.u$`25`$df[,3]))
+plot(m.R21d.u$`30`$df[,2]~m.R21d.u$`30`$df[,3])
+summary(lm(m.R21d.u$`30`$df[,2]~m.R21d.u$`30`$df[,3]))
+plot(m.R21d.u$`35`$df[,2]~m.R21d.u$`35`$df[,3])
+summary(lm(m.R21d.u$`35`$df[,2]~m.R21d.u$`35`$df[,3]))
+plot(m.R21d.u$`40`$df[,2]~m.R21d.u$`40`$df[,3])
+summary(lm(m.R21d.u$`40`$df[,2]~m.R21d.u$`40`$df[,3]))
 
 ###
 #26:20 deg. C growing temperature
@@ -1850,159 +1850,159 @@ summary(lm(m.R21.091719.u$`40`$df[,2]~m.R21.091719.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.R26.Rd<-rep(NA,length(R26.102219$Curve))
-for (i in 1:length(R26.102219$Curve)){
-  p.R26.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R26,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],23.5,R26.102219$Curve[i])
+p.R26.Rd<-rep(NA,length(R26a$Curve))
+for (i in 1:length(R26a$Curve)){
+  p.R26.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R26,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],23.5,R26a$Curve[i])
 }
-R26.102219$Rd<-p.R26.Rd
+R26a$Rd<-p.R26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-R26.102219.d<-R26.102219[R26.102219$Direction == "down",]
-R26.102219.u<-R26.102219[R26.102219$Direction == "up",]
+R26a.d<-R26a[R26a$Direction == "down",]
+R26a.u<-R26a[R26a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.R26.102219.d<-fitacis(R26.102219.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R26.102219.d)
-coef(m.R26.102219.d)
+m.R26a.d<-fitacis(R26a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R26a.d)
+coef(m.R26a.d)
 
 #Ascending
-m.R26.102219.u<-fitacis(R26.102219.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R26.102219.u)
-coef(m.R26.102219.u)
+m.R26a.u<-fitacis(R26a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R26a.u)
+coef(m.R26a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.R26.102219.d$`10`$df[,2]~m.R26.102219.d$`10`$df[,3])
-summary(lm(m.R26.102219.d$`10`$df[,2]~m.R26.102219.d$`10`$df[,3]))
-plot(m.R26.102219.d$`15`$df[,2]~m.R26.102219.d$`15`$df[,3])
-summary(lm(m.R26.102219.d$`15`$df[,2]~m.R26.102219.d$`15`$df[,3]))
-plot(m.R26.102219.d$`20`$df[,2]~m.R26.102219.d$`20`$df[,3])
-summary(lm(m.R26.102219.d$`20`$df[,2]~m.R26.102219.d$`20`$df[,3]))
-plot(m.R26.102219.d$`25`$df[,2]~m.R26.102219.d$`25`$df[,3])
-summary(lm(m.R26.102219.d$`25`$df[,2]~m.R26.102219.d$`25`$df[,3]))
+plot(m.R26a.d$`10`$df[,2]~m.R26a.d$`10`$df[,3])
+summary(lm(m.R26a.d$`10`$df[,2]~m.R26a.d$`10`$df[,3]))
+plot(m.R26a.d$`15`$df[,2]~m.R26a.d$`15`$df[,3])
+summary(lm(m.R26a.d$`15`$df[,2]~m.R26a.d$`15`$df[,3]))
+plot(m.R26a.d$`20`$df[,2]~m.R26a.d$`20`$df[,3])
+summary(lm(m.R26a.d$`20`$df[,2]~m.R26a.d$`20`$df[,3]))
+plot(m.R26a.d$`25`$df[,2]~m.R26a.d$`25`$df[,3])
+summary(lm(m.R26a.d$`25`$df[,2]~m.R26a.d$`25`$df[,3]))
 
 #Ascending
-plot(m.R26.102219.u$`25`$df[,2]~m.R26.102219.u$`25`$df[,3])
-summary(lm(m.R26.102219.u$`25`$df[,2]~m.R26.102219.u$`25`$df[,3]))
-plot(m.R26.102219.u$`30`$df[,2]~m.R26.102219.u$`30`$df[,3])
-summary(lm(m.R26.102219.u$`30`$df[,2]~m.R26.102219.u$`30`$df[,3]))
-plot(m.R26.102219.u$`35`$df[,2]~m.R26.102219.u$`35`$df[,3])
-summary(lm(m.R26.102219.u$`35`$df[,2]~m.R26.102219.u$`35`$df[,3]))
-plot(m.R26.102219.u$`40`$df[,2]~m.R26.102219.u$`40`$df[,3])
-summary(lm(m.R26.102219.u$`40`$df[,2]~m.R26.102219.u$`40`$df[,3]))
+plot(m.R26a.u$`25`$df[,2]~m.R26a.u$`25`$df[,3])
+summary(lm(m.R26a.u$`25`$df[,2]~m.R26a.u$`25`$df[,3]))
+plot(m.R26a.u$`30`$df[,2]~m.R26a.u$`30`$df[,3])
+summary(lm(m.R26a.u$`30`$df[,2]~m.R26a.u$`30`$df[,3]))
+plot(m.R26a.u$`35`$df[,2]~m.R26a.u$`35`$df[,3])
+summary(lm(m.R26a.u$`35`$df[,2]~m.R26a.u$`35`$df[,3]))
+plot(m.R26a.u$`40`$df[,2]~m.R26a.u$`40`$df[,3])
+summary(lm(m.R26a.u$`40`$df[,2]~m.R26a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.R26.Rd<-rep(NA,length(R26.112219$Curve))
-for (i in 1:length(R26.112219$Curve)){
-  p.R26.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R26,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],23.5,R26.112219$Curve[i])
+p.R26.Rd<-rep(NA,length(R26b$Curve))
+for (i in 1:length(R26b$Curve)){
+  p.R26.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R26,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],23.5,R26b$Curve[i])
 }
-R26.112219$Rd<-p.R26.Rd
+R26b$Rd<-p.R26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-R26.112219.d<-R26.112219[R26.112219$Direction == "down",]
-R26.112219.u<-R26.112219[R26.112219$Direction == "up",]
+R26b.d<-R26b[R26b$Direction == "down",]
+R26b.u<-R26b[R26b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.R26.112219.d<-fitacis(R26.112219.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R26.112219.d)
-coef(m.R26.112219.d)
+m.R26b.d<-fitacis(R26b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R26b.d)
+coef(m.R26b.d)
 
 #Ascending
-m.R26.112219.u<-fitacis(R26.112219.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R26.112219.u)
-coef(m.R26.112219.u)
+m.R26b.u<-fitacis(R26b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R26b.u)
+coef(m.R26b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.R26.112219.d$`10`$df[,2]~m.R26.112219.d$`10`$df[,3])
-summary(lm(m.R26.112219.d$`10`$df[,2]~m.R26.112219.d$`10`$df[,3]))
-plot(m.R26.112219.d$`15`$df[,2]~m.R26.112219.d$`15`$df[,3])
-summary(lm(m.R26.112219.d$`15`$df[,2]~m.R26.112219.d$`15`$df[,3]))
-plot(m.R26.112219.d$`20`$df[,2]~m.R26.112219.d$`20`$df[,3])
-summary(lm(m.R26.112219.d$`20`$df[,2]~m.R26.112219.d$`20`$df[,3]))
-plot(m.R26.112219.d$`25`$df[,2]~m.R26.112219.d$`25`$df[,3])
-summary(lm(m.R26.112219.d$`25`$df[,2]~m.R26.112219.d$`25`$df[,3]))
+plot(m.R26b.d$`10`$df[,2]~m.R26b.d$`10`$df[,3])
+summary(lm(m.R26b.d$`10`$df[,2]~m.R26b.d$`10`$df[,3]))
+plot(m.R26b.d$`15`$df[,2]~m.R26b.d$`15`$df[,3])
+summary(lm(m.R26b.d$`15`$df[,2]~m.R26b.d$`15`$df[,3]))
+plot(m.R26b.d$`20`$df[,2]~m.R26b.d$`20`$df[,3])
+summary(lm(m.R26b.d$`20`$df[,2]~m.R26b.d$`20`$df[,3]))
+plot(m.R26b.d$`25`$df[,2]~m.R26b.d$`25`$df[,3])
+summary(lm(m.R26b.d$`25`$df[,2]~m.R26b.d$`25`$df[,3]))
 
 #Ascending
-plot(m.R26.112219.u$`25`$df[,2]~m.R26.112219.u$`25`$df[,3])
-summary(lm(m.R26.112219.u$`25`$df[,2]~m.R26.112219.u$`25`$df[,3]))
-plot(m.R26.112219.u$`30`$df[,2]~m.R26.112219.u$`30`$df[,3])
-summary(lm(m.R26.112219.u$`30`$df[,2]~m.R26.112219.u$`30`$df[,3]))
-plot(m.R26.112219.u$`35`$df[,2]~m.R26.112219.u$`35`$df[,3])
-summary(lm(m.R26.112219.u$`35`$df[,2]~m.R26.112219.u$`35`$df[,3]))
-plot(m.R26.112219.u$`40`$df[,2]~m.R26.112219.u$`40`$df[,3])
-summary(lm(m.R26.112219.u$`40`$df[,2]~m.R26.112219.u$`40`$df[,3]))
+plot(m.R26b.u$`25`$df[,2]~m.R26b.u$`25`$df[,3])
+summary(lm(m.R26b.u$`25`$df[,2]~m.R26b.u$`25`$df[,3]))
+plot(m.R26b.u$`30`$df[,2]~m.R26b.u$`30`$df[,3])
+summary(lm(m.R26b.u$`30`$df[,2]~m.R26b.u$`30`$df[,3]))
+plot(m.R26b.u$`35`$df[,2]~m.R26b.u$`35`$df[,3])
+summary(lm(m.R26b.u$`35`$df[,2]~m.R26b.u$`35`$df[,3]))
+plot(m.R26b.u$`40`$df[,2]~m.R26b.u$`40`$df[,3])
+summary(lm(m.R26b.u$`40`$df[,2]~m.R26b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.R26.Rd<-rep(NA,length(R26.120319$Curve))
-for (i in 1:length(R26.120319$Curve)){
-  p.R26.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R26,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],23.5,R26.120319$Curve[i])
+p.R26.Rd<-rep(NA,length(R26c$Curve))
+for (i in 1:length(R26c$Curve)){
+  p.R26.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R26,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],23.5,R26c$Curve[i])
 }
-R26.120319$Rd<-p.R26.Rd
+R26c$Rd<-p.R26.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-R26.120319.d<-R26.120319[R26.120319$Direction == "down",] 
-R26.120319.u<-R26.120319[R26.120319$Direction == "up",]
+R26c.d<-R26c[R26c$Direction == "down",] 
+R26c.u<-R26c[R26c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.R26.120319.d<-fitacis(R26.120319.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R26.120319.d)
-coef(m.R26.120319.d) 
+m.R26c.d<-fitacis(R26c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R26c.d)
+coef(m.R26c.d) 
 
 #Ascending
-m.R26.120319.u<-fitacis(R26.120319.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R26.120319.u)
-coef(m.R26.120319.u) 
+m.R26c.u<-fitacis(R26c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R26c.u)
+coef(m.R26c.u) 
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.R26.120319.d$`10`$df[,2]~m.R26.120319.d$`10`$df[,3])
-summary(lm(m.R26.120319.d$`10`$df[,2]~m.R26.120319.d$`10`$df[,3]))
-plot(m.R26.120319.d$`15`$df[,2]~m.R26.120319.d$`15`$df[,3])
-summary(lm(m.R26.120319.d$`15`$df[,2]~m.R26.120319.d$`15`$df[,3]))
-plot(m.R26.120319.d$`20`$df[,2]~m.R26.120319.d$`20`$df[,3])
-summary(lm(m.R26.120319.d$`20`$df[,2]~m.R26.120319.d$`20`$df[,3]))
-plot(m.R26.120319.d$`25`$df[,2]~m.R26.120319.d$`25`$df[,3])
-summary(lm(m.R26.120319.d$`25`$df[,2]~m.R26.120319.d$`25`$df[,3]))
+plot(m.R26c.d$`10`$df[,2]~m.R26c.d$`10`$df[,3])
+summary(lm(m.R26c.d$`10`$df[,2]~m.R26c.d$`10`$df[,3]))
+plot(m.R26c.d$`15`$df[,2]~m.R26c.d$`15`$df[,3])
+summary(lm(m.R26c.d$`15`$df[,2]~m.R26c.d$`15`$df[,3]))
+plot(m.R26c.d$`20`$df[,2]~m.R26c.d$`20`$df[,3])
+summary(lm(m.R26c.d$`20`$df[,2]~m.R26c.d$`20`$df[,3]))
+plot(m.R26c.d$`25`$df[,2]~m.R26c.d$`25`$df[,3])
+summary(lm(m.R26c.d$`25`$df[,2]~m.R26c.d$`25`$df[,3]))
 
 #Ascending
-plot(m.R26.120319.u$`25`$df[,2]~m.R26.120319.u$`25`$df[,3])
-summary(lm(m.R26.120319.u$`25`$df[,2]~m.R26.120319.u$`25`$df[,3]))
-plot(m.R26.120319.u$`30`$df[,2]~m.R26.120319.u$`30`$df[,3])
-summary(lm(m.R26.120319.u$`30`$df[,2]~m.R26.120319.u$`30`$df[,3]))
-plot(m.R26.120319.u$`35`$df[,2]~m.R26.120319.u$`35`$df[,3])
-summary(lm(m.R26.120319.u$`35`$df[,2]~m.R26.120319.u$`35`$df[,3]))
-plot(m.R26.120319.u$`40`$df[,2]~m.R26.120319.u$`40`$df[,3])
-summary(lm(m.R26.120319.u$`40`$df[,2]~m.R26.120319.u$`40`$df[,3]))
+plot(m.R26c.u$`25`$df[,2]~m.R26c.u$`25`$df[,3])
+summary(lm(m.R26c.u$`25`$df[,2]~m.R26c.u$`25`$df[,3]))
+plot(m.R26c.u$`30`$df[,2]~m.R26c.u$`30`$df[,3])
+summary(lm(m.R26c.u$`30`$df[,2]~m.R26c.u$`30`$df[,3]))
+plot(m.R26c.u$`35`$df[,2]~m.R26c.u$`35`$df[,3])
+summary(lm(m.R26c.u$`35`$df[,2]~m.R26c.u$`35`$df[,3]))
+plot(m.R26c.u$`40`$df[,2]~m.R26c.u$`40`$df[,3])
+summary(lm(m.R26c.u$`40`$df[,2]~m.R26c.u$`40`$df[,3]))
 
 ###
 #31:25 deg. C growing temperature
@@ -2013,193 +2013,193 @@ summary(lm(m.R26.120319.u$`40`$df[,2]~m.R26.120319.u$`40`$df[,3]))
 ##
 
 #Calculate RL for each measurement temperature
-p.R31.Rd<-rep(NA,length(R31.071318$Curve))
-for (i in 1:length(R31.071318$Curve)){
-  p.R31.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R31,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],28.5,R31.071318$Curve[i])
+p.R31.Rd<-rep(NA,length(R31a$Curve))
+for (i in 1:length(R31a$Curve)){
+  p.R31.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R31,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],28.5,R31a$Curve[i])
 }
-R31.071318$Rd<-p.R31.Rd
+R31a$Rd<-p.R31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-R31.071318.d<-R31.071318[R31.071318$Direction == "down",]
-R31.071318.u<-R31.071318[R31.071318$Direction == "up",]
+R31a.d<-R31a[R31a$Direction == "down",]
+R31a.u<-R31a[R31a$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.R31.071318.d<-fitacis(R31.071318.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R31.071318.d)
-coef(m.R31.071318.d)
+m.R31a.d<-fitacis(R31a.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R31a.d)
+coef(m.R31a.d)
 
 #Ascending
-m.R31.071318.u<-fitacis(R31.071318.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R31.071318.u)
-coef(m.R31.071318.u)
+m.R31a.u<-fitacis(R31a.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R31a.u)
+coef(m.R31a.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.R31.071318.d$`10`$df[,2]~m.R31.071318.d$`10`$df[,3])
-summary(lm(m.R31.071318.d$`10`$df[,2]~m.R31.071318.d$`10`$df[,3]))
-plot(m.R31.071318.d$`15`$df[,2]~m.R31.071318.d$`15`$df[,3])
-summary(lm(m.R31.071318.d$`15`$df[,2]~m.R31.071318.d$`15`$df[,3]))
-plot(m.R31.071318.d$`20`$df[,2]~m.R31.071318.d$`20`$df[,3])
-summary(lm(m.R31.071318.d$`20`$df[,2]~m.R31.071318.d$`20`$df[,3]))
-plot(m.R31.071318.d$`25`$df[,2]~m.R31.071318.d$`25`$df[,3])
-summary(lm(m.R31.071318.d$`25`$df[,2]~m.R31.071318.d$`25`$df[,3]))
-plot(m.R31.071318.d$`30`$df[,2]~m.R31.071318.d$`30`$df[,3])
-summary(lm(m.R31.071318.d$`30`$df[,2]~m.R31.071318.d$`30`$df[,3]))
+plot(m.R31a.d$`10`$df[,2]~m.R31a.d$`10`$df[,3])
+summary(lm(m.R31a.d$`10`$df[,2]~m.R31a.d$`10`$df[,3]))
+plot(m.R31a.d$`15`$df[,2]~m.R31a.d$`15`$df[,3])
+summary(lm(m.R31a.d$`15`$df[,2]~m.R31a.d$`15`$df[,3]))
+plot(m.R31a.d$`20`$df[,2]~m.R31a.d$`20`$df[,3])
+summary(lm(m.R31a.d$`20`$df[,2]~m.R31a.d$`20`$df[,3]))
+plot(m.R31a.d$`25`$df[,2]~m.R31a.d$`25`$df[,3])
+summary(lm(m.R31a.d$`25`$df[,2]~m.R31a.d$`25`$df[,3]))
+plot(m.R31a.d$`30`$df[,2]~m.R31a.d$`30`$df[,3])
+summary(lm(m.R31a.d$`30`$df[,2]~m.R31a.d$`30`$df[,3]))
 
 #Ascending
-plot(m.R31.071318.u$`30`$df[,2]~m.R31.071318.u$`30`$df[,3])
-summary(lm(m.R31.071318.u$`30`$df[,2]~m.R31.071318.u$`30`$df[,3]))
-plot(m.R31.071318.u$`35`$df[,2]~m.R31.071318.u$`35`$df[,3])
-summary(lm(m.R31.071318.u$`35`$df[,2]~m.R31.071318.u$`35`$df[,3]))
-plot(m.R31.071318.u$`40`$df[,2]~m.R31.071318.u$`40`$df[,3])
-summary(lm(m.R31.071318.u$`40`$df[,2]~m.R31.071318.u$`40`$df[,3]))
+plot(m.R31a.u$`30`$df[,2]~m.R31a.u$`30`$df[,3])
+summary(lm(m.R31a.u$`30`$df[,2]~m.R31a.u$`30`$df[,3]))
+plot(m.R31a.u$`35`$df[,2]~m.R31a.u$`35`$df[,3])
+summary(lm(m.R31a.u$`35`$df[,2]~m.R31a.u$`35`$df[,3]))
+plot(m.R31a.u$`40`$df[,2]~m.R31a.u$`40`$df[,3])
+summary(lm(m.R31a.u$`40`$df[,2]~m.R31a.u$`40`$df[,3]))
 
 ##
 #Replicate 2
 ##
 
 #Calculate RL for each measurement temperature
-p.R31.Rd<-rep(NA,length(R31.072318$Curve))
-for (i in 1:length(R31.072318$Curve)){
-  p.R31.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R31,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],28.5,R31.072318$Curve[i])
+p.R31.Rd<-rep(NA,length(R31b$Curve))
+for (i in 1:length(R31b$Curve)){
+  p.R31.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R31,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],28.5,R31b$Curve[i])
 }
-R31.072318$Rd<-p.R31.Rd
+R31b$Rd<-p.R31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-R31.072318.d<-R31.072318[R31.072318$Direction == "down",]
-R31.072318.u<-R31.072318[R31.072318$Direction == "up",]
+R31b.d<-R31b[R31b$Direction == "down",]
+R31b.u<-R31b[R31b$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.R31.072318.d<-fitacis(R31.072318.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R31.072318.d)
-coef(m.R31.072318.d)
+m.R31b.d<-fitacis(R31b.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R31b.d)
+coef(m.R31b.d)
 
 #Ascending
-m.R31.072318.u<-fitacis(R31.072318.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R31.072318.u)
-coef(m.R31.072318.u)
+m.R31b.u<-fitacis(R31b.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R31b.u)
+coef(m.R31b.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.R31.072318.d$`10`$df[,2]~m.R31.072318.d$`10`$df[,3])
-summary(lm(m.R31.072318.d$`10`$df[,2]~m.R31.072318.d$`10`$df[,3]))
-plot(m.R31.072318.d$`15`$df[,2]~m.R31.072318.d$`15`$df[,3])
-summary(lm(m.R31.072318.d$`15`$df[,2]~m.R31.072318.d$`15`$df[,3]))
-plot(m.R31.072318.d$`20`$df[,2]~m.R31.072318.d$`20`$df[,3])
-summary(lm(m.R31.072318.d$`20`$df[,2]~m.R31.072318.d$`20`$df[,3]))
-plot(m.R31.072318.d$`25`$df[,2]~m.R31.072318.d$`25`$df[,3])
-summary(lm(m.R31.072318.d$`25`$df[,2]~m.R31.072318.d$`25`$df[,3]))
-plot(m.R31.072318.d$`30`$df[,2]~m.R31.072318.d$`30`$df[,3])
-summary(lm(m.R31.072318.d$`30`$df[,2]~m.R31.072318.d$`30`$df[,3]))
+plot(m.R31b.d$`10`$df[,2]~m.R31b.d$`10`$df[,3])
+summary(lm(m.R31b.d$`10`$df[,2]~m.R31b.d$`10`$df[,3]))
+plot(m.R31b.d$`15`$df[,2]~m.R31b.d$`15`$df[,3])
+summary(lm(m.R31b.d$`15`$df[,2]~m.R31b.d$`15`$df[,3]))
+plot(m.R31b.d$`20`$df[,2]~m.R31b.d$`20`$df[,3])
+summary(lm(m.R31b.d$`20`$df[,2]~m.R31b.d$`20`$df[,3]))
+plot(m.R31b.d$`25`$df[,2]~m.R31b.d$`25`$df[,3])
+summary(lm(m.R31b.d$`25`$df[,2]~m.R31b.d$`25`$df[,3]))
+plot(m.R31b.d$`30`$df[,2]~m.R31b.d$`30`$df[,3])
+summary(lm(m.R31b.d$`30`$df[,2]~m.R31b.d$`30`$df[,3]))
 
 #Ascending
-plot(m.R31.072318.u$`30`$df[,2]~m.R31.072318.u$`30`$df[,3])
-summary(lm(m.R31.072318.u$`30`$df[,2]~m.R31.072318.u$`30`$df[,3]))
-plot(m.R31.072318.u$`35`$df[,2]~m.R31.072318.u$`35`$df[,3])
-summary(lm(m.R31.072318.u$`35`$df[,2]~m.R31.072318.u$`35`$df[,3]))
-plot(m.R31.072318.u$`40`$df[,2]~m.R31.072318.u$`40`$df[,3])
-summary(lm(m.R31.072318.u$`40`$df[,2]~m.R31.072318.u$`40`$df[,3]))
+plot(m.R31b.u$`30`$df[,2]~m.R31b.u$`30`$df[,3])
+summary(lm(m.R31b.u$`30`$df[,2]~m.R31b.u$`30`$df[,3]))
+plot(m.R31b.u$`35`$df[,2]~m.R31b.u$`35`$df[,3])
+summary(lm(m.R31b.u$`35`$df[,2]~m.R31b.u$`35`$df[,3]))
+plot(m.R31b.u$`40`$df[,2]~m.R31b.u$`40`$df[,3])
+summary(lm(m.R31b.u$`40`$df[,2]~m.R31b.u$`40`$df[,3]))
 
 ##
 #Replicate 3
 ##
 
 #Calculate RL for each measurement temperature
-p.R31.Rd<-rep(NA,length(R31.101418$Curve))
-for (i in 1:length(R31.101418$Curve)){
-  p.R31.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R31,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],28.5,R31.101418$Curve[i])
+p.R31.Rd<-rep(NA,length(R31c$Curve))
+for (i in 1:length(R31c$Curve)){
+  p.R31.Rd[i]<-norm.Topt.s.lin(0.983/Rd.25.R31,ft.Topt.s.lin.R[10],ft.Topt.s.lin.R[11],ft.Topt.s.lin.R[12],ft.Topt.s.lin.R[13],28.5,R31c$Curve[i])
 }
-R31.101418$Rd<-p.R31.Rd
+R31c$Rd<-p.R31.Rd
 
 #Subset data depending on if they were collected in an ascending or descending order
-R31.101418.d<-R31.101418[R31.101418$Direction == "down",]
-R31.101418.u<-R31.101418[R31.101418$Direction == "up",]
+R31c.d<-R31c[R31c$Direction == "down",]
+R31c.u<-R31c[R31c$Direction == "up",]
 
 #
 #Fit curves
 #
 
 #Descending
-m.R31.101418.d<-fitacis(R31.101418.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R31.101418.d)
-coef(m.R31.101418.d)
+m.R31c.d<-fitacis(R31c.d,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R31c.d)
+coef(m.R31c.d)
 
 #Ascending
-m.R31.101418.u<-fitacis(R31.101418.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
-plot(m.R31.101418.u)
-coef(m.R31.101418.u)
+m.R31c.u<-fitacis(R31c.u,"Curve",useRd=TRUE,fitTPU=T,Tcorrect=F)
+plot(m.R31c.u)
+coef(m.R31c.u)
 
 #
 #Calculate R2 of fitted vs. measured assimilation values
 #
 
 #Descending
-plot(m.R31.101418.d$`10`$df[,2]~m.R31.101418.d$`10`$df[,3])
-summary(lm(m.R31.101418.d$`10`$df[,2]~m.R31.101418.d$`10`$df[,3]))
-plot(m.R31.101418.d$`15`$df[,2]~m.R31.101418.d$`15`$df[,3])
-summary(lm(m.R31.101418.d$`15`$df[,2]~m.R31.101418.d$`15`$df[,3]))
-plot(m.R31.101418.d$`20`$df[,2]~m.R31.101418.d$`20`$df[,3])
-summary(lm(m.R31.101418.d$`20`$df[,2]~m.R31.101418.d$`20`$df[,3]))
-plot(m.R31.101418.d$`25`$df[,2]~m.R31.101418.d$`25`$df[,3])
-summary(lm(m.R31.101418.d$`25`$df[,2]~m.R31.101418.d$`25`$df[,3]))
-plot(m.R31.101418.d$`30`$df[,2]~m.R31.101418.d$`30`$df[,3])
-summary(lm(m.R31.101418.d$`30`$df[,2]~m.R31.101418.d$`30`$df[,3]))
+plot(m.R31c.d$`10`$df[,2]~m.R31c.d$`10`$df[,3])
+summary(lm(m.R31c.d$`10`$df[,2]~m.R31c.d$`10`$df[,3]))
+plot(m.R31c.d$`15`$df[,2]~m.R31c.d$`15`$df[,3])
+summary(lm(m.R31c.d$`15`$df[,2]~m.R31c.d$`15`$df[,3]))
+plot(m.R31c.d$`20`$df[,2]~m.R31c.d$`20`$df[,3])
+summary(lm(m.R31c.d$`20`$df[,2]~m.R31c.d$`20`$df[,3]))
+plot(m.R31c.d$`25`$df[,2]~m.R31c.d$`25`$df[,3])
+summary(lm(m.R31c.d$`25`$df[,2]~m.R31c.d$`25`$df[,3]))
+plot(m.R31c.d$`30`$df[,2]~m.R31c.d$`30`$df[,3])
+summary(lm(m.R31c.d$`30`$df[,2]~m.R31c.d$`30`$df[,3]))
 
 #Ascending
-plot(m.R31.101418.u$`30`$df[,2]~m.R31.101418.u$`30`$df[,3])
-summary(lm(m.R31.101418.u$`30`$df[,2]~m.R31.101418.u$`30`$df[,3]))
-plot(m.R31.101418.u$`35`$df[,2]~m.R31.101418.u$`35`$df[,3])
-summary(lm(m.R31.101418.u$`35`$df[,2]~m.R31.101418.u$`35`$df[,3]))
-plot(m.R31.101418.u$`40`$df[,2]~m.R31.101418.u$`40`$df[,3])
-summary(lm(m.R31.101418.u$`40`$df[,2]~m.R31.101418.u$`40`$df[,3]))
+plot(m.R31c.u$`30`$df[,2]~m.R31c.u$`30`$df[,3])
+summary(lm(m.R31c.u$`30`$df[,2]~m.R31c.u$`30`$df[,3]))
+plot(m.R31c.u$`35`$df[,2]~m.R31c.u$`35`$df[,3])
+summary(lm(m.R31c.u$`35`$df[,2]~m.R31c.u$`35`$df[,3]))
+plot(m.R31c.u$`40`$df[,2]~m.R31c.u$`40`$df[,3])
+summary(lm(m.R31c.u$`40`$df[,2]~m.R31c.u$`40`$df[,3]))
 
 ###
 #Data which were removed
 ###
 
 #Removed because R2 of fit <0.9
-#m.A26.020820.u at 40 deg. C
-#m.G21.082019.d all temperatures
-#m.G26.110119.u 40 deg. C
-#m.R21.073118.d at 10 deg. C
-#m.R21.073118.u at 35 deg. C
+#m.A26c.u at 40 deg. C
+#m.G21c.d all temperatures
+#m.G26d.u 40 deg. C
+#m.R21a.d at 10 deg. C
+#m.R21a.u at 35 deg. C
 
 #Removed based on Vcmax SE >40%
-#m.M26.091119.u at 40 deg. C
-#m.A26.020420.u at 40 deg. C
-#m.A26.020820.u at 40 deg. C
-#m.A31.071618.u at 40 deg. C
-#m.G21.082019.u at 30 deg. C
-#m.G26.110119.u at 40 deg. C (Vcmax SE is NaN)
-#m.G31.071118.u at 40 deg. C
+#m.M26b.u at 40 deg. C
+#m.A26b.u at 40 deg. C
+#m.A26c.u at 40 deg. C
+#m.A31a.u at 40 deg. C
+#m.G21c.u at 30 deg. C
+#m.G26d.u at 40 deg. C (Vcmax SE is NaN)
+#m.G31b.u at 40 deg. C
 
 #Removed because they were not fit
-#m.M26.091119.d Jmax at 10 deg. C
-#m.M31.080218.u Jmax at 40 deg. C
-#m.M31.120418.d Jmax at 10 deg. C
-#m.A21.071218.d Jmax at 15 deg. C
-#m.A21.071818.d Jmax at 15 deg. C
-#m.G21.082019.u Jmax at 25 deg. C
-#m.G26.090619.d Jmax at 10 deg. C
-#m.G26.100319.d Jmax at 10 deg. C
-#m.G31.072218.d Jmax at 10 and 15 deg. C
-#m.R21.101018.d Jmax at 10 deg. C
-#m.R26.102219.d Jmax at 10 deg. C
-#m.R26.112219.d Jmax at 10 deg. C
+#m.M26b.d Jmax at 10 deg. C
+#m.M31a.u Jmax at 40 deg. C
+#m.M31b.d Jmax at 10 deg. C
+#m.A21a.d Jmax at 15 deg. C
+#m.A21b.d Jmax at 15 deg. C
+#m.G21c.u Jmax at 25 deg. C
+#m.G26b.d Jmax at 10 deg. C
+#m.G26c.d Jmax at 10 deg. C
+#m.G31c.d Jmax at 10 and 15 deg. C
+#m.R21c.d Jmax at 10 deg. C
+#m.R26a.d Jmax at 10 deg. C
+#m.R26b.d Jmax at 10 deg. C
 
 ###
 #Extract A275 estimates from each A-Ci fit
@@ -2214,106 +2214,106 @@ summary(lm(m.R31.101418.u$`40`$df[,2]~m.R31.101418.u$`40`$df[,3]))
 #
 
 #Replicate 1
-M21.071418.A275<-c(m.M21.071418.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.M21.071418.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.M21.071418.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.M21.071418.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.M21.071418.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.M21.071418.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.M21.071418.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.M21.071418.u$`40`$Photosyn(Ci=275)[[2]])
+M21a.A275<-c(m.M21a.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.M21a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.M21a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.M21a.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.M21a.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.M21a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.M21a.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.M21a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-M21.120918.A275<-c(m.M21.120918.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.M21.120918.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.M21.120918.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.M21.120918.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.M21.120918.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.M21.120918.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.M21.120918.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.M21.120918.u$`40`$Photosyn(Ci=275)[[2]])
+M21b.A275<-c(m.M21b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.M21b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.M21b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.M21b.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.M21b.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.M21b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.M21b.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.M21b.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-M21.012119.A275<-c(m.M21.012119.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.M21.012119.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.M21.012119.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.M21.012119.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.M21.012119.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.M21.012119.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.M21.012119.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.M21.012119.u$`40`$Photosyn(Ci=275)[[2]])
+M21c.A275<-c(m.M21c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.M21c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.M21c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.M21c.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.M21c.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.M21c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.M21c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.M21c.u$`40`$Photosyn(Ci=275)[[2]])
 
-M21.A275<-c(M21.071418.A275,M21.120918.A275,M21.012119.A275)
+M21.A275<-c(M21a.A275,M21b.A275,M21c.A275)
 
 #
 #26:20 deg. C growing temperature
 #
 
 #Replicate 1
-M26.083019.A275<-c(m.M26.083019.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.M26.083019.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.M26.083019.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.M26.083019.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.M26.083019.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.M26.083019.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.M26.083019.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.M26.083019.u$`40`$Photosyn(Ci=275)[[2]])
+M26a.A275<-c(m.M26a.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.M26a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.M26a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.M26a.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.M26a.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.M26a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.M26a.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.M26a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-M26.091119.A275<-c(m.M26.091119.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.M26.091119.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.M26.091119.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.M26.091119.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.M26.091119.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.M26.091119.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.M26.091119.u$`35`$Photosyn(Ci=275)[[2]])
+M26b.A275<-c(m.M26b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.M26b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.M26b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.M26b.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.M26b.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.M26b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.M26b.u$`35`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-M26.092119.A275<-c(m.M26.092119.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.M26.092119.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.M26.092119.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.M26.092119.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.M26.092119.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.M26.092119.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.M26.092119.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.M26.092119.u$`40`$Photosyn(Ci=275)[[2]])
+M26c.A275<-c(m.M26c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.M26c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.M26c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.M26c.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.M26c.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.M26c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.M26c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.M26c.u$`40`$Photosyn(Ci=275)[[2]])
 
-M26.A275<-c(M26.083019.A275,M26.091119.A275,M26.092119.A275)
+M26.A275<-c(M26a.A275,M26b.A275,M26c.A275)
 
 #
 #31:25 deg. C growing temperature
 #
 
 #Replicate 1
-M31.080218.A275<-c(m.M31.080218.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.M31.080218.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.M31.080218.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.M31.080218.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.M31.080218.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.M31.080218.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.M31.080218.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.M31.080218.u$`40`$Photosyn(Ci=275)[[2]])
+M31a.A275<-c(m.M31a.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.M31a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.M31a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.M31a.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.M31a.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.M31a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.M31a.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.M31a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-M31.120418.A275<-c(m.M31.120418.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.M31.120418.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.M31.120418.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.M31.120418.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.M31.120418.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.M31.120418.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.M31.120418.u$`40`$Photosyn(Ci=275)[[2]])
+M31b.A275<-c(m.M31b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.M31b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.M31b.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.M31b.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.M31b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.M31b.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.M31b.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-M31.040919.A275<-c(m.M31.040919.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.M31.040919.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.M31.040919.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.M31.040919.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.M31.040919.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.M31.040919.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.M31.040919.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.M31.040919.u$`40`$Photosyn(Ci=275)[[2]])
+M31c.A275<-c(m.M31c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.M31c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.M31c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.M31c.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.M31c.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.M31c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.M31c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.M31c.u$`40`$Photosyn(Ci=275)[[2]])
 
-M31.A275<-c(M31.080218.A275,M31.120418.A275,M31.040919.A275)
+M31.A275<-c(M31a.A275,M31b.A275,M31c.A275)
 
 ##
 #Alnus
@@ -2324,105 +2324,105 @@ M31.A275<-c(M31.080218.A275,M31.120418.A275,M31.040919.A275)
 #
 
 #Replicate 1
-A21.071218.A275<-c(m.A21.071218.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.A21.071218.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.A21.071218.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.A21.071218.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.A21.071218.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.A21.071218.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.A21.071218.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.A21.071218.u$`40`$Photosyn(Ci=275)[[2]])
+A21a.A275<-c(m.A21a.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.A21a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.A21a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.A21a.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.A21a.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.A21a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.A21a.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.A21a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-A21.071818.A275<-c(m.A21.071818.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.A21.071818.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.A21.071818.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.A21.071818.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.A21.071818.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.A21.071818.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.A21.071818.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.A21.071818.u$`40`$Photosyn(Ci=275)[[2]])
+A21b.A275<-c(m.A21b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.A21b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.A21b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.A21b.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.A21b.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.A21b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.A21b.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.A21b.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-A21.101718.A275<-c(m.A21.101718.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.A21.101718.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.A21.101718.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.A21.101718.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.A21.101718.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.A21.101718.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.A21.101718.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.A21.101718.u$`40`$Photosyn(Ci=275)[[2]])
+A21c.A275<-c(m.A21c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.A21c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.A21c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.A21c.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.A21c.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.A21c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.A21c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.A21c.u$`40`$Photosyn(Ci=275)[[2]])
 
-A21.A275<-c(A21.071218.A275,A21.071818.A275,A21.101718.A275)
+A21.A275<-c(A21a.A275,A21b.A275,A21c.A275)
 
 #
 #26:20 deg. C growing temperature
 #
 
 #Replicate 1
-A26.112419.A275<-c(m.A26.112419.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.A26.112419.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.A26.112419.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.A26.112419.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.A26.112419.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.A26.112419.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.A26.112419.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.A26.112419.u$`40`$Photosyn(Ci=275)[[2]])
+A26a.A275<-c(m.A26a.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.A26a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.A26a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.A26a.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.A26a.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.A26a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.A26a.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.A26a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-A26.020420.A275<-c(m.A26.020420.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.A26.020420.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.A26.020420.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.A26.020420.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.A26.020420.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.A26.020420.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.A26.020420.u$`35`$Photosyn(Ci=275)[[2]])
+A26b.A275<-c(m.A26b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.A26b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.A26b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.A26b.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.A26b.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.A26b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.A26b.u$`35`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-A26.020820.A275<-c(m.A26.020820.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.A26.020820.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.A26.020820.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.A26.020820.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.A26.020820.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.A26.020820.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.A26.020820.u$`35`$Photosyn(Ci=275)[[2]])
+A26c.A275<-c(m.A26c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.A26c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.A26c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.A26c.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.A26c.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.A26c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.A26c.u$`35`$Photosyn(Ci=275)[[2]])
 
-A26.A275<-c(A26.112419.A275,A26.020420.A275,A26.020820.A275)
+A26.A275<-c(A26a.A275,A26b.A275,A26c.A275)
 
 #
 #31:25 deg. C growing temperature
 #
 
 #Replicate 1
-A31.071618.A275<-c(m.A31.071618.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.A31.071618.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.A31.071618.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.A31.071618.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.A31.071618.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.A31.071618.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.A31.071618.u$`35`$Photosyn(Ci=275)[[2]])
+A31a.A275<-c(m.A31a.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.A31a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.A31a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.A31a.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.A31a.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.A31a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.A31a.u$`35`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-A31.092918.A275<-c(m.A31.092918.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.A31.092918.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.A31.092918.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.A31.092918.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.A31.092918.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.A31.092918.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.A31.092918.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.A31.092918.u$`40`$Photosyn(Ci=275)[[2]])
+A31b.A275<-c(m.A31b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.A31b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.A31b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.A31b.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.A31b.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.A31b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.A31b.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.A31b.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-A31.112518.A275<-c(m.A31.112518.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.A31.112518.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.A31.112518.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.A31.112518.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.A31.112518.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.A31.112518.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.A31.112518.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.A31.112518.u$`40`$Photosyn(Ci=275)[[2]])
+A31c.A275<-c(m.A31c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.A31c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.A31c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.A31c.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.A31c.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.A31c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.A31c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.A31c.u$`40`$Photosyn(Ci=275)[[2]])
 
-A31.A275<-c(A31.071618.A275,A31.092918.A275,A31.112518.A275)
+A31.A275<-c(A31a.A275,A31b.A275,A31c.A275)
 
 ##
 #Gliricidia
@@ -2433,117 +2433,117 @@ A31.A275<-c(A31.071618.A275,A31.092918.A275,A31.112518.A275)
 #
 
 #Replicate 1
-G21.080318.A275<-c(m.G21.080318.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.G21.080318.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.G21.080318.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.G21.080318.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.G21.080318.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.G21.080318.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.G21.080318.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.G21.080318.u$`40`$Photosyn(Ci=275)[[2]])
+G21a.A275<-c(m.G21a.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.G21a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.G21a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.G21a.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.G21a.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.G21a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.G21a.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.G21a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-G21.082019.A275<-c(m.G21.082019.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.G21.082019.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.G21.082019.u$`40`$Photosyn(Ci=275)[[2]])
+G21c.A275<-c(m.G21c.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.G21c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.G21c.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-G21.082819.A275<-c(m.G21.082819.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.G21.082819.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.G21.082819.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.G21.082819.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.G21.082819.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.G21.082819.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.G21.082819.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.G21.082819.u$`40`$Photosyn(Ci=275)[[2]])
+G21d.A275<-c(m.G21d.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.G21d.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.G21d.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.G21d.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.G21d.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.G21d.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.G21d.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.G21d.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 4
-G21.112718.A275<-c(m.G21.112718.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.G21.112718.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.G21.112718.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.G21.112718.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.G21.112718.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.G21.112718.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.G21.112718.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.G21.112718.u$`40`$Photosyn(Ci=275)[[2]])
+G21b.A275<-c(m.G21b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.G21b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.G21b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.G21b.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.G21b.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.G21b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.G21b.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.G21b.u$`40`$Photosyn(Ci=275)[[2]])
 
-G21.A275<-c(G21.080318.A275,G21.112718.A275,G21.082019.A275,G21.082819.A275)
+G21.A275<-c(G21a.A275,G21b.A275,G21c.A275,G21d.A275)
 
 #
 #26:20 deg. C growing temperature
 #
 
 #Replicate 1
-G26.082319.A275<-c(m.G26.082319.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.G26.082319.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.G26.082319.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.G26.082319.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.G26.082319.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.G26.082319.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.G26.082319.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.G26.082319.u$`40`$Photosyn(Ci=275)[[2]])
+G26a.A275<-c(m.G26a.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.G26a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.G26a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.G26a.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.G26a.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.G26a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.G26a.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.G26a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-G26.090619.A275<-c(m.G26.090619.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.G26.090619.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.G26.090619.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.G26.090619.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.G26.090619.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.G26.090619.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.G26.090619.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.G26.090619.u$`40`$Photosyn(Ci=275)[[2]])
+G26b.A275<-c(m.G26b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.G26b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.G26b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.G26b.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.G26b.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.G26b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.G26b.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.G26b.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-G26.100319.A275<-c(m.G26.100319.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.G26.100319.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.G26.100319.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.G26.100319.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.G26.100319.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.G26.100319.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.G26.100319.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.G26.100319.u$`40`$Photosyn(Ci=275)[[2]])
+G26c.A275<-c(m.G26c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.G26c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.G26c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.G26c.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.G26c.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.G26c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.G26c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.G26c.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 4
-G26.110119.A275<-c(m.G26.110119.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.G26.110119.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.G26.110119.u$`35`$Photosyn(Ci=275)[[2]])
+G26d.A275<-c(m.G26d.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.G26d.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.G26d.u$`35`$Photosyn(Ci=275)[[2]])
 
-G26.A275<-c(G26.082319.A275,G26.090619.A275,G26.100319.A275,G26.110119.A275)
+G26.A275<-c(G26a.A275,G26b.A275,G26c.A275,G26d.A275)
 
 #
 #31:25 deg. C growing temperature
 #
 
 #Replicate 1
-G31.050418.A275<-c(m.G31.050418.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.G31.050418.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.G31.050418.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.G31.050418.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.G31.050418.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.G31.050418.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.G31.050418.u$`40`$Photosyn(Ci=275)[[2]])
+G31a.A275<-c(m.G31a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.G31a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.G31a.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.G31a.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.G31a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.G31a.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.G31a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-G31.071118.A275<-c(m.G31.071118.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.G31.071118.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.G31.071118.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.G31.071118.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.G31.071118.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.G31.071118.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.G31.071118.u$`35`$Photosyn(Ci=275)[[2]])
+G31b.A275<-c(m.G31b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.G31b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.G31b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.G31b.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.G31b.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.G31b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.G31b.u$`35`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-G31.072218.A275<-c(m.G31.072218.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.G31.072218.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.G31.072218.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.G31.072218.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.G31.072218.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.G31.072218.d$`32`$Photosyn(Ci=275)[[2]],
-                   m.G31.072218.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.G31.072218.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.G31.072218.u$`40`$Photosyn(Ci=275)[[2]])
+G31c.A275<-c(m.G31c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.G31c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.G31c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.G31c.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.G31c.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.G31c.d$`32`$Photosyn(Ci=275)[[2]],
+                   m.G31c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.G31c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.G31c.u$`40`$Photosyn(Ci=275)[[2]])
 
-G31.A275<-c(G31.050418.A275,G31.071118.A275,G31.072218.A275)
+G31.A275<-c(G31a.A275,G31b.A275,G31c.A275)
 
 ##
 #Robinia
@@ -2554,117 +2554,117 @@ G31.A275<-c(G31.050418.A275,G31.071118.A275,G31.072218.A275)
 #
 
 #Replicate 1
-R21.073118.A275<-c(m.R21.073118.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.R21.073118.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.R21.073118.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.R21.073118.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.R21.073118.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.R21.073118.u$`40`$Photosyn(Ci=275)[[2]])
+R21a.A275<-c(m.R21a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.R21a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.R21a.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.R21a.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.R21a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.R21a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-R21.100518.A275<-c(m.R21.100518.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.R21.100518.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.R21.100518.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.R21.100518.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.R21.100518.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.R21.100518.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.R21.100518.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.R21.100518.u$`40`$Photosyn(Ci=275)[[2]])
+R21b.A275<-c(m.R21b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.R21b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.R21b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.R21b.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.R21b.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.R21b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.R21b.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.R21b.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-R21.101018.A275<-c(m.R21.101018.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.R21.101018.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.R21.101018.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.R21.101018.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.R21.101018.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.R21.101018.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.R21.101018.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.R21.101018.u$`40`$Photosyn(Ci=275)[[2]])
+R21c.A275<-c(m.R21c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.R21c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.R21c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.R21c.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.R21c.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.R21c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.R21c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.R21c.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 4
-R21.091719.A275<-c(m.R21.091719.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.R21.091719.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.R21.091719.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.R21.091719.u$`20`$Photosyn(Ci=275)[[2]],
-                   m.R21.091719.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.R21.091719.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.R21.091719.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.R21.091719.u$`40`$Photosyn(Ci=275)[[2]])
+R21d.A275<-c(m.R21d.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.R21d.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.R21d.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.R21d.u$`20`$Photosyn(Ci=275)[[2]],
+                   m.R21d.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.R21d.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.R21d.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.R21d.u$`40`$Photosyn(Ci=275)[[2]])
 
-R21.A275<-c(R21.073118.A275,R21.100518.A275,R21.101018.A275,R21.091719.A275)
+R21.A275<-c(R21a.A275,R21b.A275,R21c.A275,R21d.A275)
 
 #
 #26:20 deg. C growing temperature
 #
 
 #Replicate 1
-R26.102219.A275<-c(m.R26.102219.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.R26.102219.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.R26.102219.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.R26.102219.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.R26.102219.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.R26.102219.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.R26.102219.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.R26.102219.u$`40`$Photosyn(Ci=275)[[2]])
+R26a.A275<-c(m.R26a.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.R26a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.R26a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.R26a.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.R26a.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.R26a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.R26a.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.R26a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-R26.112219.A275<-c(m.R26.112219.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.R26.112219.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.R26.112219.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.R26.112219.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.R26.112219.d$`40`$Photosyn(Ci=275)[[2]],
-                   m.R26.112219.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.R26.112219.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.R26.112219.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.R26.112219.u$`40`$Photosyn(Ci=275)[[2]])
+R26b.A275<-c(m.R26b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.R26b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.R26b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.R26b.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.R26b.d$`40`$Photosyn(Ci=275)[[2]],
+                   m.R26b.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.R26b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.R26b.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.R26b.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-R26.120319.A275<-c(m.R26.120319.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.R26.120319.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.R26.120319.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.R26.120319.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.R26.120319.u$`25`$Photosyn(Ci=275)[[2]],
-                   m.R26.120319.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.R26.120319.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.R26.120319.u$`40`$Photosyn(Ci=275)[[2]])
+R26c.A275<-c(m.R26c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.R26c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.R26c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.R26c.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.R26c.u$`25`$Photosyn(Ci=275)[[2]],
+                   m.R26c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.R26c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.R26c.u$`40`$Photosyn(Ci=275)[[2]])
 
-R26.A275<-c(R26.102219.A275,R26.112219.A275,R26.120319.A275)
+R26.A275<-c(R26a.A275,R26b.A275,R26c.A275)
 
 #
 #31:25 deg. C growing temperature
 #
 
 #Replicate 1
-R31.071318.A275<-c(m.R31.071318.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.R31.071318.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.R31.071318.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.R31.071318.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.R31.071318.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.R31.071318.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.R31.071318.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.R31.071318.u$`40`$Photosyn(Ci=275)[[2]])
+R31a.A275<-c(m.R31a.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.R31a.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.R31a.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.R31a.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.R31a.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.R31a.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.R31a.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.R31a.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 2
-R31.072318.A275<-c(m.R31.072318.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.R31.072318.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.R31.072318.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.R31.072318.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.R31.072318.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.R31.072318.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.R31.072318.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.R31.072318.u$`40`$Photosyn(Ci=275)[[2]])
+R31b.A275<-c(m.R31b.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.R31b.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.R31b.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.R31b.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.R31b.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.R31b.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.R31b.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.R31b.u$`40`$Photosyn(Ci=275)[[2]])
 
 #Replicate 3
-R31.101418.A275<-c(m.R31.101418.d$`10`$Photosyn(Ci=275)[[2]],
-                   m.R31.101418.d$`15`$Photosyn(Ci=275)[[2]],
-                   m.R31.101418.d$`20`$Photosyn(Ci=275)[[2]],
-                   m.R31.101418.d$`25`$Photosyn(Ci=275)[[2]],
-                   m.R31.101418.d$`30`$Photosyn(Ci=275)[[2]],
-                   m.R31.101418.u$`30`$Photosyn(Ci=275)[[2]],
-                   m.R31.101418.u$`35`$Photosyn(Ci=275)[[2]],
-                   m.R31.101418.u$`40`$Photosyn(Ci=275)[[2]])
+R31c.A275<-c(m.R31c.d$`10`$Photosyn(Ci=275)[[2]],
+                   m.R31c.d$`15`$Photosyn(Ci=275)[[2]],
+                   m.R31c.d$`20`$Photosyn(Ci=275)[[2]],
+                   m.R31c.d$`25`$Photosyn(Ci=275)[[2]],
+                   m.R31c.d$`30`$Photosyn(Ci=275)[[2]],
+                   m.R31c.u$`30`$Photosyn(Ci=275)[[2]],
+                   m.R31c.u$`35`$Photosyn(Ci=275)[[2]],
+                   m.R31c.u$`40`$Photosyn(Ci=275)[[2]])
 
-R31.A275<-c(R31.071318.A275,R31.072318.A275,R31.101418.A275)
+R31.A275<-c(R31a.A275,R31b.A275,R31c.A275)
 
 ####
 #The following assembles the data frames that are used to model A275, Vcmax, and Jmax as functions of temperature
@@ -2678,10 +2678,10 @@ R31.A275<-c(R31.071318.A275,R31.072318.A275,R31.101418.A275)
 #21:15 deg. C growing temperature
 ##
 
-dat.V.M21<-cbind(c(coef(m.M21.071418.d)[,2],coef(m.M21.071418.u)[,2],coef(m.M21.120918.d)[,2],
-                   coef(m.M21.120918.u)[,2],coef(m.M21.012119.d)[,2],coef(m.M21.012119.u)[,2]))
-dat.J.M21<-cbind(c(coef(m.M21.071418.d)[,3],coef(m.M21.071418.u)[,3],coef(m.M21.120918.d)[,3],
-                   coef(m.M21.120918.u)[,3],coef(m.M21.012119.d)[,3],coef(m.M21.012119.u)[,3]))
+dat.V.M21<-cbind(c(coef(m.M21a.d)[,2],coef(m.M21a.u)[,2],coef(m.M21b.d)[,2],
+                   coef(m.M21b.u)[,2],coef(m.M21c.d)[,2],coef(m.M21c.u)[,2]))
+dat.J.M21<-cbind(c(coef(m.M21a.d)[,3],coef(m.M21a.u)[,3],coef(m.M21b.d)[,3],
+                   coef(m.M21b.u)[,3],coef(m.M21c.d)[,3],coef(m.M21c.u)[,3]))
 dat.Tc.M21<-cbind(c(10,15,20,20,25,30,35,40,10,15,20,20,25,30,35,40,10,15,20,20,25,30,35,40))
 dat.Dir.M21<-cbind(c("down","down","down","up","up","up","up","up","down","down","down","up","up","up","up","up",
                      "down","down","down","up","up","up","up","up"))
@@ -2697,12 +2697,12 @@ write.csv(dat.M21,"ACi.dat.M21.csv")
 #26:25 deg. C growing temperature
 ##
 
-dat.V.M26<-cbind(c(coef(m.M26.083019.d)[,2],coef(m.M26.083019.u)[,2],
-                   coef(m.M26.091119.d)[,2],coef(m.M26.091119.u)[1:3,2],
-                   coef(m.M26.092119.d)[,2],coef(m.M26.092119.u)[,2]))
-dat.J.M26<-cbind(c(coef(m.M26.083019.d)[,3],coef(m.M26.083019.u)[,3],
-                   NA,coef(m.M26.091119.d)[2:4,3],coef(m.M26.091119.u)[1:3,3],
-                   coef(m.M26.092119.d)[,3],coef(m.M26.092119.u)[,3]))
+dat.V.M26<-cbind(c(coef(m.M26a.d)[,2],coef(m.M26a.u)[,2],
+                   coef(m.M26b.d)[,2],coef(m.M26b.u)[1:3,2],
+                   coef(m.M26c.d)[,2],coef(m.M26c.u)[,2]))
+dat.J.M26<-cbind(c(coef(m.M26a.d)[,3],coef(m.M26a.u)[,3],
+                   NA,coef(m.M26b.d)[2:4,3],coef(m.M26b.u)[1:3,3],
+                   coef(m.M26c.d)[,3],coef(m.M26c.u)[,3]))
 dat.Tc.M26<-cbind(c(10,15,20,25,25,30,35,40,
                     10,15,20,25,25,30,35,
                     10,15,20,25,25,30,35,40))
@@ -2725,10 +2725,10 @@ write.csv(dat.M26,"ACi.dat.M26.csv")
 #31:25 deg. C growing temperature
 ##
 
-dat.V.M31<-cbind(c(coef(m.M31.080218.d)[,2],coef(m.M31.080218.u)[,2],coef(m.M31.120418.d)[,2],
-                   coef(m.M31.120418.u)[,2],coef(m.M31.040919.d)[,2],coef(m.M31.040919.u)[,2]))
-dat.J.M31<-cbind(c(coef(m.M31.080218.d)[,3],coef(m.M31.080218.u)[1:2,3],NA,NA,coef(m.M31.120418.d)[2:4,3],
-                   coef(m.M31.120418.u)[,3],coef(m.M31.040919.d)[,3],coef(m.M31.040919.u)[,3]))
+dat.V.M31<-cbind(c(coef(m.M31a.d)[,2],coef(m.M31a.u)[,2],coef(m.M31b.d)[,2],
+                   coef(m.M31b.u)[,2],coef(m.M31c.d)[,2],coef(m.M31c.u)[,2]))
+dat.J.M31<-cbind(c(coef(m.M31a.d)[,3],coef(m.M31a.u)[1:2,3],NA,NA,coef(m.M31b.d)[2:4,3],
+                   coef(m.M31b.u)[,3],coef(m.M31c.d)[,3],coef(m.M31c.u)[,3]))
 dat.Tc.M31<-cbind(c(10,15,20,25,30,30,35,40,15,20,25,30,30,35,40,10,15,20,25,30,30,35,40))
 dat.Dir.M31<-cbind(c("down","down","down","down","down","up","up","up","down","down","down","down","up","up","up",
                      "down","down","down","down","down","up","up","up"))
@@ -2748,10 +2748,10 @@ write.csv(dat.M31,"ACi.dat.M31.csv")
 #21:15 deg. C growing temperature
 ##
 
-dat.V.A21<-cbind(c(coef(m.A21.071218.d)[,2],coef(m.A21.071218.u)[,2],coef(m.A21.071818.d)[,2],
-                   coef(m.A21.071818.u)[,2],coef(m.A21.101718.d)[,2],coef(m.A21.101718.u)[,2]))
-dat.J.A21<-cbind(c(coef(m.A21.071218.d)[1,3],NA,coef(m.A21.071218.d)[3,3],coef(m.A21.071218.u)[,3],NA,coef(m.A21.071818.d)[2:3,3],
-                   coef(m.A21.071818.u)[,3],coef(m.A21.101718.d)[,3],coef(m.A21.101718.u)[,3]))
+dat.V.A21<-cbind(c(coef(m.A21a.d)[,2],coef(m.A21a.u)[,2],coef(m.A21b.d)[,2],
+                   coef(m.A21b.u)[,2],coef(m.A21c.d)[,2],coef(m.A21c.u)[,2]))
+dat.J.A21<-cbind(c(coef(m.A21a.d)[1,3],NA,coef(m.A21a.d)[3,3],coef(m.A21a.u)[,3],NA,coef(m.A21b.d)[2:3,3],
+                   coef(m.A21b.u)[,3],coef(m.A21c.d)[,3],coef(m.A21c.u)[,3]))
 dat.Tc.A21<-cbind(c(10,15,20,20,25,30,35,40,10,15,20,20,25,30,35,40,10,15,20,20,25,30,35,40))
 dat.Dir.A21<-cbind(c("down","down","down","up","up","up","up","up","down","down","down","up","up","up","up","up",
                      "down","down","down","up","up","up","up","up"))
@@ -2767,12 +2767,12 @@ write.csv(dat.A21,"ACi.dat.A21.csv")
 #26:20 deg. C growing temperature
 ##
 
-dat.V.A26<-cbind(c(coef(m.A26.112419.d)[,2],coef(m.A26.112419.u)[,2],
-                   coef(m.A26.020420.d)[,2],coef(m.A26.020420.u)[1:3,2],
-                   coef(m.A26.020820.d)[,2],coef(m.A26.020820.u)[1:3,2]))
-dat.J.A26<-cbind(c(coef(m.A26.112419.d)[,3],coef(m.A26.112419.u)[,3],
-                   coef(m.A26.020420.d)[,3],coef(m.A26.020420.u)[1:3,3],
-                   coef(m.A26.020820.d)[,3],coef(m.A26.020820.u)[1:3,3]))
+dat.V.A26<-cbind(c(coef(m.A26a.d)[,2],coef(m.A26a.u)[,2],
+                   coef(m.A26b.d)[,2],coef(m.A26b.u)[1:3,2],
+                   coef(m.A26c.d)[,2],coef(m.A26c.u)[1:3,2]))
+dat.J.A26<-cbind(c(coef(m.A26a.d)[,3],coef(m.A26a.u)[,3],
+                   coef(m.A26b.d)[,3],coef(m.A26b.u)[1:3,3],
+                   coef(m.A26c.d)[,3],coef(m.A26c.u)[1:3,3]))
 dat.Tc.A26<-cbind(c(10,15,20,25,25,30,35,40,
                     10,15,20,25,25,30,35,
                     10,15,20,25,25,30,35))
@@ -2795,10 +2795,10 @@ write.csv(dat.A26,"ACi.dat.A26.csv")
 #31:25 deg. C growing temperature
 ##
 
-dat.V.A31<-cbind(c(coef(m.A31.071618.d)[,2],coef(m.A31.071618.u)[1:2,2],coef(m.A31.092918.d)[,2],
-                   coef(m.A31.092918.u)[,2],coef(m.A31.112518.d)[,2],coef(m.A31.112518.u)[,2]))
-dat.J.A31<-cbind(c(coef(m.A31.071618.d)[,3],coef(m.A31.071618.u)[1:2,3],coef(m.A31.092918.d)[,3],
-                   coef(m.A31.092918.u)[,3],coef(m.A31.112518.d)[,3],coef(m.A31.112518.u)[,3]))
+dat.V.A31<-cbind(c(coef(m.A31a.d)[,2],coef(m.A31a.u)[1:2,2],coef(m.A31b.d)[,2],
+                   coef(m.A31b.u)[,2],coef(m.A31c.d)[,2],coef(m.A31c.u)[,2]))
+dat.J.A31<-cbind(c(coef(m.A31a.d)[,3],coef(m.A31a.u)[1:2,3],coef(m.A31b.d)[,3],
+                   coef(m.A31b.u)[,3],coef(m.A31c.d)[,3],coef(m.A31c.u)[,3]))
 dat.Tc.A31<-cbind(c(10,15,20,25,30,30,35,10,15,20,25,30,30,35,40,10,15,20,25,30,30,35,40))
 dat.Dir.A31<-cbind(c("down","down","down","down","down","up","up","down","down","down","down","down","up","up","up",
                      "down","down","down","down","down","up","up","up"))
@@ -2818,10 +2818,10 @@ write.csv(dat.A31,"ACi.dat.A31.csv")
 #21:15 deg. C growing temperature
 ##
 
-dat.V.G21<-cbind(c(coef(m.G21.080318.d)[,2],coef(m.G21.080318.u)[,2],coef(m.G21.112718.d)[,2],
-                   coef(m.G21.112718.u)[,2],coef(m.G21.082019.u)[1,2],coef(m.G21.082019.u)[4:5,2],coef(m.G21.082819.d)[,2],coef(m.G21.082819.u)[,2]))
-dat.J.G21<-cbind(c(coef(m.G21.080318.d)[,3],coef(m.G21.080318.u)[,3],coef(m.G21.112718.d)[,3],
-                   coef(m.G21.112718.u)[,3],coef(m.G21.082019.u)[1,3],coef(m.G21.082019.u)[4:5,3],coef(m.G21.082819.d)[,3],coef(m.G21.082819.u)[,3]))
+dat.V.G21<-cbind(c(coef(m.G21a.d)[,2],coef(m.G21a.u)[,2],coef(m.G21b.d)[,2],
+                   coef(m.G21b.u)[,2],coef(m.G21c.u)[1,2],coef(m.G21c.u)[4:5,2],coef(m.G21d.d)[,2],coef(m.G21d.u)[,2]))
+dat.J.G21<-cbind(c(coef(m.G21a.d)[,3],coef(m.G21a.u)[,3],coef(m.G21b.d)[,3],
+                   coef(m.G21b.u)[,3],coef(m.G21c.u)[1,3],coef(m.G21c.u)[4:5,3],coef(m.G21d.d)[,3],coef(m.G21d.u)[,3]))
 dat.Tc.G21<-cbind(c(10,15,20,20,25,30,35,40,10,15,20,20,25,30,35,40,20,35,40,10,15,20,20,25,30,35,40))
 dat.Dir.G21<-cbind(c("down","down","down","up","up","up","up","up","down","down","down","up","up","up","up","up",
                      "up","up","up","down","down","down","up","up","up","up","up"))
@@ -2837,14 +2837,14 @@ write.csv(dat.G21,"ACi.dat.G21.csv")
 #26:20 deg. C growing temperature
 ##
 
-dat.V.G26<-cbind(c(coef(m.G26.082319.d)[,2],coef(m.G26.082319.u)[,2],
-                   coef(m.G26.090619.d)[,2],coef(m.G26.090619.u)[,2],
-                   coef(m.G26.100319.d)[,2],coef(m.G26.100319.u)[,2],
-                   coef(m.G26.110119.u)[1:3,2]))
-dat.J.G26<-cbind(c(coef(m.G26.082319.d)[,3],coef(m.G26.082319.u)[,3],
-                   NA,coef(m.G26.090619.d)[2:4,3],coef(m.G26.090619.u)[,3],
-                   NA,coef(m.G26.100319.d)[2:4,3],coef(m.G26.100319.u)[,3],
-                   coef(m.G26.110119.u)[1:3,3]))
+dat.V.G26<-cbind(c(coef(m.G26a.d)[,2],coef(m.G26a.u)[,2],
+                   coef(m.G26b.d)[,2],coef(m.G26b.u)[,2],
+                   coef(m.G26c.d)[,2],coef(m.G26c.u)[,2],
+                   coef(m.G26d.u)[1:3,2]))
+dat.J.G26<-cbind(c(coef(m.G26a.d)[,3],coef(m.G26a.u)[,3],
+                   NA,coef(m.G26b.d)[2:4,3],coef(m.G26b.u)[,3],
+                   NA,coef(m.G26c.d)[2:4,3],coef(m.G26c.u)[,3],
+                   coef(m.G26d.u)[1:3,3]))
 dat.Tc.G26<-cbind(c(10,15,20,25,25,30,35,40,
                     10,15,20,25,25,30,35,40,
                     10,15,20,25,25,30,35,40,
@@ -2871,12 +2871,12 @@ write.csv(dat.G26,"ACi.dat.G26.csv")
 #31:25 deg. C growing temperature
 ##
 
-dat.V.G31<-cbind(c(coef(m.G31.050418.d)[,2],coef(m.G31.050418.u)[,2],
-                   coef(m.G31.071118.d)[,2],coef(m.G31.071118.u)[1:2,2],
-                   coef(m.G31.072218.d)[,2],coef(m.G31.072218.u)[,2]))
-dat.J.G31<-cbind(c(coef(m.G31.050418.d)[,3],coef(m.G31.050418.u)[,3],
-                   coef(m.G31.071118.d)[,3],coef(m.G31.071118.u)[1:2,3],
-                   NA,NA,coef(m.G31.072218.d)[3:6,3],coef(m.G31.072218.u)[,3]))
+dat.V.G31<-cbind(c(coef(m.G31a.d)[,2],coef(m.G31a.u)[,2],
+                   coef(m.G31b.d)[,2],coef(m.G31b.u)[1:2,2],
+                   coef(m.G31c.d)[,2],coef(m.G31c.u)[,2]))
+dat.J.G31<-cbind(c(coef(m.G31a.d)[,3],coef(m.G31a.u)[,3],
+                   coef(m.G31b.d)[,3],coef(m.G31b.u)[1:2,3],
+                   NA,NA,coef(m.G31c.d)[3:6,3],coef(m.G31c.u)[,3]))
 dat.Tc.G31<-cbind(c(15,20,25,30,30,35,40,10,15,20,25,30,30,35,10,15,20,25,30,32.4,30,35,40))
 dat.Dir.G31<-cbind(c("down","down","down","down","up","up","up","down","down","down","down","down","up","up",
                      "down","down","down","down","down","down","up","up","up"))
@@ -2896,14 +2896,14 @@ write.csv(dat.G31,"ACi.dat.G31.csv")
 #21:15 deg. C growing temperature
 ##
 
-dat.V.R21<-cbind(c(coef(m.R21.073118.d)[2:3,2],coef(m.R21.073118.u)[1:3,2],coef(m.R21.073118.u)[5,2],
-                   coef(m.R21.100518.d)[,2],coef(m.R21.100518.u)[,2],
-                   coef(m.R21.101018.d)[,2],coef(m.R21.101018.u)[,2],
-                   coef(m.R21.091719.d)[,2],coef(m.R21.091719.u)[,2]))
-dat.J.R21<-cbind(c(coef(m.R21.073118.d)[2:3,3],coef(m.R21.073118.u)[1:3,3],coef(m.R21.073118.u)[5,3],
-                   coef(m.R21.100518.d)[,3],coef(m.R21.100518.u)[,3],
-                   NA,coef(m.R21.101018.d)[2:3,2],coef(m.R21.101018.u)[,3],
-                   coef(m.R21.091719.d)[,3],coef(m.R21.091719.u)[,3]))
+dat.V.R21<-cbind(c(coef(m.R21a.d)[2:3,2],coef(m.R21a.u)[1:3,2],coef(m.R21a.u)[5,2],
+                   coef(m.R21b.d)[,2],coef(m.R21b.u)[,2],
+                   coef(m.R21c.d)[,2],coef(m.R21c.u)[,2],
+                   coef(m.R21d.d)[,2],coef(m.R21d.u)[,2]))
+dat.J.R21<-cbind(c(coef(m.R21a.d)[2:3,3],coef(m.R21a.u)[1:3,3],coef(m.R21a.u)[5,3],
+                   coef(m.R21b.d)[,3],coef(m.R21b.u)[,3],
+                   NA,coef(m.R21c.d)[2:3,2],coef(m.R21c.u)[,3],
+                   coef(m.R21d.d)[,3],coef(m.R21d.u)[,3]))
 dat.Tc.R21<-cbind(c(15,20,20,25,30,40,
                     10,15,20,20,25,30,35,40,
                     10,15,20,20,25,30,35,40,
@@ -2927,12 +2927,12 @@ write.csv(dat.R21,"ACi.dat.R21.csv")
 #26:20 deg. C growing temperature
 ##
 
-dat.V.R26<-cbind(c(coef(m.R26.102219.d)[,2],coef(m.R26.102219.u)[,2],
-                   coef(m.R26.112219.d)[,2],coef(m.R26.112219.u)[,2],
-                   coef(m.R26.120319.d)[,2],coef(m.R26.120319.u)[,2]))
-dat.J.R26<-cbind(c(NA,coef(m.R26.102219.d)[2:4,2],coef(m.R26.102219.u)[,3],
-                   NA,coef(m.R26.112219.d)[2:5,3],coef(m.R26.112219.u)[,3],
-                   coef(m.R26.120319.d)[,3],coef(m.R26.120319.u)[,3]))
+dat.V.R26<-cbind(c(coef(m.R26a.d)[,2],coef(m.R26a.u)[,2],
+                   coef(m.R26b.d)[,2],coef(m.R26b.u)[,2],
+                   coef(m.R26c.d)[,2],coef(m.R26c.u)[,2]))
+dat.J.R26<-cbind(c(NA,coef(m.R26a.d)[2:4,2],coef(m.R26a.u)[,3],
+                   NA,coef(m.R26b.d)[2:5,3],coef(m.R26b.u)[,3],
+                   coef(m.R26c.d)[,3],coef(m.R26c.u)[,3]))
 dat.Tc.R26<-cbind(c(10,15,20,25,25,30,35,40,
                     10,15,20,25,40,25,30,35,40,
                     10,15,20,25,25,30,35,40))
@@ -2955,10 +2955,10 @@ write.csv(dat.R26,"ACi.dat.R26.csv")
 #31:25 deg. C growing temperature
 ##
 
-dat.V.R31<-cbind(c(coef(m.R31.071318.d)[,2],coef(m.R31.071318.u)[,2],coef(m.R31.072318.d)[,2],
-                   coef(m.R31.072318.u)[,2],coef(m.R31.101418.d)[,2],coef(m.R31.101418.u)[,2]))
-dat.J.R31<-cbind(c(coef(m.R31.071318.d)[,3],coef(m.R31.071318.u)[,3],coef(m.R31.072318.d)[,3],
-                   coef(m.R31.072318.u)[,3],coef(m.R31.101418.d)[,3],coef(m.R31.101418.u)[,3]))
+dat.V.R31<-cbind(c(coef(m.R31a.d)[,2],coef(m.R31a.u)[,2],coef(m.R31b.d)[,2],
+                   coef(m.R31b.u)[,2],coef(m.R31c.d)[,2],coef(m.R31c.u)[,2]))
+dat.J.R31<-cbind(c(coef(m.R31a.d)[,3],coef(m.R31a.u)[,3],coef(m.R31b.d)[,3],
+                   coef(m.R31b.u)[,3],coef(m.R31c.d)[,3],coef(m.R31c.u)[,3]))
 dat.Tc.R31<-cbind(c(10,15,20,25,30,30,35,40,
                     10,15,20,25,30,30,35,40,
                     10,15,20,25,30,30,35,40))
