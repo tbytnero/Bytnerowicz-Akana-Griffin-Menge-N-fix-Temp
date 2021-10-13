@@ -1686,9 +1686,9 @@ ALRU21c <- read.csv("ALRU21c_inst.csv")
 ALRU26a <- read.csv("ALRU26a_inst.csv")
 ALRU26b <- read.csv("ALRU26b_inst.csv")
 ALRU26c <- read.csv("ALRU26c_inst.csv")
-ALRU31a <- read.csv("ALRU31c_inst.csv")
-ALRU31b <- read.csv("ALRU31a_inst.csv")
-ALRU31c <- read.csv("ALRU31b_inst.csv")
+ALRU31a <- read.csv("ALRU31a_inst.csv")
+ALRU31b <- read.csv("ALRU31b_inst.csv")
+ALRU31c <- read.csv("ALRU31c_inst.csv")
 
 #Gliricidia
 GLSE21a <- read.csv("GLSE21a_inst.csv")
