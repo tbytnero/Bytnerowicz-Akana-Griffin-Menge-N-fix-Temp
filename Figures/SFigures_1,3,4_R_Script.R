@@ -17,7 +17,7 @@ library(bbmle)
 library(MASS)
 
 ####
-#Read in N-fixation data
+#Read in N fixation data
 ####
 
 #Alnus rubra
@@ -94,7 +94,7 @@ R31.Asat.dat<-A400.data[A400.data$Tr=="R31",]
 #Define functions
 ####
 
-#No acclimation (used for calculating N-fixation rates at 15 and 40 deg. C [Supplementary Figure 4])
+#No acclimation (used for calculating N fixation rates at 15 and 40 deg. C [Supplementary Figure 4])
 beta <- function(ymax,Tmin,Topt,Tmax,T){
   y <- pmax(0,ymax*(Tmax-T)/(Tmax-Topt)*(((T-Tmin)/(Topt-Tmin))^((Topt-Tmin)/(Tmax-Topt))))
   for(i in 1:length(y)){
@@ -105,7 +105,7 @@ beta <- function(ymax,Tmin,Topt,Tmax,T){
   y
 }
 
-#Acclimation of all parameters (used for N-fixation with Morella, Alnus, and Robinia)
+#Acclimation of all parameters (used for N fixation with Morella, Alnus, and Robinia)
 beta.lin.all <- function(ymax,a,b,c,d,e,f,T,Tgrow){
   y <- pmax(0,ymax*((e+f*Tgrow)-T)/((e+f*Tgrow)-(c+d*Tgrow))*(((T-(a+b*Tgrow))/((c+d*Tgrow)-(a+b*Tgrow)))^(((c+d*Tgrow)-(a+b*Tgrow))/((e+f*Tgrow)-(c+d*Tgrow)))))
   for(i in 1:length(y)){
@@ -116,7 +116,7 @@ beta.lin.all <- function(ymax,a,b,c,d,e,f,T,Tgrow){
   y
 }
 
-#Acclimation of Tmin and Topt (used for N-fixation with Gliricidia)
+#Acclimation of Tmin and Topt (used for N fixation with Gliricidia)
 beta.lin.Tmin.Topt <- function(ymax,Tmax,a,b,c,d,T,Tgrow){
   y <- pmax(0,ymax*(Tmax-T)/(Tmax-(c+d*Tgrow))*(((T-(a+b*Tgrow))/((c+d*Tgrow)-(a+b*Tgrow)))^(((c+d*Tgrow)-(a+b*Tgrow))/(Tmax-(c+d*Tgrow)))))
   for(i in 1:length(y)){
@@ -137,7 +137,7 @@ beta.Topt.lin <- function(ymax,Tmin,a,b,Tmax,T,Tgrow){
 #Negative log-likelihood (NLL) functions
 ####
 
-#NLL function for acclimation of all parameters (used for N-fixation with Morella, Alnus, and Robinia)
+#NLL function for acclimation of all parameters (used for N fixation with Morella, Alnus, and Robinia)
 Nase_beta_linall_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
                                      ymax26a,ymax26b,ymax26c,
                                      ymax31a,ymax31b,ymax31c,
@@ -168,7 +168,7 @@ Nase_beta_linall_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
       sum(dnorm(Nasedat31c,mean=Nasemean31c,sd=exp(sdNase),log=TRUE),na.rm=TRUE))
 }
 
-#NLL function for acclimation of Tmin and Topt (used for N-fixation with Gliricidia)
+#NLL function for acclimation of Tmin and Topt (used for N fixation with Gliricidia)
 Nase_beta_linTminTopt_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
                                           ymax26a,ymax26b,ymax26c,
                                           ymax31a,ymax31b,ymax31c,
@@ -411,7 +411,7 @@ Photo_beta_normNLL_all_Topt.lin <- function(sdPhoto,ymaxM21a,ymaxM21b,ymaxM21c,y
 ####
 
 ###
-#N-fixation
+#N fixation
 ###
 
 
@@ -532,7 +532,7 @@ fit_Photo_beta_all_Topt.lin_Asat <- mle2(Photo_beta_normNLL_all_Topt.lin,start=l
 summary(fit_Photo_beta_all_Topt.lin_Asat)
 
 ####
-#Save N-fixation parameter estimates
+#Save N fixation parameter estimates
 ####
 
 #Morella
@@ -548,7 +548,7 @@ ft.g <- coef(fit_Nase_beta_linTminTopt_GLSE)
 ft.r <- coef(fit_Nase_beta_linall_ROPS)
 
 ####
-#Calculate N-fixation rates at 15 and 40 deg. C as a function of growing temperature
+#Calculate N fixation rates at 15 and 40 deg. C as a function of growing temperature
 ####
 
 #Vector of mean growing and measurement temperatures
@@ -615,7 +615,7 @@ for(i in 1:length(Tg.seq)){
 }
 
 ####
-#Calculate N-fixation 95% CI
+#Calculate N fixation 95% CI
 ####
 
 ##
@@ -1264,6 +1264,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[81],coef(fit_Photo_
       from=10,to=40,lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 title(main=expression('  a'),cex.main=1.5,adj=0,line=-1)
 mtext(expression(italic(Morella)),side=3,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 29.0 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=28.99,lty=2,col="dodgerblue1")
 
 #S3b
 plot(A21.Asat.dat$Temp[1:3],A21.Asat.dat$A400[1:3]/coef(fit_Photo_beta_all_Topt.lin_Asat)[20],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1282,6 +1284,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[82],coef(fit_Photo_
       from=10,to=40,lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 title(main=expression('  b'),cex.main=1.5,adj=0,line=-1)
 mtext(expression(italic(Alnus)),side=3,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 26.2 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=26.17,lty=2,col="dodgerblue1")
 
 #S3c
 plot(G21.Asat.dat$Temp[1:3],G21.Asat.dat$A400[1:3]/coef(fit_Photo_beta_all_Topt.lin_Asat)[38],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1300,6 +1304,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[83],coef(fit_Photo_
       from=10,to=40,lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 title(main=expression('  c'),cex.main=1.5,adj=0,line=-1)
 mtext(expression(italic(Gliricidia)),side=3,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 24.5 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=24.48,lty=2,col="dodgerblue1")
 
 #S3d
 plot(R21.Asat.dat$Temp[1:3],R21.Asat.dat$A400[1:3]/coef(fit_Photo_beta_all_Topt.lin_Asat)[57],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1321,6 +1327,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[84],coef(fit_Photo_
 title(main=expression('  d'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('21:15 '*degree*'C'),side=4,line=1,cex=1.5)
 mtext(expression(italic(Robinia)),side=3,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 27.6 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=27.59,lty=2,col="dodgerblue1")
 
 #S3e
 plot(M26.Asat.dat$Temp[1:4],M26.Asat.dat$A400[1:4]/coef(fit_Photo_beta_all_Topt.lin_Asat)[8],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1338,6 +1346,8 @@ points(M26.Asat.dat$Temp[21:24],M26.Asat.dat$A400[21:24]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[81],coef(fit_Photo_beta_all_Topt.lin_Asat)[85],coef(fit_Photo_beta_all_Topt.lin_Asat)[89],coef(fit_Photo_beta_all_Topt.lin_Asat)[77],x,23.5),
       from=10,to=40,lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  e'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 29.8 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=29.81,lty=2,col="gold1")
 
 #S3f
 plot(A26.Asat.dat$Temp[1:4],A26.Asat.dat$A400[1:4]/coef(fit_Photo_beta_all_Topt.lin_Asat)[26],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1355,6 +1365,8 @@ points(A26.Asat.dat$Temp[21:24],A26.Asat.dat$A400[21:24]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[82],coef(fit_Photo_beta_all_Topt.lin_Asat)[86],coef(fit_Photo_beta_all_Topt.lin_Asat)[90],coef(fit_Photo_beta_all_Topt.lin_Asat)[78],x,23.5),
       from=10,to=40,lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  f'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 28.3 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=28.26,lty=2,col="gold1")
 
 #S3g
 plot(G26.Asat.dat$Temp[1:4],G26.Asat.dat$A400[1:4]/coef(fit_Photo_beta_all_Topt.lin_Asat)[44],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1373,6 +1385,8 @@ points(G26.Asat.dat$Temp[25:28],G26.Asat.dat$A400[25:28]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[83],coef(fit_Photo_beta_all_Topt.lin_Asat)[87],coef(fit_Photo_beta_all_Topt.lin_Asat)[91],coef(fit_Photo_beta_all_Topt.lin_Asat)[79],x,23.5),
       from=10,to=40,lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  g'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 27.2 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=27.25,lty=2,col="gold1")
 
 #S3h
 plot(R26.Asat.dat$Temp[1:4],R26.Asat.dat$A400[1:4]/coef(fit_Photo_beta_all_Topt.lin_Asat)[65],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1391,6 +1405,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[84],coef(fit_Photo_
       from=10,to=40,lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  h'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('26:20 '*degree*'C'),side=4,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 28.4 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=28.39,lty=2,col="gold1")
 
 #S3i
 plot(M31.Asat.dat$Temp[1:5],M31.Asat.dat$A400[1:5]/coef(fit_Photo_beta_all_Topt.lin_Asat)[14],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1408,6 +1424,8 @@ points(M31.Asat.dat$Temp[21:23],M31.Asat.dat$A400[21:23]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[81],coef(fit_Photo_beta_all_Topt.lin_Asat)[85],coef(fit_Photo_beta_all_Topt.lin_Asat)[89],coef(fit_Photo_beta_all_Topt.lin_Asat)[77],x,28.5),
       from=10,to=40,lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  i'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 30.6 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=30.62,lty=2,col="orangered3")
 
 #S3j
 plot(A31.Asat.dat$Temp[1:5],A31.Asat.dat$A400[1:5]/coef(fit_Photo_beta_all_Topt.lin_Asat)[32],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1425,6 +1443,8 @@ points(A31.Asat.dat$Temp[22:24],A31.Asat.dat$A400[22:24]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[82],coef(fit_Photo_beta_all_Topt.lin_Asat)[86],coef(fit_Photo_beta_all_Topt.lin_Asat)[90],coef(fit_Photo_beta_all_Topt.lin_Asat)[78],x,28.5),
       from=10,to=40,lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  j'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 30.3 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=30.35,lty=2,col="orangered3")
 
 #S3k
 plot(G31.Asat.dat$Temp[1:4],G31.Asat.dat$A400[1:4]/coef(fit_Photo_beta_all_Topt.lin_Asat)[51],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1442,6 +1462,8 @@ points(G31.Asat.dat$Temp[22:24],G31.Asat.dat$A400[22:24]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[83],coef(fit_Photo_beta_all_Topt.lin_Asat)[87],coef(fit_Photo_beta_all_Topt.lin_Asat)[91],coef(fit_Photo_beta_all_Topt.lin_Asat)[79],x,28.5),
       from=10,to=40,lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  k'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 30.0 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=30.01,lty=2,col="orangered3")
 
 #S3l
 plot(R31.Asat.dat$Temp[1:5],R31.Asat.dat$A400[1:5]/coef(fit_Photo_beta_all_Topt.lin_Asat)[71],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -1460,6 +1482,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_Asat)[84],coef(fit_Photo_
       from=10,to=40,lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  l'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('31:25 '*degree*'C'),side=4,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 29.2 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=29.19,lty=2,col="orangered3")
 
 mtext(expression('Photosynthesis ('*italic('A')[sat]*'; % of max)'),side=2,line=2.9,cex=1.5,outer=T)
 mtext(expression('Temperature ('*degree*'C)'),side=1,line=3,cex=1.5,outer=T)
@@ -1601,7 +1625,7 @@ par(xpd=TRUE)
 
 #Legend
 plot(0:10, 0:10, type='n', bty='n', xaxt='n', yaxt='n',xlab=NA,ylab=NA)
-legend("left",legend=c(expression(underline(bold('N-fixation'))),expression(italic(Morella)),expression(italic(Alnus)),expression(italic(Gliricidia)),expression(italic(Robinia)),
+legend("left",legend=c(expression(underline(bold('N fixation'))),expression(italic(Morella)),expression(italic(Alnus)),expression(italic(Gliricidia)),expression(italic(Robinia)),
                        expression(underline(bold('Photosynthesis'))),expression(italic(Morella)),expression(italic(Alnus)),expression(italic(Gliricidia)),expression(italic(Robinia))),
        col=c(NA,"darkorange1","darkturquoise","orangered2","dodgerblue3",NA,"darkorange1","darkturquoise","orangered2","dodgerblue3"),
        lty=c(NA,1,1,1,1,NA,2,2,2,2),pch=c(NA,16,16,17,17,NA,1,1,2,2),bty="n",pt.cex=1.5,lwd=1,x.intersp = 0.2,y.intersp = 1,

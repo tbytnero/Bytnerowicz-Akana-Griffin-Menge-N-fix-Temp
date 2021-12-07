@@ -517,6 +517,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[81],coef(fit_Photo_
       from=10,to=40,lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 title(main=expression('  a'),cex.main=1.5,adj=0,line=-1)
 mtext(expression(italic(Morella)),side=3,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 27.2 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=27.22,lty=2,col="dodgerblue1")
 
 #S2b
 plot(A21.A275.dat$Temp[1:3],A21.A275.dat$A275[1:3]/coef(fit_Photo_beta_all_Topt.lin_A275)[20],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -535,6 +537,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[82],coef(fit_Photo_
       from=10,to=40,lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 title(main=expression('  b'),cex.main=1.5,adj=0,line=-1)
 mtext(expression(italic(Alnus)),side=3,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 25.4 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=25.36,lty=2,col="dodgerblue1")
 
 #S2c
 plot(G21.A275.dat$Temp[1:3],G21.A275.dat$A275[1:3]/coef(fit_Photo_beta_all_Topt.lin_A275)[38],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -553,6 +557,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[83],coef(fit_Photo_
       from=10,to=40,lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 title(main=expression('  c'),cex.main=1.5,adj=0,line=-1)
 mtext(expression(italic(Gliricidia)),side=3,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 24.7 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=24.68,lty=2,col="dodgerblue1")
 
 #S2d
 plot(R21.A275.dat$Temp[1:2],R21.A275.dat$A275[1:2]/coef(fit_Photo_beta_all_Topt.lin_A275)[57],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -574,6 +580,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[84],coef(fit_Photo_
 title(main=expression('  d'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('21:15 '*degree*'C'),side=4,line=1,cex=1.5)
 mtext(expression(italic(Robinia)),side=3,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 26.5 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=26.46,lty=2,col="dodgerblue1")
 
 #S2e
 plot(M26.A275.dat$Temp[1:4],M26.A275.dat$A275[1:4]/coef(fit_Photo_beta_all_Topt.lin_A275)[8],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -591,6 +599,8 @@ points(M26.A275.dat$Temp[20:23],M26.A275.dat$A275[20:23]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[81],coef(fit_Photo_beta_all_Topt.lin_A275)[85],coef(fit_Photo_beta_all_Topt.lin_A275)[89],coef(fit_Photo_beta_all_Topt.lin_A275)[77],x,23.5),
       from=10,to=40,lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  e'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 28.4 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=28.41,lty=2,col="gold1")
 
 #S2f
 plot(A26.A275.dat$Temp[1:4],A26.A275.dat$A275[1:4]/coef(fit_Photo_beta_all_Topt.lin_A275)[26],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -608,6 +618,8 @@ points(A26.A275.dat$Temp[20:22],A26.A275.dat$A275[20:22]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[82],coef(fit_Photo_beta_all_Topt.lin_A275)[86],coef(fit_Photo_beta_all_Topt.lin_A275)[90],coef(fit_Photo_beta_all_Topt.lin_A275)[78],x,23.5),
       from=10,to=40,lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  f'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 27.1 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=27.06,lty=2,col="gold1")
 
 #S2g
 plot(G26.A275.dat$Temp[1:4],G26.A275.dat$A275[1:4]/coef(fit_Photo_beta_all_Topt.lin_A275)[44],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -626,6 +638,8 @@ points(G26.A275.dat$Temp[25:27],G26.A275.dat$A275[25:27]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[83],coef(fit_Photo_beta_all_Topt.lin_A275)[87],coef(fit_Photo_beta_all_Topt.lin_A275)[91],coef(fit_Photo_beta_all_Topt.lin_A275)[79],x,23.5),
       from=10,to=40,lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  g'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 27.9 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=27.87,lty=2,col="gold1")
 
 #S2h
 plot(R26.A275.dat$Temp[1:4],R26.A275.dat$A275[1:4]/coef(fit_Photo_beta_all_Topt.lin_A275)[65],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -644,6 +658,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[84],coef(fit_Photo_
       from=10,to=40,lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  h'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('26:20 '*degree*'C'),side=4,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 27.4 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=27.43,lty=2,col="gold1")
 
 #S2i
 plot(M31.A275.dat$Temp[1:5],M31.A275.dat$A275[1:5]/coef(fit_Photo_beta_all_Topt.lin_A275)[14],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -661,6 +677,8 @@ points(M31.A275.dat$Temp[21:23],M31.A275.dat$A275[21:23]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[81],coef(fit_Photo_beta_all_Topt.lin_A275)[85],coef(fit_Photo_beta_all_Topt.lin_A275)[89],coef(fit_Photo_beta_all_Topt.lin_A275)[77],x,28.5),
       from=10,to=40,lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  i'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 29.6 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=29.60,lty=2,col="orangered3")
 
 #S2j
 plot(A31.A275.dat$Temp[1:5],A31.A275.dat$A275[1:5]/coef(fit_Photo_beta_all_Topt.lin_A275)[32],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -678,6 +696,8 @@ points(A31.A275.dat$Temp[21:23],A31.A275.dat$A275[21:23]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[82],coef(fit_Photo_beta_all_Topt.lin_A275)[86],coef(fit_Photo_beta_all_Topt.lin_A275)[90],coef(fit_Photo_beta_all_Topt.lin_A275)[78],x,28.5),
       from=10,to=40,lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  j'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 28.7 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=28.75,lty=2,col="orangered3")
 
 #S2k
 plot(G31.A275.dat$Temp[1:4],G31.A275.dat$A275[1:4]/coef(fit_Photo_beta_all_Topt.lin_A275)[51],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -695,6 +715,8 @@ points(G31.A275.dat$Temp[21:23],G31.A275.dat$A275[21:23]/coef(fit_Photo_beta_all
 curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[83],coef(fit_Photo_beta_all_Topt.lin_A275)[87],coef(fit_Photo_beta_all_Topt.lin_A275)[91],coef(fit_Photo_beta_all_Topt.lin_A275)[79],x,28.5),
       from=10,to=40,lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  k'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 31.0 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=31.05,lty=2,col="orangered3")
 
 #S2l
 plot(R31.A275.dat$Temp[1:5],R31.A275.dat$A275[1:5]/coef(fit_Photo_beta_all_Topt.lin_A275)[71],pch=1,cex=1.5,col="black",ylim=c(0,1.6),xlim=c(5,45),xlab=NA,
@@ -713,6 +735,8 @@ curve(beta.Topt.lin(1,coef(fit_Photo_beta_all_Topt.lin_A275)[84],coef(fit_Photo_
       from=10,to=40,lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  l'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('31:25 '*degree*'C'),side=4,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 28.4 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=28.40,lty=2,col="orangered3")
 
 mtext(expression('Photosynthesis ('*italic('A')[275]*'; % of max)'),side=2,line=2.9,cex=1.5,outer=T)
 mtext(expression('Temperature ('*degree*'C)'),side=1,line=3,cex=1.5,outer=T)

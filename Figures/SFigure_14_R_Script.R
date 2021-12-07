@@ -28,9 +28,9 @@ par(pty="s")
 
 #S14a
 plot(25:40,25:40,col="white",xlab=NA,ylab=NA,las=1,xlim=c(0,100),ylim=c(0,100),cex.lab=1.5,cex.axis=1.2)
-mtext(expression('N-fixation at 15 '*degree*'C'),side=2,cex=1.2,line=4.75)
+mtext(expression('N fixation at 15 '*degree*'C'),side=2,cex=1.2,line=4.75)
 mtext(expression('(simulated; % of max)'),side=2,cex=1.2,line=3)
-mtext(expression('N-fixation at 15 '*degree*'C'),side=1,cex=1.2,line=3)
+mtext(expression('N fixation at 15 '*degree*'C'),side=1,cex=1.2,line=3)
 mtext(expression('(measured; % of max)'),side=1,cex=1.2,line=4.75)
 abline(a=0,b=1,lty=2)
 points(c(x1.dat$r15)~c(og.dat$r15),pch=c(16,16,16,16,16,16,17,17,17,17,17,17),
@@ -72,9 +72,9 @@ mtext(text="b",side=3,cex=1.2,adj=0)
 
 #S14c
 plot(25:40,25:40,col="white",xlab=NA,ylab=NA,las=1,xlim=c(0,100),ylim=c(0,100),cex.lab=1.5,cex.axis=1.2)
-mtext(expression('N-fixation at 40 '*degree*'C'),side=2,cex=1.2,line=4.75)
+mtext(expression('N fixation at 40 '*degree*'C'),side=2,cex=1.2,line=4.75)
 mtext(expression('(simulated; % of max)'),side=2,cex=1.2,line=3)
-mtext(expression('N-fixation at 40 '*degree*'C'),side=1,cex=1.2,line=3)
+mtext(expression('N fixation at 40 '*degree*'C'),side=1,cex=1.2,line=3)
 mtext(expression('(measured; % of max)'),side=1,cex=1.2,line=4.75)
 abline(a=0,b=1,lty=2)
 points(c(x1.dat$r40)~c(og.dat$r40),pch=c(16,16,16,16,16,16,17,17,17,17,17,17),

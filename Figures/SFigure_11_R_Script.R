@@ -10,7 +10,7 @@
 ####
 
 ####
-#Read in N-fixation data
+#Read in N fixation data
 ####
 
 M.og<-read.csv("MOCE_lin_beta_fit.csv")
@@ -19,7 +19,7 @@ G.og<-read.csv("GLSE_lin_beta_fit.csv")
 R.og<-read.csv("ROPS_lin_beta_fit.csv")
 
 ####
-#Read in simulated instantaneous N-fixation fits (i.e., without effect of temporal decline)
+#Read in simulated instantaneous N fixation fits (i.e., without effect of temporal decline)
 ####
 
 M.inst<-read.csv("MOCE_inst_beta_fit.csv")
@@ -200,9 +200,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -239,9 +239,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -278,9 +278,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -291,7 +291,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin21.M.o,Topt21.M.o,Tmax21.M.o,25)
@@ -353,9 +353,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -392,9 +392,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -431,9 +431,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -444,7 +444,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin21.A.o,Topt21.A.o,Tmax21.A.o,25)
@@ -500,9 +500,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -539,9 +539,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -578,9 +578,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -591,7 +591,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin21.G.o,Topt21.G.o,Tmax21.G.o,25)
@@ -647,9 +647,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -686,9 +686,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -725,9 +725,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -738,7 +738,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin21.R.o,Topt21.R.o,Tmax21.R.o,25)
@@ -795,9 +795,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -834,9 +834,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -873,9 +873,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -886,7 +886,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin26.M.o,Topt26.M.o,Tmax26.M.o,25)
@@ -941,9 +941,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -980,9 +980,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1019,9 +1019,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1032,7 +1032,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin26.A.o,Topt26.A.o,Tmax26.A.o,25)
@@ -1087,9 +1087,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1126,9 +1126,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1165,9 +1165,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1178,7 +1178,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin26.G.o,Topt26.G.o,Tmax26.G.o,25)
@@ -1233,9 +1233,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1272,9 +1272,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1311,9 +1311,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1324,7 +1324,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin26.R.o,Topt26.R.o,Tmax26.R.o,25)
@@ -1380,9 +1380,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1419,9 +1419,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1458,9 +1458,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1471,7 +1471,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin31.M.o,Topt31.M.o,Tmax31.M.o,25)
@@ -1526,9 +1526,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1565,9 +1565,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1604,9 +1604,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1617,7 +1617,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin31.A.o,Topt31.A.o,Tmax31.A.o,25)
@@ -1672,9 +1672,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1711,9 +1711,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1750,9 +1750,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1763,7 +1763,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin31.G.o,Topt31.G.o,Tmax31.G.o,25)
@@ -1818,9 +1818,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1857,9 +1857,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1896,9 +1896,9 @@ for (i in 1:(length(time.sim)-1)){
   
   # Now find the change in tau corresponding to the average
   # of the value at the current tau value and the value at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1909,7 +1909,7 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Calculate Topt and relative N-fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
+#Calculate Topt and relative N fixation rate at 15 and 40 deg. C for 1x and 3x slower heating rate
 temp.sim<-tau.sim+Topt
 
 og.25<-beta(1,Tmin31.R.o,Topt31.R.o,Tmax31.R.o,25)
@@ -1930,5 +1930,5 @@ points(x3.slow.fit[109:476]/x3.slow.fit[251]~temp.sim[109:476],type="l",lwd=1.2,
 title(main=expression('  l'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('31:25 '*degree*'C'),side=4,line=1,cex=1.5)
 
-mtext(expression('N-fixation (normalized to 1 at 25 '*degree*'C)'),side=2,line=2.9,cex=1.5,outer=T)
+mtext(expression('N fixation (normalized to 1 at 25 '*degree*'C)'),side=2,line=2.9,cex=1.5,outer=T)
 mtext(expression('Temperature ('*degree*'C)'),side=1,line=3,cex=1.5,outer=T)

@@ -17,7 +17,7 @@ library(bbmle)
 library(MASS)
 
 ####
-#Read in N-fixation data
+#Read in N fixation data
 ####
 
 #Alnus rubra
@@ -92,7 +92,7 @@ R31.A275.dat<-read.csv("ACi.dat.R31.csv")
 #Define functions
 ####
 
-#No acclimation (used for calculating N-fixation rates at 25 deg. C [Figure 2] and
+#No acclimation (used for calculating N fixation rates at 25 deg. C [Figure 2] and
 #in calculating the interaction between exposure time and temperature [Figure 4])
 beta <- function(ymax,Tmin,Topt,Tmax,T){
   y <- pmax(0,ymax*(Tmax-T)/(Tmax-Topt)*(((T-Tmin)/(Topt-Tmin))^((Topt-Tmin)/(Tmax-Topt))))
@@ -104,7 +104,7 @@ beta <- function(ymax,Tmin,Topt,Tmax,T){
   y
 }
 
-#Acclimation of all parameters (used for N-fixation with Morella, Alnus, and Robinia)
+#Acclimation of all parameters (used for N fixation with Morella, Alnus, and Robinia)
 beta.lin.all <- function(ymax,a,b,c,d,e,f,T,Tgrow){
   y <- pmax(0,ymax*((e+f*Tgrow)-T)/((e+f*Tgrow)-(c+d*Tgrow))*(((T-(a+b*Tgrow))/((c+d*Tgrow)-(a+b*Tgrow)))^(((c+d*Tgrow)-(a+b*Tgrow))/((e+f*Tgrow)-(c+d*Tgrow)))))
   for(i in 1:length(y)){
@@ -115,7 +115,7 @@ beta.lin.all <- function(ymax,a,b,c,d,e,f,T,Tgrow){
   y
 }
 
-#Acclimation of Tmin and Topt (used for N-fixation with Gliricidia)
+#Acclimation of Tmin and Topt (used for N fixation with Gliricidia)
 beta.lin.Tmin.Topt <- function(ymax,Tmax,a,b,c,d,T,Tgrow){
   y <- pmax(0,ymax*(Tmax-T)/(Tmax-(c+d*Tgrow))*(((T-(a+b*Tgrow))/((c+d*Tgrow)-(a+b*Tgrow)))^(((c+d*Tgrow)-(a+b*Tgrow))/(Tmax-(c+d*Tgrow)))))
   for(i in 1:length(y)){
@@ -172,7 +172,7 @@ nsig.mod <- function(p,q,Tau){
 #Negative log-likelihood (NLL) functions
 ####
 
-#NLL function for acclimation of all parameters (used for N-fixation with Morella, Alnus, and Robinia)
+#NLL function for acclimation of all parameters (used for N fixation with Morella, Alnus, and Robinia)
 Nase_beta_linall_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
                                      ymax26a,ymax26b,ymax26c,
                                      ymax31a,ymax31b,ymax31c,
@@ -203,7 +203,7 @@ Nase_beta_linall_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
       sum(dnorm(Nasedat31c,mean=Nasemean31c,sd=exp(sdNase),log=TRUE),na.rm=TRUE))
 }
 
-#NLL function for acclimation of Tmin and Topt (used for N-fixation with Gliricidia)
+#NLL function for acclimation of Tmin and Topt (used for N fixation with Gliricidia)
 Nase_beta_linTminTopt_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
                                           ymax26a,ymax26b,ymax26c,
                                           ymax31a,ymax31b,ymax31c,
@@ -445,7 +445,7 @@ Photo_beta_normNLL_all_Topt.lin <- function(sdPhoto,ymaxM21a,ymaxM21b,ymaxM21c,y
 ####
 
 ###
-#N-fixation
+#N fixation
 ###
 
 #Morella
@@ -565,7 +565,7 @@ fit_Photo_beta_all_Topt.lin_A275 <- mle2(Photo_beta_normNLL_all_Topt.lin,start=l
 summary(fit_Photo_beta_all_Topt.lin_A275)
 
 ####
-#Save N-fixation parameter estimates
+#Save N fixation parameter estimates
 ####
 
 #Morella
@@ -581,7 +581,7 @@ ft.g <- coef(fit_Nase_beta_linTminTopt_GLSE)
 ft.r <- coef(fit_Nase_beta_linall_ROPS)
 
 ####
-#Calculate N-fixation rates at 15 and 40 deg. C as a function of growing temperature
+#Calculate N fixation rates at 15 and 40 deg. C as a function of growing temperature
 ####
 
 #Vector of mean growing and measurement temperatures
@@ -648,7 +648,7 @@ for(i in 1:length(Tg.seq)){
 }
 
 ####
-#Calculate N-fixation 95% CI
+#Calculate N fixation 95% CI
 ####
 
 ##
@@ -658,7 +658,7 @@ for(i in 1:length(Tg.seq)){
 #Generate 1000 multivariate normal random deviates for calculating CI
 vmat.m=mvrnorm(1000,mu=coef(fit_Nase_beta_linall_MOCE),Sigma=vcov(fit_Nase_beta_linall_MOCE))
 
-#N-fixation ~ measurement temperature for 21:15 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 21:15 deg. C growing temperature (Figure 1)
 dist.m21=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.m21<-rep(NA,length(Tsim))
 high.m21<-rep(NA,length(Tsim))
@@ -670,7 +670,7 @@ for(j in 1:length(Tsim)){
   high.m21[j]<-quantile(dist.m21[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 26:20 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 26:20 deg. C growing temperature (Figure 1)
 dist.m26=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.m26<-rep(NA,length(Tsim))
 high.m26<-rep(NA,length(Tsim))
@@ -682,7 +682,7 @@ for(j in 1:length(Tsim)){
   high.m26[j]<-quantile(dist.m26[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 31:25 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 31:25 deg. C growing temperature (Figure 1)
 dist.m31=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.m31<-rep(NA,length(Tsim))
 high.m31<-rep(NA,length(Tsim))
@@ -737,7 +737,7 @@ for(j in 1:length(Tg.seq)){
 #Generate 1000 multivariate normal random deviates for calculating CI
 vmat.a=mvrnorm(1000,mu=coef(fit_Nase_beta_linall_ALRU),Sigma=vcov(fit_Nase_beta_linall_ALRU))
 
-#N-fixation ~ measurement temperature for 21:15 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 21:15 deg. C growing temperature (Figure 1)
 dist.a21=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.a21<-rep(NA,length(Tsim))
 high.a21<-rep(NA,length(Tsim))
@@ -749,7 +749,7 @@ for(j in 1:length(Tsim)){
   high.a21[j]<-quantile(dist.a21[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 26:20 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 26:20 deg. C growing temperature (Figure 1)
 dist.a26=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.a26<-rep(NA,length(Tsim))
 high.a26<-rep(NA,length(Tsim))
@@ -761,7 +761,7 @@ for(j in 1:length(Tsim)){
   high.a26[j]<-quantile(dist.a26[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 31:25 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 31:25 deg. C growing temperature (Figure 1)
 dist.a31=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.a31<-rep(NA,length(Tsim))
 high.a31<-rep(NA,length(Tsim))
@@ -816,7 +816,7 @@ for(j in 1:length(Tg.seq)){
 #Generate 1000 multivariate normal random deviates for calculating CI
 vmat.g=mvrnorm(1000,mu=coef(fit_Nase_beta_linTminTopt_GLSE),Sigma=vcov(fit_Nase_beta_linTminTopt_GLSE))
 
-#N-fixation ~ measurement temperature for 21:15 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 21:15 deg. C growing temperature (Figure 1)
 dist.g21=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.g21<-rep(NA,length(Tsim))
 high.g21<-rep(NA,length(Tsim))
@@ -828,7 +828,7 @@ for(j in 1:length(Tsim)){
   high.g21[j]<-quantile(dist.g21[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 26:20 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 26:20 deg. C growing temperature (Figure 1)
 dist.g26=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.g26<-rep(NA,length(Tsim))
 high.g26<-rep(NA,length(Tsim))
@@ -840,7 +840,7 @@ for(j in 1:length(Tsim)){
   high.g26[j]<-quantile(dist.g26[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 31:25 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 31:25 deg. C growing temperature (Figure 1)
 dist.g31=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.g31<-rep(NA,length(Tsim))
 high.g31<-rep(NA,length(Tsim))
@@ -895,7 +895,7 @@ for(j in 1:length(Tg.seq)){
 #Generate 1000 multivariate normal random deviates for calculating CI
 vmat.r=mvrnorm(1000,mu=coef(fit_Nase_beta_linall_ROPS),Sigma=vcov(fit_Nase_beta_linall_ROPS))
 
-#N-fixation ~ measurement temperature for 21:15 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 21:15 deg. C growing temperature (Figure 1)
 dist.r21=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.r21<-rep(NA,length(Tsim))
 high.r21<-rep(NA,length(Tsim))
@@ -907,7 +907,7 @@ for(j in 1:length(Tsim)){
   high.r21[j]<-quantile(dist.r21[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 26:20 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 26:20 deg. C growing temperature (Figure 1)
 dist.r26=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.r26<-rep(NA,length(Tsim))
 high.r26<-rep(NA,length(Tsim))
@@ -919,7 +919,7 @@ for(j in 1:length(Tsim)){
   high.r26[j]<-quantile(dist.r26[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 31:25 deg. C growing temperature (Figure 1)
+#N fixation ~ measurement temperature for 31:25 deg. C growing temperature (Figure 1)
 dist.r31=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.r31<-rep(NA,length(Tsim))
 high.r31<-rep(NA,length(Tsim))
@@ -1220,7 +1220,7 @@ for(j in 1:length(Tg.seq)){
 }
 
 ####
-#Calculate range of N-fixation data
+#Calculate range of N fixation data
 ####
 
 #Morella
@@ -1272,164 +1272,188 @@ par(mar=c(0,0,0,0))
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=F)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=c("0","25","50","75","100","125","150"),las=1,cex.axis=1.5)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.m21,rev(high.m21)),
-        col=adjustcolor("dodgerblue1",alpha.f = 0.2),border=NA)
-points(MOCE21a$Temperature,MOCE21a$Vmax/(9960.998949*ft.m[2]),pch=16,cex=0.001,col="gray")
-points(MOCE21b$Temperature,MOCE21b$Vmax/(3833.121977*ft.m[3]),pch=16,cex=0.001,col="gray")
-points(MOCE21c$Temperature,MOCE21c$Vmax/(3095.456985*ft.m[4]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.m21,rev(high.m21)),
+#        col=adjustcolor("dodgerblue1",alpha.f = 0.2),border=NA)
+points(MOCE21a$Temperature,MOCE21a$Vmax/(9960.998949*ft.m[2]),pch=16,cex=0.1,col="gray")
+points(MOCE21b$Temperature,MOCE21b$Vmax/(3833.121977*ft.m[3]),pch=16,cex=0.1,col="gray")
+points(MOCE21c$Temperature,MOCE21c$Vmax/(3095.456985*ft.m[4]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.m[12]*18.5+ft.m[11],ft.m[14]*18.5+ft.m[13],ft.m[16]*18.5+ft.m[15],x),
       from=max(M.min,ft.m[12]*18.5+ft.m[11]),to=min(M.max,ft.m[16]*18.5+ft.m[15]),lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 mtext(expression(italic(Morella)),side=3,line=1,cex=1.5)
 title(main=expression('  a'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 29.0 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=29.03,lty=2,col="dodgerblue1")
 
 #1b
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=F)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=F)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.a21,rev(high.a21)),
-        col=adjustcolor("dodgerblue1",alpha.f = 0.2),border=NA)
-points(ALRU21a$Temperature,ALRU21a$Vmax/(10035.24751*ft.a[2]),pch=16,cex=0.001,col="gray")
-points(ALRU21b$Temperature,ALRU21b$Vmax/(7990.765838*ft.a[3]),pch=16,cex=0.001,col="gray")
-points(ALRU21c$Temperature,ALRU21c$Vmax/(4046.082544*ft.a[4]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.a21,rev(high.a21)),
+#        col=adjustcolor("dodgerblue1",alpha.f = 0.2),border=NA)
+points(ALRU21a$Temperature,ALRU21a$Vmax/(10035.24751*ft.a[2]),pch=16,cex=0.1,col="gray")
+points(ALRU21b$Temperature,ALRU21b$Vmax/(7990.765838*ft.a[3]),pch=16,cex=0.1,col="gray")
+points(ALRU21c$Temperature,ALRU21c$Vmax/(4046.082544*ft.a[4]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.a[12]*18.5+ft.a[11],ft.a[14]*18.5+ft.a[13],ft.a[16]*18.5+ft.a[15],x),
       from=max(A.min,ft.a[12]*18.5+ft.a[11]),to=min(A.max,ft.a[16]*18.5+ft.a[15]),lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 mtext(expression(italic(Alnus)),side=3,line=1,cex=1.5)
 title(main=expression('  b'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 32.4 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=32.42,lty=2,col="dodgerblue1")
 
 #1c
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=F)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=F)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.g21,rev(high.g21)),
-        col=adjustcolor("dodgerblue1",alpha.f = 0.2),border=NA)
-points(GLSE21a$Temperature,GLSE21a$Vmax/(308.3421323*ft.g[2]),pch=16,cex=0.001,col="gray")
-points(GLSE21b$Temperature,GLSE21b$Vmax/(2028.57371*ft.g[3]),pch=16,cex=0.001,col="gray")
-points(GLSE21c$Temperature,GLSE21c$Vmax/(879.0395611*ft.g[4]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.g21,rev(high.g21)),
+#        col=adjustcolor("dodgerblue1",alpha.f = 0.2),border=NA)
+points(GLSE21a$Temperature,GLSE21a$Vmax/(308.3421323*ft.g[2]),pch=16,cex=0.1,col="gray")
+points(GLSE21b$Temperature,GLSE21b$Vmax/(2028.57371*ft.g[3]),pch=16,cex=0.1,col="gray")
+points(GLSE21c$Temperature,GLSE21c$Vmax/(879.0395611*ft.g[4]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.g[13]*18.5+ft.g[12],ft.g[15]*18.5+ft.g[14],ft.g[11],x),
       from=max(G.min,ft.g[13]*18.5+ft.g[12]),to=min(G.max,ft.g[11]),lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 mtext(expression(italic(Gliricidia)),side=3,line=1,cex=1.5)
 title(main=expression('  c'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 31.6 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=31.58,lty=2,col="dodgerblue1")
 
 #1d
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=F)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=F)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.r21,rev(high.r21)),
-        col=adjustcolor("dodgerblue1",alpha.f = 0.2),border=NA)
-points(ROPS21a$Temperature,ROPS21a$Vmax/(1922.245351*ft.r[2]),pch=16,cex=0.001,col="gray")
-points(ROPS21b$Temperature,ROPS21b$Vmax/(1690.867422*ft.r[3]),pch=16,cex=0.001,col="gray")
-points(ROPS21c$Temperature,ROPS21c$Vmax/(450.8292229*ft.r[4]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.r21,rev(high.r21)),
+#        col=adjustcolor("dodgerblue1",alpha.f = 0.2),border=NA)
+points(ROPS21a$Temperature,ROPS21a$Vmax/(1922.245351*ft.r[2]),pch=16,cex=0.1,col="gray")
+points(ROPS21b$Temperature,ROPS21b$Vmax/(1690.867422*ft.r[3]),pch=16,cex=0.1,col="gray")
+points(ROPS21c$Temperature,ROPS21c$Vmax/(450.8292229*ft.r[4]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.r[12]*18.5+ft.r[11],ft.r[14]*18.5+ft.r[13],ft.r[16]*18.5+ft.r[15],x),
       from=max(R.min,ft.r[12]*18.5+ft.r[11]),to=min(R.max,ft.r[16]*18.5+ft.r[15]),lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 mtext(expression(italic(Robinia)),side=3,line=1,cex=1.5)
 title(main=expression('  d'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('21:15 '*degree*'C'),side=4,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 31.9 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=31.89,lty=2,col="dodgerblue1")
 
 #1e
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=F)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=c("0","25","50","75","100","125","150"),las=1,cex.axis=1.5)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.m26,rev(high.m26)),
-        col=adjustcolor("gold1",alpha.f = 0.2),border=NA)
-points(MOCE26a$Temperature,MOCE26a$Vmax/(6492.677546*ft.m[5]),pch=16,cex=0.001,col="gray")
-points(MOCE26b$Temperature,MOCE26b$Vmax/(5974.076428*ft.m[6]),pch=16,cex=0.001,col="gray")
-points(MOCE26c$Temperature,MOCE26c$Vmax/(7890.763063*ft.m[7]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.m26,rev(high.m26)),
+#        col=adjustcolor("gold1",alpha.f = 0.2),border=NA)
+points(MOCE26a$Temperature,MOCE26a$Vmax/(6492.677546*ft.m[5]),pch=16,cex=0.1,col="gray")
+points(MOCE26b$Temperature,MOCE26b$Vmax/(5974.076428*ft.m[6]),pch=16,cex=0.1,col="gray")
+points(MOCE26c$Temperature,MOCE26c$Vmax/(7890.763063*ft.m[7]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.m[12]*23.5+ft.m[11],ft.m[14]*23.5+ft.m[13],ft.m[16]*23.5+ft.m[15],x),
       from=max(M.min,ft.m[12]*23.5+ft.m[11]),to=min(M.max,ft.m[16]*23.5+ft.m[15]),lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  e'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 32.9 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=32.94,lty=2,col="gold1")
 
 #1f
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=F)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=F)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.a26,rev(high.a26)),
-        col=adjustcolor("gold1",alpha.f = 0.2),border=NA)
-points(ALRU26a$Temperature,ALRU26a$Vmax/(2236.979133*ft.a[5]),pch=16,cex=0.001,col="gray")
-points(ALRU26b$Temperature,ALRU26b$Vmax/(2744.252462*ft.a[6]),pch=16,cex=0.001,col="gray")
-points(ALRU26c$Temperature,ALRU26c$Vmax/(1831.763172*ft.a[7]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.a26,rev(high.a26)),
+#        col=adjustcolor("gold1",alpha.f = 0.2),border=NA)
+points(ALRU26a$Temperature,ALRU26a$Vmax/(2236.979133*ft.a[5]),pch=16,cex=0.1,col="gray")
+points(ALRU26b$Temperature,ALRU26b$Vmax/(2744.252462*ft.a[6]),pch=16,cex=0.1,col="gray")
+points(ALRU26c$Temperature,ALRU26c$Vmax/(1831.763172*ft.a[7]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.a[12]*23.5+ft.a[11],ft.a[14]*23.5+ft.a[13],ft.a[16]*23.5+ft.a[15],x),
       from=max(A.min,ft.a[12]*23.5+ft.a[11]),to=min(A.max,ft.a[16]*23.5+ft.a[15]),lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  f'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 32.7 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=32.74,lty=2,col="gold1")
 
 #1g
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=F)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=F)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.g26,rev(high.g26)),
-        col=adjustcolor("gold1",alpha.f = 0.2),border=NA)
-points(GLSE26a$Temperature,GLSE26a$Vmax/(909.4624356*ft.g[5]),pch=16,cex=0.001,col="gray")
-points(GLSE26b$Temperature,GLSE26b$Vmax/(1373.906634*ft.g[6]),pch=16,cex=0.001,col="gray")
-points(GLSE26c$Temperature,GLSE26c$Vmax/(705.9735103*ft.g[7]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.g26,rev(high.g26)),
+#        col=adjustcolor("gold1",alpha.f = 0.2),border=NA)
+points(GLSE26a$Temperature,GLSE26a$Vmax/(909.4624356*ft.g[5]),pch=16,cex=0.1,col="gray")
+points(GLSE26b$Temperature,GLSE26b$Vmax/(1373.906634*ft.g[6]),pch=16,cex=0.1,col="gray")
+points(GLSE26c$Temperature,GLSE26c$Vmax/(705.9735103*ft.g[7]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.g[13]*23.5+ft.g[12],ft.g[15]*23.5+ft.g[14],ft.g[11],x),
       from=max(G.min,ft.g[13]*23.5+ft.g[12]),to=min(G.max,ft.g[11]),lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  g'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 33.7 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=33.66,lty=2,col="gold1")
 
 #1h
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=F)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=F)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.r26,rev(high.r26)),
-        col=adjustcolor("gold1",alpha.f = 0.2),border=NA)
-points(ROPS26a$Temperature,ROPS26a$Vmax/(2785.452785*ft.r[5]),pch=16,cex=0.001,col="gray")
-points(ROPS26b$Temperature,ROPS26b$Vmax/(1572.439251*ft.r[6]),pch=16,cex=0.001,col="gray")
-points(ROPS26c$Temperature,ROPS26c$Vmax/(1686.352*ft.r[7]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.r26,rev(high.r26)),
+#        col=adjustcolor("gold1",alpha.f = 0.2),border=NA)
+points(ROPS26a$Temperature,ROPS26a$Vmax/(2785.452785*ft.r[5]),pch=16,cex=0.1,col="gray")
+points(ROPS26b$Temperature,ROPS26b$Vmax/(1572.439251*ft.r[6]),pch=16,cex=0.1,col="gray")
+points(ROPS26c$Temperature,ROPS26c$Vmax/(1686.352*ft.r[7]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.r[12]*23.5+ft.r[11],ft.r[14]*23.5+ft.r[13],ft.r[16]*23.5+ft.r[15],x),
       from=max(R.min,ft.r[12]*23.5+ft.r[11]),to=min(R.max,ft.r[16]*23.5+ft.r[15]),lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  h'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('26:20 '*degree*'C'),side=4,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 32.0 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=32.02,lty=2,col="gold1")
 
 #1i
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=T,cex.axis=1.5)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=c("0","25","50","75","100","125","150"),las=1,cex.axis=1.5)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.m31,rev(high.m31)),
-        col=adjustcolor("orangered3",alpha.f = 0.2),border=NA)
-points(MOCE31a$Temperature,MOCE31a$Vmax/(8826.601393*ft.m[8]),pch=16,cex=0.001,col="gray")
-points(MOCE31b$Temperature,MOCE31b$Vmax/(2371.923752*ft.m[9]),pch=16,cex=0.001,col="gray")
-points(MOCE31c$Temperature,MOCE31c$Vmax/(629.7544222*ft.m[10]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.m31,rev(high.m31)),
+#        col=adjustcolor("orangered3",alpha.f = 0.2),border=NA)
+points(MOCE31a$Temperature,MOCE31a$Vmax/(8826.601393*ft.m[8]),pch=16,cex=0.1,col="gray")
+points(MOCE31b$Temperature,MOCE31b$Vmax/(2371.923752*ft.m[9]),pch=16,cex=0.1,col="gray")
+points(MOCE31c$Temperature,MOCE31c$Vmax/(629.7544222*ft.m[10]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.m[12]*28.5+ft.m[11],ft.m[14]*28.5+ft.m[13],ft.m[16]*28.5+ft.m[15],x),
       from=max(M.min,ft.m[12]*28.5+ft.m[11]),to=min(M.max,ft.m[16]*28.5+ft.m[15]),lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  i'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 36.9 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=36.86,lty=2,col="orangered3")
 
 #1j
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=T,cex.axis=1.5)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=F)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.a31,rev(high.a31)),
-        col=adjustcolor("orangered3",alpha.f = 0.2),border=NA)
-points(ALRU31a$Temperature,ALRU31a$Vmax/(406.3524389*ft.a[8]),pch=16,cex=0.001,col="gray")
-points(ALRU31b$Temperature,ALRU31b$Vmax/(1832.723413*ft.a[9]),pch=16,cex=0.001,col="gray")
-points(ALRU31c$Temperature,ALRU31c$Vmax/(1350.729381*ft.a[10]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.a31,rev(high.a31)),
+#        col=adjustcolor("orangered3",alpha.f = 0.2),border=NA)
+points(ALRU31a$Temperature,ALRU31a$Vmax/(406.3524389*ft.a[8]),pch=16,cex=0.1,col="gray")
+points(ALRU31b$Temperature,ALRU31b$Vmax/(1832.723413*ft.a[9]),pch=16,cex=0.1,col="gray")
+points(ALRU31c$Temperature,ALRU31c$Vmax/(1350.729381*ft.a[10]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.a[12]*28.5+ft.a[11],ft.a[14]*28.5+ft.a[13],ft.a[16]*28.5+ft.a[15],x),
       from=max(A.min,ft.a[12]*28.5+ft.a[11]),to=min(A.max,ft.a[16]*28.5+ft.a[15]),lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  j'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 33.1 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=33.07,lty=2,col="orangered3")
 
 #1k
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=T,cex.axis=1.5)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=F)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.g31,rev(high.g31)),
-        col=adjustcolor("orangered3",alpha.f = 0.2),border=NA)
-points(GLSE31a$Temperature,GLSE31a$Vmax/(1196.3736273*ft.g[8]),pch=16,cex=0.001,col="gray")
-points(GLSE31b$Temperature,GLSE31b$Vmax/(312.4607561*ft.g[9]),pch=16,cex=0.001,col="gray")
-points(GLSE31c$Temperature,GLSE31c$Vmax/(209.4577018*ft.g[10]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.g31,rev(high.g31)),
+#        col=adjustcolor("orangered3",alpha.f = 0.2),border=NA)
+points(GLSE31a$Temperature,GLSE31a$Vmax/(1196.3736273*ft.g[8]),pch=16,cex=0.1,col="gray")
+points(GLSE31b$Temperature,GLSE31b$Vmax/(312.4607561*ft.g[9]),pch=16,cex=0.1,col="gray")
+points(GLSE31c$Temperature,GLSE31c$Vmax/(209.4577018*ft.g[10]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.g[13]*28.5+ft.g[12],ft.g[15]*28.5+ft.g[14],ft.g[11],x),
       from=max(G.min,ft.g[13]*28.5+ft.g[12]),to=min(G.max,ft.g[11]),lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  k'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 35.7 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=35.74,lty=2,col="orangered3")
 
 #1l
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
 axis(1,at=c(10,20,30,40,50),labels=T,cex.axis=1.5)
 axis(2,at=c(0,.25,.5,.75,1,1.25,1.5),labels=F)
-polygon(x=c(Tsim,rev(Tsim)),y=c(low.r31,rev(high.r31)),
-        col=adjustcolor("orangered3",alpha.f = 0.2),border=NA)
-points(ROPS31a$Temperature,ROPS31a$Vmax/(1646.769302*ft.r[8]),pch=16,cex=0.001,col="gray")
-points(ROPS31b$Temperature,ROPS31b$Vmax/(920.7416901*ft.r[9]),pch=16,cex=0.001,col="gray")
-points(ROPS31c$Temperature,ROPS31c$Vmax/(1978.187071*ft.r[10]),pch=16,cex=0.001,col="gray")
+#polygon(x=c(Tsim,rev(Tsim)),y=c(low.r31,rev(high.r31)),
+#        col=adjustcolor("orangered3",alpha.f = 0.2),border=NA)
+points(ROPS31a$Temperature,ROPS31a$Vmax/(1646.769302*ft.r[8]),pch=16,cex=0.1,col="gray")
+points(ROPS31b$Temperature,ROPS31b$Vmax/(920.7416901*ft.r[9]),pch=16,cex=0.1,col="gray")
+points(ROPS31c$Temperature,ROPS31c$Vmax/(1978.187071*ft.r[10]),pch=16,cex=0.1,col="gray")
 curve(beta(1,ft.r[12]*28.5+ft.r[11],ft.r[14]*28.5+ft.r[13],ft.r[16]*28.5+ft.r[15],x),
       from=max(R.min,ft.r[12]*28.5+ft.r[11]),to=min(R.max,ft.r[16]*28.5+ft.r[15]),lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  l'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('31:25 '*degree*'C'),side=4,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 32.1 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=32.14,lty=2,col="orangered3")
 
 mtext(expression('Nitrogen fixation (% of max)'),side=2,line=2.9,cex=1.5,outer=T)
 mtext(expression('Temperature ('*degree*'C)'),side=1,line=3,cex=1.5,outer=T)
@@ -1439,7 +1463,7 @@ mtext(expression('Temperature ('*degree*'C)'),side=1,line=3,cex=1.5,outer=T)
 ###############################################################################################################
 
 ####
-#Calculate relative N-fixation rate at 25C
+#Calculate relative N fixation rate at 25C
 ####
 
 #Houlton et al. 2008 function
@@ -1678,7 +1702,7 @@ par(xpd=TRUE)
 
 #Legend
 plot(0:10, 0:10, type='n', bty='n', xaxt='n', yaxt='n',xlab=NA,ylab=NA)
-legend("left",legend=c(expression(underline(bold('N-fixation'))),expression(italic(Morella)),expression(italic(Alnus)),expression(italic(Gliricidia)),expression(italic(Robinia)),
+legend("left",legend=c(expression(underline(bold('N fixation'))),expression(italic(Morella)),expression(italic(Alnus)),expression(italic(Gliricidia)),expression(italic(Robinia)),
                        expression(underline(bold('Photosynthesis'))),expression(italic(Morella)),expression(italic(Alnus)),expression(italic(Gliricidia)),expression(italic(Robinia))),
        col=c(NA,"darkorange1","darkturquoise","orangered2","dodgerblue3",NA,"darkorange1","darkturquoise","orangered2","dodgerblue3"),
        lty=c(NA,1,1,1,1,NA,2,2,2,2),pch=c(NA,16,16,17,17,NA,1,1,2,2),bty="n",pt.cex=1.5,lwd=1,x.intersp = 0.2,y.intersp = 1,
@@ -1698,10 +1722,10 @@ q<-0.2526679
 c<-0.9572269
 
 #Modified beta (Equation 5) parameters in absense of temporal decline that was 
-#simulated to occur during measurement of N-fixation temperature response
+#simulated to occur during measurement of N fixation temperature response
 #(for Morella at 21:15 and 31:25 deg. C growing temperatures; Figure 4b,c)
 #See "Temporal_Decline_Nfix_Minus_Temporal_Effect.R" script for derivation of shift
-#in N-fixation rate~temperature datapoints and statistical fits of the modified beta
+#in N fixation rate~temperature datapoints and statistical fits of the modified beta
 #function to these simulated datapoints
 Tmin21.i<-1.66
 Tmin31.i<-13.54
@@ -1710,7 +1734,7 @@ Topt31.i<-36.95
 Tmax21.i<-45.73
 Tmax31.i<-46.14
 
-#Modified beta parameters to measured N-fixation temperature responses
+#Modified beta parameters to measured N fixation temperature responses
 #See "Nfix_Model_Comparison.R" script for statistical fits
 #(for Morella at 21:15 and 31:25 deg. C growing temperatures; Figure 4b,c)
 Tmin21.o<-ft.m[12]*18.5+ft.m[11]
@@ -1737,7 +1761,7 @@ par(pty="s")
 plot(0:10,0:10,col="white",xlim=c(0,6),ylim=c(0,1),xlab=NA,ylab=NA,las=1,yaxt="n",cex.axis=1.2)
 mtext(text="a",side=3,cex=1.2,adj=0)
 axis(2,at=c(0,0.2,0.4,0.6,0.8,1),labels=c("0","20","40","60","80","100"),las=1,cex.axis=1.2)
-mtext(expression('N-fixation'),side=2,line=4.75,cex=1.2)
+mtext(expression('N fixation'),side=2,line=4.75,cex=1.2)
 mtext(expression('(% of max)'),side=2,line=3,cex=1.2)
 mtext(expression('Time (hr)'),side=1,line=3,cex=1.2,outer=F)
 curve(fall.norm(exp(exp.mod(alpha,beta2,-10)-1),c,nsig.mod(p,q,-10),x),
@@ -1789,10 +1813,10 @@ for (i in 1:(length(time.sim)-1)){
   SNF_nexttemp <- ((1+b)/(1+b*d))*((1-d)/(1+b*exp(c*time.sim))+d)
   
   # Now find the change in tau corresponding to the average
-  # of the value at the current tau value and the N-fixation rate at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # of the value at the current tau value and the N fixation rate at the 
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1826,10 +1850,10 @@ for (i in 1:(length(time.sim)-1)){
   SNF_nexttemp <- ((1+b)/(1+b*d))*((1-d)/(1+b*exp(c*time.sim))+d)
   
   # Now find the change in tau corresponding to the average
-  # of the value at the current tau value and the N-fixation rate at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # of the value at the current tau value and the N fixation rate at the 
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1863,10 +1887,10 @@ for (i in 1:(length(time.sim)-1)){
   SNF_nexttemp <- ((1+b)/(1+b*d))*((1-d)/(1+b*exp(c*time.sim))+d)
   
   # Now find the change in tau corresponding to the average
-  # of the value at the current tau value and the N-fixation rate at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # of the value at the current tau value and the N fixation rate at the 
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1877,14 +1901,14 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Generate relative N-fixation rate at 25 deg. C for measured (og.25)
+#Generate relative N fixation rate at 25 deg. C for measured (og.25)
 #and for simulated curve that occurs in the absense of the expected temporal decline
-#during measurement of N-fixation temperature response (ins.25)
+#during measurement of N fixation temperature response (ins.25)
 og.25<-beta(1,Tmin21.o,Topt21.o,Tmax21.o,25)
 ins.25<-beta(1,Tmin21.i,Topt21.i,Tmax21.i,25)
 
-#N-fixation temperature response curve simulated to occur in the absense of the expected 
-#temporal decline during measurement of N-fixation temperature response
+#N fixation temperature response curve simulated to occur in the absense of the expected 
+#temporal decline during measurement of N fixation temperature response
 ins.fit<-beta(1/ins.25,Tmin21.i,Topt21.i,Tmax21.i,temp.sim)
 
 #Simulated curves at different heating rates
@@ -1895,7 +1919,7 @@ x3.slow.fit<-ins.fit*SNF_realized.c
 plot(0:50,(0:50)/50,col="white",xlab=NA,ylab=NA,las=1,ylim=c(0,1.6),cex.axis=1.2,xlim=c(0,50))
 mtext(text="b",side=3,cex=1.2,adj=0)
 title(main=expression(italic(Morella)*'; 21:15 '*degree*'C'),cex.main=1.5,line=1)
-mtext(expression('N-fixation'),side=2,line=4.75,cex=1.2)
+mtext(expression('N fixation'),side=2,line=4.75,cex=1.2)
 mtext(expression('(normalized to 1 at 25 '*degree*'C)'),side=2,line=3,cex=1.2)
 mtext(expression('Temperature ('*degree*'C)'),side=1,line=3,cex=1.2,outer=F)
 curve(beta(1/og.25,Tmin21.o,Topt21.o,Tmax21.o,x),from=Tmin21.o,to=Tmax21.o,lwd=1.2,col="black",lty=2,add=TRUE)
@@ -1942,10 +1966,10 @@ for (i in 1:(length(time.sim)-1)){
   SNF_nexttemp <- ((1+b)/(1+b*d))*((1-d)/(1+b*exp(c*time.sim))+d)
   
   # Now find the change in tau corresponding to the average
-  # of the value at the current tau value and the N-fixation rate at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # of the value at the current tau value and the N fixation rate at the 
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.a[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -1979,10 +2003,10 @@ for (i in 1:(length(time.sim)-1)){
   SNF_nexttemp <- ((1+b)/(1+b*d))*((1-d)/(1+b*exp(c*time.sim))+d)
   
   # Now find the change in tau corresponding to the average
-  # of the value at the current tau value and the N-fixation rate at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # of the value at the current tau value and the N fixation rate at the 
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.b[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -2016,10 +2040,10 @@ for (i in 1:(length(time.sim)-1)){
   SNF_nexttemp <- ((1+b)/(1+b*d))*((1-d)/(1+b*exp(c*time.sim))+d)
   
   # Now find the change in tau corresponding to the average
-  # of the value at the current tau value and the N-fixation rate at the 
-  # next tau value that corresponds to the same N-fixation rate.
+  # of the value at the current tau value and the N fixation rate at the 
+  # next tau value that corresponds to the same N fixation rate.
   
-  # Index of the value that most closely matches the current relative N-fixation rate (SNF)
+  # Index of the value that most closely matches the current relative N fixation rate (SNF)
   j <- which.min(abs(SNF_realized.c[i] - SNF_currenttemp[1:i]))
   jvec[i+1] <- j
   dSNF_currenttemp <- SNF_currenttemp[j+1] - SNF_currenttemp[j]
@@ -2030,14 +2054,14 @@ for (i in 1:(length(time.sim)-1)){
   SNF_realized.c[i+1] <- SNF_realized.c[i] + mean(c(dSNF_currenttemp,dSNF_nexttemp))
 }
 
-#Generate relative N-fixation rate at 25 deg. C for measured (og.25)
+#Generate relative N fixation rate at 25 deg. C for measured (og.25)
 #and for simulated curve that occurs in the absense of the expected temporal decline
-#during measurement of N-fixation temperature response (ins.25)
+#during measurement of N fixation temperature response (ins.25)
 og.25<-beta(1,Tmin31.o,Topt31.o,Tmax31.o,25)
 ins.25<-beta(1,Tmin31.i,Topt31.i,Tmax31.i,25)
 
-#N-fixation temperature response curve simulated to occur in the absense of the expected 
-#temporal decline during measurement of N-fixation temperature response
+#N fixation temperature response curve simulated to occur in the absense of the expected 
+#temporal decline during measurement of N fixation temperature response
 ins.fit<-beta(1/ins.25,Tmin31.i,Topt31.i,Tmax31.i,temp.sim)
 
 #Simulated curves at different heating rates
@@ -2048,7 +2072,7 @@ x3.slow.fit<-ins.fit*SNF_realized.c
 plot(0:50,(0:50)/50,col="white",xlab=NA,ylab=NA,las=1,ylim=c(0,3),cex.axis=1.2,xlim=c(0,50))
 mtext(text="c",side=3,cex=1.2,adj=0)
 title(main=expression(italic(Morella)*'; 31:25 '*degree*'C'),cex.main=1.5,line=1)
-mtext(expression('N-fixation'),side=2,line=4.75,cex=1.2)
+mtext(expression('N fixation'),side=2,line=4.75,cex=1.2)
 mtext(expression('(normalized to 1 at 25 '*degree*'C)'),side=2,line=3,cex=1.2)
 mtext(expression('Temperature ('*degree*'C)'),side=1,line=3,cex=1.2,outer=F)
 curve(beta(1/og.25,Tmin31.o,Topt31.o,Tmax31.o,x),from=Tmin31.o,to=Tmax31.o,lwd=1.2,col="black",lty=2,add=TRUE)
@@ -2074,9 +2098,9 @@ confint(lm(slow.3x.dat$r40~x1.dat$r40)) #Slope not significantly >1
 
 #4d
 plot(25:40,25:40,col="white",xlab=NA,ylab=NA,las=1,xlim=c(0,100),ylim=c(0,100),cex.lab=1.5,cex.axis=1.2)
-mtext(expression('N-fixation at 15 '*degree*'C'),side=2,cex=1.2,line=4.75)
+mtext(expression('N fixation at 15 '*degree*'C'),side=2,cex=1.2,line=4.75)
 mtext(expression('(long exposure; % of max)'),side=2,cex=1.2,line=3)
-mtext(expression('N-fixation at 15 '*degree*'C'),side=1,cex=1.2,line=3)
+mtext(expression('N fixation at 15 '*degree*'C'),side=1,cex=1.2,line=3)
 mtext(expression('(short exposure; % of max)'),side=1,cex=1.2,line=4.75)
 legend("top",legend=expression('Slope = 1.048 (1.046, 1.051)'),bty="n",
        y.intersp = 0.7,cex=.9,x.intersp = 0.5)
@@ -2131,9 +2155,9 @@ mtext(text="e",side=3,cex=1.2,adj=0)
 
 #4f
 plot(25:40,25:40,col="white",xlab=NA,ylab=NA,las=1,xlim=c(0,100),ylim=c(0,100),cex.lab=1.5,cex.axis=1.2)
-mtext(expression('N-fixation at 40 '*degree*'C'),side=2,cex=1.2,line=4.75)
+mtext(expression('N fixation at 40 '*degree*'C'),side=2,cex=1.2,line=4.75)
 mtext(expression('(long exposure; % of max)'),side=2,cex=1.2,line=3)
-mtext(expression('N-fixation at 40 '*degree*'C'),side=1,cex=1.2,line=3)
+mtext(expression('N fixation at 40 '*degree*'C'),side=1,cex=1.2,line=3)
 legend("top",legend=expression('Slope = 1.046 (0.717, 1.375)'),bty="n",
        y.intersp = 0.7,cex=.9,x.intersp = 0.5)
 mtext(expression('(short exposure; % of max)'),side=1,cex=1.2,line=4.75)
