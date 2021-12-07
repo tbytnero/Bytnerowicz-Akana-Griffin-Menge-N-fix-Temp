@@ -1,5 +1,5 @@
 # Bytnerowicz-Akana-Griffin-Menge-N-fix-Temp-Code
-R scripts to recreate analyses and figures for Bytnerowicz, Akana, Griffin, and Menge "The temperature sensitivity of woody dinitrogen fixation across species and growing temperatures"
+R scripts to recreate analyses and figures for Bytnerowicz, Akana, Griffin, and Menge "Temperature sensitivity of woody nitrogen fixation across species and growing temperatures"
 
 -------------------------------------------
 
