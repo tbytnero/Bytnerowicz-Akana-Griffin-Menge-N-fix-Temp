@@ -93,7 +93,7 @@ R31.A275.dat<-read.csv("ACi.dat.R31.csv")
 #Define functions
 ####
 
-#No acclimation (used for calculating N-fixation rates at 25 deg. C [Supplementary Figure 16])
+#No acclimation (used for calculating N fixation rates at 25 deg. C [Supplementary Figure 16])
 beta <- function(ymax,Tmin,Topt,Tmax,T){
   y <- pmax(0,ymax*(Tmax-T)/(Tmax-Topt)*(((T-Tmin)/(Topt-Tmin))^((Topt-Tmin)/(Tmax-Topt))))
   for(i in 1:length(y)){
@@ -104,7 +104,7 @@ beta <- function(ymax,Tmin,Topt,Tmax,T){
   y
 }
 
-#Acclimation of all parameters (used for N-fixation with Morella and Alnus)
+#Acclimation of all parameters (used for N fixation with Morella and Alnus)
 beta.lin.all <- function(ymax,a,b,c,d,e,f,T,Tgrow){
   y <- pmax(0,ymax*((e+f*Tgrow)-T)/((e+f*Tgrow)-(c+d*Tgrow))*(((T-(a+b*Tgrow))/((c+d*Tgrow)-(a+b*Tgrow)))^(((c+d*Tgrow)-(a+b*Tgrow))/((e+f*Tgrow)-(c+d*Tgrow)))))
   for(i in 1:length(y)){
@@ -115,7 +115,7 @@ beta.lin.all <- function(ymax,a,b,c,d,e,f,T,Tgrow){
   y
 }
 
-#Acclimation of Tmin and Topt (used for N-fixation with Gliricidia)
+#Acclimation of Tmin and Topt (used for N fixation with Gliricidia)
 beta.lin.Tmin.Topt <- function(ymax,Tmax,a,b,c,d,T,Tgrow){
   y <- pmax(0,ymax*(Tmax-T)/(Tmax-(c+d*Tgrow))*(((T-(a+b*Tgrow))/((c+d*Tgrow)-(a+b*Tgrow)))^(((c+d*Tgrow)-(a+b*Tgrow))/(Tmax-(c+d*Tgrow)))))
   for(i in 1:length(y)){
@@ -126,7 +126,7 @@ beta.lin.Tmin.Topt <- function(ymax,Tmax,a,b,c,d,T,Tgrow){
   y
 }
 
-#Acclimation of Tmin and Tmax (used for N-fixation with Robinia)
+#Acclimation of Tmin and Tmax (used for N fixation with Robinia)
 beta.lin.Tmin.Tmax <- function(ymax,Topt,a,b,c,d,T,Tgrow){
   y <- pmax(0,ymax*((c+d*Tgrow)-T)/((c+d*Tgrow)-Topt)*(((T-(a+b*Tgrow))/(Topt-(a+b*Tgrow)))^((Topt-(a+b*Tgrow))/((c+d*Tgrow)-Topt))))
   for(i in 1:length(y)){
@@ -163,7 +163,7 @@ Houlton_func_norm <- function(Ts){
 #Negative log-likelihood (NLL) functions
 ####
 
-#NLL function for acclimation of all parameters (used for N-fixation with Morella and Alnus)
+#NLL function for acclimation of all parameters (used for N fixation with Morella and Alnus)
 Nase_beta_linall_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
                                      ymax26a,ymax26b,ymax26c,
                                      ymax31a,ymax31b,ymax31c,
@@ -194,7 +194,7 @@ Nase_beta_linall_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
       sum(dnorm(Nasedat31c,mean=Nasemean31c,sd=exp(sdNase),log=TRUE),na.rm=TRUE))
 }
 
-#NLL function for acclimation of Tmin and Topt (used for N-fixation with Gliricidia)
+#NLL function for acclimation of Tmin and Topt (used for N fixation with Gliricidia)
 Nase_beta_linTminTopt_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
                                           ymax26a,ymax26b,ymax26c,
                                           ymax31a,ymax31b,ymax31c,
@@ -226,7 +226,7 @@ Nase_beta_linTminTopt_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
       sum(dnorm(Nasedat31c,mean=Nasemean31c,sd=exp(sdNase),log=TRUE),na.rm=TRUE))
 }
 
-#NLL function for acclimation of Tmin and Tmax (used for N-fixation with Robinia)
+#NLL function for acclimation of Tmin and Tmax (used for N fixation with Robinia)
 Nase_beta_linTminTmax_normNLL <- function(sdNase,ymax21a,ymax21b,ymax21c,
                                           ymax26a,ymax26b,ymax26c,
                                           ymax31a,ymax31b,ymax31c,
@@ -468,7 +468,7 @@ Photo_beta_normNLL_all_Topt.lin <- function(sdPhoto,ymaxM21a,ymaxM21b,ymaxM21c,y
 ####
 
 ###
-#N-fixation
+#N fixation
 ###
 
 #Morella
@@ -588,7 +588,7 @@ fit_Photo_beta_all_Topt.lin_A275 <- mle2(Photo_beta_normNLL_all_Topt.lin,start=l
 summary(fit_Photo_beta_all_Topt.lin_A275)
 
 ####
-#Save N-fixation parameter estimates
+#Save N fixation parameter estimates
 ####
 
 #Morella
@@ -604,7 +604,7 @@ ft.g_linKm <- coef(fit_Nase_beta_linTminTopt_GLSE_linKm)
 ft.r_linKm <- coef(fit_Nase_beta_linTminTmax_ROPS_linKm)
 
 ####
-#Calculate N-fixation rates at 15 and 40 deg. C as a function of growing temperature
+#Calculate N fixation rates at 15 and 40 deg. C as a function of growing temperature
 ####
 
 #Vector of mean growing and measurement temperatures
@@ -671,7 +671,7 @@ for(i in 1:length(Tg.seq)){
 }
 
 ####
-#Calculate N-fixation 95% CI
+#Calculate N fixation 95% CI
 ####
 
 ##
@@ -681,7 +681,7 @@ for(i in 1:length(Tg.seq)){
 #Generate 1000 multivariate normal random deviates for calculating CI
 vmat.m_linKm=mvrnorm(1000,mu=coef(fit_Nase_beta_linall_MOCE_linKm),Sigma=vcov(fit_Nase_beta_linall_MOCE_linKm))
 
-#N-fixation ~ measurement temperature for 21:15 deg. C growing temperature
+#N fixation ~ measurement temperature for 21:15 deg. C growing temperature
 dist.m21_linKm=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.m21_linKm<-rep(NA,length(Tsim))
 high.m21_linKm<-rep(NA,length(Tsim))
@@ -693,7 +693,7 @@ for(j in 1:length(Tsim)){
   high.m21_linKm[j]<-quantile(dist.m21_linKm[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 26:20 deg. C growing temperature
+#N fixation ~ measurement temperature for 26:20 deg. C growing temperature
 dist.m26_linKm=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.m26_linKm<-rep(NA,length(Tsim))
 high.m26_linKm<-rep(NA,length(Tsim))
@@ -705,7 +705,7 @@ for(j in 1:length(Tsim)){
   high.m26_linKm[j]<-quantile(dist.m26_linKm[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 31:25 deg. C growing temperature
+#N fixation ~ measurement temperature for 31:25 deg. C growing temperature
 dist.m31_linKm=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.m31_linKm<-rep(NA,length(Tsim))
 high.m31_linKm<-rep(NA,length(Tsim))
@@ -760,7 +760,7 @@ for(j in 1:length(Tg.seq)){
 #Generate 1000 multivariate normal random deviates for calculating CI
 vmat.a=mvrnorm(1000,mu=coef(fit_Nase_beta_linall_ALRU),Sigma=vcov(fit_Nase_beta_linall_ALRU))
 
-#N-fixation ~ measurement temperature for 21:15 deg. C growing temperature
+#N fixation ~ measurement temperature for 21:15 deg. C growing temperature
 dist.a21=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.a21<-rep(NA,length(Tsim))
 high.a21<-rep(NA,length(Tsim))
@@ -772,7 +772,7 @@ for(j in 1:length(Tsim)){
   high.a21[j]<-quantile(dist.a21[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 26:20 deg. C growing temperature
+#N fixation ~ measurement temperature for 26:20 deg. C growing temperature
 dist.a26=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.a26<-rep(NA,length(Tsim))
 high.a26<-rep(NA,length(Tsim))
@@ -784,7 +784,7 @@ for(j in 1:length(Tsim)){
   high.a26[j]<-quantile(dist.a26[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 31:25 deg. C growing temperature
+#N fixation ~ measurement temperature for 31:25 deg. C growing temperature
 dist.a31=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.a31<-rep(NA,length(Tsim))
 high.a31<-rep(NA,length(Tsim))
@@ -839,7 +839,7 @@ for(j in 1:length(Tg.seq)){
 #Generate 1000 multivariate normal random deviates for calculating CI
 vmat.g_linKm=mvrnorm(1000,mu=coef(fit_Nase_beta_linTminTopt_GLSE_linKm),Sigma=vcov(fit_Nase_beta_linTminTopt_GLSE_linKm))
 
-#N-fixation ~ measurement temperature for 21:15 deg. C growing temperature
+#N fixation ~ measurement temperature for 21:15 deg. C growing temperature
 dist.g21_linKm=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.g21_linKm<-rep(NA,length(Tsim))
 high.g21_linKm<-rep(NA,length(Tsim))
@@ -851,7 +851,7 @@ for(j in 1:length(Tsim)){
   high.g21_linKm[j]<-quantile(dist.g21_linKm[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 26:20 deg. C growing temperature
+#N fixation ~ measurement temperature for 26:20 deg. C growing temperature
 dist.g26_linKm=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.g26_linKm<-rep(NA,length(Tsim))
 high.g26_linKm<-rep(NA,length(Tsim))
@@ -863,7 +863,7 @@ for(j in 1:length(Tsim)){
   high.g26_linKm[j]<-quantile(dist.g26_linKm[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 31:25 deg. C growing temperature
+#N fixation ~ measurement temperature for 31:25 deg. C growing temperature
 dist.g31_linKm=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.g31_linKm<-rep(NA,length(Tsim))
 high.g31_linKm<-rep(NA,length(Tsim))
@@ -918,7 +918,7 @@ for(j in 1:length(Tg.seq)){
 #Generate 1000 multivariate normal random deviates for calculating CI
 vmat.r_linKm=mvrnorm(1000,mu=coef(fit_Nase_beta_linTminTmax_ROPS_linKm),Sigma=vcov(fit_Nase_beta_linTminTmax_ROPS_linKm))
 
-#N-fixation ~ measurement temperature for 21:15 deg. C growing temperature
+#N fixation ~ measurement temperature for 21:15 deg. C growing temperature
 dist.r21_linKm=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.r21_linKm<-rep(NA,length(Tsim))
 high.r21_linKm<-rep(NA,length(Tsim))
@@ -930,7 +930,7 @@ for(j in 1:length(Tsim)){
   high.r21_linKm[j]<-quantile(dist.r21_linKm[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 26:20 deg. C growing temperature
+#N fixation ~ measurement temperature for 26:20 deg. C growing temperature
 dist.r26_linKm=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.r26_linKm<-rep(NA,length(Tsim))
 high.r26_linKm<-rep(NA,length(Tsim))
@@ -942,7 +942,7 @@ for(j in 1:length(Tsim)){
   high.r26_linKm[j]<-quantile(dist.r26_linKm[,j],0.975)
 }
 
-#N-fixation ~ measurement temperature for 31:25 deg. C growing temperature
+#N fixation ~ measurement temperature for 31:25 deg. C growing temperature
 dist.r31_linKm=matrix(NA,nrow=1000,ncol=length(Tsim))
 low.r31_linKm<-rep(NA,length(Tsim))
 high.r31_linKm<-rep(NA,length(Tsim))
@@ -1231,7 +1231,7 @@ for(j in 1:length(Tg.seq)){
 }
 
 ####
-#Calculate range of N-fixation data
+#Calculate range of N fixation data
 ####
 
 #Morella
@@ -1290,6 +1290,8 @@ curve(beta(1,ft.m_linKm[12]*18.5+ft.m_linKm[11],ft.m_linKm[14]*18.5+ft.m_linKm[1
       from=max(M.min,ft.m_linKm[12]*18.5+ft.m_linKm[11]),to=min(M.max,ft.m_linKm[16]*18.5+ft.m_linKm[15]),lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 mtext(expression(italic(Morella)),side=3,line=1,cex=1.5)
 title(main=expression('  a'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 31.5 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=31.45,lty=2,col="dodgerblue1")
 
 #S15b
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1302,6 +1304,8 @@ curve(beta(1,ft.a[12]*18.5+ft.a[11],ft.a[14]*18.5+ft.a[13],ft.a[16]*18.5+ft.a[15
       from=max(A.min,ft.a[12]*18.5+ft.a[11]),to=min(A.max,ft.a[16]*18.5+ft.a[15]),lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 mtext(expression(italic(Alnus)),side=3,line=1,cex=1.5)
 title(main=expression('  b'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 32.4 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=32.42,lty=2,col="dodgerblue1")
 
 #S15c
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1314,6 +1318,8 @@ curve(beta(1,ft.g_linKm[13]*18.5+ft.g_linKm[12],ft.g_linKm[15]*18.5+ft.g_linKm[1
       from=max(G.min,ft.g_linKm[13]*18.5+ft.g_linKm[12]),to=min(G.max,ft.g_linKm[11]),lwd=2,col="dodgerblue1",lty=1,add=TRUE)
 mtext(expression(italic(Gliricidia)),side=3,line=1,cex=1.5)
 title(main=expression('  c'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 32.6 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=32.60,lty=2,col="dodgerblue1")
 
 #S15d
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1327,6 +1333,8 @@ curve(beta(1,ft.r_linKm[13]*18.5+ft.r_linKm[12],ft.r_linKm[11],ft.r_linKm[15]*18
 mtext(expression(italic(Robinia)),side=3,line=1,cex=1.5)
 title(main=expression('  d'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('21:15 '*degree*'C'),side=4,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 33.0 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=33.01,lty=2,col="dodgerblue1")
 
 #S15e
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1338,6 +1346,8 @@ points(MOCE26c$Temperature,MOCE26c$Vmax/(7890.763063*ft.m_linKm[7]),pch=16,cex=0
 curve(beta(1,ft.m_linKm[12]*23.5+ft.m_linKm[11],ft.m_linKm[14]*23.5+ft.m_linKm[13],ft.m_linKm[16]*23.5+ft.m_linKm[15],x),
       from=max(M.min,ft.m_linKm[12]*23.5+ft.m_linKm[11]),to=min(M.max,ft.m_linKm[16]*23.5+ft.m_linKm[15]),lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  e'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 34.6 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=34.62,lty=2,col="gold1")
 
 #S15f
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1349,6 +1359,8 @@ points(ALRU26c$Temperature,ALRU26c$Vmax/(1831.763172*ft.a[7]),pch=16,cex=0.001,c
 curve(beta(1,ft.a[12]*23.5+ft.a[11],ft.a[14]*23.5+ft.a[13],ft.a[16]*23.5+ft.a[15],x),
       from=max(A.min,ft.a[12]*23.5+ft.a[11]),to=min(A.max,ft.a[16]*23.5+ft.a[15]),lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  f'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 32.7 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=32.74,lty=2,col="gold1")
 
 #S15g
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1360,6 +1372,8 @@ points(GLSE26c$Temperature,GLSE26c$Vmax/(705.9735103*ft.g_linKm[7]),pch=16,cex=0
 curve(beta(1,ft.g_linKm[13]*23.5+ft.g_linKm[12],ft.g_linKm[15]*23.5+ft.g_linKm[14],ft.g_linKm[11],x),
       from=max(G.min,ft.g_linKm[13]*23.5+ft.g_linKm[12]),to=min(G.max,ft.g_linKm[11]),lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  g'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 34.2 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=34.21,lty=2,col="gold1")
 
 #S15h
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1372,6 +1386,8 @@ curve(beta(1,ft.r_linKm[13]*23.5+ft.r_linKm[12],ft.r_linKm[11],ft.r_linKm[15]*23
       from=max(R.min,ft.r_linKm[13]*23.5+ft.r_linKm[12]),to=min(R.max,ft.r_linKm[15]*23.5+ft.r_linKm[14]),lwd=2,col="gold1",lty=1,add=TRUE)
 title(main=expression('  h'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('26:20 '*degree*'C'),side=4,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 33.0 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=33.01,lty=2,col="gold1")
 
 #S15i
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1383,6 +1399,8 @@ points(MOCE31c$Temperature,MOCE31c$Vmax/(629.7544222*ft.m_linKm[10]),pch=16,cex=
 curve(beta(1,ft.m_linKm[12]*28.5+ft.m_linKm[11],ft.m_linKm[14]*28.5+ft.m_linKm[13],ft.m_linKm[16]*28.5+ft.m_linKm[15],x),
       from=max(M.min,ft.m_linKm[12]*28.5+ft.m_linKm[11]),to=min(M.max,ft.m_linKm[16]*28.5+ft.m_linKm[15]),lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  i'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 37.8 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=37.78,lty=2,col="orangered3")
 
 #S15j
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1394,6 +1412,8 @@ points(ALRU31c$Temperature,ALRU31c$Vmax/(1350.729381*ft.a[10]),pch=16,cex=0.001,
 curve(beta(1,ft.a[12]*28.5+ft.a[11],ft.a[14]*28.5+ft.a[13],ft.a[16]*28.5+ft.a[15],x),
       from=max(A.min,ft.a[12]*28.5+ft.a[11]),to=min(A.max,ft.a[16]*28.5+ft.a[15]),lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  j'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 33.1 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=33.07,lty=2,col="orangered3")
 
 #S15k
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1405,6 +1425,8 @@ points(GLSE31c$Temperature,GLSE31c$Vmax/(209.4577018*ft.g_linKm[10]),pch=16,cex=
 curve(beta(1,ft.g_linKm[13]*28.5+ft.g_linKm[12],ft.g_linKm[15]*28.5+ft.g_linKm[14],ft.g_linKm[11],x),
       from=max(G.min,ft.g_linKm[13]*28.5+ft.g_linKm[12]),to=min(G.max,ft.g_linKm[11]),lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  k'),cex.main=1.5,adj=0,line=-1)
+title(main=expression('   '*italic(T)[opt]*' = 35.8 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=35.82,lty=2,col="orangered3")
 
 #S15l
 plot(0:10,0:10,t="n",ylim=c(0,1.6),xlim=c(5,50),xlab=NA,ylab=NA,las=1,xaxt="n",yaxt="n")
@@ -1417,6 +1439,8 @@ curve(beta(1,ft.r_linKm[13]*28.5+ft.r_linKm[12],ft.r_linKm[11],ft.r_linKm[15]*28
       from=max(R.min,ft.r_linKm[13]*28.5+ft.r_linKm[12]),to=min(R.max,ft.r_linKm[15]*28.5+ft.r_linKm[14]),lwd=2,col="orangered3",lty=1,add=TRUE)
 title(main=expression('  l'),cex.main=1.5,adj=0,line=-1)
 mtext(expression('31:25 '*degree*'C'),side=4,line=1,cex=1.5)
+title(main=expression('   '*italic(T)[opt]*' = 33.0 '*degree*'C'),cex.main=1,adj=0,line=-3)
+abline(v=33.01,lty=2,col="orangered3")
 
 mtext(expression('Nitrogen fixation (% of max)'),side=2,line=2.9,cex=1.5,outer=T)
 mtext(expression('Temperature ('*degree*'C)'),side=1,line=3,cex=1.5,outer=T)
@@ -1426,7 +1450,7 @@ mtext(expression('Temperature ('*degree*'C)'),side=1,line=3,cex=1.5,outer=T)
 ###############################################################################################################
 
 ####
-#Calculate relative N-fixation rate at 25C
+#Calculate relative N fixation rate at 25C
 ####
 
 #Houlton et al. 2008 function
@@ -1665,7 +1689,7 @@ par(xpd=TRUE)
 
 #Legend
 plot(0:10, 0:10, type='n', bty='n', xaxt='n', yaxt='n',xlab=NA,ylab=NA)
-legend("left",legend=c(expression(underline(bold('N-fixation'))),expression(italic(Morella)),expression(italic(Alnus)),expression(italic(Gliricidia)),expression(italic(Robinia)),
+legend("left",legend=c(expression(underline(bold('N fixation'))),expression(italic(Morella)),expression(italic(Alnus)),expression(italic(Gliricidia)),expression(italic(Robinia)),
                        expression(underline(bold('Photosynthesis'))),expression(italic(Morella)),expression(italic(Alnus)),expression(italic(Gliricidia)),expression(italic(Robinia))),
        col=c(NA,"darkorange1","darkturquoise","orangered2","dodgerblue3",NA,"darkorange1","darkturquoise","orangered2","dodgerblue3"),
        lty=c(NA,1,1,1,1,NA,2,2,2,2),pch=c(NA,16,16,17,17,NA,1,1,2,2),bty="n",pt.cex=1.5,lwd=1,x.intersp = 0.2,y.intersp = 1,
